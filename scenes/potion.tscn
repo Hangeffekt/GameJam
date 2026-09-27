@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://doh57xo13r2dp"]
+
+[ext_resource type="Script" uid="uid://dwtnsmhbby5et" path="res://scripts/potion.gd" id="1_3mc24"]
+[ext_resource type="StyleBox" uid="uid://b6ynm81qtn1v3" path="res://styles/menubox.tres" id="2_8kk5y"]
+[ext_resource type="StyleBox" uid="uid://ch2qisog2e65j" path="res://styles/potioncategoryactive.tres" id="3_l7w6n"]
+[ext_resource type="Texture2D" uid="uid://j61f44nbyva" path="res://assets/shop/potion_ui.png" id="4_6gods"]
+
+[node name="potion" type="CanvasLayer" unique_id=947814072]
+script = ExtResource("1_3mc24")
+
+[node name="PotionUi" type="Sprite2D" parent="." unique_id=2084757185]
+position = Vector2(576, 326)
+scale = Vector2(0.59999996, 0.6018519)
+texture = ExtResource("4_6gods")
+
+[node name="potionmenu" type="Panel" parent="." unique_id=292840461]
+offset_left = 808.0
+offset_top = 19.0
+offset_right = 1137.0
+offset_bottom = 633.0
+theme_override_styles/panel = ExtResource("2_8kk5y")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="potionmenu" unique_id=952243843]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -154.0
+offset_top = -298.5
+offset_right = 153.0
+offset_bottom = 296.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="potionmenu/ScrollContainer" unique_id=921163051]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="potionmenu/ScrollContainer/VBoxContainer" unique_id=1273497411]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="potionmenu" unique_id=1883612706]
+layout_mode = 0
+offset_left = -69.0
+offset_top = 62.0
+offset_right = 10.0
+offset_bottom = 171.0
+theme_override_styles/panel = ExtResource("3_l7w6n")

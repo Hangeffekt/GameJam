@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://037oyu7x11ic"]
+
+[ext_resource type="Script" uid="uid://bantlg6g7dnun" path="res://scripts/DialogueBox.gd" id="1_pwpf0"]
+[ext_resource type="StyleBox" uid="uid://b6ynm81qtn1v3" path="res://styles/menubox.tres" id="2_1n5wf"]
+[ext_resource type="Texture2D" uid="uid://t84tt4y6yyik" path="res://assets/shop/cash_register_ui.png" id="2_giuoe"]
+[ext_resource type="StyleBox" uid="uid://clqda3ykp77qo" path="res://styles/left_side_menu.tres" id="2_pe8jb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_idp6d"]
+content_margin_left = 20.0
+content_margin_top = 15.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_detail = 15
+anti_aliasing_size = 0.01
+
+[sub_resource type="FontVariation" id="FontVariation_pe8jb"]
+
+[node name="DialogueBox" type="CanvasLayer" unique_id=747149065]
+script = ExtResource("1_pwpf0")
+
+[node name="Panel" type="Panel" parent="." unique_id=1948743383]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="accept" type="Button" parent="Panel" unique_id=39402456]
+visible = false
+layout_mode = 0
+offset_left = 897.0
+offset_top = -133.0
+offset_right = 1116.0
+offset_bottom = -82.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = ExtResource("2_pe8jb")
+action_mode = 0
+text = "Elfogad"
+autowrap_trim_flags = 0
+
+[node name="decline" type="Button" parent="Panel" unique_id=565192833]
+visible = false
+layout_mode = 0
+offset_left = 897.0
+offset_top = -76.0
+offset_right = 1116.0
+offset_bottom = -25.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = ExtResource("2_pe8jb")
+action_mode = 0
+text = "Elutasít"
+autowrap_trim_flags = 0
+
+[node name="NameLabel" type="Label" parent="Panel" unique_id=454580920]
+layout_mode = 0
+offset_left = 222.0
+offset_top = -221.0
+offset_right = 516.0
+offset_bottom = -148.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_idp6d")
+text = "zhrjztjtzjtzj"
+
+[node name="TextLabel" type="RichTextLabel" parent="Panel" unique_id=1994695144]
+custom_minimum_size = Vector2(500, 150)
+custom_maximum_size = Vector2(1200, 150)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -354.0
+offset_top = -166.99998
+offset_right = 336.0
+offset_bottom = -16.999985
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(1, 1.12)
+focus_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = SubResource("FontVariation_pe8jb")
+theme_override_font_sizes/normal_font_size = 20
+theme_override_styles/normal = ExtResource("2_1n5wf")
+text = "tru56u5"
+selection_enabled = true
+
+[node name="CashRegisterUi" type="Sprite2D" parent="." unique_id=861118620]
+visible = false
+position = Vector2(577.25, 326)
+scale = Vector2(0.59765625, 0.59999996)
+texture = ExtResource("2_giuoe")
+
+[connection signal="pressed" from="Panel/accept" to="." method="_on_accept_pressed"]
+[connection signal="pressed" from="Panel/decline" to="." method="_on_decline_pressed"]

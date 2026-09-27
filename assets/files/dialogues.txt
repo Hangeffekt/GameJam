@@ -1,0 +1,13 @@
+1,1,pu,hi
+2,1,ti,hi
+3,1,pu,csinálj ilxet
+4,1,ti,5000 lesz
+5,2,re,hi
+6,2,ti,hi
+7,2,re,csinálj ilxet
+8,2,ti,2000 lesz
+9,2,re,de jó legyen
+10,3,gi,hi
+11,3,ti,hi
+12,3,gi,csinálj ilxet
+13,3,ti,5000 lesz
