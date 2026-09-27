@@ -1,4 +1,5 @@
 extends CanvasLayer
+@onready var dialogue_box: CanvasLayer = $"."
 
 @onready var name_label: Label = $Panel/NameLabel
 @onready var text_label: RichTextLabel = $Panel/TextLabel
@@ -14,8 +15,9 @@ func find_dialogue(group_id: int) -> void:
 	next_dialogue()
 
 func _input(event):
-	if event is InputEventMouseButton and event.pressed:
+	if event is InputEventMouseButton and event.pressed and dialogue_box.visible:
 		actual_dialogue = actual_dialogue + 1
+		print(actual_dialogue)
 		if max_dialogue >= actual_dialogue + 1:
 			next_dialogue()
 		
@@ -30,8 +32,6 @@ func next_dialogue() -> void:
 		$Panel/decline.show()
 
 
-
-
 func _on_decline_pressed() -> void:
 	actual_dialogue = 0
 	max_dialogue = 0
@@ -41,5 +41,9 @@ func _on_decline_pressed() -> void:
 	$"..".leave_customer()
 
 
+
 func _on_accept_pressed() -> void:
 	pass
+	
+	
+	
