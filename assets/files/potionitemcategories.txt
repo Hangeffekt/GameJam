@@ -1,3 +1,0 @@
-1,Növényi
-2,Állati/Emberi
-3,Kristályok

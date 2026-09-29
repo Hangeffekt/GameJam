@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://dwtnsmhbby5et" path="res://scripts/potion.gd" id="1_3mc24"]
 [ext_resource type="StyleBox" uid="uid://b6ynm81qtn1v3" path="res://styles/menubox.tres" id="2_8kk5y"]
-[ext_resource type="StyleBox" uid="uid://ch2qisog2e65j" path="res://styles/potioncategoryactive.tres" id="3_l7w6n"]
 [ext_resource type="Texture2D" uid="uid://j61f44nbyva" path="res://assets/shop/potion_ui.png" id="4_6gods"]
 
 [node name="potion" type="CanvasLayer" unique_id=947814072]
@@ -40,10 +39,17 @@ layout_mode = 2
 [node name="HBoxContainer" type="HBoxContainer" parent="potionmenu/ScrollContainer/VBoxContainer" unique_id=1273497411]
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="potionmenu" unique_id=1883612706]
-layout_mode = 0
-offset_left = -69.0
-offset_top = 62.0
+[node name="Control" type="Control" parent="potionmenu" unique_id=104414477]
+anchors_preset = 0
+offset_left = -68.0
+offset_top = 61.0
 offset_right = 10.0
-offset_bottom = 171.0
-theme_override_styles/panel = ExtResource("3_l7w6n")
+offset_bottom = 529.0
+
+[node name="VBox" type="VBoxContainer" parent="potionmenu/Control" unique_id=1737966532]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 467.0
+grow_horizontal = 2
+theme_override_constants/separation = 41
