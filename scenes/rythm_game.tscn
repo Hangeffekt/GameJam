@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://qbamren3hir4"]
 
-[ext_resource type="Script" uid="uid://dv52i53pw4i85" path="res://scenes/rythm_game.gd" id="1_hidhp"]
+[ext_resource type="Script" uid="uid://dv52i53pw4i85" path="res://scripts/rythm_game.gd" id="1_hidhp"]
 [ext_resource type="Texture2D" uid="uid://cxhune3egbhga" path="res://assets/placeholders/dropplet_placeholder.png" id="2_qmehk"]
 [ext_resource type="Texture2D" uid="uid://b5d5qmnhk7whd" path="res://assets/placeholders/placeholder_cauldron.png" id="2_uuflm"]
 [ext_resource type="PackedScene" uid="uid://dpy8dk57s8673" path="res://scenes/wave.tscn" id="4_uuflm"]
