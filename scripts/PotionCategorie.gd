@@ -12,7 +12,6 @@ var selected: bool
 static var all_instances: Array[PotionCategorie] = []
 
 func _init(p_id: int, p_parent_id: int, p_name: String, p_picture_name: String, p_atr1: int, p_atr2: int, p_atr3: int, p_selected: bool):
-	print(p_name)
 	self.id = p_id
 	self.parent_id = p_parent_id
 	self.name = p_name
