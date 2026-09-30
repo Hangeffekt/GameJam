@@ -1,0 +1,215 @@
+[gd_scene format=3 uid="uid://qbamren3hir4"]
+
+[ext_resource type="Script" uid="uid://dv52i53pw4i85" path="res://scenes/rythm_game.gd" id="1_hidhp"]
+[ext_resource type="Texture2D" uid="uid://cxhune3egbhga" path="res://assets/placeholders/dropplet_placeholder.png" id="2_qmehk"]
+[ext_resource type="Texture2D" uid="uid://b5d5qmnhk7whd" path="res://assets/placeholders/placeholder_cauldron.png" id="2_uuflm"]
+[ext_resource type="PackedScene" uid="uid://dpy8dk57s8673" path="res://scenes/wave.tscn" id="4_uuflm"]
+[ext_resource type="PackedScene" uid="uid://mgw84bj5qnk4" path="res://scenes/star.tscn" id="5_4qhuu"]
+
+[sub_resource type="Animation" id="Animation_qmehk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(573.99994, 50)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_hidhp"]
+resource_name = "dropping"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(3.8637378, 1),
+"update": 0,
+"values": [Vector2(573.99994, 50), Vector2(573.99994, 398.99997)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 0.96593493),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uuflm"]
+_data = {
+&"RESET": SubResource("Animation_qmehk"),
+&"dropping": SubResource("Animation_hidhp")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0mw1e"]
+size = Vector2(7.868828, 6.2694316)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_0mw1e"]
+a = Vector2(32, 0)
+b = Vector2(-24, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mmtjo"]
+size = Vector2(15, 49)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e3dmf"]
+size = Vector2(15, 49)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_71p6h"]
+size = Vector2(226, 49)
+
+[node name="rythm_game" type="Node2D" unique_id=1484322323]
+script = ExtResource("1_hidhp")
+
+[node name="culdron_placeholder" type="Sprite2D" parent="." unique_id=1195092205]
+position = Vector2(567, 474)
+scale = Vector2(5.3833933, 4.08709)
+texture = ExtResource("2_uuflm")
+
+[node name="dropplet_placeholderr" type="Sprite2D" parent="." unique_id=51806181]
+visible = false
+position = Vector2(573.99994, 50)
+scale = Vector2(7.625, 8.772727)
+texture = ExtResource("2_qmehk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="dropplet_placeholderr" unique_id=268235826]
+libraries/ = SubResource("AnimationLibrary_uuflm")
+autoplay = &"dropping"
+
+[node name="dropplet_area" type="Area2D" parent="dropplet_placeholderr" unique_id=355675222]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dropplet_placeholderr/dropplet_area" unique_id=1260614117]
+position = Vector2(-0.13114929, 1.9948187)
+scale = Vector2(0.9999996, 0.9999999)
+shape = SubResource("RectangleShape2D_0mw1e")
+
+[node name="szelle_jelzok" type="Node2D" parent="." unique_id=15873312]
+
+[node name="leesett_jelzo" type="Area2D" parent="szelle_jelzok" unique_id=1223914326]
+position = Vector2(569, 427)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="szelle_jelzok/leesett_jelzo" unique_id=2064278013]
+shape = SubResource("SegmentShape2D_0mw1e")
+
+[node name="perfect_szelle_jelzo" type="Area2D" parent="szelle_jelzok" unique_id=1926087473]
+position = Vector2(904, 432)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="szelle_jelzok/perfect_szelle_jelzo" unique_id=888409672]
+position = Vector2(-8.5, -2.5)
+shape = SubResource("RectangleShape2D_mmtjo")
+debug_color = Color(0.016313557, 0.5581168, 0.055020012, 0.41960785)
+
+[node name="good_szelle_jelzo" type="Area2D" parent="szelle_jelzok" unique_id=1686673206]
+position = Vector2(878, 429)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="szelle_jelzok/good_szelle_jelzo" unique_id=1008066986]
+position = Vector2(2.5, 0.5)
+shape = SubResource("RectangleShape2D_e3dmf")
+debug_color = Color(0.73542345, 0.46520102, 0.18935934, 0.41960785)
+
+[node name="early_szelle_jelzo" type="Area2D" parent="szelle_jelzok" unique_id=2047371898]
+position = Vector2(863, 431)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="szelle_jelzok/early_szelle_jelzo" unique_id=1106304082]
+position = Vector2(-103, -1.5)
+shape = SubResource("RectangleShape2D_71p6h")
+debug_color = Color(0.96168846, 1.540184e-06, 0.51167804, 0.41960785)
+
+[node name="wave" parent="." unique_id=193732849 instance=ExtResource("4_uuflm")]
+visible = false
+position = Vector2(567, 427)
+
+[node name="test" type="Label" parent="." unique_id=1750695539]
+offset_left = 755.0
+offset_top = 146.0
+offset_right = 795.0
+offset_bottom = 169.0
+
+[node name="stars_collection" type="Node2D" parent="." unique_id=283514124]
+
+[node name="star" parent="stars_collection" unique_id=366075080 instance=ExtResource("5_4qhuu")]
+position = Vector2(1066, 45)
+
+[node name="star2" parent="stars_collection" unique_id=1570308714 instance=ExtResource("5_4qhuu")]
+position = Vector2(1066, 96)
+index = 1
+
+[node name="star3" parent="stars_collection" unique_id=544390773 instance=ExtResource("5_4qhuu")]
+position = Vector2(1066, 141)
+index = 2
+
+[node name="star4" parent="stars_collection" unique_id=460662236 instance=ExtResource("5_4qhuu")]
+position = Vector2(1066, 183)
+index = 3
+
+[node name="star5" parent="stars_collection" unique_id=878188028 instance=ExtResource("5_4qhuu")]
+position = Vector2(1066, 237)
+index = 4
+
+[node name="star6" parent="stars_collection" unique_id=649013768 instance=ExtResource("5_4qhuu")]
+position = Vector2(1066, 291)
+index = 5
+
+[node name="star7" parent="stars_collection" unique_id=1814637941 instance=ExtResource("5_4qhuu")]
+position = Vector2(1066, 339)
+index = 6
+
+[node name="star8" parent="stars_collection" unique_id=1570439741 instance=ExtResource("5_4qhuu")]
+position = Vector2(1066, 387)
+index = 7
+
+[node name="star9" parent="stars_collection" unique_id=449558581 instance=ExtResource("5_4qhuu")]
+position = Vector2(1066, 437)
+index = 8
+
+[node name="star10" parent="stars_collection" unique_id=108483811 instance=ExtResource("5_4qhuu")]
+position = Vector2(1066, 489)
+index = 9
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=482661213]
+offset_left = 445.0
+offset_top = 615.0
+offset_right = 697.0
+offset_bottom = 642.0
+max_value = 20.0
+
+[node name="victory label" type="Label" parent="ProgressBar" unique_id=1305022546]
+visible = false
+layout_mode = 0
+offset_left = -168.0
+offset_top = -442.0
+offset_right = 449.0
+offset_bottom = -196.0
+theme_override_font_sizes/font_size = 180
+text = "győztél"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="area_entered" from="szelle_jelzok/leesett_jelzo" to="." method="_on_leesett_jelzo_area_entered"]
+[connection signal="value_changed" from="ProgressBar" to="." method="_on_progress_bar_value_changed"]
