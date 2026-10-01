@@ -2,15 +2,13 @@
 
 [ext_resource type="Script" uid="uid://dwtnsmhbby5et" path="res://scripts/potion.gd" id="1_3mc24"]
 [ext_resource type="StyleBox" uid="uid://b6ynm81qtn1v3" path="res://styles/menubox.tres" id="2_8kk5y"]
-[ext_resource type="StyleBox" uid="uid://ch2qisog2e65j" path="res://styles/potioncategoryactive.tres" id="3_3mc24"]
+[ext_resource type="Texture2D" uid="uid://d38xy1ikji4yc" path="res://assets/potion/potion_ui_02.png" id="3_8kk5y"]
 [ext_resource type="Texture2D" uid="uid://j61f44nbyva" path="res://assets/shop/potion_ui.png" id="4_6gods"]
+[ext_resource type="StyleBox" uid="uid://vfbn1867ixcv" path="res://styles/potionmenuinactive.tres" id="5_8kk5y"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_67q4m"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_msale"]
-
-[sub_resource type="Theme" id="Theme_8kk5y"]
-default_font_size = 20
 
 [node name="potion" type="CanvasLayer" unique_id=947814072]
 script = ExtResource("1_3mc24")
@@ -20,6 +18,12 @@ visible = false
 position = Vector2(576, 326)
 scale = Vector2(0.59999996, 0.6018519)
 texture = ExtResource("4_6gods")
+
+[node name="PotionUi02" type="Sprite2D" parent="." unique_id=2135501395]
+visible = false
+position = Vector2(576, 326)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_8kk5y")
 
 [node name="Control" type="Control" parent="." unique_id=104414477]
 layout_mode = 3
@@ -41,58 +45,124 @@ theme_override_styles/panel = ExtResource("2_8kk5y")
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 20.0
+offset_left = -26.0
+offset_bottom = 100.0
 grow_horizontal = 2
 theme_override_constants/separation = 41
 
 [node name="testbtn" type="Button" parent="Control/VBox" unique_id=1714506839]
 visible = false
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-theme_override_styles/normal = ExtResource("3_3mc24")
+theme_override_styles/normal = ExtResource("5_8kk5y")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=952243843]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+custom_minimum_size = Vector2(300, 500)
+anchors_preset = -1
+anchor_right = 1.0170001
+anchor_bottom = 0.901
 offset_left = 852.0
 offset_top = 77.0
-offset_right = 20.0
-offset_bottom = -64.0
+offset_right = 0.41589355
+offset_bottom = 0.15197754
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 theme_override_styles/panel = SubResource("StyleBoxEmpty_67q4m")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_msale")
 horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
 
 [node name="GridContainer" type="GridContainer" parent="ScrollContainer" unique_id=1683704855]
-custom_minimum_size = Vector2(300, 614)
+custom_minimum_size = Vector2(300, 500)
 layout_mode = 2
 size_flags_horizontal = 3
-offset_transform_enabled = true
 theme_override_constants/h_separation = 50
 theme_override_constants/v_separation = 5
 columns = 2
 
-[node name="Control2" type="VBoxContainer" parent="ScrollContainer/GridContainer" unique_id=2004457119]
-visible = false
-layout_mode = 2
-theme = SubResource("Theme_8kk5y")
+[node name="choosed_items" type="GridContainer" parent="." unique_id=1177732796]
+offset_left = 420.0
+offset_top = 45.0
+offset_right = 657.0
+offset_bottom = 120.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_constants/h_separation = 5
+columns = 3
 
-[node name="testbtn" type="Button" parent="ScrollContainer/GridContainer/Control2" unique_id=1465246376]
-custom_minimum_size = Vector2(101.87, 100)
+[node name="testbtn" type="Panel" parent="choosed_items" unique_id=325158395]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = ExtResource("2_8kk5y")
+
+[node name="testbtn2" type="Panel" parent="choosed_items" unique_id=1100750638]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_8kk5y")
+
+[node name="testbtn3" type="Panel" parent="choosed_items" unique_id=1001384771]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_8kk5y")
+
+[node name="points" type="GridContainer" parent="." unique_id=785419252]
+offset_left = 21.0
+offset_top = 553.0
+offset_right = 766.0
+offset_bottom = 628.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 27
+columns = 3
+
+[node name="PanelRed" type="Panel" parent="points" unique_id=343504662]
+custom_minimum_size = Vector2(230, 75)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = ExtResource("2_8kk5y")
+
+[node name="red" type="Label" parent="points/PanelRed" unique_id=670840386]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 15.0
+offset_right = 230.0
+offset_bottom = 57.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "0"
+
+[node name="PanelGreen" type="Panel" parent="points" unique_id=1248051893]
+custom_minimum_size = Vector2(230, 75)
 layout_mode = 2
 size_flags_vertical = 4
-theme_override_styles/normal = ExtResource("3_3mc24")
+theme_override_styles/panel = ExtResource("2_8kk5y")
 
-[node name="Label" type="Label" parent="ScrollContainer/GridContainer/Control2" unique_id=874901408]
-layout_mode = 2
-text = "1"
+[node name="green" type="Label" parent="points/PanelGreen" unique_id=2038501131]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 15.0
+offset_right = 230.0
+offset_bottom = 57.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "0"
 
-[node name="Label2" type="Label" parent="ScrollContainer/GridContainer/Control2" unique_id=1920650036]
+[node name="PanelBlue" type="Panel" parent="points" unique_id=1669707181]
+custom_minimum_size = Vector2(230, 75)
 layout_mode = 2
-text = "1"
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = ExtResource("2_8kk5y")
 
-[node name="Label3" type="Label" parent="ScrollContainer/GridContainer/Control2" unique_id=1381234303]
-layout_mode = 2
-text = "1"
+[node name="blue" type="Label" parent="points/PanelBlue" unique_id=232419186]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 15.0
+offset_right = 230.0
+offset_bottom = 57.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "0"
