@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b5d5qmnhk7whd" path="res://assets/placeholders/placeholder_cauldron.png" id="2_uuflm"]
 [ext_resource type="PackedScene" uid="uid://dpy8dk57s8673" path="res://scenes/wave.tscn" id="4_uuflm"]
 [ext_resource type="PackedScene" uid="uid://mgw84bj5qnk4" path="res://scenes/star.tscn" id="5_4qhuu"]
+[ext_resource type="PackedScene" uid="uid://7en3j6hc7kc3" path="res://scenes/dev_debug_menu.tscn" id="6_jgy0h"]
 
 [sub_resource type="Animation" id="Animation_qmehk"]
 length = 0.001
@@ -210,6 +211,12 @@ theme_override_font_sizes/font_size = 180
 text = "győztél"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Dev_debug_menu" parent="." unique_id=218198422 instance=ExtResource("6_jgy0h")]
+offset_left = 1151.0
+offset_top = -1.0
+offset_right = 1151.0
+offset_bottom = -1.0
 
 [connection signal="area_entered" from="szelle_jelzok/leesett_jelzo" to="." method="_on_leesett_jelzo_area_entered"]
 [connection signal="value_changed" from="ProgressBar" to="." method="_on_progress_bar_value_changed"]
