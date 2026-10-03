@@ -37,8 +37,7 @@ func leave_customer() -> void:
 
 
 func _on_potion_pressed() -> void:
-	$potion.show()
-	$DialogueBox.hide()
+	get_tree().change_scene_to_file("res://scenes/potion.tscn")
 
 func _on_shop_pressed() -> void:
 	$potion.hide()

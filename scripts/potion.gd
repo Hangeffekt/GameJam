@@ -107,8 +107,23 @@ func item_choosed(id: int, atr1: int, atr2: int, atr3: int):
 		item_place_id_3 = id
 		set_and_write_values(atr1, atr2, atr3)
 		add_labels_to_recipe(set_number(sum_red), set_number(sum_green), set_number(sum_blue), result_box)
-		#mini_game_result()
+		var result_point = 0
+		result_point = result_point + mini_game_result(sum_red, recipe[0].relation_1, recipe[0].target_number_1)
+		result_point = result_point + mini_game_result(sum_green, recipe[0].relation_2, recipe[0].target_number_2)
+		result_point = result_point + mini_game_result(sum_blue, recipe[0].relation_3, recipe[0].target_number_3)
+		
+		match(result_point):
+			0:
+				$result/textResult.text = "Bad"
+			1:
+				$result/textResult.text = "Bad"
+			2:
+				$result/textResult.text = "Good"
+			3:
+				$result/textResult.text = "Perfect"
 		$result.show()
+		await get_tree().create_timer(5.0).timeout
+		get_tree().change_scene_to_file("res://scenes/shop.tscn")
 
 func set_and_write_values(atr1: int, atr2: int, atr3: int) -> void:
 	sum_red = sum_red + atr1
@@ -144,4 +159,16 @@ func create_and_set_new_label(str_value: String, placeholder) -> void:
 	text_label.text = str_value
 	placeholder.add_child(text_label)
 	
+func mini_game_result(left_side: int, relation: String, right_side: int) -> int:
+	var line_result = false
+	if(relation == ">"):
+		line_result = left_side > right_side
+	elif(relation == "<"):
+		line_result = left_side < right_side
+	elif(relation == "-"):
+		line_result = left_side == 0
 	
+	if line_result:
+		return 1
+	else:
+		return 0
