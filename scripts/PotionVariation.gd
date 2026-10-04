@@ -22,14 +22,14 @@ func _init(p_id: int, p_relation_1: String, p_target_number_1: int, p_relation_2
 	all_variation_instances.append(self)
 	
 static func choose_random_variation(day : int) -> Array[PotionVariation]:
-	var id: int = 0
+	var random_id: int
 	if(day == 1):
-		id = randi_range(1, 15)
+		random_id = randi_range(1, 15)
 	elif(day == 2):
-		id = randi_range(16, 30)
+		random_id = randi_range(16, 30)
 	elif(day == 3):
-		id = randi_range(31, 50)
+		random_id = randi_range(31, 50)
 	else:
-		id = randi_range(1, 50)
+		random_id = randi_range(1, 50)
 		
-	return all_variation_instances.filter(func(value): return value.id == id)
+	return all_variation_instances.filter(func(value): return value.id == random_id)

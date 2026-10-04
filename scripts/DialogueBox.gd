@@ -7,8 +7,8 @@ var actual_dialogue: int = 0
 var max_dialogue: int = 0
 var dialogues: Array = []
 
-func find_dialogue(group_id: int) -> void:
-	dialogues = Dialogue.get_by_group(2)
+func find_dialogue(dialogue_id: int) -> void:
+	dialogues = Dialogue.get_by_group(dialogue_id)
 	max_dialogue = dialogues.size()
 	
 	next_dialogue()

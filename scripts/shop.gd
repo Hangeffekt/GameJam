@@ -1,15 +1,11 @@
 extends CanvasLayer
 var customer: bool = false
 
-@onready var timer: Timer = $Timer
-var script_fajl = load("res://scripts/load_datas.gd")
+@onready var timer: Timer = Timer.new()
 @onready var potion_scene = load("res://scenes/potion.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
-	var uj_objektum = script_fajl.new()
-	uj_objektum._ready()
 	if !customer:
 		choose_customer()
 

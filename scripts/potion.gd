@@ -1,6 +1,5 @@
 extends CanvasLayer
 
-var script_fajl = load("res://scripts/load_datas.gd")
 @onready var categorie_box = $Control/VBox
 @onready var categorie_item_box = $ScrollContainer/GridContainer
 @onready var recipe_box = $recipe/GridContainer
@@ -20,15 +19,13 @@ var used_items: Array = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var uj_objektum = script_fajl.new()
-	uj_objektum._ready()
-	set_and_write_values(0,0,0)
-	category_buttons(1)
+	if get_tree().current_scene.name == "potion":
+		set_and_write_values(0,0,0)
+		category_buttons(1)
 	
-	#get recipe
-	recipe = PotionVariation.choose_random_variation(1)
-	print(recipe[0].id)
-	add_labels_to_recipe("x", "x", "x", recipe_box)
+		#get recipe
+		recipe = PotionVariation.choose_random_variation(1)
+		add_labels_to_recipe("x", "x", "x", recipe_box)
 	
 
 func category_buttons(id: int):
@@ -39,6 +36,7 @@ func category_buttons(id: int):
 	for categorie in PotionCategorie.all_instances:
 		if(categorie.parent_id == 0):
 			var button = Button.new()
+			button.add_to_group("potion_buttons")
 			if categorie.id == id:
 				button.custom_minimum_size = Vector2(79, 105)
 				button.add_theme_stylebox_override("normal", preload("res://styles/potioncategoryactive.tres"))
@@ -60,10 +58,10 @@ func category_items(id: int):
 		if(item.parent_id == id):
 			var control = VBoxContainer.new()
 			var button = Button.new()
+			button.add_to_group("potion_buttons")
 			#create item button
 			button.custom_minimum_size = Vector2(100, 100)
 			if(used_items.find(item.id) != -1):
-				print(used_items.find(item.id))
 				button.add_theme_stylebox_override("normal", preload("res://styles/disabled_item.tres"))
 				button.mouse_filter = Control.MOUSE_FILTER_IGNORE
 			else:
@@ -76,17 +74,17 @@ func category_items(id: int):
 			control.add_child(button)
 			
 			#create labels for values
-			var labelgreen = create_labels_for_item(str(item.atr1))
+			var labelgreen = create_labels_for_item(set_number(item.atr1))
 			control.add_child(labelgreen)
-			labelgreen = create_labels_for_item(str(item.atr2))
+			labelgreen = create_labels_for_item(set_number(item.atr2))
 			control.add_child(labelgreen)
-			labelgreen = create_labels_for_item(str(item.atr3))
+			labelgreen = create_labels_for_item(set_number(item.atr3))
 			control.add_child(labelgreen)
 			categorie_item_box.add_child(control)
 
-func create_labels_for_item(str: String) -> Label:
+func create_labels_for_item(text: String) -> Label:
 	var label = Label.new()
-	label.text = str
+	label.text = text
 	label.add_theme_font_size_override("font_size", 24)
 	label.add_theme_color_override("font_color", Color("#000000"))
 	
@@ -105,25 +103,7 @@ func item_choosed(id: int, atr1: int, atr2: int, atr3: int):
 	elif !item_place_3:
 		item_place_3 = true
 		item_place_id_3 = id
-		set_and_write_values(atr1, atr2, atr3)
-		add_labels_to_recipe(set_number(sum_red), set_number(sum_green), set_number(sum_blue), result_box)
-		var result_point = 0
-		result_point = result_point + mini_game_result(sum_red, recipe[0].relation_1, recipe[0].target_number_1)
-		result_point = result_point + mini_game_result(sum_green, recipe[0].relation_2, recipe[0].target_number_2)
-		result_point = result_point + mini_game_result(sum_blue, recipe[0].relation_3, recipe[0].target_number_3)
-		
-		match(result_point):
-			0:
-				$result/textResult.text = "Bad"
-			1:
-				$result/textResult.text = "Bad"
-			2:
-				$result/textResult.text = "Good"
-			3:
-				$result/textResult.text = "Perfect"
-		$result.show()
-		await get_tree().create_timer(5.0).timeout
-		get_tree().change_scene_to_file("res://scenes/shop.tscn")
+		end_game(atr1, atr2, atr3)
 
 func set_and_write_values(atr1: int, atr2: int, atr3: int) -> void:
 	sum_red = sum_red + atr1
@@ -172,3 +152,31 @@ func mini_game_result(left_side: int, relation: String, right_side: int) -> int:
 		return 1
 	else:
 		return 0
+		
+func end_game(atr1: int, atr2: int, atr3: int) -> void:
+	#disable mouse and scroll
+	for button in get_tree().get_nodes_in_group("potion_buttons"):
+		if button is Button:
+			button.mouse_filter = Control.MOUSE_FILTER_IGNORE
+			$ScrollContainer.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	
+	#set and write game result
+	set_and_write_values(atr1, atr2, atr3)
+	add_labels_to_recipe(set_number(sum_red), set_number(sum_green), set_number(sum_blue), result_box)
+	var result_point = 0
+	result_point = result_point + mini_game_result(sum_red, recipe[0].relation_1, recipe[0].target_number_1)
+	result_point = result_point + mini_game_result(sum_green, recipe[0].relation_2, recipe[0].target_number_2)
+	result_point = result_point + mini_game_result(sum_blue, recipe[0].relation_3, recipe[0].target_number_3)
+	
+	match(result_point):
+		0:
+			$result/textResult.text = "Bad"
+		1:
+			$result/textResult.text = "Bad"
+		2:
+			$result/textResult.text = "Good"
+		3:
+			$result/textResult.text = "Perfect"
+	$result.show()
+	await get_tree().create_timer(5.0).timeout
+	get_tree().change_scene_to_file("res://scenes/shop.tscn")
