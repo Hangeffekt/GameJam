@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://ftysgm2wcxpj" path="res://scripts/shop.gd" id="1_032fp"]
 [ext_resource type="Texture2D" uid="uid://cw4iv3dkyq88f" path="res://assets/shop/bc 03.png" id="2_2fc2m"]
 [ext_resource type="Texture2D" uid="uid://b1j414xsa45p" path="res://assets/shop/MAIN VIEW.png" id="3_8r1wq"]
-[ext_resource type="PackedScene" uid="uid://037oyu7x11ic" path="res://scenes/DialogueBox.tscn" id="4_ajxib"]
 [ext_resource type="PackedScene" uid="uid://doh57xo13r2dp" path="res://scenes/potion.tscn" id="5_ajxib"]
+[ext_resource type="PackedScene" uid="uid://cshl60v00b23l" path="res://scenes/dialogue_manager.tscn" id="5_y6sft"]
 [ext_resource type="StyleBox" uid="uid://clqda3ykp77qo" path="res://styles/left_side_menu.tres" id="6_y6sft"]
 [ext_resource type="Texture2D" uid="uid://j61f44nbyva" path="res://assets/shop/potion_ui.png" id="7_m4ofw"]
 [ext_resource type="PackedScene" uid="uid://7en3j6hc7kc3" path="res://scenes/dev_debug_menu.tscn" id="8_y6sft"]
@@ -24,9 +24,6 @@ visible = false
 position = Vector2(580, 326)
 scale = Vector2(0.60520834, 0.6)
 texture = ExtResource("3_8r1wq")
-
-[node name="DialogueBox" parent="." unique_id=747149065 instance=ExtResource("4_ajxib")]
-visible = false
 
 [node name="potion" parent="." unique_id=947814072 instance=ExtResource("5_ajxib")]
 visible = false
@@ -79,6 +76,9 @@ scale = Vector2(0.6010417, 0.5962963)
 texture = ExtResource("7_m4ofw")
 
 [node name="Dev_debug_menu" parent="." unique_id=218198422 instance=ExtResource("8_y6sft")]
+
+[node name="DialogueManager" parent="." unique_id=515192348 instance=ExtResource("5_y6sft")]
+visible = false
 
 [connection signal="pressed" from="left_menu/VBoxContainer/shop" to="." method="_on_shop_pressed"]
 [connection signal="pressed" from="left_menu/VBoxContainer/potion" to="." method="_on_potion_pressed"]

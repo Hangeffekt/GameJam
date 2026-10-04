@@ -8,8 +8,9 @@ extends Control
 @onready var credits_background: Panel = $CreditsBackground
 
 func _ready() -> void:
-	#itt meg kell adnom egy alap értéket mert különben mindenhol a key érték neve fog ki íródni
+	#itt meg kell adnom egy alap értéket mert különben mindenhol a key érték neve fog kiíródni
 	TranslationServer.set_locale(GlobalScript.language)
+	
 
 ##Button Singals
 func _on_start_pressed() -> void:

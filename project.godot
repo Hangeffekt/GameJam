@@ -25,7 +25,6 @@ GlobalScript="*uid://dqnv8tqk5njfb"
 
 [display]
 
-window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
@@ -43,7 +42,7 @@ interact={
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://assets/LocalizationFiles/Localization_menu.eng.translation", "res://assets/LocalizationFiles/Localization_menu.hun.translation")
+locale/translations=PackedStringArray("res://assets/LocalizationFiles/Localization.eng.translation", "res://assets/LocalizationFiles/Localization.hun.translation")
 
 [physics]
 

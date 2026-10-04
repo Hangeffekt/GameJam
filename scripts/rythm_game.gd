@@ -13,7 +13,7 @@ extends Node2D
 
 @onready var stars_collection: Node2D = $stars_collection
 @onready var stars: Array[Star] = []
-#ezzel figyelem melyik csillagnál járunk
+#ezzel figyelem melyik csillagnál járunk a listában
 var cursor = 0
 
 # felmerült egy hiba ahol ha a játékos spamelte az interact inputot, akkor töbször kapott pontot az "1 pont / hullám" helyett. 
