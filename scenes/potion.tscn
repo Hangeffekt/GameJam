@@ -2,9 +2,49 @@
 
 [ext_resource type="Script" uid="uid://dwtnsmhbby5et" path="res://scripts/potion.gd" id="1_3mc24"]
 [ext_resource type="StyleBox" uid="uid://b6ynm81qtn1v3" path="res://styles/menubox.tres" id="2_8kk5y"]
-[ext_resource type="Texture2D" uid="uid://d38xy1ikji4yc" path="res://assets/potion/potion_ui_02.png" id="3_8kk5y"]
-[ext_resource type="Texture2D" uid="uid://j61f44nbyva" path="res://assets/shop/potion_ui.png" id="4_6gods"]
+[ext_resource type="Texture2D" uid="uid://xj4vn1r3r8h3" path="res://assets/potion/potion.png" id="3_8kk5y"]
 [ext_resource type="StyleBox" uid="uid://vfbn1867ixcv" path="res://styles/potionmenuinactive.tres" id="5_8kk5y"]
+[ext_resource type="Texture2D" uid="uid://r5enybi6yqii" path="res://assets/potion/steam animation/potion_steam_001.png" id="5_yxgu6"]
+[ext_resource type="Texture2D" uid="uid://d4msi4th65iwv" path="res://assets/potion/steam animation/potion_steam_002.png" id="6_qted3"]
+[ext_resource type="Texture2D" uid="uid://c43fv27541ow8" path="res://assets/potion/steam animation/potion_steam_003.png" id="7_ancum"]
+[ext_resource type="Texture2D" uid="uid://cinj5qlyppnd2" path="res://assets/potion/steam animation/potion_steam_004.png" id="8_yp1kk"]
+[ext_resource type="Texture2D" uid="uid://q16q1wg764g8" path="res://assets/potion/steam animation/potion_steam_005.png" id="9_8dbo2"]
+[ext_resource type="Texture2D" uid="uid://b2fd85ojgwgqb" path="res://assets/potion/steam animation/potion_steam_006.png" id="10_a6teu"]
+[ext_resource type="Texture2D" uid="uid://b55tkn7r41er4" path="res://assets/potion/steam animation/potion_steam_007.png" id="11_gmx3n"]
+[ext_resource type="Texture2D" uid="uid://b4p4yyjma3tc1" path="res://assets/potion/steam animation/potion_steam_008.png" id="12_qkra3"]
+[ext_resource type="Texture2D" uid="uid://bvyx0htqac8rk" path="res://assets/potion/ingredients/amethyst.png" id="13_qted3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_67q4m"]
+animations = [{
+"frames": [{
+"duration": 25.0,
+"texture": ExtResource("5_yxgu6")
+}, {
+"duration": 25.0,
+"texture": ExtResource("6_qted3")
+}, {
+"duration": 25.0,
+"texture": ExtResource("7_ancum")
+}, {
+"duration": 25.0,
+"texture": ExtResource("8_yp1kk")
+}, {
+"duration": 25.0,
+"texture": ExtResource("9_8dbo2")
+}, {
+"duration": 25.0,
+"texture": ExtResource("10_a6teu")
+}, {
+"duration": 25.0,
+"texture": ExtResource("11_gmx3n")
+}, {
+"duration": 10.0,
+"texture": ExtResource("12_qkra3")
+}],
+"loop": 1,
+"name": &"steam",
+"speed": 24.0
+}]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_67q4m"]
 
@@ -13,17 +53,20 @@
 [node name="potion" type="CanvasLayer" unique_id=947814072]
 script = ExtResource("1_3mc24")
 
-[node name="PotionUi" type="Sprite2D" parent="." unique_id=2084757185]
-visible = false
-position = Vector2(576, 326)
-scale = Vector2(0.59999996, 0.6018519)
-texture = ExtResource("4_6gods")
-
-[node name="PotionUi02" type="Sprite2D" parent="." unique_id=2135501395]
-visible = false
-position = Vector2(576, 326)
-scale = Vector2(0.6, 0.6)
+[node name="Potion" type="Sprite2D" parent="." unique_id=1887912111]
+position = Vector2(576.50006, 323)
+scale = Vector2(0.6005209, 0.6055556)
 texture = ExtResource("3_8kk5y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1995833275]
+texture_filter = 2
+position = Vector2(508, 80)
+scale = Vector2(0.62282604, 0.6076087)
+sprite_frames = SubResource("SpriteFrames_67q4m")
+animation = &"steam"
+autoplay = "steam"
+frame_progress = 0.17127174
+speed_scale = 2.5
 
 [node name="Control" type="Control" parent="." unique_id=104414477]
 layout_mode = 3
@@ -54,7 +97,28 @@ theme_override_constants/separation = 41
 visible = false
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+size_flags_stretch_ratio = 1.21
+offset_transform_enabled = true
 theme_override_styles/normal = ExtResource("5_8kk5y")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/VBox/testbtn" unique_id=1273790696]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="TextureRect" type="TextureRect" parent="Control/VBox/testbtn/MarginContainer" unique_id=2029959919]
+layout_mode = 2
+texture = ExtResource("13_qted3")
+expand_mode = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=952243843]
 custom_minimum_size = Vector2(300, 500)

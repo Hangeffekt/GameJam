@@ -46,6 +46,8 @@ func category_buttons(id: int):
 				button.add_theme_stylebox_override("normal", preload("res://styles/potionmenuinactive.tres"))
 			button.pressed.connect(func(): category_items(categorie.id))
 			button.pressed.connect(func(): category_buttons(categorie.id))
+			
+			button.add_child(add_image(categorie.picture_name))
 			categorie_box.add_child(button)
 
 
@@ -70,7 +72,9 @@ func category_items(id: int):
 					button.add_theme_stylebox_override("normal", preload("res://styles/disabled_item.tres"))
 					used_items.append(item.id)
 					button.mouse_filter = Control.MOUSE_FILTER_IGNORE
-					item_choosed(item.id, item.atr1, item.atr2, item.atr3))
+					item_choosed(item.picture_name, item.atr1, item.atr2, item.atr3))
+			
+			button.add_child(add_image(item.picture_name))
 			control.add_child(button)
 			
 			#create labels for values
@@ -82,6 +86,21 @@ func category_items(id: int):
 			control.add_child(labelgreen)
 			categorie_item_box.add_child(control)
 
+func add_image(name: String) -> MarginContainer:
+	var margin = MarginContainer.new()
+	margin.set_anchors_preset(Control.PRESET_FULL_RECT)
+	margin.add_theme_constant_override("margin_left", 10)
+	margin.add_theme_constant_override("margin_right", 10)
+	margin.add_theme_constant_override("margin_top", 10)
+	margin.add_theme_constant_override("margin_bottom", 10)
+	var image = TextureRect.new()
+	image.texture = load("res://assets/potion/ingredients/" + name + ".png")
+	image.set_anchors_preset(Control.PRESET_FULL_RECT)
+	image.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	
+	margin.add_child(image)
+	return margin
+
 func create_labels_for_item(text: String) -> Label:
 	var label = Label.new()
 	label.text = text
@@ -91,18 +110,18 @@ func create_labels_for_item(text: String) -> Label:
 	return label
 
 #if the user choosed an item, set the picture and the values on screen
-func item_choosed(id: int, atr1: int, atr2: int, atr3: int):
+func item_choosed(name: String, atr1: int, atr2: int, atr3: int):
 	if !item_place_1:
 		item_place_1 = true
-		item_place_id_1 = id
+		$choosed_items/testbtn.add_child(add_image(name))
 		set_and_write_values(atr1, atr2, atr3)
 	elif !item_place_2:
 		item_place_2 = true
-		item_place_id_2 = id
+		$choosed_items/testbtn2.add_child(add_image(name))
 		set_and_write_values(atr1, atr2, atr3)
 	elif !item_place_3:
 		item_place_3 = true
-		item_place_id_3 = id
+		$choosed_items/testbtn3.add_child(add_image(name))
 		end_game(atr1, atr2, atr3)
 
 func set_and_write_values(atr1: int, atr2: int, atr3: int) -> void:
