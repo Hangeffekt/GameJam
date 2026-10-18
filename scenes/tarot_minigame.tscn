@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://dfx447mak1f58"]
 
+[ext_resource type="Script" uid="uid://cxumvqll1x3bq" path="res://scripts/tarot_minigame_script.gd" id="1_70dqb"]
+
 [node name="tarot_minigame" type="CanvasLayer" unique_id=1327689574]
+script = ExtResource("1_70dqb")
 
 [node name="Label" type="Label" parent="." unique_id=1761873296]
 anchors_preset = 8

@@ -45,7 +45,7 @@ Portraits = Array[Texture2D]([ExtResource("10_heatd"), ExtResource("10_heatd"), 
 
 [node name="PLACEHOLDERNAMEDialogueManager" parent="." unique_id=562795217 instance=ExtResource("5_y6sft")]
 visible = false
-text_key = Array[String](["**TEST**Szeretném, ha most megosztanál velem egy jóslást, ami a következő időszakomra vonatkozik. Bízom a megérzéseidben és a látásmódodban, ezért kíváncsi vagyok, mit jósolsz nekem. Kérlek, fogalmazz meg egy konkrét, inspiráló jóslatot, ami útmutatást adhat a döntéseimhez. Ha van valamilyen szimbolikus kép vagy érzés, ami eszedbe jut rólam, azt is szívesen fogadom. Előre is köszönöm a segítségedet és a rám szánt idődet!"])
+text_key = Array[String](["**TEST**Szeretném, ha most megosztanál velem egy jóslást, ami a következő időszakomra vonatkozik. Bízom a megérzéseidben és a látásmódodban, ezért kíváncsi vagyok, mit jósolsz nekem. Kérlek, fogalmazz meg egy konkrét, inspiráló jóslatot, ami útmutatást adhat a döntéseimhez. Ha van valamilyen szimbolikus kép vagy érzés, ami eszedbe jut rólam, azt is szívesen fogadom. Előre is köszönöm a segítségedet és a rám szánt idődet! eskü nem AI generált dummy szöveg"])
 characters_name = Array[String](["**TEST** meglepően udvarias bobux eger"])
 textcolor = Array[Color]([Color(0.4898336, 0.6540255, 1, 1)])
 Portraits = Array[Texture2D]([ExtResource("11_1v8qu")])

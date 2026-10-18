@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dpy8dk57s8673"]
 
-[ext_resource type="Script" uid="uid://dahqbmnp5d5ju" path="res://scenes/wave_script.gd" id="1_7o46e"]
+[ext_resource type="Script" uid="uid://dahqbmnp5d5ju" path="res://scripts/wave_script.gd" id="1_7o46e"]
 [ext_resource type="Texture2D" uid="uid://uyqw0b2sb6nh" path="res://assets/rythm_game/ripple animation/ripple_001.png" id="1_yjuq1"]
 [ext_resource type="Texture2D" uid="uid://ctwxo4epg8bsr" path="res://assets/rythm_game/ripple animation/ripple_002.png" id="2_7o46e"]
 [ext_resource type="Texture2D" uid="uid://b6p7otmaek0qf" path="res://assets/rythm_game/ripple animation/ripple_003.png" id="3_ok6k2"]
