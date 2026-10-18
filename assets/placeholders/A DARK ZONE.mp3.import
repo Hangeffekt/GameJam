@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c3s1q86yiqswn"
+path="res://.godot/imported/A DARK ZONE.mp3-2be93cb829c01b8a13b36ea8de62321a.mp3str"
+
+[deps]
+
+source_file="res://assets/placeholders/A DARK ZONE.mp3"
+dest_files=["res://.godot/imported/A DARK ZONE.mp3-2be93cb829c01b8a13b36ea8de62321a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

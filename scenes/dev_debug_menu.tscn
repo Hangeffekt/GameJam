@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://7en3j6hc7kc3"]
+
+[ext_resource type="Script" uid="uid://dcxuv1segkjmo" path="res://scripts/dev_debug_menu_script.gd" id="1_qvtq0"]
+
+[node name="Dev_debug_menu" type="Control" unique_id=218198422]
+z_index = 1
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+grow_horizontal = 0
+script = ExtResource("1_qvtq0")
+
+[node name="Panel" type="Panel" parent="." unique_id=1827726143]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -130.0
+offset_bottom = 277.0
+grow_horizontal = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=612941330]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -58.0
+offset_top = -103.0
+offset_right = 59.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 3
+
+[node name="Menu scene" type="Button" parent="Panel/VBoxContainer" unique_id=396438141]
+layout_mode = 2
+text = "menu"
+icon_alignment = 1
+
+[node name="shop scene" type="Button" parent="Panel/VBoxContainer" unique_id=1498623750]
+layout_mode = 2
+text = "shop"
+icon_alignment = 1
+
+[node name="rythm scene" type="Button" parent="Panel/VBoxContainer" unique_id=173660413]
+layout_mode = 2
+text = "rythm"
+icon_alignment = 1
+
+[node name="potion scene" type="Button" parent="Panel/VBoxContainer" unique_id=620951460]
+layout_mode = 2
+text = "potion"
+icon_alignment = 1
+
+[node name="fullscreen" type="CheckButton" parent="Panel" unique_id=2002300317]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 12.0
+offset_top = -22.5
+offset_right = 56.0
+offset_bottom = 1.5
+grow_horizontal = 2
+grow_vertical = 2
+button_pressed = true
+
+[node name="Label" type="Label" parent="Panel/fullscreen" unique_id=1289979045]
+layout_mode = 0
+offset_left = -71.0
+offset_right = 6.0
+offset_bottom = 23.0
+text = "fullscreen"
+
+[node name="debug menu" type="Label" parent="Panel" unique_id=539414731]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 33.0
+offset_right = 115.0
+offset_bottom = 56.0
+text = "debug menu"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel" unique_id=741488689]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -65.5
+offset_right = 38.0
+offset_bottom = -25.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="Panel/HBoxContainer" unique_id=1482630647]
+layout_mode = 2
+text = "eng"
+
+[node name="Button2" type="Button" parent="Panel/HBoxContainer" unique_id=1777731833]
+layout_mode = 2
+text = "hu  "
+
+[node name="debug_visible_button" type="CheckButton" parent="." unique_id=1983700777]
+layout_mode = 1
+offset_left = -44.0
+offset_bottom = 24.0
+
+[connection signal="pressed" from="Panel/VBoxContainer/Menu scene" to="." method="_on_menu_scene_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/shop scene" to="." method="_on_shop_scene_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/rythm scene" to="." method="_on_rythm_scene_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/potion scene" to="." method="_on_potion_scene_pressed"]
+[connection signal="toggled" from="Panel/fullscreen" to="." method="_on_fullscreen_toggled"]
+[connection signal="pressed" from="Panel/HBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="toggled" from="debug_visible_button" to="." method="_on_debug_visible_button_toggled"]

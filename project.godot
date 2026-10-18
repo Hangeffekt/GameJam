@@ -1,23 +1,20 @@
-; Engine configuration file.
-; It's best edited using the editor UI and not directly,
-; since the parameters that go here are not all obvious.
-;
-; Format:
-;   [section] ; section goes between []
-;   param=value ; assign values to parameters
-
 config_version=5
 
 [application]
 
 config/name="GameJam"
-run/main_scene="uid://cxha0kgegdssp"
+run/main_scene="uid://o5jy8ipb8x7j"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://bd4dmwkafpmr"
+
 [autoload]
 
-LoadDatas="*uid://c00k16sbn3dl"
+GlobalScript="*uid://dqnv8tqk5njfb"
+SceneTransition="*uid://dpu4wkfor1375"
 
 [display]
 
@@ -28,10 +25,23 @@ window/stretch/aspect="expand"
 
 project/assembly_name="GameJam"
 
+[input]
+
+interact={
+"deadzone": 0.2,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":false,"double_click":false,"script":null)
+]
+}
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://assets/LocalizationFiles/Localization.eng.translation", "res://assets/LocalizationFiles/Localization.hun.translation")
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"

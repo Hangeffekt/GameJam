@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://dmy2me1t326d7"]
+
+[ext_resource type="Texture2D" uid="uid://doirt1tnxy1fy" path="res://assets/shop/dooranim/shop_door_closed.png" id="2_hjioq"]
+[ext_resource type="Texture2D" uid="uid://uogi86r8irpk" path="res://assets/shop/dooranim/shop_door7.png" id="3_7fv0e"]
+[ext_resource type="Texture2D" uid="uid://bei4wfhb24oh5" path="res://assets/shop/dooranim/shop_door6.png" id="4_gqao7"]
+[ext_resource type="Texture2D" uid="uid://bu1drde6p2rcx" path="res://assets/shop/dooranim/shop_door5.png" id="5_cc28d"]
+[ext_resource type="Texture2D" uid="uid://dxqr8bvd7dkvr" path="res://assets/shop/dooranim/shop_door4.png" id="6_jperb"]
+[ext_resource type="Texture2D" uid="uid://wxpa2ork4hak" path="res://assets/shop/dooranim/shop_door3.png" id="7_l5qia"]
+[ext_resource type="Texture2D" uid="uid://ce55im8yo5sn4" path="res://assets/shop/dooranim/shop_door2.png" id="8_sd1xi"]
+[ext_resource type="Texture2D" uid="uid://c660fd48a3hxe" path="res://assets/shop/dooranim/shop_door1.png" id="9_548mp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e3dmf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hjioq")
+}],
+"loop": 1,
+"name": &"closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_7fv0e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gqao7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_cc28d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_jperb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_l5qia")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_sd1xi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_548mp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_sd1xi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_l5qia")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_jperb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_cc28d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gqao7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7fv0e")
+}],
+"loop": 0,
+"name": &"open",
+"speed": 6.0
+}]
+
+[node name="door_animation" type="Node2D" unique_id=1620329815]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1617436332]
+sprite_frames = SubResource("SpriteFrames_e3dmf")
+animation = &"open"
+frame = 12
+frame_progress = 1.0

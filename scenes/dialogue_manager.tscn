@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://cshl60v00b23l"]
+
+[ext_resource type="Script" uid="uid://byxwcael5jsg7" path="res://scripts/dialogue_manager_script.gd" id="1_jbixp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jbixp"]
+font_size = 35
+
+[node name="DialogueManager" type="CanvasLayer" unique_id=515192348]
+process_mode = 3
+script = ExtResource("1_jbixp")
+
+[node name="Portrait" type="TextureRect" parent="." unique_id=313778417]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -266.75
+offset_top = -266.75
+offset_right = 266.75
+offset_bottom = 266.75
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+expand_mode = 1
+
+[node name="DialogueBox" type="Control" parent="." unique_id=1387549307]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="DialogueBox" unique_id=428638917]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5)
+
+[node name="dialogueText" type="RichTextLabel" parent="DialogueBox" unique_id=86517111]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 29
+theme_override_font_sizes/bold_font_size = 29
+theme_override_font_sizes/bold_italics_font_size = 29
+theme_override_font_sizes/italics_font_size = 29
+theme_override_font_sizes/mono_font_size = 29
+text = "test text"
+visible_characters_behavior = 1
+
+[node name="ColorRect2" type="ColorRect" parent="DialogueBox" unique_id=1245612926]
+layout_mode = 0
+offset_top = -58.0
+offset_right = 201.0
+offset_bottom = -2.0
+color = Color(0, 0, 0, 0.5)
+
+[node name="nameText" type="Label" parent="DialogueBox/ColorRect2" unique_id=1065804556]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "test text"
+label_settings = SubResource("LabelSettings_jbixp")
