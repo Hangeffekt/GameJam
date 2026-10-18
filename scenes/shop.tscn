@@ -1,84 +1,42 @@
 [gd_scene format=3 uid="uid://cxha0kgegdssp"]
 
 [ext_resource type="Script" uid="uid://ftysgm2wcxpj" path="res://scripts/shop.gd" id="1_032fp"]
-[ext_resource type="Texture2D" uid="uid://cw4iv3dkyq88f" path="res://assets/shop/bc 03.png" id="2_2fc2m"]
-[ext_resource type="Texture2D" uid="uid://b1j414xsa45p" path="res://assets/shop/MAIN VIEW.png" id="3_8r1wq"]
-[ext_resource type="PackedScene" uid="uid://doh57xo13r2dp" path="res://scenes/potion.tscn" id="5_ajxib"]
+[ext_resource type="Texture2D" uid="uid://cj546s45na2kh" path="res://assets/shop/shop_background.png" id="2_8r1wq"]
+[ext_resource type="Texture2D" uid="uid://du7byomuhtfaf" path="res://assets/shop/shop_foreground.png" id="3_ajxib"]
+[ext_resource type="PackedScene" uid="uid://dmy2me1t326d7" path="res://scenes/door_animation.tscn" id="3_y6sft"]
 [ext_resource type="PackedScene" uid="uid://cshl60v00b23l" path="res://scenes/dialogue_manager.tscn" id="5_y6sft"]
-[ext_resource type="StyleBox" uid="uid://clqda3ykp77qo" path="res://styles/left_side_menu.tres" id="6_y6sft"]
-[ext_resource type="Texture2D" uid="uid://j61f44nbyva" path="res://assets/shop/potion_ui.png" id="7_m4ofw"]
+[ext_resource type="Texture2D" uid="uid://c02psrf0vepa3" path="res://assets/tutorial wizard/wizard_evil.png" id="7_m4ofw"]
+[ext_resource type="Texture2D" uid="uid://bvcmyt7enuqqj" path="res://assets/tutorial wizard/wizard_default.png" id="8_heatd"]
 [ext_resource type="PackedScene" uid="uid://7en3j6hc7kc3" path="res://scenes/dev_debug_menu.tscn" id="8_y6sft"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bc0v0"]
+[ext_resource type="Texture2D" uid="uid://dviio0v7aaskt" path="res://assets/tutorial wizard/wizard_shocked.png" id="9_1v8qu"]
+[ext_resource type="Texture2D" uid="uid://b4dgb5s1j213f" path="res://assets/placeholders/placeholder_char.png" id="10_heatd"]
 
 [node name="Node2D" type="CanvasLayer" unique_id=1181666746]
 script = ExtResource("1_032fp")
 
-[node name="Bc03" type="Sprite2D" parent="." unique_id=2142794426]
-position = Vector2(578.5, 321.49997)
-scale = Vector2(0.60052085, 0.5953704)
-texture = ExtResource("2_2fc2m")
+[node name="shop_background" type="Sprite2D" parent="." unique_id=1407014071]
+position = Vector2(578.1112, 324.25)
+scale = Vector2(0.6013889, 0.6013889)
+texture = ExtResource("2_8r1wq")
 
-[node name="MainView" type="Sprite2D" parent="." unique_id=917820670]
-visible = false
-position = Vector2(580, 326)
-scale = Vector2(0.60520834, 0.6)
-texture = ExtResource("3_8r1wq")
+[node name="door_animation" parent="shop_background" unique_id=1620329815 instance=ExtResource("3_y6sft")]
+position = Vector2(556.85895, 72.74827)
 
-[node name="potion" parent="." unique_id=947814072 instance=ExtResource("5_ajxib")]
-visible = false
-
-[node name="left_menu" type="Panel" parent="." unique_id=1656975008]
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -101.0
-offset_right = 131.0
-offset_bottom = 217.0
-grow_vertical = 2
-size_flags_horizontal = 0
-size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxEmpty_bc0v0")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="left_menu" unique_id=135480002]
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_right = 8.0
-grow_vertical = 2
-theme_override_constants/separation = 5
-
-[node name="shop" type="Button" parent="left_menu/VBoxContainer" unique_id=1861505173]
-custom_minimum_size = Vector2(90, 78)
-layout_mode = 2
-theme_override_styles/normal = ExtResource("6_y6sft")
-action_mode = 0
-
-[node name="potion" type="Button" parent="left_menu/VBoxContainer" unique_id=1320203254]
-custom_minimum_size = Vector2(90, 78)
-layout_mode = 2
-theme_override_styles/normal = ExtResource("6_y6sft")
-
-[node name="moon" type="Button" parent="left_menu/VBoxContainer" unique_id=1461215139]
-custom_minimum_size = Vector2(90, 78)
-layout_mode = 2
-theme_override_styles/normal = ExtResource("6_y6sft")
-
-[node name="tarrot" type="Button" parent="left_menu/VBoxContainer" unique_id=2145722884]
-custom_minimum_size = Vector2(90, 78)
-layout_mode = 2
-theme_override_styles/normal = ExtResource("6_y6sft")
-
-[node name="PotionUi" type="Sprite2D" parent="left_menu/VBoxContainer" unique_id=1996459842]
-visible = false
-position = Vector2(578, 106.5)
-scale = Vector2(0.6010417, 0.5962963)
-texture = ExtResource("7_m4ofw")
+[node name="shop_foreground" type="Sprite2D" parent="shop_background" unique_id=1902416791]
+texture = ExtResource("3_ajxib")
 
 [node name="Dev_debug_menu" parent="." unique_id=218198422 instance=ExtResource("8_y6sft")]
 
-[node name="DialogueManager" parent="." unique_id=515192348 instance=ExtResource("5_y6sft")]
+[node name="Wizard_DialogueManager" parent="." unique_id=515192348 instance=ExtResource("5_y6sft")]
 visible = false
+text_key = Array[String](["**TEST** Bárcsak tudnám mit kellene csinálnom.", "**TEST** Ezért vagyok én itt", "**TEST** Milyen jó nekem", "**TEST** tudtad? ha most átméreteznéd a játék ablakot, nagyon valószínű hogy összeomlik az egész program", "**TEST** Kérlek ne tedd"])
+characters_name = Array[String](["**TEST**Játékos", "**TEST**T Wizard", "**TEST**Játékos", "**TEST**T Wizard", "**TEST**T Wizard"])
+textcolor = Array[Color]([Color(1, 0.79836136, 0.5646045, 1), Color(0.82081234, 0.65582925, 1, 1), Color(1, 0.8, 0.5647059, 1), Color(0.81960785, 0.654902, 1, 1), Color(0.81960785, 0.654902, 1, 1)])
+Portraits = Array[Texture2D]([null, ExtResource("7_m4ofw"), ExtResource("7_m4ofw"), ExtResource("8_heatd"), ExtResource("9_1v8qu")])
 
-[connection signal="pressed" from="left_menu/VBoxContainer/shop" to="." method="_on_shop_pressed"]
-[connection signal="pressed" from="left_menu/VBoxContainer/potion" to="." method="_on_potion_pressed"]
+[node name="CatDialogueManager" parent="." unique_id=1145626878 instance=ExtResource("5_y6sft")]
+visible = false
+text_key = Array[String](["**TEST** üdv, csinálj nekem a potit", "**TEST** milyet szeretnél?", "**TEST** Jót", "**TEST** És siess", "**TEST** Rendben"])
+characters_name = Array[String](["**TEST**Cat", "**TEST**Player", "**TEST**Cat", "**TEST**Cat", "**TEST**Player"])
+textcolor = Array[Color]([Color(0.8812561, 0.65154487, 0.9766125, 1), Color(1, 0.8, 0.5647059, 1), Color(0.88235295, 0.6509804, 0.9764706, 1), Color(0.88235295, 0.6509804, 0.9764706, 1), Color(1, 0.8, 0.5647059, 1)])
+Portraits = Array[Texture2D]([ExtResource("10_heatd"), null, null, null, null])

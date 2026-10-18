@@ -3,11 +3,14 @@ extends CanvasLayer
 @onready var dialogue_box: Control = $DialogueBox
 @onready var dialogue_text: RichTextLabel = $DialogueBox/dialogueText
 @onready var name_text: Label = $DialogueBox/ColorRect2/nameText
+@onready var portrait: TextureRect = $Portrait
+signal dialogue_finished
 
 ##FONTOS! a listák hosszának meg kell egyeznie
 @export var text_key: Array[String] = []
 @export var characters_name: Array[String] = []
 @export var textcolor: Array[Color] = []
+@export var Portraits: Array[Texture2D] = []
 
 #miért nem egy dictionary vagy többdimenziód tömb?
 #ötlet 1: csak a szöveget tárolom. annak elég egy tömb... de jó lenne neveket is tárolni
@@ -49,6 +52,10 @@ func updateLine():
 	dialogue_text.text = tr(dialogue_lines[current_line_index])
 	name_text.text = tr(characters_name[current_line_index])
 	dialogue_text.self_modulate = textcolor[current_line_index]
+	if current_line_index < Portraits.size() and Portraits[current_line_index]:
+		portrait.texture = Portraits[current_line_index]
+		portrait.visible = true
+	else: portrait.visible = false
 	typeWriterEffect()
 
 func _input(event: InputEvent) -> void:
@@ -72,6 +79,9 @@ func advance_dialogue():
 		get_tree().paused = false
 		is_dialogue_active = false
 		dialogue_box.visible = false
+		portrait.visible = false
+		dialogue_finished.emit() #jelzek hogy vége van a beszélgetésnek
+		print("dialogue_finished.emit()")
 		
 func typeWriterEffect():
 	#ha már fut akkor megállítjuk
@@ -81,7 +91,7 @@ func typeWriterEffect():
 	dialogue_text.visible_characters = 0
 	
 	var char_count: int = dialogue_text.text.length()
-	print(char_count)
+	#print(char_count)
 	var realTime: float = char_count * time_per_char
 	
 	tween = create_tween()

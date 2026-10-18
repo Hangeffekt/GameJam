@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://cxha0kgegdssp"]
+
+[ext_resource type="Script" uid="uid://ftysgm2wcxpj" path="res://scripts/shop.gd" id="1_032fp"]
+[ext_resource type="Texture2D" uid="uid://cj546s45na2kh" path="res://assets/shop/shop_background.png" id="2_8r1wq"]
+[ext_resource type="Texture2D" uid="uid://du7byomuhtfaf" path="res://assets/shop/shop_foreground.png" id="3_ajxib"]
+[ext_resource type="PackedScene" uid="uid://dmy2me1t326d7" path="res://scenes/door_animation.tscn" id="3_y6sft"]
+[ext_resource type="PackedScene" uid="uid://cshl60v00b23l" path="res://scenes/dialogue_manager.tscn" id="5_y6sft"]
+[ext_resource type="Texture2D" uid="uid://c02psrf0vepa3" path="res://assets/tutorial wizard/wizard_evil.png" id="7_m4ofw"]
+[ext_resource type="Texture2D" uid="uid://bvcmyt7enuqqj" path="res://assets/tutorial wizard/wizard_default.png" id="8_heatd"]
+[ext_resource type="PackedScene" uid="uid://7en3j6hc7kc3" path="res://scenes/dev_debug_menu.tscn" id="8_y6sft"]
+[ext_resource type="Texture2D" uid="uid://dviio0v7aaskt" path="res://assets/tutorial wizard/wizard_shocked.png" id="9_1v8qu"]
+
+[node name="Node2D" type="CanvasLayer" unique_id=1181666746]
+script = ExtResource("1_032fp")
+
+[node name="shop_background" type="Sprite2D" parent="." unique_id=1407014071]
+position = Vector2(578.1112, 324.25)
+scale = Vector2(0.6013889, 0.6013889)
+texture = ExtResource("2_8r1wq")
+
+[node name="door_animation" parent="shop_background" unique_id=1620329815 instance=ExtResource("3_y6sft")]
+position = Vector2(556.85895, 72.74827)
+
+[node name="shop_foreground" type="Sprite2D" parent="shop_background" unique_id=1902416791]
+texture = ExtResource("3_ajxib")
+
+[node name="Dev_debug_menu" parent="." unique_id=218198422 instance=ExtResource("8_y6sft")]
+
+[node name="Wizard_DialogueManager" parent="." unique_id=515192348 instance=ExtResource("5_y6sft")]
+visible = false
+text_key = Array[String](["**TEST** Bárcsak tudnám mit kellene csinálnom.", "**TEST** Ezért vagyok én itt", "**TEST** Milyen jó nekem", "**TEST** tudtad? ha most átméreteznéd a játék ablakot, nagyon valószínű hogy összeomlik az egész program", "**TEST** Kérlek ne tedd"])
+characters_name = Array[String](["**TEST**Játékos", "**TEST**T Wizard", "**TEST**Játékos", "**TEST**T Wizard", "**TEST**T Wizard"])
+textcolor = Array[Color]([Color(1, 0.79836136, 0.5646045, 1), Color(0.82081234, 0.65582925, 1, 1), Color(1, 0.8, 0.5647059, 1), Color(0.81960785, 0.654902, 1, 1), Color(0.81960785, 0.654902, 1, 1)])
+Portraits = Array[Texture2D]([null, ExtResource("7_m4ofw"), ExtResource("7_m4ofw"), ExtResource("8_heatd"), ExtResource("9_1v8qu")])
+
+[node name="CatDialogueManager" parent="." unique_id=1145626878 instance=ExtResource("5_y6sft")]
+visible = false

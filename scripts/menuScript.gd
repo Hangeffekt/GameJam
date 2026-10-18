@@ -14,7 +14,8 @@ func _ready() -> void:
 
 ##Button Singals
 func _on_start_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/shop.tscn")
+	SceneTransition.change_scene("res://scenes/shop.tscn")
+	
 
 func _on_options_pressed() -> void:
 	options_background.visible = true
@@ -25,7 +26,7 @@ func _on_credits_pressed() -> void:
 	options_background.visible = false
 
 func _on_exit_pressed() -> void:
-	get_tree().quit()
+	SceneTransition.quit_game()
 
 
 ##options menu

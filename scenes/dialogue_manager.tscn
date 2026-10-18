@@ -8,9 +8,22 @@ font_size = 35
 [node name="DialogueManager" type="CanvasLayer" unique_id=515192348]
 process_mode = 3
 script = ExtResource("1_jbixp")
-text_key = Array[String](["TEST_CONVO_1", "TEST_CONVO_2", "TEST_CONVO_3", "TEST_CONVO_4", "TEST_CONVO_5"])
-characters_name = Array[String](["TEST_CHARACTERNAME_CAT", "karakter2", "TEST_CHARACTERNAME_CAT", "TEST_CHARACTERNAME_CAT", "karakter2"])
-textcolor = Array[Color]([Color(0.8480591, 0.73081416, 1, 1), Color(0.9999997, 0.9391516, 0.5797359, 1), Color(0.84705883, 0.7294118, 1, 1), Color(0.84705883, 0.7294118, 1, 1), Color(1, 0.9372549, 0.5803922, 1)])
+
+[node name="Portrait" type="TextureRect" parent="." unique_id=313778417]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -266.75
+offset_top = -266.75
+offset_right = 266.75
+offset_bottom = 266.75
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+expand_mode = 1
 
 [node name="DialogueBox" type="Control" parent="." unique_id=1387549307]
 custom_minimum_size = Vector2(0, 200)
