@@ -1,45 +1,378 @@
 [gd_scene format=3 uid="uid://dpy8dk57s8673"]
 
-[ext_resource type="Texture2D" uid="uid://c4eqyssgapwki" path="res://assets/placeholders/placeholder_wave.png" id="1_y5ysc"]
+[ext_resource type="Script" uid="uid://dahqbmnp5d5ju" path="res://scenes/wave_script.gd" id="1_7o46e"]
+[ext_resource type="Texture2D" uid="uid://uyqw0b2sb6nh" path="res://assets/rythm_game/ripple animation/ripple_001.png" id="1_yjuq1"]
+[ext_resource type="Texture2D" uid="uid://ctwxo4epg8bsr" path="res://assets/rythm_game/ripple animation/ripple_002.png" id="2_7o46e"]
+[ext_resource type="Texture2D" uid="uid://b6p7otmaek0qf" path="res://assets/rythm_game/ripple animation/ripple_003.png" id="3_ok6k2"]
+[ext_resource type="Texture2D" uid="uid://dcujkh3pukc4u" path="res://assets/rythm_game/ripple animation/ripple_004.png" id="4_wy5f2"]
+[ext_resource type="Texture2D" uid="uid://dr7stppi3ygo4" path="res://assets/rythm_game/ripple animation/ripple_005.png" id="5_roe0b"]
+[ext_resource type="Texture2D" uid="uid://dxepfu405njk0" path="res://assets/rythm_game/ripple animation/ripple_006.png" id="6_g3s1h"]
+[ext_resource type="Texture2D" uid="uid://cfc4nxrdgcf0a" path="res://assets/rythm_game/ripple animation/ripple_007.png" id="7_wj6ds"]
+[ext_resource type="Texture2D" uid="uid://hfsaoyhrf6cr" path="res://assets/rythm_game/ripple animation/ripple_008.png" id="8_3kyrg"]
+[ext_resource type="Texture2D" uid="uid://cseexdxct4d82" path="res://assets/rythm_game/ripple animation/ripple_009.png" id="9_5nm1l"]
+[ext_resource type="Texture2D" uid="uid://cevuegmarw5df" path="res://assets/rythm_game/ripple animation/ripple_010.png" id="10_nx005"]
+[ext_resource type="Texture2D" uid="uid://co05rfwhmfact" path="res://assets/rythm_game/ripple animation/ripple_011.png" id="11_oe4lc"]
+[ext_resource type="Texture2D" uid="uid://4j7ibtucq8jj" path="res://assets/rythm_game/ripple animation/ripple_012.png" id="12_w8y5h"]
+[ext_resource type="Texture2D" uid="uid://dta2e6bxwkhwh" path="res://assets/rythm_game/ripple animation/ripple_013.png" id="13_vxp8r"]
+[ext_resource type="Texture2D" uid="uid://bqd6k2d41gh7x" path="res://assets/rythm_game/ripple animation/ripple_014.png" id="14_cwt8e"]
+[ext_resource type="Texture2D" uid="uid://da042k54vsprc" path="res://assets/rythm_game/ripple animation/ripple_015.png" id="15_r87rk"]
+[ext_resource type="Texture2D" uid="uid://3mjoethrnh2c" path="res://assets/rythm_game/ripple animation/ripple_016.png" id="16_dmcsc"]
+[ext_resource type="Texture2D" uid="uid://804y4pviypgm" path="res://assets/rythm_game/ripple animation/ripple_017.png" id="17_xv8hu"]
+[ext_resource type="Texture2D" uid="uid://buht1owdqilvp" path="res://assets/rythm_game/ripple animation/ripple_018.png" id="18_wq0ab"]
+[ext_resource type="Texture2D" uid="uid://bej2ajfy1652v" path="res://assets/rythm_game/ripple animation/ripple_019.png" id="19_2x1bi"]
+[ext_resource type="Texture2D" uid="uid://dilm1mr335qfy" path="res://assets/rythm_game/ripple animation/ripple_020.png" id="20_nqpws"]
+[ext_resource type="Texture2D" uid="uid://dklikwp7jbk6m" path="res://assets/rythm_game/ripple animation/ripple_021.png" id="21_ruir2"]
+[ext_resource type="Texture2D" uid="uid://bnyml7vx11m1o" path="res://assets/rythm_game/ripple animation/ripple_022.png" id="22_8kpnr"]
+[ext_resource type="Texture2D" uid="uid://g0ejq0hji3y5" path="res://assets/rythm_game/ripple animation/ripple_023.png" id="23_87jrq"]
+[ext_resource type="Texture2D" uid="uid://c2va8rbfrnqrn" path="res://assets/rythm_game/ripple animation/ripple_024.png" id="24_n1kj3"]
+[ext_resource type="Texture2D" uid="uid://um3dr01hhssj" path="res://assets/rythm_game/ripple animation/ripple_025.png" id="25_tfp3u"]
+[ext_resource type="Texture2D" uid="uid://8an04bvh1cmg" path="res://assets/rythm_game/ripple animation/ripple_026.png" id="26_gwqbb"]
+[ext_resource type="Texture2D" uid="uid://bty5dh4fvojph" path="res://assets/rythm_game/ripple animation/ripple_027.png" id="27_hx33s"]
+[ext_resource type="Texture2D" uid="uid://q458us8gpprb" path="res://assets/rythm_game/ripple animation/ripple_028.png" id="28_ve1gl"]
+[ext_resource type="Texture2D" uid="uid://crqyob2w5qrb2" path="res://assets/rythm_game/ripple animation/ripple_029.png" id="29_jk4yg"]
+[ext_resource type="Texture2D" uid="uid://doli4m514pihj" path="res://assets/rythm_game/ripple animation/ripple_030.png" id="30_hpa3p"]
+[ext_resource type="Texture2D" uid="uid://bu7ldhi50blgf" path="res://assets/rythm_game/ripple animation/ripple_031.png" id="31_1noxa"]
+[ext_resource type="Texture2D" uid="uid://br527loyos2h7" path="res://assets/rythm_game/ripple animation/ripple_032.png" id="32_ymb8q"]
+[ext_resource type="Texture2D" uid="uid://bexp0ey20oklb" path="res://assets/rythm_game/ripple animation/ripple_033.png" id="33_qq8gn"]
+[ext_resource type="Texture2D" uid="uid://bplo3lmlwp5ko" path="res://assets/rythm_game/ripple animation/ripple_034.png" id="34_mmxpa"]
+[ext_resource type="Texture2D" uid="uid://ss433tg84vua" path="res://assets/rythm_game/ripple animation/ripple_035.png" id="35_pet2e"]
+[ext_resource type="Texture2D" uid="uid://t8ve46ebagaa" path="res://assets/rythm_game/ripple animation/ripple_036.png" id="36_pi6ee"]
+[ext_resource type="Texture2D" uid="uid://0aquyo3u4sip" path="res://assets/rythm_game/ripple animation/ripple_037.png" id="37_6klpv"]
+[ext_resource type="Texture2D" uid="uid://84mt5o2dn567" path="res://assets/rythm_game/ripple animation/ripple_038.png" id="38_qxt15"]
+[ext_resource type="Texture2D" uid="uid://dhcs6k1woytjm" path="res://assets/rythm_game/ripple animation/ripple_039.png" id="39_p27ae"]
+[ext_resource type="Texture2D" uid="uid://d2064m1spao42" path="res://assets/rythm_game/ripple animation/ripple_040.png" id="40_qh3se"]
+[ext_resource type="Texture2D" uid="uid://ddqdhf4il6lfu" path="res://assets/rythm_game/ripple animation/ripple_041.png" id="41_12khx"]
+[ext_resource type="Texture2D" uid="uid://qf7ai3cgm7ig" path="res://assets/rythm_game/ripple animation/ripple_042.png" id="42_hbiwd"]
+[ext_resource type="Texture2D" uid="uid://jfvjqwleeel4" path="res://assets/rythm_game/ripple animation/ripple_043.png" id="43_0nx46"]
+[ext_resource type="Texture2D" uid="uid://cnbxt7ioy65xp" path="res://assets/rythm_game/ripple animation/ripple_044.png" id="44_177d8"]
+[ext_resource type="Texture2D" uid="uid://bm3oahhxvwacc" path="res://assets/rythm_game/ripple animation/ripple_045.png" id="45_6cycn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e3dmf"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_yjuq1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7o46e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ok6k2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wy5f2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_roe0b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_g3s1h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_wj6ds")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_3kyrg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_5nm1l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_nx005")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_oe4lc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_w8y5h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_vxp8r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_cwt8e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_r87rk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_dmcsc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_xv8hu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_wq0ab")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_2x1bi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_nqpws")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_ruir2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_8kpnr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_87jrq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_n1kj3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_tfp3u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_gwqbb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_hx33s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_ve1gl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_jk4yg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_hpa3p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_1noxa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_ymb8q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_qq8gn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_mmxpa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_pet2e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_pi6ee")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_6klpv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_qxt15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_p27ae")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_qh3se")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_12khx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_hbiwd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_0nx46")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_177d8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_6cycn")
+}],
+"loop": 0,
+"name": &"waving",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_yjuq1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7o46e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ok6k2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wy5f2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_roe0b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_g3s1h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_wj6ds")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_3kyrg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_5nm1l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_nx005")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_oe4lc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_w8y5h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_vxp8r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_cwt8e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_r87rk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_dmcsc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_xv8hu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_wq0ab")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_2x1bi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_nqpws")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_ruir2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_8kpnr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_87jrq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_n1kj3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_tfp3u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_gwqbb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_hx33s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_ve1gl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_jk4yg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_hpa3p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_1noxa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_ymb8q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_qq8gn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_mmxpa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_pet2e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_pi6ee")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_6klpv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_qxt15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_p27ae")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_qh3se")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_12khx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_hbiwd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_0nx46")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_177d8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_6cycn")
+}],
+"loop": 1,
+"name": &"waving_fast",
+"speed": 40.0
+}]
 
 [sub_resource type="Animation" id="Animation_y5ysc"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
+tracks/0/path = NodePath("wave_Area2D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.3515625, 0.3515625)]
+"values": [Vector2(105.244446, -8.533334)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".:visible")
+tracks/1/path = NodePath("..:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_sl0wx"]
 resource_name = "idle"
-length = 2.0
+length = 2.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:visible")
+tracks/0/path = NodePath("..:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
+"times": PackedFloat32Array(0, 2.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, false]
@@ -47,28 +380,28 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_h2l3e"]
 resource_name = "waweing"
-length = 2.0
+length = 2.2
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
+tracks/0/path = NodePath("wave_Area2D:position")
 tracks/0/interp = 1
-tracks/0/loop_wrap = true
+tracks/0/loop_wrap = false
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(0.42044756, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0.3515625, 0.3515625), Vector2(5, 5)]
+"values": [Vector2(105.244446, -8.533334), Vector2(170.66667, -8.533334), Vector2(227.55556, -8.533334), Vector2(281.6, -8.533334), Vector2(332.8, -8.533334), Vector2(386.84442, -8.533334), Vector2(432.35556, -8.533334), Vector2(475.02225, -8.533334), Vector2(506.3111, -8.533334), Vector2(540.44446, -8.533334), Vector2(574.57776, -8.533334), Vector2(617.24445, -8.533334), Vector2(637.1556, -8.533334), Vector2(662.75555, -8.533334), Vector2(682.6666, -8.533334), Vector2(711.1111, -8.533334), Vector2(731.0222, -8.533333), Vector2(756.6222, -8.533334), Vector2(766.1037, -8.533334), Vector2(776.5333, -8.533333), Vector2(785.06665, -8.533334), Vector2(786.4889, -8.533334), Vector2(787.91113, -8.533334)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".:visible")
+tracks/1/path = NodePath("..:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 2),
+"times": PackedFloat32Array(0, 2.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, true]
@@ -82,19 +415,21 @@ _data = {
 }
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_4qhuu"]
+b = Vector2(0, 16.181728)
 
 [node name="wave" type="Node2D" unique_id=193732849]
+script = ExtResource("1_7o46e")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=973661808]
-visible = false
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1429958952]
 scale = Vector2(0.3515625, 0.3515625)
-texture = ExtResource("1_y5ysc")
+sprite_frames = SubResource("SpriteFrames_e3dmf")
+animation = &"waving"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D" unique_id=1104018699]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D" unique_id=1104018699]
 libraries/ = SubResource("AnimationLibrary_sl0wx")
 
-[node name="wave_Area2D" type="Area2D" parent="Sprite2D" unique_id=714343354]
+[node name="wave_Area2D" type="Area2D" parent="AnimatedSprite2D" unique_id=714343354]
+position = Vector2(105.244446, -8.533334)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/wave_Area2D" unique_id=1160684862]
-position = Vector2(68, -4.9999995)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/wave_Area2D" unique_id=1160684862]
 shape = SubResource("SegmentShape2D_4qhuu")

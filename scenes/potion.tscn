@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://b55tkn7r41er4" path="res://assets/potion/steam animation/potion_steam_007.png" id="11_gmx3n"]
 [ext_resource type="Texture2D" uid="uid://b4p4yyjma3tc1" path="res://assets/potion/steam animation/potion_steam_008.png" id="12_qkra3"]
 [ext_resource type="Texture2D" uid="uid://bvyx0htqac8rk" path="res://assets/potion/ingredients/amethyst.png" id="13_qted3"]
+[ext_resource type="PackedScene" uid="uid://7en3j6hc7kc3" path="res://scenes/dev_debug_menu.tscn" id="14_ancum"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_67q4m"]
 animations = [{
@@ -330,3 +331,5 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
 text = "Good"
 horizontal_alignment = 1
+
+[node name="Dev_debug_menu" parent="." unique_id=218198422 instance=ExtResource("14_ancum")]

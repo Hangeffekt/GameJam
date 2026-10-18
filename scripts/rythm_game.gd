@@ -1,9 +1,9 @@
 extends Node2D
 
 @onready var wave: Node2D = $wave
-@onready var animation_player: AnimationPlayer = $wave/Sprite2D/AnimationPlayer
+@onready var animation_player: AnimationPlayer = $wave/AnimatedSprite2D/AnimationPlayer
 @onready var test: Label = $test
-@onready var wave_area_2d: Area2D = $wave/Sprite2D/wave_Area2D
+@onready var wave_area_2d: Area2D = $wave/AnimatedSprite2D/wave_Area2D
 @onready var leesett_jelzo: Area2D = $szelle_jelzok/leesett_jelzo
 @onready var perfect_szelle_jelzo: Area2D = $szelle_jelzok/perfect_szelle_jelzo
 @onready var good_szelle_jelzo: Area2D = $szelle_jelzok/good_szelle_jelzo
@@ -15,6 +15,7 @@ extends Node2D
 @onready var stars: Array[Star] = []
 #ezzel figyelem melyik csillagnál járunk a listában
 var cursor = 0
+var done = false #ha nyert a játékos akkor ne kezeljük az inputokat
 
 # felmerült egy hiba ahol ha a játékos spamelte az interact inputot, akkor töbször kapott pontot az "1 pont / hullám" helyett. 
 # ezért egy sima ellenörzés miatt csináltam ezt a változót. ami lehetne bool is de idgaf
@@ -26,14 +27,14 @@ const maxpoints = 20
 func _on_leesett_jelzo_area_entered(area: Area2D) -> void:
 	if area.name == "dropplet_area":
 		wave.visible = true
-		animation_player.play("waweing")
+		wave.start_wave()
 		test.text = " "
 		antispam = 1
 
 #igen minden egyes inputnál megnézzük még akkor is ha a játékos megmozgatta az egért,
 # mert az alap godot generált inputokat nem lenne okos dolog kitörölni
 func _input(event: InputEvent) -> void:
-	if antispam == 0:
+	if antispam == 0 or done:
 		return
 	
 	#itt nézzük meg hogy hol van a hullám amikor a felhasználó megnyomja az egér gombot
@@ -60,6 +61,7 @@ func _input(event: InputEvent) -> void:
 ##GET READY FOR THE STARS
 func _ready() -> void:
 	#összegyüjtöm a sok csillag objektumot a stars listába
+	wave.visible = false
 	for child in stars_collection.get_children():
 		if child is Star:                 
 			stars.append(child)
@@ -83,4 +85,8 @@ func  _on_phasesignal(index: int, phase: int) -> void:
 
 func _on_progress_bar_value_changed(value: float) -> void:
 	if value == maxpoints:
+		done = true
 		victory_label.visible = true
+		await get_tree().create_timer(3.0).timeout
+		GlobalScript.nextcustomer = GlobalScript.nextcustomer + 1
+		SceneTransition.change_scene("res://scenes/shop.tscn")

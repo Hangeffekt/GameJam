@@ -199,4 +199,4 @@ func end_game(atr1: int, atr2: int, atr3: int) -> void:
 	$result.show()
 	await get_tree().create_timer(5.0).timeout
 	GlobalScript.nextcustomer = GlobalScript.nextcustomer + 1
-	get_tree().change_scene_to_file("res://scenes/shop.tscn")
+	SceneTransition.change_scene("res://scenes/shop.tscn")

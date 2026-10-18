@@ -1,25 +1,15 @@
 [gd_scene format=3 uid="uid://mgw84bj5qnk4"]
 
 [ext_resource type="Script" uid="uid://bsyk31br8ot0h" path="res://scripts/star_script.gd" id="1_mcqwg"]
-[ext_resource type="Texture2D" uid="uid://ddtigbjh3ow77" path="res://assets/placeholders/placeholder_star_sheet.png" id="2_j6vao"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ef0hr"]
-atlas = ExtResource("2_j6vao")
-region = Rect2(96, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8d8bx"]
-atlas = ExtResource("2_j6vao")
-region = Rect2(48, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8lrp4"]
-atlas = ExtResource("2_j6vao")
-region = Rect2(0, 0, 48, 48)
+[ext_resource type="Texture2D" uid="uid://c1xx3qkhepu1f" path="res://assets/rythm_game/stars/star_005.png" id="2_8d8bx"]
+[ext_resource type="Texture2D" uid="uid://dvvmv7jlvudev" path="res://assets/rythm_game/stars/star_001.png" id="3_8lrp4"]
+[ext_resource type="Texture2D" uid="uid://b7eloxqwkx2ul" path="res://assets/rythm_game/stars/star_003.png" id="4_sxbdi"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_e3dmf"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ef0hr")
+"texture": ExtResource("2_8d8bx")
 }],
 "loop": 1,
 "name": &"phase_0",
@@ -27,7 +17,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8d8bx")
+"texture": ExtResource("3_8lrp4")
 }],
 "loop": 1,
 "name": &"phase_1",
@@ -35,7 +25,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8lrp4")
+"texture": ExtResource("4_sxbdi")
 }],
 "loop": 1,
 "name": &"phase_2",
@@ -46,5 +36,6 @@ animations = [{
 script = ExtResource("1_mcqwg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1951209354]
+scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_e3dmf")
-animation = &"phase_0"
+animation = &"phase_2"

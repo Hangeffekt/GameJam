@@ -9,7 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://bvcmyt7enuqqj" path="res://assets/tutorial wizard/wizard_default.png" id="8_heatd"]
 [ext_resource type="PackedScene" uid="uid://7en3j6hc7kc3" path="res://scenes/dev_debug_menu.tscn" id="8_y6sft"]
 [ext_resource type="Texture2D" uid="uid://dviio0v7aaskt" path="res://assets/tutorial wizard/wizard_shocked.png" id="9_1v8qu"]
-[ext_resource type="Texture2D" uid="uid://b4dgb5s1j213f" path="res://assets/placeholders/placeholder_char.png" id="10_heatd"]
+[ext_resource type="Texture2D" uid="uid://b1hl83324sdjn" path="res://assets/placeholders/placeholder_char.png" id="10_heatd"]
+[ext_resource type="Texture2D" uid="uid://b4dgb5s1j213f" path="res://assets/placeholders/placeholder_char2.png" id="11_1v8qu"]
+[ext_resource type="Texture2D" uid="uid://bhru5f31v1lpn" path="res://assets/placeholders/Screenshot 2026-08-13 233144.png" id="12_44xle"]
 
 [node name="Node2D" type="CanvasLayer" unique_id=1181666746]
 script = ExtResource("1_032fp")
@@ -39,4 +41,18 @@ visible = false
 text_key = Array[String](["**TEST** üdv, csinálj nekem a potit", "**TEST** milyet szeretnél?", "**TEST** Jót", "**TEST** És siess", "**TEST** Rendben"])
 characters_name = Array[String](["**TEST**Cat", "**TEST**Player", "**TEST**Cat", "**TEST**Cat", "**TEST**Player"])
 textcolor = Array[Color]([Color(0.8812561, 0.65154487, 0.9766125, 1), Color(1, 0.8, 0.5647059, 1), Color(0.88235295, 0.6509804, 0.9764706, 1), Color(0.88235295, 0.6509804, 0.9764706, 1), Color(1, 0.8, 0.5647059, 1)])
-Portraits = Array[Texture2D]([ExtResource("10_heatd"), null, null, null, null])
+Portraits = Array[Texture2D]([ExtResource("10_heatd"), ExtResource("10_heatd"), ExtResource("10_heatd"), ExtResource("10_heatd"), ExtResource("10_heatd")])
+
+[node name="PLACEHOLDERNAMEDialogueManager" parent="." unique_id=562795217 instance=ExtResource("5_y6sft")]
+visible = false
+text_key = Array[String](["**TEST**Szeretném, ha most megosztanál velem egy jóslást, ami a következő időszakomra vonatkozik. Bízom a megérzéseidben és a látásmódodban, ezért kíváncsi vagyok, mit jósolsz nekem. Kérlek, fogalmazz meg egy konkrét, inspiráló jóslatot, ami útmutatást adhat a döntéseimhez. Ha van valamilyen szimbolikus kép vagy érzés, ami eszedbe jut rólam, azt is szívesen fogadom. Előre is köszönöm a segítségedet és a rám szánt idődet!"])
+characters_name = Array[String](["**TEST** meglepően udvarias bobux eger"])
+textcolor = Array[Color]([Color(0.4898336, 0.6540255, 1, 1)])
+Portraits = Array[Texture2D]([ExtResource("11_1v8qu")])
+
+[node name="2PLACEHOLDERNAMEDialogueManager" parent="." unique_id=1878537526 instance=ExtResource("5_y6sft")]
+visible = false
+text_key = Array[String](["**TEST** Tarot Szöveg", "**TEST** Szöveg Tarot"])
+characters_name = Array[String](["**TEST** asd", "**TEST**dsa"])
+textcolor = Array[Color]([Color(1, 0.286494, 0.23255634, 1), Color(1, 0.28627452, 0.23137255, 1)])
+Portraits = Array[Texture2D]([ExtResource("12_44xle"), ExtResource("12_44xle")])

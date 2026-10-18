@@ -3,19 +3,19 @@ extends Control
 
 
 func _on_menu_scene_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/menu.tscn")
+	SceneTransition.change_scene("res://scenes/menu.tscn")
 
 
 func _on_shop_scene_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/shop.tscn")
+	SceneTransition.change_scene("res://scenes/shop.tscn")
 
 
 func _on_rythm_scene_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/rythm_game.tscn")
+	SceneTransition.change_scene("res://scenes/rythm_game.tscn")
 
 
 func _on_potion_scene_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/rythm_game.tscn")
+	SceneTransition.change_scene("res://scenes/potion.tscn")
 
 
 func _on_fullscreen_toggled(toggled_on: bool) -> void:
