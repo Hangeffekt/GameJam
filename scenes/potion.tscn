@@ -47,6 +47,9 @@ animations = [{
 "speed": 24.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5wtr2"]
+bg_color = Color(0.92156863, 0.8039216, 0.8352941, 1)
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_67q4m"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_msale"]
@@ -95,7 +98,6 @@ grow_horizontal = 2
 theme_override_constants/separation = 41
 
 [node name="testbtn" type="Button" parent="Control/VBox" unique_id=1714506839]
-visible = false
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -103,6 +105,7 @@ size_flags_vertical = 4
 size_flags_stretch_ratio = 1.21
 offset_transform_enabled = true
 theme_override_styles/normal = ExtResource("5_8kk5y")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5wtr2")
 
 [node name="MarginContainer" type="MarginContainer" parent="Control/VBox/testbtn" unique_id=1273790696]
 layout_mode = 1

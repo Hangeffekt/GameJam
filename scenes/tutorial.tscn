@@ -1,0 +1,129 @@
+[gd_scene format=3 uid="uid://bqog7piaxqlsc"]
+
+[ext_resource type="Script" uid="uid://dw3r1kyx4p4tr" path="res://scripts/tutorial.gd" id="1_ph3nu"]
+[ext_resource type="Texture2D" uid="uid://dqibqk8vnyfqm" path="res://assets/tutorial pictures/main.png" id="2_ckvwl"]
+[ext_resource type="StyleBox" uid="uid://b6ynm81qtn1v3" path="res://styles/menubox.tres" id="2_ph3nu"]
+[ext_resource type="PackedScene" uid="uid://cshl60v00b23l" path="res://scenes/dialogue_manager.tscn" id="3_4kmhl"]
+[ext_resource type="Texture2D" uid="uid://bvcmyt7enuqqj" path="res://assets/tutorial wizard/wizard_default.png" id="4_cq4me"]
+[ext_resource type="Texture2D" uid="uid://btp5ofkfadkv5" path="res://assets/tutorial wizard/wizard_pointing.png" id="5_6yjpi"]
+[ext_resource type="Texture2D" uid="uid://javtmgmibwpb" path="res://assets/tutorial wizard/wizard_thinking.png" id="6_gbqnl"]
+[ext_resource type="Texture2D" uid="uid://c02psrf0vepa3" path="res://assets/tutorial wizard/wizard_evil.png" id="7_ckvwl"]
+
+[node name="Tutorial" type="CanvasLayer" unique_id=1684112177]
+script = ExtResource("1_ph3nu")
+
+[node name="Portrait" type="TextureRect" parent="." unique_id=1078548488]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 317.0
+offset_top = 100.0
+offset_right = 528.75
+offset_bottom = 311.75
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+expand_mode = 1
+
+[node name="Control" type="Control" parent="." unique_id=1670514372]
+layout_mode = 3
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -575.0
+offset_top = -1.0
+offset_right = 579.0
+offset_bottom = -244.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="mainpicture" type="TextureRect" parent="Control" unique_id=1771648011]
+layout_mode = 0
+offset_left = 373.0
+offset_top = 50.0
+offset_right = 1078.0
+offset_bottom = 398.0
+texture = ExtResource("2_ckvwl")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Control" unique_id=873114346]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 71
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 47
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer" unique_id=793874478]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 44
+
+[node name="StartBtn" type="Button" parent="Control/MarginContainer/VBoxContainer" unique_id=1955515945]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = ExtResource("2_ph3nu")
+text = "Alapok"
+
+[node name="PotionBtn" type="Button" parent="Control/MarginContainer/VBoxContainer" unique_id=1413886356]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = ExtResource("2_ph3nu")
+text = "Bájital"
+
+[node name="MoonPlateBtn" type="Button" parent="Control/MarginContainer/VBoxContainer" unique_id=1596328653]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = ExtResource("2_ph3nu")
+text = "Holdtál"
+
+[node name="TarrotBtn" type="Button" parent="Control/MarginContainer/VBoxContainer" unique_id=1796295163]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = ExtResource("2_ph3nu")
+text = "Tarrot"
+
+[node name="SartTutorial" parent="." unique_id=515192348 instance=ExtResource("3_4kmhl")]
+text_key = Array[String](["ÁÁÁÁ, úgy látom keresl valamit. Jóhelyen jársz.", "Válassz a fenti menük közül és mindere választ kapsz!"])
+characters_name = Array[String](["Wizz Ard", "Wizz Ard"])
+textcolor = Array[Color]([Color(0, 0, 0, 1), Color(0, 0, 0, 1)])
+Portraits = Array[Texture2D]([ExtResource("4_cq4me"), ExtResource("5_6yjpi")])
+
+[node name="MainTutorial" parent="." unique_id=1700445730 instance=ExtResource("3_4kmhl")]
+text_key = Array[String](["Az első nap mindíg nehéz nem igaz. Ne aggódj segítek eligazodni a sok őjdonségban.", "Egyátlagos nap kinyitod a boltot. Jönnek a vásárlók akik szeretnének valami... hogy is mondjam?", "Nem éppen jóra való dolgot... Béjitalt, csillagok olvasását, vagy Jóslást kártyából.", "Hakész, fizetnek és jön a következő, közben minden féle dologgal traktálnak."])
+characters_name = Array[String](["Wizz Ard", "Wizz Ard", "Wizz Ard", "Wizz Ard"])
+textcolor = Array[Color]([Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1)])
+Portraits = Array[Texture2D]([ExtResource("4_cq4me"), ExtResource("6_gbqnl"), ExtResource("7_ckvwl"), ExtResource("4_cq4me")])
+
+[node name="PotionTutorial" parent="." unique_id=1044000698 instance=ExtResource("3_4kmhl")]
+text_key = Array[String](["Az első nap mindíg nehéz nem igaz. Ne aggódj segítek eligazodni a sok őjdonségban.", "Egyátlagos nap kinyitod a boltot. Jönnek a vásárlók akik szeretnének valami... hogy is mondjam?", "Nem éppen jóra való dolgot... Béjitalt, csillagok olvasását, vagy Jóslást kártyából.", "Hakész, fizetnek és jön a következő, közben minden féle dologgal traktálnak."])
+characters_name = Array[String](["Wizz Ard", "Wizz Ard", "Wizz Ard", "Wizz Ard"])
+textcolor = Array[Color]([Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1)])
+Portraits = Array[Texture2D]([ExtResource("4_cq4me"), ExtResource("6_gbqnl"), ExtResource("7_ckvwl"), ExtResource("4_cq4me")])
+
+[node name="MoonPlateTutorial" parent="." unique_id=1939476836 instance=ExtResource("3_4kmhl")]
+text_key = Array[String](["Az első nap mindíg nehéz nem igaz. Ne aggódj segítek eligazodni a sok őjdonségban.", "Egyátlagos nap kinyitod a boltot. Jönnek a vásárlók akik szeretnének valami... hogy is mondjam?", "Nem éppen jóra való dolgot... Béjitalt, csillagok olvasását, vagy Jóslást kártyából.", "Hakész, fizetnek és jön a következő, közben minden féle dologgal traktálnak."])
+characters_name = Array[String](["Wizz Ard", "Wizz Ard", "Wizz Ard", "Wizz Ard"])
+textcolor = Array[Color]([Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1)])
+Portraits = Array[Texture2D]([ExtResource("4_cq4me"), ExtResource("6_gbqnl"), ExtResource("7_ckvwl"), ExtResource("4_cq4me")])
+
+[node name="TarrotTutorial" parent="." unique_id=1791220221 instance=ExtResource("3_4kmhl")]
+text_key = Array[String](["Az első nap mindíg nehéz nem igaz. Ne aggódj segítek eligazodni a sok őjdonségban.", "Egyátlagos nap kinyitod a boltot. Jönnek a vásárlók akik szeretnének valami... hogy is mondjam?", "Nem éppen jóra való dolgot... Béjitalt, csillagok olvasását, vagy Jóslást kártyából.", "Hakész, fizetnek és jön a következő, közben minden féle dologgal traktálnak."])
+characters_name = Array[String](["Wizz Ard", "Wizz Ard", "Wizz Ard", "Wizz Ard"])
+textcolor = Array[Color]([Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1)])
+Portraits = Array[Texture2D]([ExtResource("4_cq4me"), ExtResource("6_gbqnl"), ExtResource("7_ckvwl"), ExtResource("4_cq4me")])
+
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/StartBtn" to="." method="_on_start_btn_pressed"]

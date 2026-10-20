@@ -13,3 +13,5 @@ TEST_CONVO_3,"***TEST*** És kérlek siess, az idő pénz.","***TEST*** And plea
 TEST_CONVO_4,***TEST*** Köszönöm,***TEST*** Thank you.
 TEST_CONVO_5,"***TEST*** Ez nem kedv kérdése, akkor is megcsinálod.",***TEST*** I dont care if you want to do it or not. You will make it.
 TEST_CHARACTERNAME_CAT,***TEST*** Cica,***TEST*** Cat
+WIZZARD_TUTORIAL_1,ÁÁÁÁ, úgy látom keresl valamit. Jóhelyen jársz.
+WIZZARD_TUTORIAL_2,Válassz a fenti menük közül és mindere választ kapsz!
