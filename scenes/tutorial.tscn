@@ -9,8 +9,29 @@
 [ext_resource type="Texture2D" uid="uid://javtmgmibwpb" path="res://assets/tutorial wizard/wizard_thinking.png" id="6_gbqnl"]
 [ext_resource type="Texture2D" uid="uid://c02psrf0vepa3" path="res://assets/tutorial wizard/wizard_evil.png" id="7_ckvwl"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_67q4m"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nlqja"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0epgs"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g2equ"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ckvwl"]
+load_path = "res://.godot/imported/wizard_pointing.png-245bf5cea1240ef5f7c6554a9223b189.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nlqja"]
+load_path = "res://.godot/imported/wizard_evil.png-f1434839eea927afaad1510adc1c779e.ctex"
+
 [node name="Tutorial" type="CanvasLayer" unique_id=1684112177]
 script = ExtResource("1_ph3nu")
+
+[node name="Panel" type="Panel" parent="." unique_id=828354553]
+offset_left = -1653.0
+offset_top = -796.0
+offset_right = 2630.0
+offset_bottom = 1520.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_67q4m")
 
 [node name="Portrait" type="TextureRect" parent="." unique_id=1078548488]
 anchors_preset = 8
@@ -42,6 +63,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="mainpicture" type="TextureRect" parent="Control" unique_id=1771648011]
+visible = false
 layout_mode = 0
 offset_left = 373.0
 offset_top = 50.0
@@ -96,34 +118,70 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = ExtResource("2_ph3nu")
 text = "Tarrot"
 
+[node name="TutorialButton" type="Button" parent="." unique_id=2123120564]
+offset_left = 992.0
+offset_top = 5.0
+offset_right = 1101.0
+offset_bottom = 114.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_nlqja")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0epgs")
+theme_override_styles/hover = SubResource("StyleBoxTexture_g2equ")
+
+[node name="TextureRect" type="TextureRect" parent="TutorialButton" unique_id=1178551254]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_cq4me")
+expand_mode = 1
+
 [node name="SartTutorial" parent="." unique_id=515192348 instance=ExtResource("3_4kmhl")]
-text_key = Array[String](["ÁÁÁÁ, úgy látom keresl valamit. Jóhelyen jársz.", "Válassz a fenti menük közül és mindere választ kapsz!"])
-characters_name = Array[String](["Wizz Ard", "Wizz Ard"])
-textcolor = Array[Color]([Color(0, 0, 0, 1), Color(0, 0, 0, 1)])
-Portraits = Array[Texture2D]([ExtResource("4_cq4me"), ExtResource("5_6yjpi")])
+visible = false
+text_key = Array[String](["ÁÁÁÁ, úgy látom, keresel valamit! Jó helyen jársz!", "Ha még egyszer rám kattintasz a sarokban nem foglak zavarni.", "Válassz a bal oldali gombok közül, és minden kérdésedre választ kapsz!"])
+characters_name = Array[String](["Wizz Ard", "Wizz Ard", "Wizz Ard"])
+textcolor = Array[Color]([Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)])
+Portraits = Array[Texture2D]([ExtResource("4_cq4me"), ExtResource("6_gbqnl"), ExtResource("5_6yjpi")])
 
 [node name="MainTutorial" parent="." unique_id=1700445730 instance=ExtResource("3_4kmhl")]
-text_key = Array[String](["Az első nap mindíg nehéz nem igaz. Ne aggódj segítek eligazodni a sok őjdonségban.", "Egyátlagos nap kinyitod a boltot. Jönnek a vásárlók akik szeretnének valami... hogy is mondjam?", "Nem éppen jóra való dolgot... Béjitalt, csillagok olvasását, vagy Jóslást kártyából.", "Hakész, fizetnek és jön a következő, közben minden féle dologgal traktálnak."])
+visible = false
+text_key = Array[String](["Az első nap mindig nehéz, nem igaz? Ne aggódj, segítek eligazodni a sok újdonság között.", "Egy átlagos nap: kinyitod a boltot, és máris érkeznek a vásárlók, akik valami… hogy is mondjam?", "Nem éppen tisztességes dologra vágynak. Bájitalokra, csillagjóslásra vagy éppen kártyavetésre.", "Ha végeztek, fizetnek, majd jön a következő vásárló. Közben pedig mindenféle történettel traktálnak."])
 characters_name = Array[String](["Wizz Ard", "Wizz Ard", "Wizz Ard", "Wizz Ard"])
-textcolor = Array[Color]([Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1)])
+textcolor = Array[Color]([Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)])
 Portraits = Array[Texture2D]([ExtResource("4_cq4me"), ExtResource("6_gbqnl"), ExtResource("7_ckvwl"), ExtResource("4_cq4me")])
 
 [node name="PotionTutorial" parent="." unique_id=1044000698 instance=ExtResource("3_4kmhl")]
-text_key = Array[String](["Az első nap mindíg nehéz nem igaz. Ne aggódj segítek eligazodni a sok őjdonségban.", "Egyátlagos nap kinyitod a boltot. Jönnek a vásárlók akik szeretnének valami... hogy is mondjam?", "Nem éppen jóra való dolgot... Béjitalt, csillagok olvasását, vagy Jóslást kártyából.", "Hakész, fizetnek és jön a következő, közben minden féle dologgal traktálnak."])
-characters_name = Array[String](["Wizz Ard", "Wizz Ard", "Wizz Ard", "Wizz Ard"])
-textcolor = Array[Color]([Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1)])
-Portraits = Array[Texture2D]([ExtResource("4_cq4me"), ExtResource("6_gbqnl"), ExtResource("7_ckvwl"), ExtResource("4_cq4me")])
+visible = false
+text_key = Array[String](["A bájitalkeverés nem könnyű mesterség. Minden tudásodra szükséged lesz ahhoz, hogy a főzet kiváló legyen.", "Nézd meg a bal oldalon található receptet! Három sorban három különböző értéket találsz.", "Most pillants a jobb oldalra! Itt kategóriákba rendezve találod az összetevőket. Mindegyik összetevő három különböző értékkel rendelkezik.", "Ha kiválasztasz egy összetevőt, az bekerül a mozsárba. Minden bájital elkészítéséhez három összetevőre van szükséged, de mindegyiket csak egyszer választhatod ki. Szerencsére az utoljára hozzáadott összetevőt még eltávolíthatod.", "Alul láthatod, hogyan alakul az egyes módosítók összértéke a kiválasztott összetevők alapján.", "Ha úgy gondolod, minden a helyére került, nyomd meg az Őrlés és főzés gombot, hogy elkészítsd a bájitalt!"])
+characters_name = Array[String](["Wizz Ard", "Wizz Ard", "Wizz Ard", "Wizz Ard", "Wizz Ard", "Wizz Ard"])
+textcolor = Array[Color]([Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)])
+Portraits = Array[Texture2D]([ExtResource("4_cq4me"), SubResource("CompressedTexture2D_ckvwl"), SubResource("CompressedTexture2D_nlqja"), ExtResource("4_cq4me"), ExtResource("4_cq4me"), ExtResource("4_cq4me")])
 
 [node name="MoonPlateTutorial" parent="." unique_id=1939476836 instance=ExtResource("3_4kmhl")]
-text_key = Array[String](["Az első nap mindíg nehéz nem igaz. Ne aggódj segítek eligazodni a sok őjdonségban.", "Egyátlagos nap kinyitod a boltot. Jönnek a vásárlók akik szeretnének valami... hogy is mondjam?", "Nem éppen jóra való dolgot... Béjitalt, csillagok olvasását, vagy Jóslást kártyából.", "Hakész, fizetnek és jön a következő, közben minden féle dologgal traktálnak."])
+visible = false
+text_key = Array[String](["A Holdtál mélyén csillagok tükröződnek, vizük a jövő titkait őrzi.", "Egyetlen csepp hullik a tükörsima felszínre, s a víz fodrozódni kezd.", "Figyeld a megfelelő pillanatot! Ha jókor kongatod meg a tálat, az egyik csillag felragyog.", "Hívd életre az összes csillagot, és feltárulnak előtted a jövő titkai. Ha mind felragyogott, a csillagolvasás sikeres!"])
 characters_name = Array[String](["Wizz Ard", "Wizz Ard", "Wizz Ard", "Wizz Ard"])
-textcolor = Array[Color]([Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1)])
+textcolor = Array[Color]([Color(1, 1, 1, 1), Color(0.9691369, 0.9691369, 0.9691368, 1), Color(0.9955804, 0.99558026, 0.99558026, 1), Color(0.9955804, 0.99558026, 0.99558026, 1)])
 Portraits = Array[Texture2D]([ExtResource("4_cq4me"), ExtResource("6_gbqnl"), ExtResource("7_ckvwl"), ExtResource("4_cq4me")])
 
 [node name="TarrotTutorial" parent="." unique_id=1791220221 instance=ExtResource("3_4kmhl")]
+visible = false
 text_key = Array[String](["Az első nap mindíg nehéz nem igaz. Ne aggódj segítek eligazodni a sok őjdonségban.", "Egyátlagos nap kinyitod a boltot. Jönnek a vásárlók akik szeretnének valami... hogy is mondjam?", "Nem éppen jóra való dolgot... Béjitalt, csillagok olvasását, vagy Jóslást kártyából.", "Hakész, fizetnek és jön a következő, közben minden féle dologgal traktálnak."])
 characters_name = Array[String](["Wizz Ard", "Wizz Ard", "Wizz Ard", "Wizz Ard"])
-textcolor = Array[Color]([Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1)])
+textcolor = Array[Color]([Color(1, 1, 1, 1), Color(0.9955804, 0.99558026, 0.99558026, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)])
 Portraits = Array[Texture2D]([ExtResource("4_cq4me"), ExtResource("6_gbqnl"), ExtResource("7_ckvwl"), ExtResource("4_cq4me")])
 
+[node name="StillHere" parent="." unique_id=1676930901 instance=ExtResource("3_4kmhl")]
+visible = false
+text_key = Array[String](["Nahát, még nem sikerült mindent kiderítened? Sebaj, nem szaladnak el a titkok!", "Válassz a bal oldali gombok közül és mindere választ kapsz!"])
+characters_name = Array[String](["Wizz Ard", "Wizz Ard"])
+textcolor = Array[Color]([Color(1, 1, 1, 1), Color(1, 1, 1, 1)])
+Portraits = Array[Texture2D]([ExtResource("4_cq4me"), ExtResource("5_6yjpi")])
+
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/StartBtn" to="." method="_on_start_btn_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/PotionBtn" to="." method="_on_potion_btn_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/MoonPlateBtn" to="." method="_on_moon_plate_btn_pressed"]
+[connection signal="pressed" from="TutorialButton" to="." method="_on_tutorial_button_pressed"]

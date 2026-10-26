@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://mgw84bj5qnk4" path="res://scenes/star.tscn" id="5_4qhuu"]
 [ext_resource type="Texture2D" uid="uid://co7sokf1pc6fm" path="res://assets/placeholders/IMG_0848.jpeg" id="5_gko7c"]
 [ext_resource type="PackedScene" uid="uid://7en3j6hc7kc3" path="res://scenes/dev_debug_menu.tscn" id="6_jgy0h"]
+[ext_resource type="Texture2D" uid="uid://bvcmyt7enuqqj" path="res://assets/tutorial wizard/wizard_default.png" id="10_6yyfv"]
+[ext_resource type="PackedScene" uid="uid://bqog7piaxqlsc" path="res://scenes/tutorial.tscn" id="11_c8p3f"]
 
 [sub_resource type="Animation" id="Animation_qmehk"]
 length = 0.001
@@ -87,6 +89,12 @@ size = Vector2(15, 49)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_71p6h"]
 size = Vector2(191.5, 49)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c8p3f"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rtuws"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eacpd"]
 
 [node name="rythm_game" type="Node2D" unique_id=1484322323]
 script = ExtResource("1_hidhp")
@@ -237,6 +245,29 @@ offset_left = 1151.0
 offset_top = -1.0
 offset_right = 1151.0
 offset_bottom = -1.0
+
+[node name="TutorialButton" type="Button" parent="." unique_id=725443081]
+offset_left = 992.0
+offset_top = 5.0
+offset_right = 1101.0
+offset_bottom = 114.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_c8p3f")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_rtuws")
+theme_override_styles/hover = SubResource("StyleBoxTexture_eacpd")
+
+[node name="TextureRect" type="TextureRect" parent="TutorialButton" unique_id=1856495880]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_6yyfv")
+expand_mode = 1
+
+[node name="Tutorial" parent="." unique_id=1684112177 instance=ExtResource("11_c8p3f")]
 
 [connection signal="area_entered" from="szelle_jelzok/leesett_jelzo" to="." method="_on_leesett_jelzo_area_entered"]
 [connection signal="value_changed" from="ProgressBar" to="." method="_on_progress_bar_value_changed"]

@@ -4,13 +4,16 @@ extends CanvasLayer
 @onready var dialogue_text: RichTextLabel = $DialogueBox/dialogueText
 @onready var name_text: Label = $DialogueBox/ColorRect2/nameText
 @onready var portrait: TextureRect = $Portrait
+@onready var tutorialportrait: TextureRect = $TutorialPortrait
 signal dialogue_finished
+var isTutorial: bool = false
 
 ##FONTOS! a listák hosszának meg kell egyeznie
 @export var text_key: Array[String] = []
 @export var characters_name: Array[String] = []
 @export var textcolor: Array[Color] = []
 @export var Portraits: Array[Texture2D] = []
+@export var TutorialScreens: Array[Texture2D] = []
 
 #miért nem egy dictionary vagy többdimenziód tömb?
 #ötlet 1: csak a szöveget tárolom. annak elég egy tömb... de jó lenne neveket is tárolni
@@ -31,7 +34,8 @@ func _ready() -> void:
 	
 	#start_dialogue(text_key, characters_name, textcolor)
 
-func start_dialogue(lines: Array[String], CHARname: Array[String], color: Array[Color]):
+func start_dialogue(lines: Array[String], CHARname: Array[String], color: Array[Color], tutorial: bool):
+	# ha a totorial igaz a kis kép jelenik meg, ha hamis középen a nagy
 	#game is paused, kivéve a Dialogue manager
 	get_tree().paused = true
 	#kiszedem az első elemeket a listából
@@ -39,6 +43,7 @@ func start_dialogue(lines: Array[String], CHARname: Array[String], color: Array[
 	characters_name = CHARname
 	dialogue_lines = lines
 	current_line_index = 0
+	isTutorial = tutorial
 	
 	is_dialogue_active = true
 	dialogue_box.visible = true
@@ -53,9 +58,14 @@ func updateLine():
 	name_text.text = tr(characters_name[current_line_index])
 	dialogue_text.self_modulate = textcolor[current_line_index]
 	if current_line_index < Portraits.size() and Portraits[current_line_index]:
-		portrait.texture = Portraits[current_line_index]
-		portrait.visible = true
-	else: portrait.visible = false
+		#ha tutorial szöveget írunk ki
+		if isTutorial:
+			tutorialportrait.visible = true
+			tutorialportrait.texture = Portraits[current_line_index]
+		else:
+			portrait.texture = Portraits[current_line_index]
+			portrait.visible = true
+	else: portrait.visible = false; tutorialportrait.visible = false
 	typeWriterEffect()
 
 func _input(event: InputEvent) -> void:
@@ -80,6 +90,7 @@ func advance_dialogue():
 		is_dialogue_active = false
 		dialogue_box.visible = false
 		portrait.visible = false
+		tutorialportrait.visible = false
 		dialogue_finished.emit() #jelzek hogy vége van a beszélgetésnek
 		print("dialogue_finished.emit()")
 		

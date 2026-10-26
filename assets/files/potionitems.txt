@@ -1,6 +1,6 @@
-1;0;Növényi;cinnamon;1;2;3
-2;0;Állati/Emberi;egg;1;2;3
-3;0;Kristályok;amethyst;1;2;3
+1;0;Növényi;category_body_parts;1;2;3
+2;0;Állati/Emberi;category_plant;1;2;3
+3;0;Kristályok;category_mineral;1;2;3
 4;1;Levendula;lavender;1;-2;-
 5;1;Kakukkfű;lavender;3;1;-
 6;1;Rózsaszirom;rose_petals;-;1;-

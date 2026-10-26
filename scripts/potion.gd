@@ -4,6 +4,10 @@ extends CanvasLayer
 @onready var categorie_item_box = $ScrollContainer/GridContainer
 @onready var recipe_box = $recipe/GridContainer
 @onready var result_box = $result/GridContainer
+@onready var tutorialScene: CanvasLayer = $Tutorial
+@onready var finishButton: Button = $MakePotion
+@onready var disableCategoryPanel: Panel = $disableCategories
+@onready var category_button_sample: Button = $Control/VBox/testbtn
 var sum_green: int = 0
 var sum_red: int = 0
 var sum_blue: int = 0
@@ -26,6 +30,7 @@ func _ready() -> void:
 		#get recipe
 		recipe = PotionVariation.choose_random_variation(1)
 		add_labels_to_recipe("x", "x", "x", recipe_box)
+		tutorialScene.visible = false
 	
 
 func category_buttons(id: int):
@@ -36,14 +41,14 @@ func category_buttons(id: int):
 	for categorie in PotionCategorie.all_instances:
 		if(categorie.parent_id == 0):
 			var button = Button.new()
+			button.add_child(add_bg_to_categorie("potion ui_ingredients list_category frame"))
+			button.visible = true
 			button.add_to_group("potion_buttons")
 			if categorie.id == id:
-				button.custom_minimum_size = Vector2(79, 105)
-				button.add_theme_stylebox_override("normal", preload("res://styles/potioncategoryactive.tres"))
+				button.custom_minimum_size = Vector2(100, 101)
 				category_items(id)
 			else:
-				button.custom_minimum_size = Vector2(59, 105)
-				button.add_theme_stylebox_override("normal", preload("res://styles/potionmenuinactive.tres"))
+				button.custom_minimum_size = Vector2(92, 101)
 			button.pressed.connect(func(): category_items(categorie.id))
 			button.pressed.connect(func(): category_buttons(categorie.id))
 			
@@ -62,9 +67,9 @@ func category_items(id: int):
 			var button = Button.new()
 			button.add_to_group("potion_buttons")
 			#create item button
-			button.custom_minimum_size = Vector2(100, 100)
+			button.add_child(add_bg_to_categorie("item_bg"))
+			button.custom_minimum_size = Vector2(130, 130)
 			if(used_items.find(item.id) != -1):
-				button.add_theme_stylebox_override("normal", preload("res://styles/disabled_item.tres"))
 				button.mouse_filter = Control.MOUSE_FILTER_IGNORE
 			else:
 				button.add_theme_stylebox_override("normal", preload("res://styles/menubox.tres"))
@@ -86,13 +91,22 @@ func category_items(id: int):
 			control.add_child(labelgreen)
 			categorie_item_box.add_child(control)
 
+func add_bg_to_categorie(name: String) -> TextureRect:
+	var image = TextureRect.new()
+	image.texture = load("res://assets/potion/" + name + ".png")
+	image.set_anchors_preset(Control.PRESET_FULL_RECT)
+	image.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	
+	return image
+
+# lista elemekhez kép
 func add_image(name: String) -> MarginContainer:
 	var margin = MarginContainer.new()
 	margin.set_anchors_preset(Control.PRESET_FULL_RECT)
-	margin.add_theme_constant_override("margin_left", 10)
-	margin.add_theme_constant_override("margin_right", 10)
-	margin.add_theme_constant_override("margin_top", 10)
-	margin.add_theme_constant_override("margin_bottom", 10)
+	margin.add_theme_constant_override("margin_left", 15)
+	margin.add_theme_constant_override("margin_right", 15)
+	margin.add_theme_constant_override("margin_top", 15)
+	margin.add_theme_constant_override("margin_bottom", 15)
 	var image = TextureRect.new()
 	image.texture = load("res://assets/potion/ingredients/" + name + ".png")
 	image.set_anchors_preset(Control.PRESET_FULL_RECT)
@@ -113,16 +127,24 @@ func create_labels_for_item(text: String) -> Label:
 func item_choosed(name: String, atr1: int, atr2: int, atr3: int):
 	if !item_place_1:
 		item_place_1 = true
-		$choosed_items/testbtn.add_child(add_image(name))
-		set_and_write_values(atr1, atr2, atr3)
+		item_place_id_1 = atr1
+		$selected_item_box/choosed_items/testbtn.add_child(add_image(name))
 	elif !item_place_2:
 		item_place_2 = true
-		$choosed_items/testbtn2.add_child(add_image(name))
-		set_and_write_values(atr1, atr2, atr3)
+		item_place_id_2 = atr2
+		$selected_item_box/choosed_items/testbtn2.add_child(add_image(name))
 	elif !item_place_3:
 		item_place_3 = true
-		$choosed_items/testbtn3.add_child(add_image(name))
-		end_game(atr1, atr2, atr3)
+		item_place_id_3 = atr3
+		$selected_item_box/choosed_items/testbtn3.add_child(add_image(name))
+	
+	set_and_write_values(atr1, atr2, atr3)
+	
+	if item_place_1 and item_place_2 and item_place_3:
+		finishButton.disabled = false
+		disableCategoryPanel.visible = true
+		finishButton.add_theme_stylebox_override("normal", preload("res://styles/menubox.tres"))
+		
 
 func set_and_write_values(atr1: int, atr2: int, atr3: int) -> void:
 	sum_red = sum_red + atr1
@@ -180,7 +202,6 @@ func end_game(atr1: int, atr2: int, atr3: int) -> void:
 			$ScrollContainer.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	
 	#set and write game result
-	set_and_write_values(atr1, atr2, atr3)
 	add_labels_to_recipe(set_number(sum_red), set_number(sum_green), set_number(sum_blue), result_box)
 	var result_point = 0
 	result_point = result_point + mini_game_result(sum_red, recipe[0].relation_1, recipe[0].target_number_1)
@@ -189,14 +210,23 @@ func end_game(atr1: int, atr2: int, atr3: int) -> void:
 	
 	match(result_point):
 		0:
-			$result/textResult.text = "Bad"
+			$result/textResult.text = "Rossz"
 		1:
-			$result/textResult.text = "Bad"
+			$result/textResult.text = "Rossz"
 		2:
-			$result/textResult.text = "Good"
+			$result/textResult.text = "Jó"
 		3:
-			$result/textResult.text = "Perfect"
+			$result/textResult.text = "Kiváló"
 	$result.show()
 	await get_tree().create_timer(5.0).timeout
 	GlobalScript.nextcustomer = GlobalScript.nextcustomer + 1
 	SceneTransition.change_scene("res://scenes/shop.tscn")
+
+
+func _on_tutorial_button_pressed() -> void:
+	tutorialScene.visible = true
+	tutorialScene.choose_tutorial(2)
+
+# jéték befejezése
+func _on_make_potion_pressed() -> void:
+	end_game(item_place_id_1, item_place_id_2, item_place_id_3)

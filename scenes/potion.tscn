@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://dwtnsmhbby5et" path="res://scripts/potion.gd" id="1_3mc24"]
 [ext_resource type="StyleBox" uid="uid://b6ynm81qtn1v3" path="res://styles/menubox.tres" id="2_8kk5y"]
 [ext_resource type="Texture2D" uid="uid://xj4vn1r3r8h3" path="res://assets/potion/potion.png" id="3_8kk5y"]
-[ext_resource type="StyleBox" uid="uid://vfbn1867ixcv" path="res://styles/potionmenuinactive.tres" id="5_8kk5y"]
 [ext_resource type="Texture2D" uid="uid://r5enybi6yqii" path="res://assets/potion/steam animation/potion_steam_001.png" id="5_yxgu6"]
 [ext_resource type="Texture2D" uid="uid://d4msi4th65iwv" path="res://assets/potion/steam animation/potion_steam_002.png" id="6_qted3"]
 [ext_resource type="Texture2D" uid="uid://c43fv27541ow8" path="res://assets/potion/steam animation/potion_steam_003.png" id="7_ancum"]
@@ -11,9 +10,17 @@
 [ext_resource type="Texture2D" uid="uid://q16q1wg764g8" path="res://assets/potion/steam animation/potion_steam_005.png" id="9_8dbo2"]
 [ext_resource type="Texture2D" uid="uid://b2fd85ojgwgqb" path="res://assets/potion/steam animation/potion_steam_006.png" id="10_a6teu"]
 [ext_resource type="Texture2D" uid="uid://b55tkn7r41er4" path="res://assets/potion/steam animation/potion_steam_007.png" id="11_gmx3n"]
+[ext_resource type="Texture2D" uid="uid://bvcmyt7enuqqj" path="res://assets/tutorial wizard/wizard_default.png" id="11_yp1kk"]
 [ext_resource type="Texture2D" uid="uid://b4p4yyjma3tc1" path="res://assets/potion/steam animation/potion_steam_008.png" id="12_qkra3"]
+[ext_resource type="Texture2D" uid="uid://cw77m55bxx8v5" path="res://assets/potion/potion ui_ingredients list_base.png" id="13_qkra3"]
 [ext_resource type="Texture2D" uid="uid://bvyx0htqac8rk" path="res://assets/potion/ingredients/amethyst.png" id="13_qted3"]
 [ext_resource type="PackedScene" uid="uid://7en3j6hc7kc3" path="res://scenes/dev_debug_menu.tscn" id="14_ancum"]
+[ext_resource type="Texture2D" uid="uid://cwyrjxmbru4wr" path="res://assets/potion/item_bg.png" id="15_1nmat"]
+[ext_resource type="Texture2D" uid="uid://bgstswdm8ffnn" path="res://assets/potion/potion ui_ingredients list_category frame.png" id="15_6p5he"]
+[ext_resource type="Texture2D" uid="uid://c6san78754ic2" path="res://assets/potion/potion ui_ingredients bar_reference.png" id="15_ron7i"]
+[ext_resource type="PackedScene" uid="uid://bqog7piaxqlsc" path="res://scenes/tutorial.tscn" id="16_8dbo2"]
+[ext_resource type="StyleBox" uid="uid://c3kxrhf1owtl6" path="res://styles/disableButton.tres" id="16_a6teu"]
+[ext_resource type="Texture2D" uid="uid://ipsm6bc3auxm" path="res://assets/potion/potion ui_requirement_base.png" id="16_gmx3n"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_67q4m"]
 animations = [{
@@ -47,6 +54,16 @@ animations = [{
 "speed": 24.0
 }]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8dbo2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a6teu"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gmx3n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qkra3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1nmat"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5wtr2"]
 bg_color = Color(0.92156863, 0.8039216, 0.8352941, 1)
 
@@ -54,11 +71,21 @@ bg_color = Color(0.92156863, 0.8039216, 0.8352941, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_msale"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_msale"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a0jua"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fw5pv"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_67q4m"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jub73"]
+
 [node name="potion" type="CanvasLayer" unique_id=947814072]
 script = ExtResource("1_3mc24")
 
 [node name="Potion" type="Sprite2D" parent="." unique_id=1887912111]
-position = Vector2(576.50006, 323)
+position = Vector2(577.00006, 329)
 scale = Vector2(0.6005209, 0.6055556)
 texture = ExtResource("3_8kk5y")
 
@@ -72,6 +99,27 @@ autoplay = "steam"
 frame_progress = 0.17127174
 speed_scale = 2.5
 
+[node name="TutorialButton" type="Button" parent="." unique_id=1217891676]
+offset_left = 992.0
+offset_top = 5.0
+offset_right = 1101.0
+offset_bottom = 114.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_8dbo2")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_a6teu")
+theme_override_styles/hover = SubResource("StyleBoxTexture_gmx3n")
+
+[node name="TextureRect" type="TextureRect" parent="TutorialButton" unique_id=828349922]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_yp1kk")
+expand_mode = 1
+
 [node name="Control" type="Control" parent="." unique_id=104414477]
 layout_mode = 3
 anchors_preset = 0
@@ -83,41 +131,72 @@ offset_bottom = 548.0
 [node name="potionmenu" type="Panel" parent="Control" unique_id=292840461]
 layout_mode = 0
 offset_left = 68.0
-offset_top = -61.0
+offset_top = 16.0
 offset_right = 397.0
 offset_bottom = 553.0
-theme_override_styles/panel = ExtResource("2_8kk5y")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_qkra3")
 
-[node name="VBox" type="VBoxContainer" parent="Control" unique_id=1737966532]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_left = -26.0
-offset_bottom = 100.0
-grow_horizontal = 2
-theme_override_constants/separation = 41
-
-[node name="testbtn" type="Button" parent="Control/VBox" unique_id=1714506839]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-size_flags_stretch_ratio = 1.21
-offset_transform_enabled = true
-theme_override_styles/normal = ExtResource("5_8kk5y")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_5wtr2")
-
-[node name="MarginContainer" type="MarginContainer" parent="Control/VBox/testbtn" unique_id=1273790696]
+[node name="TextureRect" type="TextureRect" parent="Control/potionmenu" unique_id=2049742529]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
+texture = ExtResource("13_qkra3")
+expand_mode = 1
+
+[node name="VBox" type="VBoxContainer" parent="Control" unique_id=1737966532]
+custom_minimum_size = Vector2(85, 500)
+custom_maximum_size = Vector2(101, 500)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -24.5
+offset_top = 71.0
+offset_right = -1.0
+offset_bottom = 571.0
+grow_horizontal = 2
+theme_override_constants/separation = 31
+
+[node name="testbtn" type="Button" parent="Control/VBox" unique_id=1714506839]
+custom_minimum_size = Vector2(85, 100)
+custom_maximum_size = Vector2(101, 100)
+layout_mode = 2
+size_flags_vertical = 4
+size_flags_stretch_ratio = 1.21
+offset_transform_enabled = true
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1nmat")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5wtr2")
+
+[node name="TextureRect" type="TextureRect" parent="Control/VBox/testbtn" unique_id=1730209497]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("15_6p5he")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/VBox/testbtn" unique_id=1273790696]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.0
+offset_top = -15.0
+offset_right = 15.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 1.0023774)
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
 
 [node name="TextureRect" type="TextureRect" parent="Control/VBox/testbtn/MarginContainer" unique_id=2029959919]
 layout_mode = 2
@@ -125,14 +204,14 @@ texture = ExtResource("13_qted3")
 expand_mode = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=952243843]
-custom_minimum_size = Vector2(300, 500)
+custom_minimum_size = Vector2(300, 400)
 anchors_preset = -1
 anchor_right = 1.0170001
 anchor_bottom = 0.901
-offset_left = 852.0
-offset_top = 77.0
-offset_right = 0.41589355
-offset_bottom = 0.15197754
+offset_left = 835.0
+offset_top = 124.0
+offset_right = -36.584106
+offset_bottom = -2.8480225
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -142,38 +221,123 @@ horizontal_scroll_mode = 0
 vertical_scroll_mode = 3
 
 [node name="GridContainer" type="GridContainer" parent="ScrollContainer" unique_id=1683704855]
-custom_minimum_size = Vector2(300, 500)
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/h_separation = 50
+theme_override_constants/h_separation = 13
 theme_override_constants/v_separation = 5
 columns = 2
 
-[node name="choosed_items" type="GridContainer" parent="." unique_id=1177732796]
-offset_left = 420.0
-offset_top = 45.0
-offset_right = 657.0
-offset_bottom = 120.0
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/GridContainer" unique_id=1550154933]
+visible = false
+custom_minimum_size = Vector2(130, 130)
+custom_maximum_size = Vector2(130, 130)
+layout_mode = 2
+texture = ExtResource("15_1nmat")
+
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/GridContainer" unique_id=991128883]
+visible = false
+custom_maximum_size = Vector2(130, 130)
+layout_mode = 2
+texture = ExtResource("15_1nmat")
+
+[node name="TextureRect3" type="TextureRect" parent="ScrollContainer/GridContainer" unique_id=795475046]
+visible = false
+custom_maximum_size = Vector2(130, 130)
+layout_mode = 2
+texture = ExtResource("15_1nmat")
+
+[node name="TextureRect4" type="TextureRect" parent="ScrollContainer/GridContainer" unique_id=1965524667]
+visible = false
+layout_mode = 2
+texture = ExtResource("15_1nmat")
+
+[node name="selected_item_box" type="Control" parent="." unique_id=1390781761]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -187.0
+offset_top = 22.0
+offset_right = 98.0
+offset_bottom = 178.0
+grow_horizontal = 2
+
+[node name="TextureRect" type="TextureRect" parent="selected_item_box" unique_id=1654178243]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("15_ron7i")
+expand_mode = 1
+
+[node name="choosed_items" type="GridContainer" parent="selected_item_box" unique_id=1177732796]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 22.0
+offset_top = -57.0
+offset_right = 22.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
-theme_override_constants/h_separation = 5
+theme_override_constants/h_separation = 8
 columns = 3
 
-[node name="testbtn" type="Panel" parent="choosed_items" unique_id=325158395]
+[node name="testbtn" type="Panel" parent="selected_item_box/choosed_items" unique_id=325158395]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_styles/panel = ExtResource("2_8kk5y")
+theme_override_styles/panel = SubResource("StyleBoxTexture_msale")
 
-[node name="testbtn2" type="Panel" parent="choosed_items" unique_id=1100750638]
+[node name="testbtn2" type="Panel" parent="selected_item_box/choosed_items" unique_id=1100750638]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
-theme_override_styles/panel = ExtResource("2_8kk5y")
+theme_override_styles/panel = SubResource("StyleBoxTexture_a0jua")
 
-[node name="testbtn3" type="Panel" parent="choosed_items" unique_id=1001384771]
+[node name="testbtn3" type="Panel" parent="selected_item_box/choosed_items" unique_id=1001384771]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
-theme_override_styles/panel = ExtResource("2_8kk5y")
+theme_override_styles/panel = SubResource("StyleBoxTexture_fw5pv")
+
+[node name="MakePotion" type="Button" parent="." unique_id=536323282]
+offset_left = 61.0
+offset_top = 12.0
+offset_right = 294.0
+offset_bottom = 85.0
+theme_override_styles/normal = ExtResource("16_a6teu")
+theme_override_styles/disabled = ExtResource("16_a6teu")
+disabled = true
+
+[node name="Label" type="Label" parent="MakePotion" unique_id=624391788]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -1.0
+offset_right = 2.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.6039216, 0.5019608, 0.57254905, 1)
+theme_override_font_sizes/font_size = 27
+text = "Örlés és főzés"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="disableCategories" type="Panel" parent="." unique_id=915566903]
+visible = false
+offset_left = 715.0
+offset_top = 103.0
+offset_right = 1145.0
+offset_bottom = 655.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_67q4m")
 
 [node name="points" type="GridContainer" parent="." unique_id=785419252]
 offset_left = 21.0
@@ -236,19 +400,29 @@ theme_override_font_sizes/font_size = 30
 text = "0"
 
 [node name="recipe" type="Panel" parent="." unique_id=1078800913]
-offset_left = 49.0
-offset_top = 79.0
-offset_right = 302.0
-offset_bottom = 523.0
-theme_override_styles/panel = ExtResource("2_8kk5y")
+offset_left = 47.0
+offset_top = 98.0
+offset_right = 300.0
+offset_bottom = 542.0
+
+[node name="background" type="TextureRect" parent="recipe" unique_id=1486865499]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("16_gmx3n")
+expand_mode = 1
 
 [node name="GridContainer" type="GridContainer" parent="recipe" unique_id=233012531]
 layout_mode = 0
 offset_left = 88.0
-offset_top = 224.0
+offset_top = 220.0
 offset_right = 210.0
-offset_bottom = 414.0
-theme_override_constants/h_separation = 21
+offset_bottom = 410.0
+theme_override_constants/h_separation = 22
+theme_override_constants/v_separation = 17
 columns = 3
 
 [node name="bluex" type="Label" parent="recipe/GridContainer" unique_id=415120820]
@@ -278,7 +452,17 @@ offset_left = 402.0
 offset_top = 153.0
 offset_right = 651.0
 offset_bottom = 521.0
-theme_override_styles/panel = ExtResource("2_8kk5y")
+theme_override_styles/panel = SubResource("StyleBoxTexture_jub73")
+
+[node name="TextureRect" type="TextureRect" parent="result" unique_id=516323876]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_qkra3")
+expand_mode = 1
 
 [node name="GridContainer" type="GridContainer" parent="result" unique_id=460268192]
 layout_mode = 1
@@ -336,3 +520,9 @@ text = "Good"
 horizontal_alignment = 1
 
 [node name="Dev_debug_menu" parent="." unique_id=218198422 instance=ExtResource("14_ancum")]
+
+[node name="Tutorial" parent="." unique_id=1684112177 instance=ExtResource("16_8dbo2")]
+visible = false
+
+[connection signal="pressed" from="TutorialButton" to="." method="_on_tutorial_button_pressed"]
+[connection signal="pressed" from="MakePotion" to="." method="_on_make_potion_pressed"]
