@@ -18,9 +18,11 @@
 [ext_resource type="Texture2D" uid="uid://cwyrjxmbru4wr" path="res://assets/potion/item_bg.png" id="15_1nmat"]
 [ext_resource type="Texture2D" uid="uid://bgstswdm8ffnn" path="res://assets/potion/potion ui_ingredients list_category frame.png" id="15_6p5he"]
 [ext_resource type="Texture2D" uid="uid://c6san78754ic2" path="res://assets/potion/potion ui_ingredients bar_reference.png" id="15_ron7i"]
+[ext_resource type="Texture2D" uid="uid://c58cnvvfekrmj" path="res://assets/potion/skull_icon.png" id="16_1nmat"]
 [ext_resource type="PackedScene" uid="uid://bqog7piaxqlsc" path="res://scenes/tutorial.tscn" id="16_8dbo2"]
 [ext_resource type="StyleBox" uid="uid://c3kxrhf1owtl6" path="res://styles/disableButton.tres" id="16_a6teu"]
 [ext_resource type="Texture2D" uid="uid://ipsm6bc3auxm" path="res://assets/potion/potion ui_requirement_base.png" id="16_gmx3n"]
+[ext_resource type="Texture2D" uid="uid://jyjmxgn2h3hg" path="res://assets/potion/potion ui_requirement_bar base.png" id="21_4yosp"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_67q4m"]
 animations = [{
@@ -223,33 +225,63 @@ vertical_scroll_mode = 3
 [node name="GridContainer" type="GridContainer" parent="ScrollContainer" unique_id=1683704855]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/h_separation = 13
-theme_override_constants/v_separation = 5
+theme_override_constants/h_separation = 18
+theme_override_constants/v_separation = 4
 columns = 2
 
-[node name="TextureRect" type="TextureRect" parent="ScrollContainer/GridContainer" unique_id=1550154933]
-visible = false
-custom_minimum_size = Vector2(130, 130)
-custom_maximum_size = Vector2(130, 130)
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/GridContainer" unique_id=1711898035]
+custom_minimum_size = Vector2(110, 250)
 layout_mode = 2
-texture = ExtResource("15_1nmat")
+theme_override_constants/separation = 11
 
-[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/GridContainer" unique_id=991128883]
-visible = false
-custom_maximum_size = Vector2(130, 130)
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/GridContainer/VBoxContainer" unique_id=991128883]
+custom_minimum_size = Vector2(125, 130)
 layout_mode = 2
 texture = ExtResource("15_1nmat")
+expand_mode = 1
 
-[node name="TextureRect3" type="TextureRect" parent="ScrollContainer/GridContainer" unique_id=795475046]
-visible = false
-custom_maximum_size = Vector2(130, 130)
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/GridContainer/VBoxContainer" unique_id=1691132367]
 layout_mode = 2
-texture = ExtResource("15_1nmat")
+theme_override_constants/separation = 62
 
-[node name="TextureRect4" type="TextureRect" parent="ScrollContainer/GridContainer" unique_id=1965524667]
-visible = false
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/GridContainer/VBoxContainer/HBoxContainer" unique_id=1809177744]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("16_1nmat")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="ScrollContainer/GridContainer/VBoxContainer/HBoxContainer" unique_id=887744414]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "3"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="ScrollContainer/GridContainer" unique_id=1381732127]
+custom_minimum_size = Vector2(110, 250)
+layout_mode = 2
+theme_override_constants/separation = 11
+
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/GridContainer/VBoxContainer2" unique_id=2063791303]
+custom_minimum_size = Vector2(125, 130)
 layout_mode = 2
 texture = ExtResource("15_1nmat")
+expand_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/GridContainer/VBoxContainer2" unique_id=1851847165]
+layout_mode = 2
+theme_override_constants/separation = 62
+
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/GridContainer/VBoxContainer2/HBoxContainer" unique_id=871150774]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("16_1nmat")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="ScrollContainer/GridContainer/VBoxContainer2/HBoxContainer" unique_id=859282145]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "3"
 
 [node name="selected_item_box" type="Control" parent="." unique_id=1390781761]
 layout_mode = 3
@@ -445,6 +477,45 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
 text = "3"
+
+[node name="Results" type="VBoxContainer" parent="recipe" unique_id=1331838208]
+propagate_maximum_size = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -174.0
+offset_top = 46.0
+offset_right = -33.0
+offset_bottom = 206.0
+grow_horizontal = 0
+theme_override_constants/separation = 26
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="recipe/Results" unique_id=1613962238]
+custom_minimum_size = Vector2(0, 32)
+custom_maximum_size = Vector2(140, 50)
+layout_mode = 2
+min_value = 5.0
+max_value = 50.0
+value = -3.0
+allow_greater = true
+allow_lesser = true
+nine_patch_stretch = true
+texture_under = ExtResource("21_4yosp")
+texture_over = ExtResource("21_4yosp")
+
+[node name="TextureProgressBar2" type="TextureProgressBar" parent="recipe/Results" unique_id=1510167629]
+custom_minimum_size = Vector2(0, 32)
+custom_maximum_size = Vector2(140, 50)
+layout_mode = 2
+min_value = 5.0
+max_value = 50.0
+value = 5.0
+allow_greater = true
+allow_lesser = true
+nine_patch_stretch = true
+texture_under = ExtResource("21_4yosp")
+texture_over = ExtResource("21_4yosp")
 
 [node name="result" type="Panel" parent="." unique_id=1679740515]
 visible = false

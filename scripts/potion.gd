@@ -60,19 +60,24 @@ func category_items(id: int):
 	#remove child categories
 	for child in categorie_item_box.get_children():
 		child.queue_free()
-	
+	#felépítés
+	#control
+	# -> VBoxContainer ebbe kerül a kép  és 3 változó
+	# -> -> TextureRect item gomb
+	# -> -> 3 db label
 	for item in PotionCategorie.all_instances:
 		if(item.parent_id == id):
 			var control = VBoxContainer.new()
+			control.add_child(add_bg_to_categorie("potion ui_ingredients list_category frame"))
+			control.custom_minimum_size = Vector2(125, 250)
 			var button = Button.new()
 			button.add_to_group("potion_buttons")
 			#create item button
 			button.add_child(add_bg_to_categorie("item_bg"))
-			button.custom_minimum_size = Vector2(130, 130)
+			button.custom_minimum_size = Vector2(125, 125)
 			if(used_items.find(item.id) != -1):
 				button.mouse_filter = Control.MOUSE_FILTER_IGNORE
 			else:
-				button.add_theme_stylebox_override("normal", preload("res://styles/menubox.tres"))
 				button.pressed.connect(func(): 
 					button.add_theme_stylebox_override("normal", preload("res://styles/disabled_item.tres"))
 					used_items.append(item.id)
@@ -83,14 +88,25 @@ func category_items(id: int):
 			control.add_child(button)
 			
 			#create labels for values
-			var labelgreen = create_labels_for_item(set_number(item.atr1))
-			control.add_child(labelgreen)
-			labelgreen = create_labels_for_item(set_number(item.atr2))
-			control.add_child(labelgreen)
-			labelgreen = create_labels_for_item(set_number(item.atr3))
-			control.add_child(labelgreen)
+			control.add_child(add_container("skull_icon", item.atr1))
+			control.add_child(add_container("star_icon", item.atr2))
+			control.add_child(add_container("diamond_icon", item.atr3))
 			categorie_item_box.add_child(control)
 
+#lista itemhez értékek
+func add_container(image_name: String, atr: int) -> HBoxContainer:
+	var hBoxContainer = HBoxContainer.new()
+	hBoxContainer.add_theme_constant_override("separation", 60)
+	var labelgreen = create_labels_for_item(set_number(atr))
+	var image = add_bg_to_categorie(image_name)
+	image.custom_minimum_size = Vector2i(25, 20)
+	image.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	image.set_anchors_preset(Control.PRESET_FULL_RECT)
+	hBoxContainer.add_child(image)
+	hBoxContainer.add_child(labelgreen)
+	return hBoxContainer
+
+#kategoria kép
 func add_bg_to_categorie(name: String) -> TextureRect:
 	var image = TextureRect.new()
 	image.texture = load("res://assets/potion/" + name + ".png")
@@ -124,6 +140,7 @@ func create_labels_for_item(text: String) -> Label:
 	return label
 
 #if the user choosed an item, set the picture and the values on screen
+#and create a button tu remove it
 func item_choosed(name: String, atr1: int, atr2: int, atr3: int):
 	if !item_place_1:
 		item_place_1 = true
