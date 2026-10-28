@@ -5,6 +5,7 @@
 [ext_resource type="StyleBox" uid="uid://b6ynm81qtn1v3" path="res://styles/menubox.tres" id="2_ph3nu"]
 [ext_resource type="PackedScene" uid="uid://cshl60v00b23l" path="res://scenes/dialogue_manager.tscn" id="3_4kmhl"]
 [ext_resource type="Texture2D" uid="uid://bvcmyt7enuqqj" path="res://assets/tutorial wizard/wizard_default.png" id="4_cq4me"]
+[ext_resource type="Texture2D" uid="uid://ciqhuggi2nhig" path="res://assets/potion/wizard_icon_sleep.png" id="4_nlqja"]
 [ext_resource type="Texture2D" uid="uid://btp5ofkfadkv5" path="res://assets/tutorial wizard/wizard_pointing.png" id="5_6yjpi"]
 [ext_resource type="Texture2D" uid="uid://javtmgmibwpb" path="res://assets/tutorial wizard/wizard_thinking.png" id="6_gbqnl"]
 [ext_resource type="Texture2D" uid="uid://c02psrf0vepa3" path="res://assets/tutorial wizard/wizard_evil.png" id="7_ckvwl"]
@@ -136,7 +137,7 @@ offset_left = -1.0
 offset_top = -1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_cq4me")
+texture = ExtResource("4_nlqja")
 expand_mode = 1
 
 [node name="SartTutorial" parent="." unique_id=515192348 instance=ExtResource("3_4kmhl")]

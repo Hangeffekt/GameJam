@@ -5,9 +5,13 @@ extends CanvasLayer
 @onready var recipe_box = $recipe/GridContainer
 @onready var result_box = $result/GridContainer
 @onready var tutorialScene: CanvasLayer = $Tutorial
+@onready var tutorialBtn: Button = $TutorialButton
 @onready var finishButton: Button = $MakePotion
 @onready var disableCategoryPanel: Panel = $disableCategories
 @onready var category_button_sample: Button = $Control/VBox/testbtn
+@onready var progresBarSkull: TextureProgressBar = $recipe/Results/TextureProgressBarSkull
+@onready var progresBarStar: TextureProgressBar = $recipe/Results/TextureProgressStar
+@onready var progresBarDiamond: TextureProgressBar = $recipe/Results/TextureProgressDiamond
 var sum_green: int = 0
 var sum_red: int = 0
 var sum_blue: int = 0
@@ -30,6 +34,9 @@ func _ready() -> void:
 		#get recipe
 		recipe = PotionVariation.choose_random_variation(1)
 		add_labels_to_recipe("x", "x", "x", recipe_box)
+		set_progress_value(progresBarSkull, 0, recipe[0].target_number_1)
+		set_progress_value(progresBarStar, 0, recipe[0].target_number_2)
+		set_progress_value(progresBarDiamond, 0, recipe[0].target_number_3)
 		tutorialScene.visible = false
 	
 
@@ -68,7 +75,7 @@ func category_items(id: int):
 	for item in PotionCategorie.all_instances:
 		if(item.parent_id == id):
 			var control = VBoxContainer.new()
-			control.add_child(add_bg_to_categorie("potion ui_ingredients list_category frame"))
+			#control.add_child(add_bg_to_categorie("potion ui_ingredients list_category frame"))
 			control.custom_minimum_size = Vector2(125, 250)
 			var button = Button.new()
 			button.add_to_group("potion_buttons")
@@ -77,9 +84,10 @@ func category_items(id: int):
 			button.custom_minimum_size = Vector2(125, 125)
 			if(used_items.find(item.id) != -1):
 				button.mouse_filter = Control.MOUSE_FILTER_IGNORE
+				
 			else:
 				button.pressed.connect(func(): 
-					button.add_theme_stylebox_override("normal", preload("res://styles/disabled_item.tres"))
+					button.add_child(add_bg_to_categorie("potion ui_ingredients list_used ingredient indicator overlay_02"))
 					used_items.append(item.id)
 					button.mouse_filter = Control.MOUSE_FILTER_IGNORE
 					item_choosed(item.picture_name, item.atr1, item.atr2, item.atr3))
@@ -156,6 +164,9 @@ func item_choosed(name: String, atr1: int, atr2: int, atr3: int):
 		$selected_item_box/choosed_items/testbtn3.add_child(add_image(name))
 	
 	set_and_write_values(atr1, atr2, atr3)
+	progresBarSkull.value += atr1
+	progresBarStar.value += atr2
+	progresBarDiamond.value += atr3
 	
 	if item_place_1 and item_place_2 and item_place_3:
 		finishButton.disabled = false
@@ -239,8 +250,29 @@ func end_game(atr1: int, atr2: int, atr3: int) -> void:
 	GlobalScript.nextcustomer = GlobalScript.nextcustomer + 1
 	SceneTransition.change_scene("res://scenes/shop.tscn")
 
-
+#ha pozitív nincs dolog
+#ha negatív vesszük a maximum abszolut értékét
+# ha 0 a maximum 3 és azon az értéken áll 
+func set_progress_value(texture_progress_bar: TextureProgressBar, value: float, max_limit: float):
+	
+	if max_limit > 0:
+		texture_progress_bar.min_value = 0
+		texture_progress_bar.max_value = max_limit
+		texture_progress_bar.value = 0
+		return
+	elif max_limit < 0:
+		texture_progress_bar.min_value = 0
+		texture_progress_bar.max_value = abs(max_limit)
+		texture_progress_bar.value = 0
+		return
+	else:
+		texture_progress_bar.min_value = 0
+		texture_progress_bar.max_value = 3.0
+		texture_progress_bar.value = 3.0
+		
+	
 func _on_tutorial_button_pressed() -> void:
+	tutorialBtn.visible = false
 	tutorialScene.visible = true
 	tutorialScene.choose_tutorial(2)
 

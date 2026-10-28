@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://q16q1wg764g8" path="res://assets/potion/steam animation/potion_steam_005.png" id="9_8dbo2"]
 [ext_resource type="Texture2D" uid="uid://b2fd85ojgwgqb" path="res://assets/potion/steam animation/potion_steam_006.png" id="10_a6teu"]
 [ext_resource type="Texture2D" uid="uid://b55tkn7r41er4" path="res://assets/potion/steam animation/potion_steam_007.png" id="11_gmx3n"]
-[ext_resource type="Texture2D" uid="uid://bvcmyt7enuqqj" path="res://assets/tutorial wizard/wizard_default.png" id="11_yp1kk"]
+[ext_resource type="Texture2D" uid="uid://bxkpbo002y1re" path="res://assets/potion/wizard_icon_notification_02.png" id="11_nxh22"]
 [ext_resource type="Texture2D" uid="uid://b4p4yyjma3tc1" path="res://assets/potion/steam animation/potion_steam_008.png" id="12_qkra3"]
 [ext_resource type="Texture2D" uid="uid://cw77m55bxx8v5" path="res://assets/potion/potion ui_ingredients list_base.png" id="13_qkra3"]
 [ext_resource type="Texture2D" uid="uid://bvyx0htqac8rk" path="res://assets/potion/ingredients/amethyst.png" id="13_qted3"]
@@ -23,6 +23,173 @@
 [ext_resource type="StyleBox" uid="uid://c3kxrhf1owtl6" path="res://styles/disableButton.tres" id="16_a6teu"]
 [ext_resource type="Texture2D" uid="uid://ipsm6bc3auxm" path="res://assets/potion/potion ui_requirement_base.png" id="16_gmx3n"]
 [ext_resource type="Texture2D" uid="uid://jyjmxgn2h3hg" path="res://assets/potion/potion ui_requirement_bar base.png" id="21_4yosp"]
+[ext_resource type="Texture2D" uid="uid://bgskrvbx7b4lc" path="res://assets/potion/bubble animation/bubbles_with background_0026.png" id="22_lyar8"]
+[ext_resource type="Texture2D" uid="uid://bp8j2dyk6kdhb" path="res://assets/potion/bubble animation/bubbles_with background_0027.png" id="23_746rj"]
+[ext_resource type="Texture2D" uid="uid://1k5mo7sciy2y" path="res://assets/potion/bubble animation/bubbles_with background_0028.png" id="24_ex703"]
+[ext_resource type="Texture2D" uid="uid://cblaj5c4rqtvi" path="res://assets/potion/bubble animation/bubbles_with background_0029.png" id="25_jq2hk"]
+[ext_resource type="Texture2D" uid="uid://cc4q8frruwn7y" path="res://assets/potion/bubble animation/bubbles_with background_0030.png" id="26_lwpdo"]
+[ext_resource type="Texture2D" uid="uid://bpsx5now7d8db" path="res://assets/potion/bubble animation/bubbles_with background_0031.png" id="27_woews"]
+[ext_resource type="Texture2D" uid="uid://cudsdi4yrosoe" path="res://assets/potion/bubble animation/bubbles_with background_0032.png" id="28_3rwhh"]
+[ext_resource type="Texture2D" uid="uid://1nji1l65th87" path="res://assets/potion/bubble animation/bubbles_with background_0033.png" id="29_7o4qn"]
+[ext_resource type="Texture2D" uid="uid://syumu4gu0a5p" path="res://assets/potion/bubble animation/bubbles_with background_0034.png" id="30_5w5ul"]
+[ext_resource type="Texture2D" uid="uid://dgp8d2if8m4b8" path="res://assets/potion/bubble animation/bubbles_with background_0035.png" id="31_qajbk"]
+[ext_resource type="Texture2D" uid="uid://cltsx61xwqjgw" path="res://assets/potion/bubble animation/bubbles_with background_0036.png" id="32_gi5c5"]
+[ext_resource type="Texture2D" uid="uid://bvpltc8o2iyl1" path="res://assets/potion/bubble animation/bubbles_with background_0037.png" id="33_egfhg"]
+[ext_resource type="Texture2D" uid="uid://c6ycfsdv8d421" path="res://assets/potion/bubble animation/bubbles_with background_0038.png" id="34_6ywfk"]
+[ext_resource type="Texture2D" uid="uid://qvqj4rfujwwt" path="res://assets/potion/bubble animation/bubbles_with background_0039.png" id="35_paqpw"]
+[ext_resource type="Texture2D" uid="uid://dxgpihadw0qg5" path="res://assets/potion/bubble animation/bubbles_with background_0040.png" id="36_ax2jj"]
+[ext_resource type="Texture2D" uid="uid://cumexbbqg4wp7" path="res://assets/potion/bubble animation/bubbles_with background_0041.png" id="37_esbf8"]
+[ext_resource type="Texture2D" uid="uid://bcfgvwycl480q" path="res://assets/potion/bubble animation/bubbles_with background_0042.png" id="38_s7656"]
+[ext_resource type="Texture2D" uid="uid://dx555s3rbqfi8" path="res://assets/potion/bubble animation/bubbles_with background_0043.png" id="39_5fma8"]
+[ext_resource type="Texture2D" uid="uid://dirgwtoxw3860" path="res://assets/potion/bubble animation/bubbles_with background_0044.png" id="40_eq6in"]
+[ext_resource type="Texture2D" uid="uid://cqcy1dtaeoaaj" path="res://assets/potion/bubble animation/bubbles_with background_0045.png" id="41_2a6cd"]
+[ext_resource type="Texture2D" uid="uid://57utt10qy4a3" path="res://assets/potion/bubble animation/bubbles_with background_0046.png" id="42_0lfcc"]
+[ext_resource type="Texture2D" uid="uid://bvj5yxfu5733t" path="res://assets/potion/bubble animation/bubbles_with background_0047.png" id="43_uu7a1"]
+[ext_resource type="Texture2D" uid="uid://lriqanoxni2d" path="res://assets/potion/bubble animation/bubbles_with background_0048.png" id="44_ddsa0"]
+[ext_resource type="Texture2D" uid="uid://bwfksp2dp7c16" path="res://assets/potion/bubble animation/bubbles_with background_0049.png" id="45_k3vce"]
+[ext_resource type="Texture2D" uid="uid://brj0os64oxodc" path="res://assets/potion/bubble animation/bubbles_with background_0050.png" id="46_5rr5j"]
+[ext_resource type="Texture2D" uid="uid://dtuo2fjkuh7oc" path="res://assets/potion/bubble animation/bubbles_with background_0051.png" id="47_wm84o"]
+[ext_resource type="Texture2D" uid="uid://cj4fpn2745o4i" path="res://assets/potion/bubble animation/bubbles_with background_0052.png" id="48_3hwby"]
+[ext_resource type="Texture2D" uid="uid://dtk4gyl5317iu" path="res://assets/potion/bubble animation/bubbles_with background_0053.png" id="49_0b082"]
+[ext_resource type="Texture2D" uid="uid://3sri081jenn" path="res://assets/potion/bubble animation/bubbles_with background_0054.png" id="50_oboig"]
+[ext_resource type="Texture2D" uid="uid://bwh4f20l84yjo" path="res://assets/potion/bubble animation/bubbles_with background_0055.png" id="51_jmjbx"]
+[ext_resource type="Texture2D" uid="uid://bjyx4mpuhp2cr" path="res://assets/potion/bubble animation/bubbles_with background_0056.png" id="52_fl1iw"]
+[ext_resource type="Texture2D" uid="uid://caaiybv0yadw2" path="res://assets/potion/bubble animation/bubbles_with background_0057.png" id="53_at1uo"]
+[ext_resource type="Texture2D" uid="uid://duyadybxjacku" path="res://assets/potion/bubble animation/bubbles_with background_0058.png" id="54_16u7j"]
+[ext_resource type="Texture2D" uid="uid://dxdrptu6tjvy5" path="res://assets/potion/bubble animation/bubbles_with background_0059.png" id="55_1t8a2"]
+[ext_resource type="Texture2D" uid="uid://cpyes8uq0mpyl" path="res://assets/potion/bubble animation/bubbles_with background_0060.png" id="56_t5m4n"]
+[ext_resource type="Texture2D" uid="uid://cqect2tclywco" path="res://assets/potion/bubble animation/bubbles_with background_0061.png" id="57_81uxn"]
+[ext_resource type="Texture2D" uid="uid://bpuaol645knia" path="res://assets/potion/bubble animation/bubbles_with background_0062.png" id="58_iefer"]
+[ext_resource type="Texture2D" uid="uid://coy5qjvy6gppv" path="res://assets/potion/bubble animation/bubbles_with background_0063.png" id="59_t8syr"]
+[ext_resource type="Texture2D" uid="uid://deiocryvglyr3" path="res://assets/potion/bubble animation/bubbles_with background_0064.png" id="60_w1cp5"]
+[ext_resource type="Texture2D" uid="uid://cujmu1w5wfmld" path="res://assets/potion/bubble animation/bubbles_with background_0065.png" id="61_20acx"]
+[ext_resource type="Texture2D" uid="uid://24tm4wmbvc7e" path="res://assets/potion/bubble animation/bubbles_with background_0066.png" id="62_j0s4t"]
+[ext_resource type="Texture2D" uid="uid://obug5h5i3wh8" path="res://assets/potion/bubble animation/bubbles_with background_0067.png" id="63_mufhl"]
+[ext_resource type="Texture2D" uid="uid://bn8c6xq7ucjis" path="res://assets/potion/bubble animation/bubbles_with background_0068.png" id="64_wf6fl"]
+[ext_resource type="Texture2D" uid="uid://bwjsti41d37ep" path="res://assets/potion/bubble animation/bubbles_with background_0069.png" id="65_3v5xg"]
+[ext_resource type="Texture2D" uid="uid://diy5jtqodauna" path="res://assets/potion/bubble animation/bubbles_with background_0070.png" id="66_c0hka"]
+[ext_resource type="Texture2D" uid="uid://bbf2h8ybidqyp" path="res://assets/potion/bubble animation/bubbles_with background_0071.png" id="67_yq81l"]
+[ext_resource type="Texture2D" uid="uid://d4av2akwernq1" path="res://assets/potion/bubble animation/bubbles_with background_0072.png" id="68_disuf"]
+[ext_resource type="Texture2D" uid="uid://ena2pee8rfgh" path="res://assets/potion/bubble animation/bubbles_with background_0073.png" id="69_w286r"]
+[ext_resource type="Texture2D" uid="uid://bfh5jqk7kethp" path="res://assets/potion/bubble animation/bubbles_with background_0074.png" id="70_htys2"]
+[ext_resource type="Texture2D" uid="uid://b5fpjn48t3kt5" path="res://assets/potion/bubble animation/bubbles_with background_0075.png" id="71_dp2ii"]
+[ext_resource type="Texture2D" uid="uid://c6hmggyoc5tef" path="res://assets/potion/bubble animation/bubbles_with background_0076.png" id="72_wm4v0"]
+[ext_resource type="Texture2D" uid="uid://sxj2t6c0y6dn" path="res://assets/potion/bubble animation/bubbles_with background_0077.png" id="73_y4lji"]
+[ext_resource type="Texture2D" uid="uid://q4o0mpgi0m36" path="res://assets/potion/bubble animation/bubbles_with background_0078.png" id="74_4smmy"]
+[ext_resource type="Texture2D" uid="uid://c3ybtcsmcgpmd" path="res://assets/potion/bubble animation/bubbles_with background_0079.png" id="75_jj8pe"]
+[ext_resource type="Texture2D" uid="uid://dke6mftk6lx3s" path="res://assets/potion/bubble animation/bubbles_with background_0080.png" id="76_ws50u"]
+[ext_resource type="Texture2D" uid="uid://n4vnnb5ns2x4" path="res://assets/potion/bubble animation/bubbles_with background_0081.png" id="77_m5grv"]
+[ext_resource type="Texture2D" uid="uid://c8cp7vnruk7i" path="res://assets/potion/bubble animation/bubbles_with background_0082.png" id="78_k10uh"]
+[ext_resource type="Texture2D" uid="uid://qpjm8jbn37ov" path="res://assets/potion/bubble animation/bubbles_with background_0083.png" id="79_yt61c"]
+[ext_resource type="Texture2D" uid="uid://j8514ofqox4a" path="res://assets/potion/bubble animation/bubbles_with background_0084.png" id="80_qxtuo"]
+[ext_resource type="Texture2D" uid="uid://dkqb3ju5jers3" path="res://assets/potion/bubble animation/bubbles_with background_0085.png" id="81_a0eln"]
+[ext_resource type="Texture2D" uid="uid://drmrgwwjffhpg" path="res://assets/potion/bubble animation/bubbles_with background_0086.png" id="82_uhnah"]
+[ext_resource type="Texture2D" uid="uid://cspf40gywt7d3" path="res://assets/potion/bubble animation/bubbles_with background_0087.png" id="83_f0d84"]
+[ext_resource type="Texture2D" uid="uid://bpgfdu55agmsm" path="res://assets/potion/bubble animation/bubbles_with background_0088.png" id="84_7h1ci"]
+[ext_resource type="Texture2D" uid="uid://c632q4nkqfjap" path="res://assets/potion/bubble animation/bubbles_with background_0089.png" id="85_p716c"]
+[ext_resource type="Texture2D" uid="uid://dheb75ad7hic8" path="res://assets/potion/bubble animation/bubbles_with background_0090.png" id="86_nmmpc"]
+[ext_resource type="Texture2D" uid="uid://14jd8wcqgapx" path="res://assets/potion/bubble animation/bubbles_with background_0091.png" id="87_78w1c"]
+[ext_resource type="Texture2D" uid="uid://dljo8wjhg0xms" path="res://assets/potion/bubble animation/bubbles_with background_0092.png" id="88_5pkc2"]
+[ext_resource type="Texture2D" uid="uid://bcfbtkbwf3aal" path="res://assets/potion/bubble animation/bubbles_with background_0093.png" id="89_lrrqu"]
+[ext_resource type="Texture2D" uid="uid://gannqetexmry" path="res://assets/potion/bubble animation/bubbles_with background_0094.png" id="90_sn8tx"]
+[ext_resource type="Texture2D" uid="uid://ca3pedt8e16m" path="res://assets/potion/bubble animation/bubbles_with background_0095.png" id="91_0c3vh"]
+[ext_resource type="Texture2D" uid="uid://dao5hdu3vqj1m" path="res://assets/potion/bubble animation/bubbles_with background_0096.png" id="92_nxm4a"]
+[ext_resource type="Texture2D" uid="uid://crbb68ohyq2k8" path="res://assets/potion/bubble animation/bubbles_with background_0097.png" id="93_bewna"]
+[ext_resource type="Texture2D" uid="uid://dr2w4m86trf6i" path="res://assets/potion/bubble animation/bubbles_with background_0098.png" id="94_8g8sk"]
+[ext_resource type="Texture2D" uid="uid://ctvy7hq5626f7" path="res://assets/potion/bubble animation/bubbles_with background_0099.png" id="95_emvrf"]
+[ext_resource type="Texture2D" uid="uid://dh5lexdrctujf" path="res://assets/potion/bubble animation/bubbles_with background_0100.png" id="96_3ycb5"]
+[ext_resource type="Texture2D" uid="uid://bjpwnc024ga5q" path="res://assets/potion/bubble animation/bubbles_with background_0101.png" id="97_ybhpq"]
+[ext_resource type="Texture2D" uid="uid://xi2t5ijob204" path="res://assets/potion/bubble animation/bubbles_with background_0102.png" id="98_5edyn"]
+[ext_resource type="Texture2D" uid="uid://c0ou42pm8edyb" path="res://assets/potion/bubble animation/bubbles_with background_0103.png" id="99_fb2oe"]
+[ext_resource type="Texture2D" uid="uid://bnhv7cqg6wm1q" path="res://assets/potion/bubble animation/bubbles_with background_0104.png" id="100_03cc7"]
+[ext_resource type="Texture2D" uid="uid://b4inbukax7h0e" path="res://assets/potion/bubble animation/bubbles_with background_0105.png" id="101_21wfa"]
+[ext_resource type="Texture2D" uid="uid://be11nu5yrk78e" path="res://assets/potion/bubble animation/bubbles_with background_0106.png" id="102_x5nx3"]
+[ext_resource type="Texture2D" uid="uid://iweuhrekxoug" path="res://assets/potion/bubble animation/bubbles_with background_0107.png" id="103_aiikr"]
+[ext_resource type="Texture2D" uid="uid://dje0nkgyg2ns5" path="res://assets/potion/bubble animation/bubbles_with background_0108.png" id="104_kd0lo"]
+[ext_resource type="Texture2D" uid="uid://d2l50twqjqpqh" path="res://assets/potion/bubble animation/bubbles_with background_0109.png" id="105_a33vi"]
+[ext_resource type="Texture2D" uid="uid://dtgaqsltbafog" path="res://assets/potion/bubble animation/bubbles_with background_0110.png" id="106_4rbib"]
+[ext_resource type="Texture2D" uid="uid://dpdk3ae7muyop" path="res://assets/potion/bubble animation/bubbles_with background_0111.png" id="107_j812a"]
+[ext_resource type="Texture2D" uid="uid://x7ask2kxssem" path="res://assets/potion/bubble animation/bubbles_with background_0112.png" id="108_urgl7"]
+[ext_resource type="Texture2D" uid="uid://c5oibw8dugy2h" path="res://assets/potion/bubble animation/bubbles_with background_0113.png" id="109_o7vrl"]
+[ext_resource type="Texture2D" uid="uid://bex887g22t5tp" path="res://assets/potion/bubble animation/bubbles_with background_0114.png" id="110_qn77v"]
+[ext_resource type="Texture2D" uid="uid://bowuvt5ke8f30" path="res://assets/potion/bubble animation/bubbles_with background_0115.png" id="111_vsi6f"]
+[ext_resource type="Texture2D" uid="uid://cuhvdt6j7cx7a" path="res://assets/potion/bubble animation/bubbles_with background_0116.png" id="112_t3fd3"]
+[ext_resource type="Texture2D" uid="uid://de6n727x254dq" path="res://assets/potion/bubble animation/bubbles_with background_0117.png" id="113_isq2u"]
+[ext_resource type="Texture2D" uid="uid://cdpplllxfqbah" path="res://assets/potion/bubble animation/bubbles_with background_0118.png" id="114_35fqc"]
+[ext_resource type="Texture2D" uid="uid://djmw4pc1wsiat" path="res://assets/potion/bubble animation/bubbles_with background_0119.png" id="115_q4dyl"]
+[ext_resource type="Texture2D" uid="uid://cldm87tdxtmj7" path="res://assets/potion/bubble animation/bubbles_with background_0120.png" id="116_s64io"]
+[ext_resource type="Texture2D" uid="uid://btstkddnf8cwk" path="res://assets/potion/bubble animation/bubbles_with background_0121.png" id="117_udos5"]
+[ext_resource type="Texture2D" uid="uid://2qr6ttihupei" path="res://assets/potion/bubble animation/bubbles_with background_0122.png" id="118_p5dcr"]
+[ext_resource type="Texture2D" uid="uid://btgjseq6m67yp" path="res://assets/potion/bubble animation/bubbles_with background_0123.png" id="119_6ov5w"]
+[ext_resource type="Texture2D" uid="uid://cwc4ma6nfscjc" path="res://assets/potion/bubble animation/bubbles_with background_0124.png" id="120_ey6ce"]
+[ext_resource type="Texture2D" uid="uid://6ca7m0odaxn5" path="res://assets/potion/bubble animation/bubbles_with background_0125.png" id="121_cymsp"]
+[ext_resource type="Texture2D" uid="uid://duphvxlw3srrm" path="res://assets/potion/bubble animation/bubbles_with background_0126.png" id="122_mj1l5"]
+[ext_resource type="Texture2D" uid="uid://cd11w601bajjd" path="res://assets/potion/bubble animation/bubbles_with background_0127.png" id="123_7mlh6"]
+[ext_resource type="Texture2D" uid="uid://dk3esm2r66qk3" path="res://assets/potion/bubble animation/bubbles_with background_0128.png" id="124_71gx8"]
+[ext_resource type="Texture2D" uid="uid://doawab7kb586r" path="res://assets/potion/bubble animation/bubbles_with background_0129.png" id="125_ytdjj"]
+[ext_resource type="Texture2D" uid="uid://dgwya1d5rnads" path="res://assets/potion/bubble animation/bubbles_with background_0130.png" id="126_pdtul"]
+[ext_resource type="Texture2D" uid="uid://dmci4b5cycq0y" path="res://assets/potion/bubble animation/bubbles_with background_0131.png" id="127_yuu5f"]
+[ext_resource type="Texture2D" uid="uid://dlqhi6he7l1mf" path="res://assets/potion/bubble animation/bubbles_with background_0132.png" id="128_gbdsv"]
+[ext_resource type="Texture2D" uid="uid://cv283s5fd8vjr" path="res://assets/potion/bubble animation/bubbles_with background_0133.png" id="129_gtojt"]
+[ext_resource type="Texture2D" uid="uid://bf1h165rrjyx0" path="res://assets/potion/bubble animation/bubbles_with background_0134.png" id="130_y6rld"]
+[ext_resource type="Texture2D" uid="uid://by5lmu0ef7rr0" path="res://assets/potion/bubble animation/bubbles_with background_0135.png" id="131_8efso"]
+[ext_resource type="Texture2D" uid="uid://2ok0b6b6gghn" path="res://assets/potion/bubble animation/bubbles_with background_0136.png" id="132_klhnk"]
+[ext_resource type="Texture2D" uid="uid://cbk4aiygdliyr" path="res://assets/potion/bubble animation/bubbles_with background_0137.png" id="133_7x6hb"]
+[ext_resource type="Texture2D" uid="uid://27dsp25yt1li" path="res://assets/potion/bubble animation/bubbles_with background_0138.png" id="134_lb0gp"]
+[ext_resource type="Texture2D" uid="uid://c01kw8u5qjsny" path="res://assets/potion/bubble animation/bubbles_with background_0139.png" id="135_t4o6x"]
+[ext_resource type="Texture2D" uid="uid://b2tfhnsrc5jeh" path="res://assets/potion/bubble animation/bubbles_with background_0140.png" id="136_jm70a"]
+[ext_resource type="Texture2D" uid="uid://7gncvtkwr7jw" path="res://assets/potion/bubble animation/bubbles_with background_0141.png" id="137_1o5lg"]
+[ext_resource type="Texture2D" uid="uid://boqdu4172q7pc" path="res://assets/potion/bubble animation/bubbles_with background_0142.png" id="138_syyg1"]
+[ext_resource type="Texture2D" uid="uid://b4k84pkt6it2r" path="res://assets/potion/bubble animation/bubbles_with background_0143.png" id="139_anod2"]
+[ext_resource type="Texture2D" uid="uid://c6s83ch30fsge" path="res://assets/potion/bubble animation/bubbles_with background_0144.png" id="140_rqk6p"]
+[ext_resource type="Texture2D" uid="uid://1mqtradtmp2r" path="res://assets/potion/bubble animation/bubbles_with background_0145.png" id="141_5ff88"]
+[ext_resource type="Texture2D" uid="uid://cfd3xoh0o353n" path="res://assets/potion/bubble animation/bubbles_with background_0146.png" id="142_or7sf"]
+[ext_resource type="Texture2D" uid="uid://bi7tr75cn5jps" path="res://assets/potion/bubble animation/bubbles_with background_0147.png" id="143_pd8hj"]
+[ext_resource type="Texture2D" uid="uid://cyd5goi0yrxae" path="res://assets/potion/bubble animation/bubbles_with background_0148.png" id="144_6lhqd"]
+[ext_resource type="Texture2D" uid="uid://dunard2q0j388" path="res://assets/potion/bubble animation/bubbles_with background_0149.png" id="145_l7vv4"]
+[ext_resource type="Texture2D" uid="uid://cfjqb458yi1te" path="res://assets/potion/bubble animation/bubbles_with background_0150.png" id="146_5crmu"]
+[ext_resource type="Texture2D" uid="uid://bsws1yn5ugfwt" path="res://assets/potion/bubble animation/bubbles_with background_0151.png" id="147_a8qtr"]
+[ext_resource type="Texture2D" uid="uid://kf1wcoec2hfa" path="res://assets/potion/bubble animation/bubbles_with background_0152.png" id="148_2vwgq"]
+[ext_resource type="Texture2D" uid="uid://dvaqkdmgiw636" path="res://assets/potion/bubble animation/bubbles_with background_0153.png" id="149_lm7tn"]
+[ext_resource type="Texture2D" uid="uid://dniayc3ycvvv1" path="res://assets/potion/bubble animation/bubbles_with background_0154.png" id="150_t4nx6"]
+[ext_resource type="Texture2D" uid="uid://c8bftrws4upy8" path="res://assets/potion/bubble animation/bubbles_with background_0155.png" id="151_4bkar"]
+[ext_resource type="Texture2D" uid="uid://c4cwuvnlrh34y" path="res://assets/potion/bubble animation/bubbles_with background_0156.png" id="152_okc01"]
+[ext_resource type="Texture2D" uid="uid://bqlcmjasmy564" path="res://assets/potion/bubble animation/bubbles_with background_0157.png" id="153_xrsjw"]
+[ext_resource type="Texture2D" uid="uid://cjxlwyqvny08w" path="res://assets/potion/bubble animation/bubbles_with background_0158.png" id="154_sm38n"]
+[ext_resource type="Texture2D" uid="uid://ce0nv4e0snwcw" path="res://assets/potion/bubble animation/bubbles_with background_0159.png" id="155_kmjqa"]
+[ext_resource type="Texture2D" uid="uid://blcewnej8tf07" path="res://assets/potion/bubble animation/bubbles_with background_0160.png" id="156_ajomr"]
+[ext_resource type="Texture2D" uid="uid://c24q85xcbq88m" path="res://assets/potion/bubble animation/bubbles_with background_0161.png" id="157_ivuho"]
+[ext_resource type="Texture2D" uid="uid://de3weq0tw8wil" path="res://assets/potion/bubble animation/bubbles_with background_0162.png" id="158_11j1d"]
+[ext_resource type="Texture2D" uid="uid://cvd42gtbhgdwr" path="res://assets/potion/bubble animation/bubbles_with background_0163.png" id="159_8fcbf"]
+[ext_resource type="Texture2D" uid="uid://ctbjubw5l7h0x" path="res://assets/potion/bubble animation/bubbles_with background_0164.png" id="160_6m0oh"]
+[ext_resource type="Texture2D" uid="uid://odbgeflmuow6" path="res://assets/potion/bubble animation/bubbles_with background_0165.png" id="161_owqjq"]
+[ext_resource type="Texture2D" uid="uid://c0mk5b8k4gnpv" path="res://assets/potion/bubble animation/bubbles_with background_0166.png" id="162_ln5nb"]
+[ext_resource type="Texture2D" uid="uid://d8xi86ddl1o0" path="res://assets/potion/bubble animation/bubbles_with background_0167.png" id="163_lo7ey"]
+[ext_resource type="Texture2D" uid="uid://bsckw2llwekxh" path="res://assets/potion/bubble animation/bubbles_with background_0168.png" id="164_ryqph"]
+[ext_resource type="Texture2D" uid="uid://0g7wvurpftnx" path="res://assets/potion/bubble animation/bubbles_with background_0169.png" id="165_oy345"]
+[ext_resource type="Texture2D" uid="uid://d05wapmgpdoxc" path="res://assets/potion/bubble animation/bubbles_with background_0170.png" id="166_4h6bg"]
+[ext_resource type="Texture2D" uid="uid://c11v2tkkkw64e" path="res://assets/potion/bubble animation/bubbles_with background_0171.png" id="167_tf6bj"]
+[ext_resource type="Texture2D" uid="uid://c16c08qeuatru" path="res://assets/potion/bubble animation/bubbles_with background_0172.png" id="168_eor6a"]
+[ext_resource type="Texture2D" uid="uid://cy262h1sqn15l" path="res://assets/potion/bubble animation/bubbles_with background_0173.png" id="169_vmrj3"]
+[ext_resource type="Texture2D" uid="uid://dcpgocn167jwh" path="res://assets/potion/bubble animation/bubbles_with background_0174.png" id="170_cv3oe"]
+[ext_resource type="Texture2D" uid="uid://duqppfh37681j" path="res://assets/potion/bubble animation/bubbles_with background_0175.png" id="171_yt815"]
+[ext_resource type="Texture2D" uid="uid://c0187c3t2w5br" path="res://assets/potion/bubble animation/bubbles_with background_0176.png" id="172_0t4am"]
+[ext_resource type="Texture2D" uid="uid://bsawfpj2k5hv7" path="res://assets/potion/bubble animation/bubbles_with background_0177.png" id="173_dwp8f"]
+[ext_resource type="Texture2D" uid="uid://dn7q5jgdglc6u" path="res://assets/potion/bubble animation/bubbles_with background_0178.png" id="174_7e0ot"]
+[ext_resource type="Texture2D" uid="uid://gw888uohhl7s" path="res://assets/potion/bubble animation/bubbles_with background_0179.png" id="175_jh2l8"]
+[ext_resource type="Texture2D" uid="uid://c8occlvy6vlv" path="res://assets/potion/bubble animation/bubbles_with background_0180.png" id="176_5xf7s"]
+[ext_resource type="Texture2D" uid="uid://css4icxoaid2i" path="res://assets/potion/bubble animation/bubbles_with background_0181.png" id="177_lrtgr"]
+[ext_resource type="Texture2D" uid="uid://bapofm86ss0qq" path="res://assets/potion/bubble animation/bubbles_with background_0182.png" id="178_pmcjn"]
+[ext_resource type="Texture2D" uid="uid://bjt6ub5gp7dp5" path="res://assets/potion/bubble animation/bubbles_with background_0183.png" id="179_vg3bw"]
+[ext_resource type="Texture2D" uid="uid://1k5mxylefoyh" path="res://assets/potion/bubble animation/bubbles_with background_0184.png" id="180_dnswq"]
+[ext_resource type="Texture2D" uid="uid://cerxp005pj5ns" path="res://assets/potion/bubble animation/bubbles_with background_0185.png" id="181_aiilw"]
+[ext_resource type="Texture2D" uid="uid://b3rxcxo262f4u" path="res://assets/potion/bubble animation/bubbles_with background_0186.png" id="182_nn0ar"]
+[ext_resource type="Texture2D" uid="uid://darexay88ecbv" path="res://assets/potion/bubble animation/bubbles_with background_0187.png" id="183_72ghu"]
+[ext_resource type="Texture2D" uid="uid://b4ric8ebxj6oy" path="res://assets/potion/bubble animation/bubbles_with background_0188.png" id="184_bvwxh"]
+[ext_resource type="Texture2D" uid="uid://fsv1cw1v3ojw" path="res://assets/potion/bubble animation/bubbles_with background_0189.png" id="185_mmujk"]
+[ext_resource type="Texture2D" uid="uid://b8h7kayitdu5n" path="res://assets/potion/bubble animation/bubbles_with background_0190.png" id="186_0kw1w"]
+[ext_resource type="Texture2D" uid="uid://dy6s8idjfp05r" path="res://assets/potion/bubble animation/bubbles_with background_0191.png" id="187_udsmy"]
+[ext_resource type="Texture2D" uid="uid://v6o0r78dotu1" path="res://assets/potion/potion ui_requirement_bar gsdag.png" id="188_746rj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_67q4m"]
 animations = [{
@@ -81,6 +248,512 @@ bg_color = Color(0.92156863, 0.8039216, 0.8352941, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_67q4m"]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_a0jua"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_lyar8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_746rj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_ex703")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_jq2hk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_lwpdo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_woews")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_3rwhh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_7o4qn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_5w5ul")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_qajbk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_gi5c5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_egfhg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_6ywfk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_paqpw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_ax2jj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_esbf8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_s7656")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_5fma8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_eq6in")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_2a6cd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_0lfcc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_uu7a1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_ddsa0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_k3vce")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_5rr5j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_wm84o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_3hwby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_0b082")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_oboig")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_jmjbx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_fl1iw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_at1uo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_16u7j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_1t8a2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_t5m4n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_81uxn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_iefer")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_t8syr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_w1cp5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_20acx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_j0s4t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_mufhl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_wf6fl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_3v5xg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_c0hka")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_yq81l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_disuf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_w286r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_htys2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_dp2ii")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_wm4v0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_y4lji")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_4smmy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_jj8pe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_ws50u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_m5grv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_k10uh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_yt61c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_qxtuo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_a0eln")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_uhnah")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_f0d84")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_7h1ci")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_p716c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_nmmpc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_78w1c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_5pkc2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_lrrqu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_sn8tx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_0c3vh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_nxm4a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_bewna")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_8g8sk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_emvrf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_3ycb5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_ybhpq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_5edyn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_fb2oe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_03cc7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_21wfa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_x5nx3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_aiikr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_kd0lo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_a33vi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106_4rbib")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107_j812a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108_urgl7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("109_o7vrl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("110_qn77v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("111_vsi6f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("112_t3fd3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("113_isq2u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("114_35fqc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("115_q4dyl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("116_s64io")
+}, {
+"duration": 1.0,
+"texture": ExtResource("117_udos5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("118_p5dcr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("119_6ov5w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("120_ey6ce")
+}, {
+"duration": 1.0,
+"texture": ExtResource("121_cymsp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("122_mj1l5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("123_7mlh6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("124_71gx8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("125_ytdjj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("126_pdtul")
+}, {
+"duration": 1.0,
+"texture": ExtResource("127_yuu5f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("128_gbdsv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("129_gtojt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("130_y6rld")
+}, {
+"duration": 1.0,
+"texture": ExtResource("131_8efso")
+}, {
+"duration": 1.0,
+"texture": ExtResource("132_klhnk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("133_7x6hb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_lb0gp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("135_t4o6x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("136_jm70a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("137_1o5lg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("138_syyg1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("139_anod2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("140_rqk6p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("141_5ff88")
+}, {
+"duration": 1.0,
+"texture": ExtResource("142_or7sf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("143_pd8hj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("144_6lhqd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("145_l7vv4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("146_5crmu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("147_a8qtr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("148_2vwgq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("149_lm7tn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("150_t4nx6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("151_4bkar")
+}, {
+"duration": 1.0,
+"texture": ExtResource("152_okc01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("153_xrsjw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("154_sm38n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("155_kmjqa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("156_ajomr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("157_ivuho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("158_11j1d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("159_8fcbf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("160_6m0oh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("161_owqjq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("162_ln5nb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("163_lo7ey")
+}, {
+"duration": 1.0,
+"texture": ExtResource("164_ryqph")
+}, {
+"duration": 1.0,
+"texture": ExtResource("165_oy345")
+}, {
+"duration": 1.0,
+"texture": ExtResource("166_4h6bg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("167_tf6bj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("168_eor6a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("169_vmrj3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("170_cv3oe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("171_yt815")
+}, {
+"duration": 1.0,
+"texture": ExtResource("172_0t4am")
+}, {
+"duration": 1.0,
+"texture": ExtResource("173_dwp8f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("174_7e0ot")
+}, {
+"duration": 1.0,
+"texture": ExtResource("175_jh2l8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("176_5xf7s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("177_lrtgr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("178_pmcjn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("179_vg3bw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("180_dnswq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("181_aiilw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("182_nn0ar")
+}, {
+"duration": 1.0,
+"texture": ExtResource("183_72ghu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("184_bvwxh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("185_mmujk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("186_0kw1w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("187_udsmy")
+}],
+"loop": 1,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jub73"]
 
 [node name="potion" type="CanvasLayer" unique_id=947814072]
@@ -115,11 +788,13 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1.0
-offset_top = -1.0
+offset_left = 25.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = -25.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_yp1kk")
+texture = ExtResource("11_nxh22")
 expand_mode = 1
 
 [node name="Control" type="Control" parent="." unique_id=104414477]
@@ -484,38 +1159,84 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -174.0
-offset_top = 46.0
-offset_right = -33.0
-offset_bottom = 206.0
+offset_left = -175.0
+offset_top = 57.0
+offset_right = -34.0
+offset_bottom = 217.0
 grow_horizontal = 0
-theme_override_constants/separation = 26
+theme_override_constants/separation = 41
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="recipe/Results" unique_id=1613962238]
-custom_minimum_size = Vector2(0, 32)
+[node name="TextureProgressBarSkull" type="TextureProgressBar" parent="recipe/Results" unique_id=1613962238]
+clip_children = 1
+custom_minimum_size = Vector2(0, 20)
 custom_maximum_size = Vector2(140, 50)
 layout_mode = 2
-min_value = 5.0
-max_value = 50.0
-value = -3.0
+max_value = 4.0
+value = 3.0
 allow_greater = true
 allow_lesser = true
 nine_patch_stretch = true
-texture_under = ExtResource("21_4yosp")
-texture_over = ExtResource("21_4yosp")
+texture_progress = ExtResource("21_4yosp")
 
-[node name="TextureProgressBar2" type="TextureProgressBar" parent="recipe/Results" unique_id=1510167629]
-custom_minimum_size = Vector2(0, 32)
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="recipe/Results/TextureProgressBarSkull" unique_id=405462380]
+position = Vector2(70, 16)
+scale = Vector2(0.6650001, 0.7999999)
+sprite_frames = SubResource("SpriteFrames_a0jua")
+animation = &"new_animation"
+autoplay = "new_animation"
+frame_progress = 0.59763
+
+[node name="TextureRect" type="TextureRect" parent="recipe/Results/TextureProgressBarSkull" unique_id=1133102830]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5392857
+anchor_bottom = 1.05
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("188_746rj")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureProgressStar" type="TextureProgressBar" parent="recipe/Results" unique_id=990007394]
+clip_children = 1
+custom_minimum_size = Vector2(0, 20)
 custom_maximum_size = Vector2(140, 50)
 layout_mode = 2
-min_value = 5.0
-max_value = 50.0
-value = 5.0
+max_value = 5.0
+value = 3.0
 allow_greater = true
 allow_lesser = true
 nine_patch_stretch = true
-texture_under = ExtResource("21_4yosp")
-texture_over = ExtResource("21_4yosp")
+texture_progress = ExtResource("21_4yosp")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="recipe/Results/TextureProgressStar" unique_id=837611022]
+position = Vector2(70, 16)
+scale = Vector2(0.6650001, 0.7999999)
+sprite_frames = SubResource("SpriteFrames_a0jua")
+animation = &"new_animation"
+autoplay = "new_animation"
+frame_progress = 0.94288254
+
+[node name="TextureProgressDiamond" type="TextureProgressBar" parent="recipe/Results" unique_id=535219067]
+clip_children = 1
+custom_minimum_size = Vector2(0, 20)
+custom_maximum_size = Vector2(140, 50)
+layout_mode = 2
+max_value = 5.0
+value = 3.0
+allow_greater = true
+allow_lesser = true
+nine_patch_stretch = true
+texture_progress = ExtResource("21_4yosp")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="recipe/Results/TextureProgressDiamond" unique_id=1977261063]
+position = Vector2(70, 16)
+scale = Vector2(0.6650001, 0.7999999)
+sprite_frames = SubResource("SpriteFrames_a0jua")
+animation = &"new_animation"
+autoplay = "new_animation"
+frame_progress = 0.94288254
 
 [node name="result" type="Panel" parent="." unique_id=1679740515]
 visible = false
