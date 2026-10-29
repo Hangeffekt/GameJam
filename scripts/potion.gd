@@ -9,9 +9,12 @@ extends CanvasLayer
 @onready var finishButton: Button = $MakePotion
 @onready var disableCategoryPanel: Panel = $disableCategories
 @onready var category_button_sample: Button = $Control/VBox/testbtn
-@onready var progresBarSkull: TextureProgressBar = $recipe/Results/TextureProgressBarSkull
-@onready var progresBarStar: TextureProgressBar = $recipe/Results/TextureProgressStar
-@onready var progresBarDiamond: TextureProgressBar = $recipe/Results/TextureProgressDiamond
+@onready var progresBarSkull: TextureProgressBar = $recipe/Results/ControlSkull/TextureProgressBarSkull
+@onready var maxSignSkull: TextureRect = $recipe/Results/ControlSkull/MaxSign
+@onready var progresBarStar: TextureProgressBar = $recipe/Results/ControlStar/TextureProgressBarStar
+@onready var maxSignStar: TextureRect = $recipe/Results/ControlStar/MaxSign
+@onready var progresBarDiamond: TextureProgressBar = $recipe/Results/ControlDiamond/TextureProgressBarDiamond
+@onready var maxSignDiamond: TextureRect = $recipe/Results/ControlDiamond/MaxSign
 var sum_green: int = 0
 var sum_red: int = 0
 var sum_blue: int = 0
@@ -32,11 +35,11 @@ func _ready() -> void:
 		category_buttons(1)
 	
 		#get recipe
-		recipe = PotionVariation.choose_random_variation(1)
+		recipe = PotionVariation.choose_random_variation(3)
 		add_labels_to_recipe("x", "x", "x", recipe_box)
-		set_progress_value(progresBarSkull, 0, recipe[0].target_number_1)
-		set_progress_value(progresBarStar, 0, recipe[0].target_number_2)
-		set_progress_value(progresBarDiamond, 0, recipe[0].target_number_3)
+		set_progress_value(progresBarSkull, maxSignSkull, recipe[0].relation_1, 0, recipe[0].target_number_1)
+		set_progress_value(progresBarStar, maxSignStar, recipe[0].relation_2, 0, recipe[0].target_number_2)
+		set_progress_value(progresBarDiamond, maxSignDiamond, recipe[0].relation_3, 0, recipe[0].target_number_3)
 		tutorialScene.visible = false
 	
 
@@ -164,9 +167,12 @@ func item_choosed(name: String, atr1: int, atr2: int, atr3: int):
 		$selected_item_box/choosed_items/testbtn3.add_child(add_image(name))
 	
 	set_and_write_values(atr1, atr2, atr3)
-	progresBarSkull.value += atr1
-	progresBarStar.value += atr2
-	progresBarDiamond.value += atr3
+	#progresBarSkull.value += atr1
+	countProgressBarResult(progresBarSkull, atr1, recipe[0].relation_1, recipe[0].target_number_1)
+	#progresBarStar.value += atr2
+	countProgressBarResult(progresBarStar, atr2, recipe[0].relation_2, recipe[0].target_number_2)
+	#progresBarDiamond.value += atr3
+	countProgressBarResult(progresBarDiamond, atr3, recipe[0].relation_3, recipe[0].target_number_3)
 	
 	if item_place_1 and item_place_2 and item_place_3:
 		finishButton.disabled = false
@@ -174,6 +180,25 @@ func item_choosed(name: String, atr1: int, atr2: int, atr3: int):
 		finishButton.add_theme_stylebox_override("normal", preload("res://styles/menubox.tres"))
 		
 
+func countProgressBarResult(bar: TextureProgressBar, atr: int, relacio: String, target: int) -> void:
+	if target > 0:
+		bar.value += atr
+	elif target < 0:
+		bar.value += (atr * -1)
+	elif target == 0 and relacio == '>':
+		bar.value += atr
+	elif target == 0 and relacio == '<':
+		bar.value += (atr * -1)
+	else:
+		print("megy")
+		if bar.value > 2 and atr > 0:
+			bar.value += (atr * -1)
+		elif bar.value > 2 and atr < 0:
+			bar.value += atr
+		elif bar.value <= 2:
+			bar.value += (atr * -1)
+	
+	
 func set_and_write_values(atr1: int, atr2: int, atr3: int) -> void:
 	sum_red = sum_red + atr1
 	sum_green = sum_green + atr2
@@ -253,23 +278,30 @@ func end_game(atr1: int, atr2: int, atr3: int) -> void:
 #ha pozitív nincs dolog
 #ha negatív vesszük a maximum abszolut értékét
 # ha 0 a maximum 3 és azon az értéken áll 
-func set_progress_value(texture_progress_bar: TextureProgressBar, value: float, max_limit: float):
+func set_progress_value(texture_progress_bar: TextureProgressBar, maxSign: TextureRect, relacio:String, value: float, max_limit: float):
 	
+	maxSign.position.x = 128/(abs(max_limit)+2)*abs(max_limit+1)
+	maxSign.position.y = -3.0
 	if max_limit > 0:
 		texture_progress_bar.min_value = 0
-		texture_progress_bar.max_value = max_limit
-		texture_progress_bar.value = 0
+		texture_progress_bar.max_value = max_limit + 1
+		texture_progress_bar.value = 0.0
 		return
 	elif max_limit < 0:
 		texture_progress_bar.min_value = 0
-		texture_progress_bar.max_value = abs(max_limit)
+		texture_progress_bar.max_value = abs(max_limit) + 1
 		texture_progress_bar.value = 0
 		return
-	else:
+	elif max_limit == 0 and relacio != '-':
+		maxSign.position.x = 128/2*1
 		texture_progress_bar.min_value = 0
-		texture_progress_bar.max_value = 3.0
-		texture_progress_bar.value = 3.0
-		
+		texture_progress_bar.max_value = 1
+		texture_progress_bar.value = 0
+	else:
+		maxSign.position.x = 128/2*1
+		texture_progress_bar.min_value = 0
+		texture_progress_bar.max_value = 2.0
+		texture_progress_bar.value = 2.0
 	
 func _on_tutorial_button_pressed() -> void:
 	tutorialBtn.visible = false

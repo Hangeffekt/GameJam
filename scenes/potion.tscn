@@ -190,6 +190,7 @@
 [ext_resource type="Texture2D" uid="uid://b8h7kayitdu5n" path="res://assets/potion/bubble animation/bubbles_with background_0190.png" id="186_0kw1w"]
 [ext_resource type="Texture2D" uid="uid://dy6s8idjfp05r" path="res://assets/potion/bubble animation/bubbles_with background_0191.png" id="187_udsmy"]
 [ext_resource type="Texture2D" uid="uid://v6o0r78dotu1" path="res://assets/potion/potion ui_requirement_bar gsdag.png" id="188_746rj"]
+[ext_resource type="VideoStream" uid="uid://f7gu2ah53gdw" path="res://assets/videos/potion scene_1st.ogv" id="191_ex703"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_67q4m"]
 animations = [{
@@ -760,8 +761,8 @@ animations = [{
 script = ExtResource("1_3mc24")
 
 [node name="Potion" type="Sprite2D" parent="." unique_id=1887912111]
-position = Vector2(577.00006, 329)
-scale = Vector2(0.6005209, 0.6055556)
+position = Vector2(576, 324.49994)
+scale = Vector2(0.6, 0.6009258)
 texture = ExtResource("3_8kk5y")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1995833275]
@@ -1047,6 +1048,7 @@ offset_bottom = 655.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_67q4m")
 
 [node name="points" type="GridContainer" parent="." unique_id=785419252]
+visible = false
 offset_left = 21.0
 offset_top = 553.0
 offset_right = 766.0
@@ -1119,6 +1121,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1, 0.9945843)
 texture = ExtResource("16_gmx3n")
 expand_mode = 1
 
@@ -1160,83 +1163,185 @@ anchors_preset = -1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -175.0
-offset_top = 57.0
+offset_top = 45.0
 offset_right = -34.0
-offset_bottom = 217.0
+offset_bottom = 211.0
 grow_horizontal = 0
-theme_override_constants/separation = 41
+theme_override_constants/separation = 33
 
-[node name="TextureProgressBarSkull" type="TextureProgressBar" parent="recipe/Results" unique_id=1613962238]
-clip_children = 1
-custom_minimum_size = Vector2(0, 20)
-custom_maximum_size = Vector2(140, 50)
+[node name="ControlSkull" type="Control" parent="recipe/Results" unique_id=957151646]
+custom_minimum_size = Vector2(100, 25)
 layout_mode = 2
-max_value = 4.0
-value = 3.0
+
+[node name="TextureRect" type="TextureRect" parent="recipe/Results/ControlSkull" unique_id=1133102830]
+custom_minimum_size = Vector2(140, 30)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+offset_right = -1.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("21_4yosp")
+expand_mode = 1
+
+[node name="TextureProgressBarSkull" type="TextureProgressBar" parent="recipe/Results/ControlSkull" unique_id=1613962238]
+clip_children = 1
+custom_minimum_size = Vector2(128, 20)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 7.0
+offset_right = -7.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 5.0
+value = 5.0
 allow_greater = true
 allow_lesser = true
 nine_patch_stretch = true
 texture_progress = ExtResource("21_4yosp")
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="recipe/Results/TextureProgressBarSkull" unique_id=405462380]
-position = Vector2(70, 16)
-scale = Vector2(0.6650001, 0.7999999)
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="recipe/Results/ControlSkull/TextureProgressBarSkull" unique_id=405462380]
+position = Vector2(68.00001, 14.5)
+scale = Vector2(0.70000005, 0.8055556)
 sprite_frames = SubResource("SpriteFrames_a0jua")
 animation = &"new_animation"
 autoplay = "new_animation"
-frame_progress = 0.59763
+frame_progress = 0.736226
 
-[node name="TextureRect" type="TextureRect" parent="recipe/Results/TextureProgressBarSkull" unique_id=1133102830]
+[node name="MaxSign" type="TextureRect" parent="recipe/Results/ControlSkull" unique_id=423329400]
+custom_minimum_size = Vector2(10, 40)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.5
-anchor_right = 0.5392857
-anchor_bottom = 1.05
+anchor_top = -0.12
+anchor_right = 0.07092199
+anchor_bottom = 1.48
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("188_746rj")
 expand_mode = 1
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureProgressStar" type="TextureProgressBar" parent="recipe/Results" unique_id=990007394]
-clip_children = 1
-custom_minimum_size = Vector2(0, 20)
-custom_maximum_size = Vector2(140, 50)
+[node name="ControlStar" type="Control" parent="recipe/Results" unique_id=1933250366]
+custom_minimum_size = Vector2(100, 25)
 layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="recipe/Results/ControlStar" unique_id=934357862]
+custom_minimum_size = Vector2(140, 30)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+offset_right = -1.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("21_4yosp")
+expand_mode = 1
+
+[node name="TextureProgressBarStar" type="TextureProgressBar" parent="recipe/Results/ControlStar" unique_id=658317957]
+clip_children = 1
+custom_minimum_size = Vector2(128, 20)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 7.0
+offset_right = -7.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
 max_value = 5.0
-value = 3.0
+value = 5.0
 allow_greater = true
 allow_lesser = true
 nine_patch_stretch = true
 texture_progress = ExtResource("21_4yosp")
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="recipe/Results/TextureProgressStar" unique_id=837611022]
-position = Vector2(70, 16)
-scale = Vector2(0.6650001, 0.7999999)
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="recipe/Results/ControlStar/TextureProgressBarStar" unique_id=287448836]
+position = Vector2(68.00001, 14.5)
+scale = Vector2(0.70000005, 0.8055556)
 sprite_frames = SubResource("SpriteFrames_a0jua")
 animation = &"new_animation"
 autoplay = "new_animation"
-frame_progress = 0.94288254
+frame_progress = 0.5629084
 
-[node name="TextureProgressDiamond" type="TextureProgressBar" parent="recipe/Results" unique_id=535219067]
-clip_children = 1
-custom_minimum_size = Vector2(0, 20)
-custom_maximum_size = Vector2(140, 50)
+[node name="MaxSign" type="TextureRect" parent="recipe/Results/ControlStar" unique_id=1303148800]
+custom_minimum_size = Vector2(10, 40)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.12
+anchor_right = 0.07092199
+anchor_bottom = 1.48
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("188_746rj")
+expand_mode = 1
+
+[node name="ControlDiamond" type="Control" parent="recipe/Results" unique_id=761641774]
+custom_minimum_size = Vector2(100, 25)
 layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="recipe/Results/ControlDiamond" unique_id=1257851979]
+custom_minimum_size = Vector2(140, 30)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+offset_right = -1.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("21_4yosp")
+expand_mode = 1
+
+[node name="TextureProgressBarDiamond" type="TextureProgressBar" parent="recipe/Results/ControlDiamond" unique_id=1796877365]
+clip_children = 1
+custom_minimum_size = Vector2(128, 20)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 7.0
+offset_right = -7.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
 max_value = 5.0
-value = 3.0
+value = 5.0
 allow_greater = true
 allow_lesser = true
 nine_patch_stretch = true
 texture_progress = ExtResource("21_4yosp")
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="recipe/Results/TextureProgressDiamond" unique_id=1977261063]
-position = Vector2(70, 16)
-scale = Vector2(0.6650001, 0.7999999)
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="recipe/Results/ControlDiamond/TextureProgressBarDiamond" unique_id=193907817]
+position = Vector2(68.00001, 14.5)
+scale = Vector2(0.70000005, 0.8055556)
 sprite_frames = SubResource("SpriteFrames_a0jua")
 animation = &"new_animation"
 autoplay = "new_animation"
-frame_progress = 0.94288254
+frame_progress = 0.5629084
+
+[node name="MaxSign" type="TextureRect" parent="recipe/Results/ControlDiamond" unique_id=1998201695]
+custom_minimum_size = Vector2(10, 40)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.12
+anchor_right = 0.07092199
+anchor_bottom = 1.48
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("188_746rj")
+expand_mode = 1
 
 [node name="result" type="Panel" parent="." unique_id=1679740515]
 visible = false
@@ -1311,10 +1416,31 @@ theme_override_font_sizes/font_size = 40
 text = "Good"
 horizontal_alignment = 1
 
-[node name="Dev_debug_menu" parent="." unique_id=218198422 instance=ExtResource("14_ancum")]
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="." unique_id=265360005]
+propagate_maximum_size = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.99999994
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+alignment_horizontal = 0
+alignment_vertical = 0
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="AspectRatioContainer" unique_id=136885390]
+custom_maximum_size = Vector2(1152, 648)
+propagate_maximum_size = true
+layout_mode = 2
+stream = ExtResource("191_ex703")
+autoplay = true
+metadata/_edit_use_anchors_ = true
 
 [node name="Tutorial" parent="." unique_id=1684112177 instance=ExtResource("16_8dbo2")]
 visible = false
+
+[node name="Dev_debug_menu" parent="." unique_id=218198422 instance=ExtResource("14_ancum")]
 
 [connection signal="pressed" from="TutorialButton" to="." method="_on_tutorial_button_pressed"]
 [connection signal="pressed" from="MakePotion" to="." method="_on_make_potion_pressed"]
