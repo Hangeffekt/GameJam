@@ -40,7 +40,7 @@ func _ready() -> void:
 		category_buttons(1)
 	
 		#get recipe
-		recipe = PotionVariation.choose_random_variation(3)
+		recipe = PotionVariation.choose_random_variation(4)
 		add_labels_to_recipe("x", "x", "x", recipe_box)
 		set_progress_value(progresBarSkull, maxSignSkull, recipe[0].relation_1, 0, recipe[0].target_number_1)
 		set_progress_value(progresBarStar, maxSignStar, recipe[0].relation_2, 0, recipe[0].target_number_2)
@@ -280,7 +280,7 @@ func end_game(atr1: int, atr2: int, atr3: int) -> void:
 	await get_tree().create_timer(3.0).timeout
 	GlobalScript.nextcustomer = GlobalScript.nextcustomer + 1
 	$AspectRatioContainer.visible= true
-	potionScrup.finished.connect(_on_video_fill.bind("beauty"))
+	potionScrup.finished.connect(_on_video_fill.bind(recipe[0].file_name))
 	potionScrup.play()
 	
 

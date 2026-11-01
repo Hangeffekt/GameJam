@@ -90,6 +90,7 @@ func potionvariations(fajl_utvonal: String) -> void:
 		var target_number_2: int = sor_elemei[6].to_int()
 		var p_relation_3: String = sor_elemei[8]
 		var target_number_3: int = sor_elemei[9].to_int()
+		var file_name: String = sor_elemei[10]
 		
 		var uj_peldany = PotionVariation.new(p_id,
 		p_relation_1,
@@ -97,7 +98,8 @@ func potionvariations(fajl_utvonal: String) -> void:
 		p_relation_2,
 		target_number_2,
 		p_relation_3,
-		target_number_3)
+		target_number_3,
+		file_name)
 		potion_variation_list.append(uj_peldany)
 		
 	fajl.close()

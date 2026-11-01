@@ -7,10 +7,11 @@ var relation_2: String
 var target_number_2: int
 var relation_3: String
 var target_number_3: int
+var file_name: String
 
 static var all_variation_instances: Array[PotionVariation] = []
 
-func _init(p_id: int, p_relation_1: String, p_target_number_1: int, p_relation_2: String, p_target_number_2: int, p_relation_3: String, p_target_number_3: int):
+func _init(p_id: int, p_relation_1: String, p_target_number_1: int, p_relation_2: String, p_target_number_2: int, p_relation_3: String, p_target_number_3: int, file_name: String):
 	self.id = p_id
 	self.relation_1 = p_relation_1
 	self.target_number_1 = p_target_number_1
@@ -18,6 +19,7 @@ func _init(p_id: int, p_relation_1: String, p_target_number_1: int, p_relation_2
 	self.target_number_2 = p_target_number_2
 	self.relation_3 = p_relation_3
 	self.target_number_3 = p_target_number_3
+	self.file_name = file_name
 	
 	all_variation_instances.append(self)
 	
