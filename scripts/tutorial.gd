@@ -7,6 +7,11 @@ extends CanvasLayer
 @onready var tarrot_dialogue_manager: CanvasLayer = $TarrotTutorial
 @onready var still_here_manager: CanvasLayer = $StillHere
 
+@onready var startBtn: Button = $Control/MarginContainer/VBoxContainer/StartBtn
+@onready var potionBtn: Button = $Control/MarginContainer/VBoxContainer/PotionBtn
+@onready var moonBtn: Button = $Control/MarginContainer/VBoxContainer/MoonPlateBtn
+@onready var tarrotBtn: Button = $Control/MarginContainer/VBoxContainer/TarrotBtn
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
@@ -49,15 +54,24 @@ func moonplate() -> void:
 	moonplate_dialogue_manager.hide()
 	choose_tutorial(5)
 
-
+#tutorial után lezáró dialógus
 func still_here() -> void:
 	still_here_manager.visible = true
 	still_here_manager.show()
 	#jön a kérdés. hogy működik az alábbi sor úgy, hogy a portré listát már nem adjuk meg neki. Válasz: idk but it works, dont touch it
 	still_here_manager.start_dialogue(still_here_manager.text_key, still_here_manager.characters_name, still_here_manager.textcolor,false  )
 	await still_here_manager.dialogue_finished
+	
+	startBtn.visible = true
+	potionBtn.visible = true
+	moonBtn.visible = true
+	tarrotBtn.visible = true
 
 func choose_tutorial(button: int) -> void:
+	startBtn.visible = false
+	potionBtn.visible = false
+	moonBtn.visible = false
+	tarrotBtn.visible = false
 	match button:
 		0:
 			start()

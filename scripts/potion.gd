@@ -15,6 +15,11 @@ extends CanvasLayer
 @onready var maxSignStar: TextureRect = $recipe/Results/ControlStar/MaxSign
 @onready var progresBarDiamond: TextureProgressBar = $recipe/Results/ControlDiamond/TextureProgressBarDiamond
 @onready var maxSignDiamond: TextureRect = $recipe/Results/ControlDiamond/MaxSign
+
+@onready var potionScrup: VideoStreamPlayer = $AspectRatioContainer/VideoScrup
+@onready var potionFill: VideoStreamPlayer = $AspectRatioContainer2/VideoFill
+@onready var potionSplash: VideoStreamPlayer = $AspectRatioContainer2/VideoSplash
+
 var sum_green: int = 0
 var sum_red: int = 0
 var sum_blue: int = 0
@@ -97,7 +102,8 @@ func category_items(id: int):
 			
 			button.add_child(add_image(item.picture_name))
 			control.add_child(button)
-			
+			#label for name
+			control.add_child(create_labels_for_item(item.name))
 			#create labels for values
 			control.add_child(add_container("skull_icon", item.atr1))
 			control.add_child(add_container("star_icon", item.atr2))
@@ -145,8 +151,9 @@ func add_image(name: String) -> MarginContainer:
 func create_labels_for_item(text: String) -> Label:
 	var label = Label.new()
 	label.text = text
-	label.add_theme_font_size_override("font_size", 24)
+	label.add_theme_font_size_override("font_size", 20)
 	label.add_theme_color_override("font_color", Color("#000000"))
+	label.autowrap_mode = TextServer.AUTOWRAP_WORD
 	
 	return label
 
@@ -190,7 +197,6 @@ func countProgressBarResult(bar: TextureProgressBar, atr: int, relacio: String, 
 	elif target == 0 and relacio == '<':
 		bar.value += (atr * -1)
 	else:
-		print("megy")
 		if bar.value > 2 and atr > 0:
 			bar.value += (atr * -1)
 		elif bar.value > 2 and atr < 0:
@@ -271,9 +277,12 @@ func end_game(atr1: int, atr2: int, atr3: int) -> void:
 		3:
 			$result/textResult.text = "Kiváló"
 	$result.show()
-	await get_tree().create_timer(5.0).timeout
+	await get_tree().create_timer(3.0).timeout
 	GlobalScript.nextcustomer = GlobalScript.nextcustomer + 1
-	SceneTransition.change_scene("res://scenes/shop.tscn")
+	$AspectRatioContainer.visible= true
+	potionScrup.finished.connect(_on_video_fill.bind("beauty"))
+	potionScrup.play()
+	
 
 #ha pozitív nincs dolog
 #ha negatív vesszük a maximum abszolut értékét
@@ -304,10 +313,33 @@ func set_progress_value(texture_progress_bar: TextureProgressBar, maxSign: Textu
 		texture_progress_bar.value = 2.0
 	
 func _on_tutorial_button_pressed() -> void:
-	tutorialBtn.visible = false
+	#tutorialBtn.visible = false
 	tutorialScene.visible = true
 	tutorialScene.choose_tutorial(2)
 
 # jéték befejezése
 func _on_make_potion_pressed() -> void:
 	end_game(item_place_id_1, item_place_id_2, item_place_id_3)
+	
+func _on_video_fill(name: String) -> void:
+	$AspectRatioContainer.visible= false
+	$AspectRatioContainer2.visible= true
+	potionFill.finished.connect(_on_video_splash.bind(name))
+	potionScrup.visible = false
+	potionFill.visible = true
+	var kovetkezo_video = load("res://assets/videos/" + name + "_fill.ogv")
+	# Amint az első véget ért, elindul a második
+	potionFill.stream = kovetkezo_video
+	potionFill.play()
+	
+func _on_video_splash(name: String) -> void:
+	potionFill.visible = false
+	potionSplash.visible = true
+	var kovetkezo_video = load("res://assets/videos/" + name + "_splash.ogv")
+	potionSplash.finished.connect(_on_change_sceene)
+	# Amint az első véget ért, elindul a második
+	potionSplash.stream = kovetkezo_video
+	potionSplash.play()
+
+func _on_change_sceene() -> void:
+	SceneTransition.change_scene("res://scenes/shop.tscn")

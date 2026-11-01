@@ -11,6 +11,9 @@ extends Node2D
 @onready var progress_bar: ProgressBar = $ProgressBar
 @onready var victory_label: Label = $"ProgressBar/victory label"
 
+@onready var tutorialScene: CanvasLayer = $Tutorial
+@onready var tutorialBtn: Button = $TutorialButton
+
 @onready var stars_collection: Node2D = $stars_collection
 @onready var stars: Array[Star] = []
 #ezzel figyelem melyik csillagnál járunk a listában
@@ -90,3 +93,8 @@ func _on_progress_bar_value_changed(value: float) -> void:
 		await get_tree().create_timer(3.0).timeout
 		GlobalScript.nextcustomer = GlobalScript.nextcustomer + 1
 		SceneTransition.change_scene("res://scenes/shop.tscn")
+
+
+func _on_tutorial_button_pressed() -> void:
+	tutorialScene.visible = true
+	tutorialScene.choose_tutorial(3)

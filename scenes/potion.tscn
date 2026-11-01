@@ -190,7 +190,7 @@
 [ext_resource type="Texture2D" uid="uid://b8h7kayitdu5n" path="res://assets/potion/bubble animation/bubbles_with background_0190.png" id="186_0kw1w"]
 [ext_resource type="Texture2D" uid="uid://dy6s8idjfp05r" path="res://assets/potion/bubble animation/bubbles_with background_0191.png" id="187_udsmy"]
 [ext_resource type="Texture2D" uid="uid://v6o0r78dotu1" path="res://assets/potion/potion ui_requirement_bar gsdag.png" id="188_746rj"]
-[ext_resource type="VideoStream" uid="uid://f7gu2ah53gdw" path="res://assets/videos/potion scene_1st.ogv" id="191_ex703"]
+[ext_resource type="VideoStream" uid="uid://f7gu2ah53gdw" path="res://assets/videos/potion scene_1st.ogv" id="189_ex703"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_67q4m"]
 animations = [{
@@ -916,6 +916,10 @@ layout_mode = 2
 texture = ExtResource("15_1nmat")
 expand_mode = 1
 
+[node name="Label" type="Label" parent="ScrollContainer/GridContainer/VBoxContainer" unique_id=1588469287]
+layout_mode = 2
+text = "sdvdsfv"
+
 [node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/GridContainer/VBoxContainer" unique_id=1691132367]
 layout_mode = 2
 theme_override_constants/separation = 62
@@ -1417,24 +1421,58 @@ text = "Good"
 horizontal_alignment = 1
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="." unique_id=265360005]
+visible = false
 propagate_maximum_size = false
-anchors_preset = 15
+anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 0.99999994
-offset_right = 1.0
+offset_right = 768.0
+offset_bottom = 432.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.6, 0.6)
+size_flags_horizontal = 3
+size_flags_vertical = 3
 alignment_horizontal = 0
 alignment_vertical = 0
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="AspectRatioContainer" unique_id=136885390]
+[node name="VideoScrup" type="VideoStreamPlayer" parent="AspectRatioContainer" unique_id=136885390]
 custom_maximum_size = Vector2(1152, 648)
 propagate_maximum_size = true
 layout_mode = 2
-stream = ExtResource("191_ex703")
-autoplay = true
+stream = ExtResource("189_ex703")
+metadata/_edit_use_anchors_ = true
+
+[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="." unique_id=1637396126]
+visible = false
+propagate_maximum_size = false
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 768.0
+offset_bottom = 432.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.45, 0.45)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment_horizontal = 0
+alignment_vertical = 0
+
+[node name="VideoFill" type="VideoStreamPlayer" parent="AspectRatioContainer2" unique_id=142408012]
+visible = false
+custom_maximum_size = Vector2(1152, 648)
+propagate_maximum_size = true
+layout_mode = 2
+speed_scale = 1.2
+metadata/_edit_use_anchors_ = true
+
+[node name="VideoSplash" type="VideoStreamPlayer" parent="AspectRatioContainer2" unique_id=1910483725]
+visible = false
+custom_maximum_size = Vector2(1152, 648)
+propagate_maximum_size = true
+layout_mode = 2
+speed_scale = 1.2
 metadata/_edit_use_anchors_ = true
 
 [node name="Tutorial" parent="." unique_id=1684112177 instance=ExtResource("16_8dbo2")]

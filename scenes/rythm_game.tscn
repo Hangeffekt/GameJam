@@ -271,3 +271,4 @@ expand_mode = 1
 
 [connection signal="area_entered" from="szelle_jelzok/leesett_jelzo" to="." method="_on_leesett_jelzo_area_entered"]
 [connection signal="value_changed" from="ProgressBar" to="." method="_on_progress_bar_value_changed"]
+[connection signal="pressed" from="TutorialButton" to="." method="_on_tutorial_button_pressed"]
