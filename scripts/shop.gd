@@ -6,20 +6,18 @@ extends CanvasLayer
 @onready var _2placeholdername_dialogue_manager: CanvasLayer = $"2PLACEHOLDERNAMEDialogueManager"
 
 @onready var door_animation: AnimatedSprite2D = $shop_background/door_animation/AnimatedSprite2D
-@onready var timer: Timer = $Timer
+@onready var timer: Timer = Timer.new()
 
 var ido: float = 3.0
 
-
 func _ready() -> void:
 	choose_customer(GlobalScript.nextcustomer)
-	
 
 #karakterekS
 func wizard_customer(dialogue_manager: CanvasLayer) -> void:
 	dialogue_manager.visible = true
 	#jön a kérdés. hogy működik az alábbi sor úgy, hogy a portré listát már nem adjuk meg neki. Válasz: idk but it works, dont touch it
-	dialogue_manager.start_dialogue(dialogue_manager.text_key, dialogue_manager.characters_name, dialogue_manager.textcolor )
+	dialogue_manager.start_dialogue(dialogue_manager.text_key, dialogue_manager.characters_name, dialogue_manager.textcolor, false )
 	await dialogue_manager.dialogue_finished
 	leave_customer(dialogue_manager)
 
@@ -28,7 +26,7 @@ func cat_customer(dialogue_manager: CanvasLayer) -> void:
 	await door_animation.animation_finished
 	
 	dialogue_manager.visible = true
-	dialogue_manager.start_dialogue(dialogue_manager.text_key, dialogue_manager.characters_name, dialogue_manager.textcolor )
+	dialogue_manager.start_dialogue(dialogue_manager.text_key, dialogue_manager.characters_name, dialogue_manager.textcolor, false )
 	await dialogue_manager.dialogue_finished
 	SceneTransition.change_scene("res://scenes/potion.tscn")
 	##leave_customer(cat_dialogue_manager)
@@ -38,7 +36,7 @@ func PLACEHOLDERNAME_customer(dialogue_manager: CanvasLayer) -> void:
 	await door_animation.animation_finished
 	
 	dialogue_manager.visible = true
-	dialogue_manager.start_dialogue(dialogue_manager.text_key, dialogue_manager.characters_name, dialogue_manager.textcolor )
+	dialogue_manager.start_dialogue(dialogue_manager.text_key, dialogue_manager.characters_name, dialogue_manager.textcolor, false )
 	await dialogue_manager.dialogue_finished
 	SceneTransition.change_scene("res://scenes/rythm_game.tscn")
 
@@ -47,7 +45,7 @@ func PLACEHOLDERNAME2_customer(dialogue_manager: CanvasLayer) -> void:
 	await door_animation.animation_finished
 	
 	dialogue_manager.visible = true
-	dialogue_manager.start_dialogue(dialogue_manager.text_key, dialogue_manager.characters_name, dialogue_manager.textcolor )
+	dialogue_manager.start_dialogue(dialogue_manager.text_key, dialogue_manager.characters_name, dialogue_manager.textcolor, false )
 	await dialogue_manager.dialogue_finished
 	SceneTransition.change_scene("res://scenes/tarot_minigame.tscn")
 
