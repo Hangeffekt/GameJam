@@ -241,11 +241,23 @@ bg_color = Color(0.92156863, 0.8039216, 0.8352941, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_msale"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_msale"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qa3cu"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a0jua"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0fxgo"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fw5pv"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qgcvi"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q7egl"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xbekm"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lj3i0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rrmp1"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_phbq8"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_75ifr"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_67q4m"]
 
@@ -992,7 +1004,7 @@ anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = 22.0
 offset_top = -57.0
-offset_right = 22.0
+offset_right = -14.0
 offset_bottom = 18.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -1001,47 +1013,27 @@ size_flags_vertical = 6
 theme_override_constants/h_separation = 8
 columns = 3
 
-[node name="testbtn" type="Panel" parent="selected_item_box/choosed_items" unique_id=325158395]
+[node name="choosed_item_1" type="Button" parent="selected_item_box/choosed_items" unique_id=1024687620]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_styles/panel = SubResource("StyleBoxTexture_msale")
+theme_override_styles/normal = SubResource("StyleBoxTexture_qa3cu")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0fxgo")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qgcvi")
 
-[node name="testbtn2" type="Panel" parent="selected_item_box/choosed_items" unique_id=1100750638]
+[node name="choosed_item_2" type="Button" parent="selected_item_box/choosed_items" unique_id=1479924499]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_a0jua")
+theme_override_styles/normal = SubResource("StyleBoxTexture_q7egl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_xbekm")
+theme_override_styles/hover = SubResource("StyleBoxTexture_lj3i0")
 
-[node name="testbtn3" type="Panel" parent="selected_item_box/choosed_items" unique_id=1001384771]
+[node name="choosed_item_3" type="Button" parent="selected_item_box/choosed_items" unique_id=1033321025]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_fw5pv")
-
-[node name="MakePotion" type="Button" parent="." unique_id=536323282]
-offset_left = 61.0
-offset_top = 12.0
-offset_right = 294.0
-offset_bottom = 85.0
-theme_override_styles/normal = ExtResource("16_a6teu")
-theme_override_styles/disabled = ExtResource("16_a6teu")
-disabled = true
-
-[node name="Label" type="Label" parent="MakePotion" unique_id=624391788]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 2.0
-offset_top = -1.0
-offset_right = 2.0
-offset_bottom = -1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.6039216, 0.5019608, 0.57254905, 1)
-theme_override_font_sizes/font_size = 27
-text = "Örlés és főzés"
-horizontal_alignment = 1
-vertical_alignment = 1
+theme_override_styles/normal = SubResource("StyleBoxTexture_rrmp1")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_phbq8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_75ifr")
 
 [node name="disableCategories" type="Panel" parent="." unique_id=915566903]
 visible = false
@@ -1480,5 +1472,47 @@ visible = false
 
 [node name="Dev_debug_menu" parent="." unique_id=218198422 instance=ExtResource("14_ancum")]
 
+[node name="FinalBtnMargin" type="MarginContainer" parent="." unique_id=872845477]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -133.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(1.001459, 1)
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="MakePotion" type="Button" parent="FinalBtnMargin" unique_id=536323282]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/normal = ExtResource("16_a6teu")
+theme_override_styles/disabled = ExtResource("16_a6teu")
+disabled = true
+
+[node name="Label" type="Label" parent="FinalBtnMargin/MakePotion" unique_id=624391788]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -18.5
+offset_right = 90.0
+offset_bottom = 18.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.6039216, 0.5019608, 0.57254905, 1)
+theme_override_font_sizes/font_size = 27
+text = "Örlés és főzés"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="TutorialButton" to="." method="_on_tutorial_button_pressed"]
-[connection signal="pressed" from="MakePotion" to="." method="_on_make_potion_pressed"]
+[connection signal="pressed" from="selected_item_box/choosed_items/choosed_item_1" to="." method="_on_choosed_item_1_pressed"]
+[connection signal="pressed" from="selected_item_box/choosed_items/choosed_item_2" to="." method="_on_choosed_item_2_pressed"]
+[connection signal="pressed" from="selected_item_box/choosed_items/choosed_item_3" to="." method="_on_choosed_item_3_pressed"]
+[connection signal="pressed" from="FinalBtnMargin/MakePotion" to="." method="_on_make_potion_pressed"]

@@ -6,7 +6,7 @@ extends CanvasLayer
 @onready var result_box = $result/GridContainer
 @onready var tutorialScene: CanvasLayer = $Tutorial
 @onready var tutorialBtn: Button = $TutorialButton
-@onready var finishButton: Button = $MakePotion
+@onready var finishButton: Button = $FinalBtnMargin/MakePotion
 @onready var disableCategoryPanel: Panel = $disableCategories
 @onready var category_button_sample: Button = $Control/VBox/testbtn
 @onready var progresBarSkull: TextureProgressBar = $recipe/Results/ControlSkull/TextureProgressBarSkull
@@ -31,6 +31,7 @@ var item_place_3: bool = false
 var item_place_id_3: int = 0
 var recipe: Array 
 var used_items: Array = []
+var choosed_category : int = 1
 
 
 # Called when the node enters the scene tree for the first time.
@@ -64,7 +65,7 @@ func category_buttons(id: int):
 				category_items(id)
 			else:
 				button.custom_minimum_size = Vector2(92, 101)
-			button.pressed.connect(func(): category_items(categorie.id))
+			button.pressed.connect(func(): category_items(categorie.id); choosed_category = categorie.id)
 			button.pressed.connect(func(): category_buttons(categorie.id))
 			
 			button.add_child(add_image(categorie.picture_name))
@@ -80,7 +81,9 @@ func category_items(id: int):
 	# -> VBoxContainer ebbe kerül a kép  és 3 változó
 	# -> -> TextureRect item gomb
 	# -> -> 3 db label
+	var ignore_picture = false
 	for item in PotionCategorie.all_instances:
+		ignore_picture = false
 		if(item.parent_id == id):
 			var control = VBoxContainer.new()
 			#control.add_child(add_bg_to_categorie("potion ui_ingredients list_category frame"))
@@ -90,18 +93,27 @@ func category_items(id: int):
 			#create item button
 			button.add_child(add_bg_to_categorie("item_bg"))
 			button.custom_minimum_size = Vector2(125, 125)
-			if(used_items.find(item.id) != -1):
+			if(item.id == item_place_id_1 or item.id == item_place_id_3):
 				button.mouse_filter = Control.MOUSE_FILTER_IGNORE
-				
+				ignore_picture = true
+			elif item.id == item_place_id_2:
+				button.mouse_filter = Control.MOUSE_FILTER_IGNORE
+				ignore_picture = true
 			else:
 				button.pressed.connect(func(): 
+					print("click")
 					button.add_child(add_bg_to_categorie("potion ui_ingredients list_used ingredient indicator overlay_02"))
 					used_items.append(item.id)
 					button.mouse_filter = Control.MOUSE_FILTER_IGNORE
-					item_choosed(item.picture_name, item.atr1, item.atr2, item.atr3))
+					item_choosed(item.id, item.picture_name, item.atr1, item.atr2, item.atr3))
 			
 			button.add_child(add_image(item.picture_name))
+			print(ignore_picture)
+			if ignore_picture:
+				print("megy")
+				button.add_child(add_bg_to_categorie("potion ui_ingredients list_used ingredient indicator overlay_02"))
 			control.add_child(button)
+			
 			#label for name
 			control.add_child(create_labels_for_item(item.name))
 			#create labels for values
@@ -159,19 +171,21 @@ func create_labels_for_item(text: String) -> Label:
 
 #if the user choosed an item, set the picture and the values on screen
 #and create a button tu remove it
-func item_choosed(name: String, atr1: int, atr2: int, atr3: int):
-	if !item_place_1:
-		item_place_1 = true
-		item_place_id_1 = atr1
-		$selected_item_box/choosed_items/testbtn.add_child(add_image(name))
-	elif !item_place_2:
-		item_place_2 = true
-		item_place_id_2 = atr2
-		$selected_item_box/choosed_items/testbtn2.add_child(add_image(name))
-	elif !item_place_3:
-		item_place_3 = true
-		item_place_id_3 = atr3
-		$selected_item_box/choosed_items/testbtn3.add_child(add_image(name))
+func item_choosed(id: int, name: String, atr1: int, atr2: int, atr3: int):
+	#ha nem küldünk képet nem kell
+	if name != "":
+		if !item_place_1:
+			item_place_1 = true
+			item_place_id_1 = id
+			$selected_item_box/choosed_items/choosed_item_1.add_child(add_image(name))
+		elif !item_place_2:
+			item_place_2 = true
+			item_place_id_2 = id
+			$selected_item_box/choosed_items/choosed_item_2.add_child(add_image(name))
+		elif !item_place_3:
+			item_place_3 = true
+			item_place_id_3 = id
+			$selected_item_box/choosed_items/choosed_item_3.add_child(add_image(name))
 	
 	set_and_write_values(atr1, atr2, atr3)
 	#progresBarSkull.value += atr1
@@ -343,3 +357,35 @@ func _on_video_splash(name: String) -> void:
 
 func _on_change_sceene() -> void:
 	SceneTransition.change_scene("res://scenes/shop.tscn")
+
+#remove item functions
+func _on_choosed_item_1_pressed() -> void:
+	if item_place_1:
+		$selected_item_box/choosed_items/choosed_item_1.get_child(0).queue_free()
+		var removed_item = PotionCategorie.all_instances.filter(func(x): return x.id == item_place_id_1 )
+		item_choosed(removed_item[0].id, "", removed_item[0].atr1 * -1, removed_item[0].atr2 * -1, removed_item[0].atr3 * -1)
+		item_place_id_1 = -1
+		category_buttons(choosed_category)
+		item_place_1 = false
+		disableCategoryPanel.visible = false
+
+func _on_choosed_item_2_pressed() -> void:
+	if item_place_2:
+		$selected_item_box/choosed_items/choosed_item_2.get_child(0).queue_free()
+		var removed_item = PotionCategorie.all_instances.filter(func(x): return x.id == item_place_id_2 )
+		item_choosed(removed_item[0].id, "", removed_item[0].atr1 * -1, removed_item[0].atr2 * -1, removed_item[0].atr3 * -1)
+		item_place_id_2 = -1
+		category_buttons(choosed_category)
+		item_place_2 = false
+		disableCategoryPanel.visible = false
+
+
+func _on_choosed_item_3_pressed() -> void:
+	if item_place_3:
+		$selected_item_box/choosed_items/choosed_item_3.get_child(0).queue_free()
+		var removed_item = PotionCategorie.all_instances.filter(func(x): return x.id == item_place_id_3 )
+		item_choosed(removed_item[0].id, "", removed_item[0].atr1 * -1, removed_item[0].atr2 * -1, removed_item[0].atr3 * -1)
+		item_place_id_3 = -1
+		category_buttons(choosed_category)
+		item_place_3 = false
+		disableCategoryPanel.visible = false

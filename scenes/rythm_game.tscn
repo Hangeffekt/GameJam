@@ -268,6 +268,7 @@ texture = ExtResource("10_6yyfv")
 expand_mode = 1
 
 [node name="Tutorial" parent="." unique_id=1684112177 instance=ExtResource("11_c8p3f")]
+visible = false
 
 [connection signal="area_entered" from="szelle_jelzok/leesett_jelzo" to="." method="_on_leesett_jelzo_area_entered"]
 [connection signal="value_changed" from="ProgressBar" to="." method="_on_progress_bar_value_changed"]
