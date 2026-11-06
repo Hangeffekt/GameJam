@@ -9,3 +9,8 @@ func _ready() -> void:
 	
 	var objects = script_fajl.new()
 	objects._ready()
+	
+func show_tutorial_icon() -> void:
+	print(get_tree().current_scene)
+	var icon = get_tree().current_scene.get_node("TutorialButton")
+	icon.visible = true

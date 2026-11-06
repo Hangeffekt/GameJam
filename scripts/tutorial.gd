@@ -101,3 +101,4 @@ func _on_moon_plate_btn_pressed() -> void:
 #close tutorial
 func _on_tutorial_button_pressed() -> void:
 	$".".visible = false
+	GlobalScript.show_tutorial_icon()

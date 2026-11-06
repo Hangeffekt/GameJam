@@ -100,17 +100,14 @@ func category_items(id: int):
 				button.mouse_filter = Control.MOUSE_FILTER_IGNORE
 				ignore_picture = true
 			else:
-				button.pressed.connect(func(): 
-					print("click")
+				button.pressed.connect(func():
 					button.add_child(add_bg_to_categorie("potion ui_ingredients list_used ingredient indicator overlay_02"))
 					used_items.append(item.id)
 					button.mouse_filter = Control.MOUSE_FILTER_IGNORE
 					item_choosed(item.id, item.picture_name, item.atr1, item.atr2, item.atr3))
 			
 			button.add_child(add_image(item.picture_name))
-			print(ignore_picture)
 			if ignore_picture:
-				print("megy")
 				button.add_child(add_bg_to_categorie("potion ui_ingredients list_used ingredient indicator overlay_02"))
 			control.add_child(button)
 			
@@ -199,6 +196,9 @@ func item_choosed(id: int, name: String, atr1: int, atr2: int, atr3: int):
 		finishButton.disabled = false
 		disableCategoryPanel.visible = true
 		finishButton.add_theme_stylebox_override("normal", preload("res://styles/menubox.tres"))
+	else:
+		finishButton.disabled = true
+		disableCategoryPanel.visible = false
 		
 
 func countProgressBarResult(bar: TextureProgressBar, atr: int, relacio: String, target: int) -> void:
@@ -292,7 +292,6 @@ func end_game(atr1: int, atr2: int, atr3: int) -> void:
 			$result/textResult.text = "Kiváló"
 	$result.show()
 	await get_tree().create_timer(3.0).timeout
-	GlobalScript.nextcustomer = GlobalScript.nextcustomer + 1
 	$AspectRatioContainer.visible= true
 	potionScrup.finished.connect(_on_video_fill.bind(recipe[0].file_name))
 	potionScrup.play()
@@ -327,7 +326,7 @@ func set_progress_value(texture_progress_bar: TextureProgressBar, maxSign: Textu
 		texture_progress_bar.value = 2.0
 	
 func _on_tutorial_button_pressed() -> void:
-	#tutorialBtn.visible = false
+	tutorialBtn.visible = false
 	tutorialScene.visible = true
 	tutorialScene.choose_tutorial(2)
 
@@ -356,6 +355,7 @@ func _on_video_splash(name: String) -> void:
 	potionSplash.play()
 
 func _on_change_sceene() -> void:
+	GlobalScript.nextcustomer = GlobalScript.nextcustomer + 1
 	SceneTransition.change_scene("res://scenes/shop.tscn")
 
 #remove item functions
@@ -363,29 +363,25 @@ func _on_choosed_item_1_pressed() -> void:
 	if item_place_1:
 		$selected_item_box/choosed_items/choosed_item_1.get_child(0).queue_free()
 		var removed_item = PotionCategorie.all_instances.filter(func(x): return x.id == item_place_id_1 )
-		item_choosed(removed_item[0].id, "", removed_item[0].atr1 * -1, removed_item[0].atr2 * -1, removed_item[0].atr3 * -1)
 		item_place_id_1 = -1
-		category_buttons(choosed_category)
 		item_place_1 = false
-		disableCategoryPanel.visible = false
+		item_choosed(removed_item[0].id, "", removed_item[0].atr1 * -1, removed_item[0].atr2 * -1, removed_item[0].atr3 * -1)
+		category_buttons(choosed_category)
 
 func _on_choosed_item_2_pressed() -> void:
 	if item_place_2:
 		$selected_item_box/choosed_items/choosed_item_2.get_child(0).queue_free()
 		var removed_item = PotionCategorie.all_instances.filter(func(x): return x.id == item_place_id_2 )
-		item_choosed(removed_item[0].id, "", removed_item[0].atr1 * -1, removed_item[0].atr2 * -1, removed_item[0].atr3 * -1)
 		item_place_id_2 = -1
-		category_buttons(choosed_category)
 		item_place_2 = false
-		disableCategoryPanel.visible = false
-
+		item_choosed(removed_item[0].id, "", removed_item[0].atr1 * -1, removed_item[0].atr2 * -1, removed_item[0].atr3 * -1)
+		category_buttons(choosed_category)
 
 func _on_choosed_item_3_pressed() -> void:
 	if item_place_3:
 		$selected_item_box/choosed_items/choosed_item_3.get_child(0).queue_free()
 		var removed_item = PotionCategorie.all_instances.filter(func(x): return x.id == item_place_id_3 )
-		item_choosed(removed_item[0].id, "", removed_item[0].atr1 * -1, removed_item[0].atr2 * -1, removed_item[0].atr3 * -1)
 		item_place_id_3 = -1
-		category_buttons(choosed_category)
 		item_place_3 = false
-		disableCategoryPanel.visible = false
+		item_choosed(removed_item[0].id, "", removed_item[0].atr1 * -1, removed_item[0].atr2 * -1, removed_item[0].atr3 * -1)
+		category_buttons(choosed_category)
