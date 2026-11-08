@@ -2,7 +2,7 @@ extends CanvasLayer
 
 @onready var wizard_dialogue_manager: CanvasLayer = $Wizard_DialogueManager
 @onready var cat_dialogue_manager: CanvasLayer = $CatDialogueManager
-@onready var placeholdername_dialogue_manager: CanvasLayer = $PLACEHOLDERNAMEDialogueManager
+@onready var monster_hunter_dialogue_manager: CanvasLayer = $MonsterHunterDialogueManager
 @onready var _2placeholdername_dialogue_manager: CanvasLayer = $"2PLACEHOLDERNAMEDialogueManager"
 
 @onready var door_animation: AnimatedSprite2D = $shop_background/door_animation/AnimatedSprite2D
@@ -31,7 +31,7 @@ func cat_customer(dialogue_manager: CanvasLayer) -> void:
 	SceneTransition.change_scene("res://scenes/potion.tscn")
 	##leave_customer(cat_dialogue_manager)
 
-func PLACEHOLDERNAME_customer(dialogue_manager: CanvasLayer) -> void:
+func MonsterHunter_customer(dialogue_manager: CanvasLayer) -> void:
 	door_animation.play("open")
 	await door_animation.animation_finished
 	
@@ -67,6 +67,6 @@ func choose_customer(nextcustomer: int) -> void:
 		1:
 			cat_customer(cat_dialogue_manager)
 		2:
-			PLACEHOLDERNAME_customer(placeholdername_dialogue_manager)
+			MonsterHunter_customer(monster_hunter_dialogue_manager)
 		3:
 			PLACEHOLDERNAME2_customer(_2placeholdername_dialogue_manager)
