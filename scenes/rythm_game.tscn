@@ -4,13 +4,43 @@
 [ext_resource type="Texture2D" uid="uid://b6ptulv8pfij3" path="res://assets/rythm_game/constellation_titrálásos csepegtető dolog.png" id="2_868m3"]
 [ext_resource type="Texture2D" uid="uid://clnrqnuaoeq2s" path="res://assets/rythm_game/constellation_background.png" id="2_h07vb"]
 [ext_resource type="Texture2D" uid="uid://bimbgqtnn6rlq" path="res://assets/rythm_game/constellation_bowl.png" id="2_jgy0h"]
-[ext_resource type="Texture2D" uid="uid://cxhune3egbhga" path="res://assets/placeholders/dropplet_placeholder.png" id="2_qmehk"]
+[ext_resource type="Texture2D" uid="uid://cjy7c4jmmn876" path="res://assets/rythm_game/csepp_alt.png" id="3_eacpd"]
 [ext_resource type="PackedScene" uid="uid://dpy8dk57s8673" path="res://scenes/wave.tscn" id="4_uuflm"]
 [ext_resource type="PackedScene" uid="uid://mgw84bj5qnk4" path="res://scenes/star.tscn" id="5_4qhuu"]
 [ext_resource type="Texture2D" uid="uid://co7sokf1pc6fm" path="res://assets/placeholders/IMG_0848.jpeg" id="5_gko7c"]
+[ext_resource type="Texture2D" uid="uid://del3al4177hn0" path="res://assets/rythm_game/csepp_normal.png" id="6_c8p3f"]
 [ext_resource type="PackedScene" uid="uid://7en3j6hc7kc3" path="res://scenes/dev_debug_menu.tscn" id="6_jgy0h"]
 [ext_resource type="Texture2D" uid="uid://bvcmyt7enuqqj" path="res://assets/tutorial wizard/wizard_default.png" id="10_6yyfv"]
+[ext_resource type="Texture2D" uid="uid://sfy3lftmxibm" path="res://assets/rythm_game/hpldtal_ui_progress_bar_under.png" id="10_qtbob"]
 [ext_resource type="PackedScene" uid="uid://bqog7piaxqlsc" path="res://scenes/tutorial.tscn" id="11_c8p3f"]
+[ext_resource type="Texture2D" uid="uid://bgm1gn2sewiph" path="res://assets/rythm_game/hpldtal_ui_progress_bar_over.png" id="11_ohs8n"]
+[ext_resource type="Texture2D" uid="uid://cal60xhkqr2sr" path="res://assets/rythm_game/hpldtal_ui_progress_bar_progress.png" id="12_jfaf1"]
+[ext_resource type="AudioStream" uid="uid://b8yfu8pb7251e" path="res://assets/placeholders/120 BPM Metronome.mp3" id="12_rtuws"]
+[ext_resource type="Texture2D" uid="uid://boisfvvueokcg" path="res://assets/rythm_game/action lines/holdtal_visszajelzes_vonalak0002.png" id="17_cv5sy"]
+[ext_resource type="Texture2D" uid="uid://dbalh070rqkxk" path="res://assets/rythm_game/action lines/holdtal_visszajelzes_vonalak0003.png" id="18_5q2jr"]
+[ext_resource type="Texture2D" uid="uid://5lcc5lp1jovh" path="res://assets/rythm_game/action lines/holdtal_visszajelzes_vonalak0004.png" id="19_byp0e"]
+[ext_resource type="Texture2D" uid="uid://7e5ixytda1yq" path="res://assets/rythm_game/action lines/holdtal_visszajelzes_vonalak0005.png" id="20_p1dob"]
+[ext_resource type="Texture2D" uid="uid://c4miolptxl72x" path="res://assets/rythm_game/action lines/holdtal_visszajelzes_vonalak0006.png" id="21_8vy85"]
+[ext_resource type="Texture2D" uid="uid://dlbetjev8v2rm" path="res://assets/rythm_game/action lines/holdtal_visszajelzes_vonalak0007.png" id="22_aonkf"]
+[ext_resource type="Texture2D" uid="uid://xesqo65t0txn" path="res://assets/rythm_game/action lines/holdtal_visszajelzes_vonalak0008.png" id="23_bv6r6"]
+[ext_resource type="Texture2D" uid="uid://cktam6wdsroms" path="res://assets/rythm_game/action lines/holdtal_visszajelzes_vonalak0009.png" id="24_3qcye"]
+[ext_resource type="Texture2D" uid="uid://qf0lxjtgblbs" path="res://assets/rythm_game/action lines/holdtal_visszajelzes_vonalak0010.png" id="25_wilpt"]
+[ext_resource type="Texture2D" uid="uid://biv07clhcch4t" path="res://assets/rythm_game/action lines/holdtal_visszajelzes_vonalak0011.png" id="26_lvdrq"]
+[ext_resource type="Texture2D" uid="uid://bcmjeipmfqu51" path="res://assets/rythm_game/shockwave/holdtal_visszajelzes_shockwave0002.png" id="27_wothk"]
+[ext_resource type="Texture2D" uid="uid://j22g851qmtu5" path="res://assets/rythm_game/shockwave/holdtal_visszajelzes_shockwave0003.png" id="28_bwufy"]
+[ext_resource type="Texture2D" uid="uid://bvxeytgiefxs7" path="res://assets/rythm_game/shockwave/holdtal_visszajelzes_shockwave0004.png" id="29_wh5tl"]
+[ext_resource type="Texture2D" uid="uid://blltpsoafk1wk" path="res://assets/rythm_game/shockwave/holdtal_visszajelzes_shockwave0005.png" id="30_51ojm"]
+[ext_resource type="Texture2D" uid="uid://2ug5644mik8h" path="res://assets/rythm_game/shockwave/holdtal_visszajelzes_shockwave0006.png" id="31_gsidj"]
+[ext_resource type="Texture2D" uid="uid://b55xpydispx1f" path="res://assets/rythm_game/shockwave/holdtal_visszajelzes_shockwave0007.png" id="32_vaiqt"]
+[ext_resource type="Texture2D" uid="uid://con0gpqo0onnp" path="res://assets/rythm_game/shockwave/holdtal_visszajelzes_shockwave0008.png" id="33_8cpu0"]
+[ext_resource type="Texture2D" uid="uid://dj7jcboam54xg" path="res://assets/rythm_game/shockwave/holdtal_visszajelzes_shockwave0009.png" id="34_38vb1"]
+[ext_resource type="Texture2D" uid="uid://dcis2t7ewxr5e" path="res://assets/rythm_game/shockwave/holdtal_visszajelzes_shockwave0010.png" id="35_avwwa"]
+[ext_resource type="Texture2D" uid="uid://cdpd1glwdrpdt" path="res://assets/rythm_game/shockwave/holdtal_visszajelzes_shockwave0011.png" id="36_8qdn5"]
+[ext_resource type="Texture2D" uid="uid://dk05i3vayqire" path="res://assets/rythm_game/shockwave/holdtal_visszajelzes_shockwave0012.png" id="37_q72qw"]
+[ext_resource type="Texture2D" uid="uid://bals4n66iluvv" path="res://assets/rythm_game/shockwave/holdtal_visszajelzes_shockwave0013.png" id="38_nfk1n"]
+[ext_resource type="Texture2D" uid="uid://b0hjnupqkeh5j" path="res://assets/rythm_game/shockwave/holdtal_visszajelzes_shockwave0014.png" id="39_usak7"]
+[ext_resource type="Texture2D" uid="uid://dvn8j7w44d2bl" path="res://assets/rythm_game/shockwave/holdtal_visszajelzes_shockwave0015.png" id="40_5bn43"]
+[ext_resource type="Texture2D" uid="uid://di7a6w8yqloiw" path="res://assets/placeholders/missing_texture.png" id="41_bwufy"]
 
 [sub_resource type="Animation" id="Animation_qmehk"]
 length = 0.001
@@ -42,7 +72,6 @@ tracks/1/keys = {
 [sub_resource type="Animation" id="Animation_hidhp"]
 resource_name = "dropping"
 length = 2.0
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -51,7 +80,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5, 2),
-"transitions": PackedFloat32Array(3.8637378, 3.8637378, 1),
+"transitions": PackedFloat32Array(3.8637378, 2.732077, 1),
 "update": 0,
 "values": [Vector2(595.235, 50), Vector2(595.235, 50), Vector2(595.235, 307.18)]
 }
@@ -77,18 +106,51 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0mw1e"]
 size = Vector2(7.868828, 6.2694316)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_0mw1e"]
-a = Vector2(32, 0)
-b = Vector2(-24, 0)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mmtjo"]
-size = Vector2(15, 49)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_e3dmf"]
-size = Vector2(15, 49)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_71p6h"]
-size = Vector2(191.5, 49)
+[sub_resource type="SpriteFrames" id="SpriteFrames_e3dmf"]
+animations = [{
+"frames": [],
+"loop": 0,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_cv5sy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_5q2jr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_byp0e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_p1dob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_8vy85")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_aonkf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_bv6r6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_3qcye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_wilpt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_lvdrq")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": 0,
+"name": &"run",
+"speed": 20.0
+}]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c8p3f"]
 
@@ -96,8 +158,72 @@ size = Vector2(191.5, 49)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eacpd"]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_71p6h"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_wothk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_bwufy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_wh5tl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_51ojm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_gsidj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_vaiqt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_8cpu0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_38vb1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_avwwa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_8qdn5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_q72qw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_nfk1n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_usak7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_5bn43")
+}],
+"loop": 0,
+"name": &"run",
+"speed": 25.0
+}]
+
 [node name="rythm_game" type="Node2D" unique_id=1484322323]
 script = ExtResource("1_hidhp")
+normalTexture = ExtResource("6_c8p3f")
+alternateTexture = ExtResource("3_eacpd")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=518702295]
+offset = Vector2(577.111, 320.5)
+zoom = Vector2(1.01, 1.01)
 
 [node name="background" type="Sprite2D" parent="." unique_id=1032067898]
 position = Vector2(577.1111, 320.5)
@@ -123,12 +249,11 @@ texture = ExtResource("5_gko7c")
 [node name="dropplet_placeholderr" type="Sprite2D" parent="." unique_id=51806181]
 visible = false
 position = Vector2(573.99994, 50)
-scale = Vector2(3.465, 3.983)
-texture = ExtResource("2_qmehk")
+scale = Vector2(0.41798434, 0.4804709)
+texture = ExtResource("6_c8p3f")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="dropplet_placeholderr" unique_id=268235826]
+[node name="DroppletAnimationPlayer" type="AnimationPlayer" parent="dropplet_placeholderr" unique_id=268235826]
 libraries/ = SubResource("AnimationLibrary_uuflm")
-autoplay = &"dropping"
 
 [node name="dropplet_area" type="Area2D" parent="dropplet_placeholderr" unique_id=355675222]
 
@@ -137,48 +262,28 @@ position = Vector2(-0.13114929, 1.9948187)
 scale = Vector2(0.9999996, 0.9999999)
 shape = SubResource("RectangleShape2D_0mw1e")
 
-[node name="szelle_jelzok" type="Node2D" parent="." unique_id=15873312]
-
-[node name="leesett_jelzo" type="Area2D" parent="szelle_jelzok" unique_id=1223914326]
-position = Vector2(569, 427)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="szelle_jelzok/leesett_jelzo" unique_id=2064278013]
-position = Vector2(19, -111)
-shape = SubResource("SegmentShape2D_0mw1e")
-
-[node name="perfect_szelle_jelzo" type="Area2D" parent="szelle_jelzok" unique_id=1926087473]
-position = Vector2(904, 432)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="szelle_jelzok/perfect_szelle_jelzo" unique_id=888409672]
-position = Vector2(-102, -111)
-shape = SubResource("RectangleShape2D_mmtjo")
-debug_color = Color(0.016313557, 0.5581168, 0.055020012, 0.41960785)
-
-[node name="good_szelle_jelzo" type="Area2D" parent="szelle_jelzok" unique_id=1686673206]
-position = Vector2(878, 429)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="szelle_jelzok/good_szelle_jelzo" unique_id=1008066986]
-position = Vector2(-91, -108)
-shape = SubResource("RectangleShape2D_e3dmf")
-debug_color = Color(0.73542345, 0.46520102, 0.18935934, 0.41960785)
-
-[node name="early_szelle_jelzo" type="Area2D" parent="szelle_jelzok" unique_id=2047371898]
-position = Vector2(863, 431)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="szelle_jelzok/early_szelle_jelzo" unique_id=1106304082]
-position = Vector2(-179.25, -110)
-shape = SubResource("RectangleShape2D_71p6h")
-debug_color = Color(0.96168846, 1.540184e-06, 0.51167804, 0.41960785)
-
 [node name="wave" parent="." unique_id=193732849 instance=ExtResource("4_uuflm")]
-position = Vector2(595, 315)
-scale = Vector2(0.775, 0.775)
+position = Vector2(593.285, 326.005)
+scale = Vector2(0.919, 0.919)
 
-[node name="test" type="Label" parent="." unique_id=1750695539]
-offset_left = 755.0
-offset_top = 146.0
-offset_right = 795.0
-offset_bottom = 169.0
+[node name="HitText" type="Label" parent="." unique_id=1750695539]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 783.0
+offset_top = 178.0
+offset_right = 823.0
+offset_bottom = 201.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Particles" type="AnimatedSprite2D" parent="HitText" unique_id=1428575239]
+position = Vector2(16.14, 15)
+scale = Vector2(0.098, 0.098)
+sprite_frames = SubResource("SpriteFrames_e3dmf")
+animation = &"idle"
 
 [node name="stars_collection" type="Node2D" parent="." unique_id=283514124]
 
@@ -221,20 +326,25 @@ index = 8
 position = Vector2(751, 289)
 index = 9
 
-[node name="ProgressBar" type="ProgressBar" parent="." unique_id=482661213]
-offset_left = 445.0
-offset_top = 615.0
-offset_right = 697.0
-offset_bottom = 642.0
+[node name="ProgressBar" type="TextureProgressBar" parent="." unique_id=838822504]
+offset_left = 336.0
+offset_top = 593.0
+offset_right = 1370.0
+offset_bottom = 663.0
+scale = Vector2(0.5, 0.5)
 max_value = 20.0
+step = 0.01
+texture_under = ExtResource("10_qtbob")
+texture_over = ExtResource("11_ohs8n")
+texture_progress = ExtResource("12_jfaf1")
 
 [node name="victory label" type="Label" parent="ProgressBar" unique_id=1305022546]
 visible = false
 layout_mode = 0
-offset_left = -168.0
-offset_top = -442.0
-offset_right = 449.0
-offset_bottom = -196.0
+offset_left = 233.0
+offset_top = -376.0
+offset_right = 850.0
+offset_bottom = -130.0
 theme_override_font_sizes/font_size = 180
 text = "győztél"
 horizontal_alignment = 1
@@ -270,6 +380,21 @@ expand_mode = 1
 [node name="Tutorial" parent="." unique_id=1684112177 instance=ExtResource("11_c8p3f")]
 visible = false
 
-[connection signal="area_entered" from="szelle_jelzok/leesett_jelzo" to="." method="_on_leesett_jelzo_area_entered"]
+[node name="test_metronome 120bpm" type="AudioStreamPlayer" parent="." unique_id=1961988476]
+stream = ExtResource("12_rtuws")
+
+[node name="perfectHullamEffect" type="AnimatedSprite2D" parent="." unique_id=1643179599]
+position = Vector2(584.99994, 336)
+scale = Vector2(0.351, 0.351)
+sprite_frames = SubResource("SpriteFrames_71p6h")
+animation = &"idle"
+
+[node name="MISSIONG TEXTURE REMINDER" type="Sprite2D" parent="." unique_id=526504522]
+z_index = -1
+position = Vector2(597, 324)
+scale = Vector2(6.505, 6.505)
+texture = ExtResource("41_bwufy")
+
+[connection signal="animation_finished" from="dropplet_placeholderr/DroppletAnimationPlayer" to="." method="_on_dropplet_animation_player_animation_finished"]
 [connection signal="value_changed" from="ProgressBar" to="." method="_on_progress_bar_value_changed"]
 [connection signal="pressed" from="TutorialButton" to="." method="_on_tutorial_button_pressed"]

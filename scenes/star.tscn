@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://mgw84bj5qnk4"]
 
 [ext_resource type="Script" uid="uid://bsyk31br8ot0h" path="res://scripts/star_script.gd" id="1_mcqwg"]
-[ext_resource type="Texture2D" uid="uid://c1xx3qkhepu1f" path="res://assets/rythm_game/stars/star_005.png" id="2_8d8bx"]
-[ext_resource type="Texture2D" uid="uid://dvvmv7jlvudev" path="res://assets/rythm_game/stars/star_001.png" id="3_8lrp4"]
-[ext_resource type="Texture2D" uid="uid://b7eloxqwkx2ul" path="res://assets/rythm_game/stars/star_003.png" id="4_sxbdi"]
+[ext_resource type="Texture2D" uid="uid://de1lx7lb7lvaq" path="res://assets/rythm_game/stars/star_005.png" id="2_8d8bx"]
+[ext_resource type="Texture2D" uid="uid://bqmtraprhir70" path="res://assets/rythm_game/stars/star_001.png" id="3_8lrp4"]
+[ext_resource type="Texture2D" uid="uid://biy58kxrbmwi4" path="res://assets/rythm_game/stars/star_003.png" id="4_sxbdi"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_e3dmf"]
 animations = [{

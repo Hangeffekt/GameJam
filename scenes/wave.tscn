@@ -1,51 +1,51 @@
 [gd_scene format=3 uid="uid://dpy8dk57s8673"]
 
 [ext_resource type="Script" uid="uid://dahqbmnp5d5ju" path="res://scripts/wave_script.gd" id="1_7o46e"]
-[ext_resource type="Texture2D" uid="uid://uyqw0b2sb6nh" path="res://assets/rythm_game/ripple animation/ripple_001.png" id="1_yjuq1"]
-[ext_resource type="Texture2D" uid="uid://ctwxo4epg8bsr" path="res://assets/rythm_game/ripple animation/ripple_002.png" id="2_7o46e"]
-[ext_resource type="Texture2D" uid="uid://b6p7otmaek0qf" path="res://assets/rythm_game/ripple animation/ripple_003.png" id="3_ok6k2"]
-[ext_resource type="Texture2D" uid="uid://dcujkh3pukc4u" path="res://assets/rythm_game/ripple animation/ripple_004.png" id="4_wy5f2"]
-[ext_resource type="Texture2D" uid="uid://dr7stppi3ygo4" path="res://assets/rythm_game/ripple animation/ripple_005.png" id="5_roe0b"]
-[ext_resource type="Texture2D" uid="uid://dxepfu405njk0" path="res://assets/rythm_game/ripple animation/ripple_006.png" id="6_g3s1h"]
-[ext_resource type="Texture2D" uid="uid://cfc4nxrdgcf0a" path="res://assets/rythm_game/ripple animation/ripple_007.png" id="7_wj6ds"]
-[ext_resource type="Texture2D" uid="uid://hfsaoyhrf6cr" path="res://assets/rythm_game/ripple animation/ripple_008.png" id="8_3kyrg"]
-[ext_resource type="Texture2D" uid="uid://cseexdxct4d82" path="res://assets/rythm_game/ripple animation/ripple_009.png" id="9_5nm1l"]
-[ext_resource type="Texture2D" uid="uid://cevuegmarw5df" path="res://assets/rythm_game/ripple animation/ripple_010.png" id="10_nx005"]
-[ext_resource type="Texture2D" uid="uid://co05rfwhmfact" path="res://assets/rythm_game/ripple animation/ripple_011.png" id="11_oe4lc"]
-[ext_resource type="Texture2D" uid="uid://4j7ibtucq8jj" path="res://assets/rythm_game/ripple animation/ripple_012.png" id="12_w8y5h"]
-[ext_resource type="Texture2D" uid="uid://dta2e6bxwkhwh" path="res://assets/rythm_game/ripple animation/ripple_013.png" id="13_vxp8r"]
-[ext_resource type="Texture2D" uid="uid://bqd6k2d41gh7x" path="res://assets/rythm_game/ripple animation/ripple_014.png" id="14_cwt8e"]
-[ext_resource type="Texture2D" uid="uid://da042k54vsprc" path="res://assets/rythm_game/ripple animation/ripple_015.png" id="15_r87rk"]
-[ext_resource type="Texture2D" uid="uid://3mjoethrnh2c" path="res://assets/rythm_game/ripple animation/ripple_016.png" id="16_dmcsc"]
-[ext_resource type="Texture2D" uid="uid://804y4pviypgm" path="res://assets/rythm_game/ripple animation/ripple_017.png" id="17_xv8hu"]
-[ext_resource type="Texture2D" uid="uid://buht1owdqilvp" path="res://assets/rythm_game/ripple animation/ripple_018.png" id="18_wq0ab"]
-[ext_resource type="Texture2D" uid="uid://bej2ajfy1652v" path="res://assets/rythm_game/ripple animation/ripple_019.png" id="19_2x1bi"]
-[ext_resource type="Texture2D" uid="uid://dilm1mr335qfy" path="res://assets/rythm_game/ripple animation/ripple_020.png" id="20_nqpws"]
-[ext_resource type="Texture2D" uid="uid://dklikwp7jbk6m" path="res://assets/rythm_game/ripple animation/ripple_021.png" id="21_ruir2"]
-[ext_resource type="Texture2D" uid="uid://bnyml7vx11m1o" path="res://assets/rythm_game/ripple animation/ripple_022.png" id="22_8kpnr"]
-[ext_resource type="Texture2D" uid="uid://g0ejq0hji3y5" path="res://assets/rythm_game/ripple animation/ripple_023.png" id="23_87jrq"]
-[ext_resource type="Texture2D" uid="uid://c2va8rbfrnqrn" path="res://assets/rythm_game/ripple animation/ripple_024.png" id="24_n1kj3"]
-[ext_resource type="Texture2D" uid="uid://um3dr01hhssj" path="res://assets/rythm_game/ripple animation/ripple_025.png" id="25_tfp3u"]
-[ext_resource type="Texture2D" uid="uid://8an04bvh1cmg" path="res://assets/rythm_game/ripple animation/ripple_026.png" id="26_gwqbb"]
-[ext_resource type="Texture2D" uid="uid://bty5dh4fvojph" path="res://assets/rythm_game/ripple animation/ripple_027.png" id="27_hx33s"]
-[ext_resource type="Texture2D" uid="uid://q458us8gpprb" path="res://assets/rythm_game/ripple animation/ripple_028.png" id="28_ve1gl"]
-[ext_resource type="Texture2D" uid="uid://crqyob2w5qrb2" path="res://assets/rythm_game/ripple animation/ripple_029.png" id="29_jk4yg"]
-[ext_resource type="Texture2D" uid="uid://doli4m514pihj" path="res://assets/rythm_game/ripple animation/ripple_030.png" id="30_hpa3p"]
-[ext_resource type="Texture2D" uid="uid://bu7ldhi50blgf" path="res://assets/rythm_game/ripple animation/ripple_031.png" id="31_1noxa"]
-[ext_resource type="Texture2D" uid="uid://br527loyos2h7" path="res://assets/rythm_game/ripple animation/ripple_032.png" id="32_ymb8q"]
-[ext_resource type="Texture2D" uid="uid://bexp0ey20oklb" path="res://assets/rythm_game/ripple animation/ripple_033.png" id="33_qq8gn"]
-[ext_resource type="Texture2D" uid="uid://bplo3lmlwp5ko" path="res://assets/rythm_game/ripple animation/ripple_034.png" id="34_mmxpa"]
-[ext_resource type="Texture2D" uid="uid://ss433tg84vua" path="res://assets/rythm_game/ripple animation/ripple_035.png" id="35_pet2e"]
-[ext_resource type="Texture2D" uid="uid://t8ve46ebagaa" path="res://assets/rythm_game/ripple animation/ripple_036.png" id="36_pi6ee"]
-[ext_resource type="Texture2D" uid="uid://0aquyo3u4sip" path="res://assets/rythm_game/ripple animation/ripple_037.png" id="37_6klpv"]
-[ext_resource type="Texture2D" uid="uid://84mt5o2dn567" path="res://assets/rythm_game/ripple animation/ripple_038.png" id="38_qxt15"]
-[ext_resource type="Texture2D" uid="uid://dhcs6k1woytjm" path="res://assets/rythm_game/ripple animation/ripple_039.png" id="39_p27ae"]
-[ext_resource type="Texture2D" uid="uid://d2064m1spao42" path="res://assets/rythm_game/ripple animation/ripple_040.png" id="40_qh3se"]
-[ext_resource type="Texture2D" uid="uid://ddqdhf4il6lfu" path="res://assets/rythm_game/ripple animation/ripple_041.png" id="41_12khx"]
-[ext_resource type="Texture2D" uid="uid://qf7ai3cgm7ig" path="res://assets/rythm_game/ripple animation/ripple_042.png" id="42_hbiwd"]
-[ext_resource type="Texture2D" uid="uid://jfvjqwleeel4" path="res://assets/rythm_game/ripple animation/ripple_043.png" id="43_0nx46"]
-[ext_resource type="Texture2D" uid="uid://cnbxt7ioy65xp" path="res://assets/rythm_game/ripple animation/ripple_044.png" id="44_177d8"]
-[ext_resource type="Texture2D" uid="uid://bm3oahhxvwacc" path="res://assets/rythm_game/ripple animation/ripple_045.png" id="45_6cycn"]
+[ext_resource type="Texture2D" uid="uid://uawkou85nnv3" path="res://assets/rythm_game/ripple_anim/ripple_001.png" id="2_gsof5"]
+[ext_resource type="Texture2D" uid="uid://dvnl86n2xfb4d" path="res://assets/rythm_game/ripple_anim/ripple_002.png" id="3_vcvhe"]
+[ext_resource type="Texture2D" uid="uid://bqatsy6m66q7b" path="res://assets/rythm_game/ripple_anim/ripple_003.png" id="4_pi5he"]
+[ext_resource type="Texture2D" uid="uid://b8nigagldhi7q" path="res://assets/rythm_game/ripple_anim/ripple_004.png" id="5_mmwho"]
+[ext_resource type="Texture2D" uid="uid://cqyhsc8y65fo0" path="res://assets/rythm_game/ripple_anim/ripple_005.png" id="6_kebos"]
+[ext_resource type="Texture2D" uid="uid://c8fpw48s2xqkm" path="res://assets/rythm_game/ripple_anim/ripple_006.png" id="7_psnvs"]
+[ext_resource type="Texture2D" uid="uid://cxcua3k5ho7v1" path="res://assets/rythm_game/ripple_anim/ripple_007.png" id="8_ttt3x"]
+[ext_resource type="Texture2D" uid="uid://b045vye47dcgp" path="res://assets/rythm_game/ripple_anim/ripple_008.png" id="9_arc3e"]
+[ext_resource type="Texture2D" uid="uid://dc31soqpi6jhs" path="res://assets/rythm_game/ripple_anim/ripple_009.png" id="10_u3bxe"]
+[ext_resource type="Texture2D" uid="uid://c0mkgnglp1y8r" path="res://assets/rythm_game/ripple_anim/ripple_010.png" id="11_pubne"]
+[ext_resource type="Texture2D" uid="uid://hbkgh6smqcr4" path="res://assets/rythm_game/ripple_anim/ripple_011.png" id="12_0qbhb"]
+[ext_resource type="Texture2D" uid="uid://chdwxkoasrh3o" path="res://assets/rythm_game/ripple_anim/ripple_012.png" id="13_0l852"]
+[ext_resource type="Texture2D" uid="uid://sisd60pbt5ed" path="res://assets/rythm_game/ripple_anim/ripple_013.png" id="14_51ic4"]
+[ext_resource type="Texture2D" uid="uid://dau12m5niydw1" path="res://assets/rythm_game/ripple_anim/ripple_014.png" id="15_yt8dt"]
+[ext_resource type="Texture2D" uid="uid://cp4aqe2wfq1ro" path="res://assets/rythm_game/ripple_anim/ripple_015.png" id="16_cy55y"]
+[ext_resource type="Texture2D" uid="uid://u2vt8tw0h3m7" path="res://assets/rythm_game/ripple_anim/ripple_016.png" id="17_7x4xk"]
+[ext_resource type="Texture2D" uid="uid://b437ej41eo3ii" path="res://assets/rythm_game/ripple_anim/ripple_017.png" id="18_m1ghe"]
+[ext_resource type="Texture2D" uid="uid://dt2jydbhbu8gf" path="res://assets/rythm_game/ripple_anim/ripple_018.png" id="19_qryik"]
+[ext_resource type="Texture2D" uid="uid://ird6gmjbstwl" path="res://assets/rythm_game/ripple_anim/ripple_019.png" id="20_7pk2j"]
+[ext_resource type="Texture2D" uid="uid://c54mv763a24kv" path="res://assets/rythm_game/ripple_anim/ripple_020.png" id="21_y0gpw"]
+[ext_resource type="Texture2D" uid="uid://p10gthwhnuu3" path="res://assets/rythm_game/ripple_anim/ripple_021.png" id="22_80gtw"]
+[ext_resource type="Texture2D" uid="uid://ddbvabkf4cu3p" path="res://assets/rythm_game/ripple_anim/ripple_022.png" id="23_tb7lw"]
+[ext_resource type="Texture2D" uid="uid://hburt0qi4f4e" path="res://assets/rythm_game/ripple_anim/ripple_023.png" id="24_wdky3"]
+[ext_resource type="Texture2D" uid="uid://cn0baiml4kviw" path="res://assets/rythm_game/ripple_anim/ripple_024.png" id="25_wqg4f"]
+[ext_resource type="Texture2D" uid="uid://br506laagbmk6" path="res://assets/rythm_game/ripple_anim/ripple_025.png" id="26_4qp37"]
+[ext_resource type="Texture2D" uid="uid://bkxjr4r2o1b0o" path="res://assets/rythm_game/ripple_anim/ripple_026.png" id="27_yta5d"]
+[ext_resource type="Texture2D" uid="uid://dac7rwmm05kbn" path="res://assets/rythm_game/ripple_anim/ripple_027.png" id="28_6swr1"]
+[ext_resource type="Texture2D" uid="uid://chtrtjhtenoy2" path="res://assets/rythm_game/ripple_anim/ripple_028.png" id="29_vydhm"]
+[ext_resource type="Texture2D" uid="uid://c6xv14p2ef6s" path="res://assets/rythm_game/ripple_anim/ripple_029.png" id="30_jcjj5"]
+[ext_resource type="Texture2D" uid="uid://1sa46mufjryr" path="res://assets/rythm_game/ripple_anim/ripple_030.png" id="31_t47jw"]
+[ext_resource type="Texture2D" uid="uid://ckibnohes7jtt" path="res://assets/rythm_game/ripple_anim/ripple_031.png" id="32_ccich"]
+[ext_resource type="Texture2D" uid="uid://c0k8yubt4exoc" path="res://assets/rythm_game/ripple_anim/ripple_032.png" id="33_kc0y1"]
+[ext_resource type="Texture2D" uid="uid://dmedavrgqdfx4" path="res://assets/rythm_game/ripple_anim/ripple_033.png" id="34_ycpf8"]
+[ext_resource type="Texture2D" uid="uid://kgh6vwwik18x" path="res://assets/rythm_game/ripple_anim/ripple_034.png" id="35_qku2t"]
+[ext_resource type="Texture2D" uid="uid://2idses1r5665" path="res://assets/rythm_game/ripple_anim/ripple_035.png" id="36_4eihu"]
+[ext_resource type="Texture2D" uid="uid://c1kulrqt2twml" path="res://assets/rythm_game/ripple_anim/ripple_036.png" id="37_hnpf2"]
+[ext_resource type="Texture2D" uid="uid://dqmokwe38u205" path="res://assets/rythm_game/ripple_anim/ripple_037.png" id="38_0ufr4"]
+[ext_resource type="Texture2D" uid="uid://cl8xu3nnlluws" path="res://assets/rythm_game/ripple_anim/ripple_038.png" id="39_vj2np"]
+[ext_resource type="Texture2D" uid="uid://4pf5kobh8b5h" path="res://assets/rythm_game/ripple_anim/ripple_039.png" id="40_x1tm6"]
+[ext_resource type="Texture2D" uid="uid://lhcy8qwy0dwr" path="res://assets/rythm_game/ripple_anim/ripple_040.png" id="41_01kd6"]
+[ext_resource type="Texture2D" uid="uid://jsmqps4j7mra" path="res://assets/rythm_game/ripple_anim/ripple_041.png" id="42_jueqo"]
+[ext_resource type="Texture2D" uid="uid://d0r1kq33b7a48" path="res://assets/rythm_game/ripple_anim/ripple_042.png" id="43_j5s64"]
+[ext_resource type="Texture2D" uid="uid://keno15jb6e7i" path="res://assets/rythm_game/ripple_anim/ripple_043.png" id="44_mfydc"]
+[ext_resource type="Texture2D" uid="uid://dg7dcsrpx2txa" path="res://assets/rythm_game/ripple_anim/ripple_044.png" id="45_eycid"]
+[ext_resource type="Texture2D" uid="uid://c1bjdsltf4oa1" path="res://assets/rythm_game/ripple_anim/ripple_045.png" id="46_4koac"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_e3dmf"]
 animations = [{
@@ -56,366 +56,144 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_yjuq1")
+"texture": ExtResource("2_gsof5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_7o46e")
+"texture": ExtResource("3_vcvhe")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_ok6k2")
+"texture": ExtResource("4_pi5he")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_wy5f2")
+"texture": ExtResource("5_mmwho")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_roe0b")
+"texture": ExtResource("6_kebos")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_g3s1h")
+"texture": ExtResource("7_psnvs")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_wj6ds")
+"texture": ExtResource("8_ttt3x")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_3kyrg")
+"texture": ExtResource("9_arc3e")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_5nm1l")
+"texture": ExtResource("10_u3bxe")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_nx005")
+"texture": ExtResource("11_pubne")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_oe4lc")
+"texture": ExtResource("12_0qbhb")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_w8y5h")
+"texture": ExtResource("13_0l852")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_vxp8r")
+"texture": ExtResource("14_51ic4")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_cwt8e")
+"texture": ExtResource("15_yt8dt")
 }, {
 "duration": 1.0,
-"texture": ExtResource("15_r87rk")
+"texture": ExtResource("16_cy55y")
 }, {
 "duration": 1.0,
-"texture": ExtResource("16_dmcsc")
+"texture": ExtResource("17_7x4xk")
 }, {
 "duration": 1.0,
-"texture": ExtResource("17_xv8hu")
+"texture": ExtResource("18_m1ghe")
 }, {
 "duration": 1.0,
-"texture": ExtResource("18_wq0ab")
+"texture": ExtResource("19_qryik")
 }, {
 "duration": 1.0,
-"texture": ExtResource("19_2x1bi")
+"texture": ExtResource("20_7pk2j")
 }, {
 "duration": 1.0,
-"texture": ExtResource("20_nqpws")
+"texture": ExtResource("21_y0gpw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("21_ruir2")
+"texture": ExtResource("22_80gtw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("22_8kpnr")
+"texture": ExtResource("23_tb7lw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("23_87jrq")
+"texture": ExtResource("24_wdky3")
 }, {
 "duration": 1.0,
-"texture": ExtResource("24_n1kj3")
+"texture": ExtResource("25_wqg4f")
 }, {
 "duration": 1.0,
-"texture": ExtResource("25_tfp3u")
+"texture": ExtResource("26_4qp37")
 }, {
 "duration": 1.0,
-"texture": ExtResource("26_gwqbb")
+"texture": ExtResource("27_yta5d")
 }, {
 "duration": 1.0,
-"texture": ExtResource("27_hx33s")
+"texture": ExtResource("28_6swr1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("28_ve1gl")
+"texture": ExtResource("29_vydhm")
 }, {
 "duration": 1.0,
-"texture": ExtResource("29_jk4yg")
+"texture": ExtResource("30_jcjj5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("30_hpa3p")
+"texture": ExtResource("31_t47jw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("31_1noxa")
+"texture": ExtResource("32_ccich")
 }, {
 "duration": 1.0,
-"texture": ExtResource("32_ymb8q")
+"texture": ExtResource("33_kc0y1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("33_qq8gn")
+"texture": ExtResource("34_ycpf8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("34_mmxpa")
+"texture": ExtResource("35_qku2t")
 }, {
 "duration": 1.0,
-"texture": ExtResource("35_pet2e")
+"texture": ExtResource("36_4eihu")
 }, {
 "duration": 1.0,
-"texture": ExtResource("36_pi6ee")
+"texture": ExtResource("37_hnpf2")
 }, {
 "duration": 1.0,
-"texture": ExtResource("37_6klpv")
+"texture": ExtResource("38_0ufr4")
 }, {
 "duration": 1.0,
-"texture": ExtResource("38_qxt15")
+"texture": ExtResource("39_vj2np")
 }, {
 "duration": 1.0,
-"texture": ExtResource("39_p27ae")
+"texture": ExtResource("40_x1tm6")
 }, {
 "duration": 1.0,
-"texture": ExtResource("40_qh3se")
+"texture": ExtResource("41_01kd6")
 }, {
 "duration": 1.0,
-"texture": ExtResource("41_12khx")
+"texture": ExtResource("42_jueqo")
 }, {
 "duration": 1.0,
-"texture": ExtResource("42_hbiwd")
+"texture": ExtResource("43_j5s64")
 }, {
 "duration": 1.0,
-"texture": ExtResource("43_0nx46")
+"texture": ExtResource("44_mfydc")
 }, {
 "duration": 1.0,
-"texture": ExtResource("44_177d8")
+"texture": ExtResource("45_eycid")
 }, {
 "duration": 1.0,
-"texture": ExtResource("45_6cycn")
+"texture": ExtResource("46_4koac")
 }],
 "loop": 0,
 "name": &"waving",
-"speed": 20.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_yjuq1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_7o46e")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_ok6k2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_wy5f2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_roe0b")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_g3s1h")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_wj6ds")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_3kyrg")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_5nm1l")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_nx005")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_oe4lc")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_w8y5h")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_vxp8r")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_cwt8e")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_r87rk")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_dmcsc")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_xv8hu")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18_wq0ab")
-}, {
-"duration": 1.0,
-"texture": ExtResource("19_2x1bi")
-}, {
-"duration": 1.0,
-"texture": ExtResource("20_nqpws")
-}, {
-"duration": 1.0,
-"texture": ExtResource("21_ruir2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("22_8kpnr")
-}, {
-"duration": 1.0,
-"texture": ExtResource("23_87jrq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("24_n1kj3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("25_tfp3u")
-}, {
-"duration": 1.0,
-"texture": ExtResource("26_gwqbb")
-}, {
-"duration": 1.0,
-"texture": ExtResource("27_hx33s")
-}, {
-"duration": 1.0,
-"texture": ExtResource("28_ve1gl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("29_jk4yg")
-}, {
-"duration": 1.0,
-"texture": ExtResource("30_hpa3p")
-}, {
-"duration": 1.0,
-"texture": ExtResource("31_1noxa")
-}, {
-"duration": 1.0,
-"texture": ExtResource("32_ymb8q")
-}, {
-"duration": 1.0,
-"texture": ExtResource("33_qq8gn")
-}, {
-"duration": 1.0,
-"texture": ExtResource("34_mmxpa")
-}, {
-"duration": 1.0,
-"texture": ExtResource("35_pet2e")
-}, {
-"duration": 1.0,
-"texture": ExtResource("36_pi6ee")
-}, {
-"duration": 1.0,
-"texture": ExtResource("37_6klpv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("38_qxt15")
-}, {
-"duration": 1.0,
-"texture": ExtResource("39_p27ae")
-}, {
-"duration": 1.0,
-"texture": ExtResource("40_qh3se")
-}, {
-"duration": 1.0,
-"texture": ExtResource("41_12khx")
-}, {
-"duration": 1.0,
-"texture": ExtResource("42_hbiwd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("43_0nx46")
-}, {
-"duration": 1.0,
-"texture": ExtResource("44_177d8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("45_6cycn")
-}],
-"loop": 1,
-"name": &"waving_fast",
-"speed": 40.0
+"speed": 60.0
 }]
-
-[sub_resource type="Animation" id="Animation_y5ysc"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("wave_Area2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(105.244446, -8.533334)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("..:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
-[sub_resource type="Animation" id="Animation_sl0wx"]
-resource_name = "idle"
-length = 2.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("..:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, false]
-}
-
-[sub_resource type="Animation" id="Animation_h2l3e"]
-resource_name = "waweing"
-length = 2.2
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("wave_Area2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = false
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(105.244446, -8.533334), Vector2(170.66667, -8.533334), Vector2(227.55556, -8.533334), Vector2(281.6, -8.533334), Vector2(332.8, -8.533334), Vector2(386.84442, -8.533334), Vector2(432.35556, -8.533334), Vector2(475.02225, -8.533334), Vector2(506.3111, -8.533334), Vector2(540.44446, -8.533334), Vector2(574.57776, -8.533334), Vector2(617.24445, -8.533334), Vector2(637.1556, -8.533334), Vector2(662.75555, -8.533334), Vector2(682.6666, -8.533334), Vector2(711.1111, -8.533334), Vector2(731.0222, -8.533333), Vector2(756.6222, -8.533334), Vector2(766.1037, -8.533334), Vector2(776.5333, -8.533333), Vector2(785.06665, -8.533334), Vector2(786.4889, -8.533334), Vector2(787.91113, -8.533334)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("..:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 2.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, true]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_sl0wx"]
-_data = {
-&"RESET": SubResource("Animation_y5ysc"),
-&"idle": SubResource("Animation_sl0wx"),
-&"waweing": SubResource("Animation_h2l3e")
-}
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_4qhuu"]
-b = Vector2(0, 16.181728)
 
 [node name="wave" type="Node2D" unique_id=193732849]
 script = ExtResource("1_7o46e")
@@ -423,13 +201,6 @@ script = ExtResource("1_7o46e")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1429958952]
 scale = Vector2(0.3515625, 0.3515625)
 sprite_frames = SubResource("SpriteFrames_e3dmf")
-animation = &"waving"
+animation = &"idle"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D" unique_id=1104018699]
-libraries/ = SubResource("AnimationLibrary_sl0wx")
-
-[node name="wave_Area2D" type="Area2D" parent="AnimatedSprite2D" unique_id=714343354]
-position = Vector2(105.244446, -8.533334)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/wave_Area2D" unique_id=1160684862]
-shape = SubResource("SegmentShape2D_4qhuu")
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
