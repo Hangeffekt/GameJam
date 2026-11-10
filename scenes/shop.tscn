@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dviio0v7aaskt" path="res://assets/tutorial wizard/wizard_shocked.png" id="9_1v8qu"]
 [ext_resource type="Texture2D" uid="uid://btp5ofkfadkv5" path="res://assets/tutorial wizard/wizard_pointing.png" id="10_24it5"]
 [ext_resource type="Texture2D" uid="uid://b1hl83324sdjn" path="res://assets/placeholders/placeholder_char.png" id="10_heatd"]
-[ext_resource type="Texture2D" uid="uid://b4dgb5s1j213f" path="res://assets/placeholders/placeholder_char2.png" id="11_1v8qu"]
+[ext_resource type="Texture2D" uid="uid://bexyfdl7u66bo" path="res://assets/shop/characters/Radomir.PNG" id="12_24it5"]
 [ext_resource type="Texture2D" uid="uid://bhru5f31v1lpn" path="res://assets/placeholders/Screenshot 2026-08-13 233144.png" id="12_44xle"]
 
 [node name="Node2D" type="CanvasLayer" unique_id=1181666746]
@@ -44,12 +44,12 @@ characters_name = Array[String](["**TEST**Cat", "**TEST**Player", "**TEST**Cat",
 textcolor = Array[Color]([Color(0.8812561, 0.65154487, 0.9766125, 1), Color(1, 0.8, 0.5647059, 1), Color(0.88235295, 0.6509804, 0.9764706, 1), Color(0.88235295, 0.6509804, 0.9764706, 1), Color(1, 0.8, 0.5647059, 1)])
 Portraits = Array[Texture2D]([ExtResource("10_heatd"), ExtResource("10_heatd"), ExtResource("10_heatd"), ExtResource("10_heatd"), ExtResource("10_heatd")])
 
-[node name="PLACEHOLDERNAMEDialogueManager" parent="." unique_id=562795217 instance=ExtResource("5_y6sft")]
+[node name="MonsterHunterDialogueManager" parent="." unique_id=562795217 instance=ExtResource("5_y6sft")]
 visible = false
-text_key = Array[String](["**TEST**Szeretném, ha most megosztanál velem egy jóslást, ami a következő időszakomra vonatkozik. Bízom a megérzéseidben és a látásmódodban, ezért kíváncsi vagyok, mit jósolsz nekem. Kérlek, fogalmazz meg egy konkrét, inspiráló jóslatot, ami útmutatást adhat a döntéseimhez. Ha van valamilyen szimbolikus kép vagy érzés, ami eszedbe jut rólam, azt is szívesen fogadom. Előre is köszönöm a segítségedet és a rám szánt idődet! eskü nem AI generált dummy szöveg"])
-characters_name = Array[String](["**TEST** meglepően udvarias bobux eger"])
+text_key = Array[String](["**TEST** szeretnék egy ritmusjátékot."])
+characters_name = Array[String](["**TEST** Monster Hunter"])
 textcolor = Array[Color]([Color(0.4898336, 0.6540255, 1, 1)])
-Portraits = Array[Texture2D]([ExtResource("11_1v8qu")])
+Portraits = Array[Texture2D]([ExtResource("12_24it5")])
 
 [node name="2PLACEHOLDERNAMEDialogueManager" parent="." unique_id=1878537526 instance=ExtResource("5_y6sft")]
 visible = false
