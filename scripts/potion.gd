@@ -20,6 +20,14 @@ extends CanvasLayer
 @onready var potionFill: VideoStreamPlayer = $AspectRatioContainer2/VideoFill
 @onready var potionSplash: VideoStreamPlayer = $AspectRatioContainer2/VideoSplash
 
+#choosed item control buttons
+@onready var choosed_item_1: Button = $selected_item_box/choosed_items/choosed_item_1
+@onready var item_1_remove_x: TextureRect = $selected_item_box/choosed_items/choosed_item_1/MarginContainer/TextureRect
+@onready var choosed_item_2: Button = $selected_item_box/choosed_items/choosed_item_2
+@onready var item_2_remove_x: TextureRect = $selected_item_box/choosed_items/choosed_item_2/MarginContainer/TextureRect
+@onready var choosed_item_3: Button = $selected_item_box/choosed_items/choosed_item_3
+@onready var item_3_remove_x: TextureRect = $selected_item_box/choosed_items/choosed_item_3/MarginContainer/TextureRect
+
 var sum_green: int = 0
 var sum_red: int = 0
 var sum_blue: int = 0
@@ -47,6 +55,14 @@ func _ready() -> void:
 		set_progress_value(progresBarStar, maxSignStar, recipe[0].relation_2, 0, recipe[0].target_number_2)
 		set_progress_value(progresBarDiamond, maxSignDiamond, recipe[0].relation_3, 0, recipe[0].target_number_3)
 		tutorialScene.visible = false
+	
+	#connect hovers
+	choosed_item_1.mouse_entered.connect(_on_mouse_entered_item_1)
+	choosed_item_1.mouse_exited.connect(_on_mouse_exited_item_1)
+	choosed_item_2.mouse_entered.connect(_on_mouse_entered_item_2)
+	choosed_item_2.mouse_exited.connect(_on_mouse_exited_item_2)
+	choosed_item_3.mouse_entered.connect(_on_mouse_entered_item_3)
+	choosed_item_3.mouse_exited.connect(_on_mouse_exited_item_3)
 	
 
 func category_buttons(id: int):
@@ -175,14 +191,17 @@ func item_choosed(id: int, name: String, atr1: int, atr2: int, atr3: int):
 			item_place_1 = true
 			item_place_id_1 = id
 			$selected_item_box/choosed_items/choosed_item_1.add_child(add_image(name))
+			$selected_item_box/choosed_items/choosed_item_1/MarginContainer.visible = true
 		elif !item_place_2:
 			item_place_2 = true
 			item_place_id_2 = id
 			$selected_item_box/choosed_items/choosed_item_2.add_child(add_image(name))
+			$selected_item_box/choosed_items/choosed_item_2/MarginContainer.visible = true
 		elif !item_place_3:
 			item_place_3 = true
 			item_place_id_3 = id
 			$selected_item_box/choosed_items/choosed_item_3.add_child(add_image(name))
+			$selected_item_box/choosed_items/choosed_item_3/MarginContainer.visible = true
 	
 	set_and_write_values(atr1, atr2, atr3)
 	#progresBarSkull.value += atr1
@@ -269,6 +288,7 @@ func mini_game_result(left_side: int, relation: String, right_side: int) -> int:
 		
 func end_game(atr1: int, atr2: int, atr3: int) -> void:
 	#disable mouse and scroll
+	finishButton.disabled = true
 	for button in get_tree().get_nodes_in_group("potion_buttons"):
 		if button is Button:
 			button.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -293,7 +313,10 @@ func end_game(atr1: int, atr2: int, atr3: int) -> void:
 	$result.show()
 	await get_tree().create_timer(3.0).timeout
 	$AspectRatioContainer.visible= true
-	potionScrup.finished.connect(_on_video_fill.bind(recipe[0].file_name))
+	potionScrup.visible = true
+	potionScrup.finished.connect(_on_change_sceene)
+	var kovetkezo_video = load("res://assets/videos/" + recipe[0].file_name + "_potion_hu.ogv")
+	potionScrup.stream = kovetkezo_video
 	potionScrup.play()
 	
 
@@ -340,7 +363,7 @@ func _on_video_fill(name: String) -> void:
 	potionFill.finished.connect(_on_video_splash.bind(name))
 	potionScrup.visible = false
 	potionFill.visible = true
-	var kovetkezo_video = load("res://assets/videos/" + name + "_fill.ogv")
+	var kovetkezo_video = load("res://assets/videos/" + name + "_.ogv")
 	# Amint az első véget ért, elindul a második
 	potionFill.stream = kovetkezo_video
 	potionFill.play()
@@ -361,27 +384,47 @@ func _on_change_sceene() -> void:
 #remove item functions
 func _on_choosed_item_1_pressed() -> void:
 	if item_place_1:
-		$selected_item_box/choosed_items/choosed_item_1.get_child(0).queue_free()
+		choosed_item_1.get_child(-1).queue_free()
+		choosed_item_1.find_child("MarginContainer").visible = false
 		var removed_item = PotionCategorie.all_instances.filter(func(x): return x.id == item_place_id_1 )
 		item_place_id_1 = -1
 		item_place_1 = false
 		item_choosed(removed_item[0].id, "", removed_item[0].atr1 * -1, removed_item[0].atr2 * -1, removed_item[0].atr3 * -1)
 		category_buttons(choosed_category)
 
+func _on_mouse_entered_item_1() -> void:
+	item_1_remove_x.texture = load("res://assets/potion/potion ui_ingredients bar kivevés ikon_hover.svg")
+	
+func _on_mouse_exited_item_1() -> void:
+	item_1_remove_x.texture = load("res://assets/potion/potion ui_ingredients bar kivevés ikon.png")
+
 func _on_choosed_item_2_pressed() -> void:
 	if item_place_2:
-		$selected_item_box/choosed_items/choosed_item_2.get_child(0).queue_free()
+		choosed_item_2.get_child(-1).queue_free()
+		choosed_item_2.find_child("MarginContainer").visible = false
 		var removed_item = PotionCategorie.all_instances.filter(func(x): return x.id == item_place_id_2 )
 		item_place_id_2 = -1
 		item_place_2 = false
 		item_choosed(removed_item[0].id, "", removed_item[0].atr1 * -1, removed_item[0].atr2 * -1, removed_item[0].atr3 * -1)
 		category_buttons(choosed_category)
+func _on_mouse_entered_item_2() -> void:
+	item_2_remove_x.texture = load("res://assets/potion/potion ui_ingredients bar kivevés ikon_hover.svg")
+	
+func _on_mouse_exited_item_2() -> void:
+	item_2_remove_x.texture = load("res://assets/potion/potion ui_ingredients bar kivevés ikon.png")
 
 func _on_choosed_item_3_pressed() -> void:
 	if item_place_3:
-		$selected_item_box/choosed_items/choosed_item_3.get_child(0).queue_free()
+		choosed_item_3.get_child(-1).queue_free()
+		choosed_item_3.find_child("MarginContainer").visible = false
 		var removed_item = PotionCategorie.all_instances.filter(func(x): return x.id == item_place_id_3 )
 		item_place_id_3 = -1
 		item_place_3 = false
 		item_choosed(removed_item[0].id, "", removed_item[0].atr1 * -1, removed_item[0].atr2 * -1, removed_item[0].atr3 * -1)
 		category_buttons(choosed_category)
+
+func _on_mouse_entered_item_3() -> void:
+	item_3_remove_x.texture = load("res://assets/potion/potion ui_ingredients bar kivevés ikon_hover.svg")
+	
+func _on_mouse_exited_item_3() -> void:
+	item_3_remove_x.texture = load("res://assets/potion/potion ui_ingredients bar kivevés ikon.png")

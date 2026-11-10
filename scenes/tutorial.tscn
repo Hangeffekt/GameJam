@@ -12,17 +12,17 @@
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_67q4m"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nlqja"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0epgs"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g2equ"]
-
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ckvwl"]
 load_path = "res://.godot/imported/wizard_pointing.png-245bf5cea1240ef5f7c6554a9223b189.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nlqja"]
 load_path = "res://.godot/imported/wizard_evil.png-f1434839eea927afaad1510adc1c779e.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nlqja"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0epgs"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g2equ"]
 
 [node name="Tutorial" type="CanvasLayer" unique_id=1684112177]
 script = ExtResource("1_ph3nu")
@@ -119,27 +119,6 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = ExtResource("2_ph3nu")
 text = "Tarrot"
 
-[node name="TutorialButton" type="Button" parent="." unique_id=2123120564]
-offset_left = 992.0
-offset_top = 5.0
-offset_right = 1101.0
-offset_bottom = 114.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_nlqja")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_0epgs")
-theme_override_styles/hover = SubResource("StyleBoxTexture_g2equ")
-
-[node name="TextureRect" type="TextureRect" parent="TutorialButton" unique_id=1178551254]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1.0
-offset_top = -1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("4_nlqja")
-expand_mode = 1
-
 [node name="SartTutorial" parent="." unique_id=515192348 instance=ExtResource("3_4kmhl")]
 visible = false
 text_key = Array[String](["ÁÁÁÁ, úgy látom, keresel valamit! Jó helyen jársz!", "Ha még egyszer rám kattintasz a sarokban nem foglak zavarni.", "Válassz a bal oldali gombok közül, és minden kérdésedre választ kapsz!"])
@@ -181,6 +160,27 @@ text_key = Array[String](["Nahát, még nem sikerült mindent kiderítened? Seba
 characters_name = Array[String](["Wizz Ard", "Wizz Ard"])
 textcolor = Array[Color]([Color(1, 1, 1, 1), Color(1, 1, 1, 1)])
 Portraits = Array[Texture2D]([ExtResource("4_cq4me"), ExtResource("5_6yjpi")])
+
+[node name="TutorialButton" type="Button" parent="." unique_id=2123120564]
+offset_left = 992.0
+offset_top = 5.0
+offset_right = 1101.0
+offset_bottom = 114.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_nlqja")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0epgs")
+theme_override_styles/hover = SubResource("StyleBoxTexture_g2equ")
+
+[node name="TextureRect" type="TextureRect" parent="TutorialButton" unique_id=1178551254]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_nlqja")
+expand_mode = 1
 
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/StartBtn" to="." method="_on_start_btn_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/PotionBtn" to="." method="_on_potion_btn_pressed"]

@@ -34,7 +34,8 @@ func main() -> void:
 	main_dialogue_manager.start_dialogue(main_dialogue_manager.text_key, main_dialogue_manager.characters_name, main_dialogue_manager.textcolor,true  )
 	await main_dialogue_manager.dialogue_finished
 	main_dialogue_manager.hide()
-	choose_tutorial(5)
+	_on_tutorial_button_pressed()
+	#choose_tutorial(5)
 
 func potion() -> void:
 	potion_dialogue_manager.visible = true
@@ -43,7 +44,8 @@ func potion() -> void:
 	potion_dialogue_manager.start_dialogue(potion_dialogue_manager.text_key, potion_dialogue_manager.characters_name, potion_dialogue_manager.textcolor,true  )
 	await potion_dialogue_manager.dialogue_finished
 	potion_dialogue_manager.hide()
-	choose_tutorial(5)
+	_on_tutorial_button_pressed()
+	#choose_tutorial(5)
 
 func moonplate() -> void:
 	moonplate_dialogue_manager.visible = true
@@ -52,7 +54,8 @@ func moonplate() -> void:
 	moonplate_dialogue_manager.start_dialogue(moonplate_dialogue_manager.text_key, moonplate_dialogue_manager.characters_name, moonplate_dialogue_manager.textcolor,true  )
 	await moonplate_dialogue_manager.dialogue_finished
 	moonplate_dialogue_manager.hide()
-	choose_tutorial(5)
+	_on_tutorial_button_pressed()
+	#choose_tutorial(5)
 
 #tutorial után lezáró dialógus
 func still_here() -> void:

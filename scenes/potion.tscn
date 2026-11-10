@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://bqog7piaxqlsc" path="res://scenes/tutorial.tscn" id="16_8dbo2"]
 [ext_resource type="StyleBox" uid="uid://c3kxrhf1owtl6" path="res://styles/disableButton.tres" id="16_a6teu"]
 [ext_resource type="Texture2D" uid="uid://ipsm6bc3auxm" path="res://assets/potion/potion ui_requirement_base.png" id="16_gmx3n"]
+[ext_resource type="Texture2D" uid="uid://lk7m6mtvk3y6" path="res://assets/potion/potion ui_ingredients bar kivevés ikon.png" id="18_jq2hk"]
 [ext_resource type="Texture2D" uid="uid://jyjmxgn2h3hg" path="res://assets/potion/potion ui_requirement_bar base.png" id="21_4yosp"]
 [ext_resource type="Texture2D" uid="uid://bgskrvbx7b4lc" path="res://assets/potion/bubble animation/bubbles_with background_0026.png" id="22_lyar8"]
 [ext_resource type="Texture2D" uid="uid://bp8j2dyk6kdhb" path="res://assets/potion/bubble animation/bubbles_with background_0027.png" id="23_746rj"]
@@ -190,7 +191,6 @@
 [ext_resource type="Texture2D" uid="uid://b8h7kayitdu5n" path="res://assets/potion/bubble animation/bubbles_with background_0190.png" id="186_0kw1w"]
 [ext_resource type="Texture2D" uid="uid://dy6s8idjfp05r" path="res://assets/potion/bubble animation/bubbles_with background_0191.png" id="187_udsmy"]
 [ext_resource type="Texture2D" uid="uid://v6o0r78dotu1" path="res://assets/potion/potion ui_requirement_bar gsdag.png" id="188_746rj"]
-[ext_resource type="VideoStream" uid="uid://f7gu2ah53gdw" path="res://assets/videos/potion scene_1st.ogv" id="189_ex703"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_67q4m"]
 animations = [{
@@ -234,8 +234,7 @@ animations = [{
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1nmat"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5wtr2"]
-bg_color = Color(0.92156863, 0.8039216, 0.8352941, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jq2hk"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_67q4m"]
 
@@ -857,7 +856,7 @@ size_flags_vertical = 4
 size_flags_stretch_ratio = 1.21
 offset_transform_enabled = true
 theme_override_styles/normal = SubResource("StyleBoxEmpty_1nmat")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_5wtr2")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_jq2hk")
 
 [node name="TextureRect" type="TextureRect" parent="Control/VBox/testbtn" unique_id=1730209497]
 layout_mode = 1
@@ -977,22 +976,19 @@ text = "3"
 
 [node name="selected_item_box" type="Control" parent="." unique_id=1390781761]
 layout_mode = 3
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -187.0
-offset_top = 22.0
-offset_right = 98.0
-offset_bottom = 178.0
-grow_horizontal = 2
+anchors_preset = 0
+offset_left = 391.0
+offset_top = 31.0
+offset_right = 391.0
+offset_bottom = 31.000013
 
 [node name="TextureRect" type="TextureRect" parent="selected_item_box" unique_id=1654178243]
+custom_minimum_size = Vector2(281, 50)
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = -4.0
+offset_top = -1.0
+offset_right = 277.0
+offset_bottom = 145.0
 texture = ExtResource("15_ron7i")
 expand_mode = 1
 
@@ -1002,10 +998,10 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 22.0
-offset_top = -57.0
-offset_right = -14.0
-offset_bottom = 18.0
+offset_left = 20.0
+offset_top = 14.999993
+offset_right = 261.0
+offset_bottom = 89.99999
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 6
@@ -1021,12 +1017,44 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_qa3cu")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_0fxgo")
 theme_override_styles/hover = SubResource("StyleBoxTexture_qgcvi")
 
+[node name="MarginContainer" type="MarginContainer" parent="selected_item_box/choosed_items/choosed_item_1" unique_id=664497538]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="TextureRect" type="TextureRect" parent="selected_item_box/choosed_items/choosed_item_1/MarginContainer" unique_id=1829863384]
+layout_mode = 2
+texture = ExtResource("18_jq2hk")
+expand_mode = 1
+
 [node name="choosed_item_2" type="Button" parent="selected_item_box/choosed_items" unique_id=1479924499]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_q7egl")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_xbekm")
 theme_override_styles/hover = SubResource("StyleBoxTexture_lj3i0")
+
+[node name="MarginContainer" type="MarginContainer" parent="selected_item_box/choosed_items/choosed_item_2" unique_id=16010630]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="TextureRect" type="TextureRect" parent="selected_item_box/choosed_items/choosed_item_2/MarginContainer" unique_id=431257317]
+layout_mode = 2
+texture = ExtResource("18_jq2hk")
+expand_mode = 1
 
 [node name="choosed_item_3" type="Button" parent="selected_item_box/choosed_items" unique_id=1033321025]
 custom_minimum_size = Vector2(75, 75)
@@ -1035,20 +1063,35 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_rrmp1")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_phbq8")
 theme_override_styles/hover = SubResource("StyleBoxTexture_75ifr")
 
-[node name="FinalBtnMargin" type="MarginContainer" parent="." unique_id=872845477]
-anchors_preset = 12
-anchor_top = 1.0
+[node name="MarginContainer" type="MarginContainer" parent="selected_item_box/choosed_items/choosed_item_3" unique_id=937901368]
+visible = false
+layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -133.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="TextureRect" type="TextureRect" parent="selected_item_box/choosed_items/choosed_item_3/MarginContainer" unique_id=809124335]
+layout_mode = 2
+texture = ExtResource("18_jq2hk")
+expand_mode = 1
+
+[node name="FinalBtnMargin" type="MarginContainer" parent="." unique_id=872845477]
+offset_left = 352.0
+offset_top = 513.0
+offset_right = 702.48865
+offset_bottom = 644.0
 scale = Vector2(1.001459, 1)
-theme_override_constants/margin_top = 20
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_top = 22
 theme_override_constants/margin_bottom = 20
 
 [node name="MakePotion" type="Button" parent="FinalBtnMargin" unique_id=536323282]
-custom_minimum_size = Vector2(250, 0)
+custom_minimum_size = Vector2(250, 60)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_styles/normal = ExtResource("16_a6teu")
@@ -1471,7 +1514,6 @@ alignment_vertical = 0
 custom_maximum_size = Vector2(1152, 648)
 propagate_maximum_size = true
 layout_mode = 2
-stream = ExtResource("189_ex703")
 metadata/_edit_use_anchors_ = true
 
 [node name="AspectRatioContainer2" type="AspectRatioContainer" parent="." unique_id=1637396126]
