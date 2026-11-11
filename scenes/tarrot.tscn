@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://djqj71ivsyqvv"]
+
+[ext_resource type="Script" uid="uid://elfgwaow3d6e" path="res://scripts/tarrot.gd" id="1_baelf"]
+[ext_resource type="Texture2D" uid="uid://diakfjfana6ne" path="res://assets/tarrot/tarot_back.PNG" id="1_ixfkp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_msale"]
+size = Vector3(3.5109863, 2.1738281, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t3gwp"]
+albedo_color = Color(0.5411765, 0.64705884, 0.9764706, 1)
+albedo_texture = ExtResource("1_ixfkp")
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_msale"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fw5pv"]
+
+[node name="Node3D" type="Node3D" unique_id=1399307508]
+script = ExtResource("1_baelf")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2133830255]
+transform = Transform3D(0.99999356, -0.0014985949, 0.003273189, 0, 0.90923613, 0.4162808, -0.0035999417, -0.4162781, 0.9092302, -0.032362938, 0, 2.0469391)
+light_energy = 4.9
+shadow_enabled = true
+directional_shadow_max_distance = 292.0
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=176322408]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.0440049)
+
+[node name="background" type="StaticBody3D" parent="." unique_id=438419121]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="background" unique_id=475222848]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.059448242, 0.11035156, -1.218467)
+shape = SubResource("BoxShape3D_msale")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="cardTop" type="AnimatableBody3D" parent="." unique_id=1327374470]
+transform = Transform3D(0.178, 0, 0, 0, 0.3, 0, 0, 0, 0.001, -0.0023832917, -0.181, 0.07793236)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="cardTop" unique_id=1404632352]
+material_override = SubResource("StandardMaterial3D_t3gwp")
+mesh = SubResource("BoxMesh_msale")
+
+[node name="Area3D" type="Area3D" parent="cardTop" unique_id=576079976]
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="cardTop/Area3D" unique_id=1897931787]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_fw5pv")
+
+[node name="cardSun" type="AnimatableBody3D" parent="." unique_id=330745014]
+transform = Transform3D(0.178, 0, 0, 0, 0.3, 0, 0, 0, 0.001, -0.001, -0.181, 0.056646347)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="cardSun" unique_id=997789347]
+material_override = SubResource("StandardMaterial3D_t3gwp")
+mesh = SubResource("BoxMesh_msale")
+
+[node name="Area3D" type="Area3D" parent="cardSun" unique_id=2143164304]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="cardSun/Area3D" unique_id=1041132154]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_fw5pv")
+
+[node name="cardHermit" type="AnimatableBody3D" parent="." unique_id=1887018426]
+transform = Transform3D(0.178, 0, 0, 0, 0.3, 0, 0, 0, 0.001, -0.001, -0.181, 0.011125684)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="cardHermit" unique_id=721514764]
+material_override = SubResource("StandardMaterial3D_t3gwp")
+mesh = SubResource("BoxMesh_msale")
+
+[node name="Area3D" type="Area3D" parent="cardHermit" unique_id=1916120151]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="cardHermit/Area3D" unique_id=2146900032]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_fw5pv")
+
+[node name="cardCups" type="AnimatableBody3D" parent="." unique_id=1765407090]
+transform = Transform3D(0.178, 0, 0, 0, 0.3, 0, 0, 0, 0.001, -0.001, -0.181, 0.029331386)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="cardCups" unique_id=1010426612]
+material_override = SubResource("StandardMaterial3D_t3gwp")
+mesh = SubResource("BoxMesh_msale")
+
+[node name="Area3D" type="Area3D" parent="cardCups" unique_id=402957952]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="cardCups/Area3D" unique_id=728311241]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_fw5pv")
+
+[connection signal="input_event" from="cardTop/Area3D" to="." method="_on_area_3d_input_event_cardTop"]
+[connection signal="input_event" from="cardSun/Area3D" to="." method="_on_area_3d_input_event_sunCard"]
+[connection signal="input_event" from="cardHermit/Area3D" to="." method="_on_area_3d_input_event_cardHermit"]
+[connection signal="input_event" from="cardCups/Area3D" to="." method="_on_area_3d_input_event_cardCups"]
