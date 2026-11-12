@@ -13,5 +13,96 @@ TEST_CONVO_3,"***TEST*** És kérlek siess, az idő pénz.","***TEST*** And plea
 TEST_CONVO_4,***TEST*** Köszönöm,***TEST*** Thank you.
 TEST_CONVO_5,"***TEST*** Ez nem kedv kérdése, akkor is megcsinálod.",***TEST*** I dont care if you want to do it or not. You will make it.
 TEST_CHARACTERNAME_CAT,***TEST*** Cica,***TEST*** Cat
-WIZZARD_TUTORIAL_1,ÁÁÁÁ, úgy látom keresl valamit. Jóhelyen jársz.
-WIZZARD_TUTORIAL_2,Válassz a fenti menük közül és mindere választ kapsz!
+CHAR_NAME_CAT,Clawdia,Clawdia
+CHAR_NAME_VENATOR,Radomir,Radomir
+CHAR_NAME_CHAR3,MISSING_TEXT_CHAR_NAME_CHAR3_HU,MISSING_TEXT_CHAR_NAME_CHAR3_ENG
+CHAR_NAME_TUTORWIZARD,Flimmer,Flimmer
+S0_INTRO_1,"Ha fiatal boszorkány korodban azt mondják, hogy az egyetem helyett egy kis boltot fogsz üzemeltetni azért, hogy kifizesd a tartozásaid, vagy légy formájában kellesz leélned életed hátralévő részét- ami valljuk be, jobbik esetben is csak 30 nap- akkor azt mondod: “ Az nem lehet!”",MISSING_TEXT_ENG_S0_INTRO_1
+S0_INTRO_2,“Nekem álmaim vannak! Még ott vár a nagybetűs élet!” ,MISSING_TEXT_ENG_S0_INTRO_2
+S0_INTRO_3,"…És hát, mégis ide jutottál.",MISSING_TEXT_ENG_S0_INTRO_3
+S0_INTRO_4,"Eredetileg Trixie nénikédhez tartozott a bolt. Mindig is rád akarta sózni, mivel te vagy a drága, egyetlen élő rokona. Szerencsére, mivel a Ciprusokra készült utazni a jóga oktatójával és sürgősen szüksége volt egy helyettesre, te azonnal megragadtad az alkalmat. Ő nem is lehetett volna boldogabb, neked pedig végre esélyed lett pénzhez jutni.",MISSING_TEXT_ENG_S0_INTRO_4
+S0_INTRO_5,"Hisz lehet, hogy nincsenek olyan nagy álmaid, mint gyerekkorodban, viszont a légy-lét még mindig nem szerepelt a terveid között.",MISSING_TEXT_ENG_S0_INTRO_5
+S0_INTRO_6,"Egy könnyű kar intéssel megfordítottad a “zárva” táblát. Mostmár csak várnod kellett, ezért visszatértél a pult mögé.",MISSING_TEXT_ENG_S0_INTRO_6
+S0_INTRO_7,"A tekinteted lassan a kézikönyvre kúszott, amit a nagynénéd hagyott rád. Megérintetted a szélét. Már kissé viseltes volt a külseje. Éppen a lapok közé csúsztattad az ujjaid, hogy kinyisd amikor-",MISSING_TEXT_ENG_S0_INTRO_7
+S0_INTRO_8,"A könyvből egy puffanással felhő tört elő, amitől hátrahőköltél.",MISSING_TEXT_ENG_S0_INTRO_8
+S0_INTRO_9,"Legnagyobb meglepetésedre azt vetted észre, hogy veled szembe a felhő tetején egy öreg, szakállas kisember ül.",MISSING_TEXT_ENG_S0_INTRO_9
+S0_INTRO_10,"Ááááh, már éppen ideje volt kinyújtóztatni a lábam! Nem igazán sürgetted magad, hogy kinyisd azt a könyvet. Nagyon sötét és szűk egy hely, csak hogy tudd!",MISSING_TEXT_ENG_S0_INTRO_10
+S0_INTRO_11,"Ömm, bocsi…de te ki is vagy?",MISSING_TEXT_ENG_S0_INTRO_11
+S0_INTRO_12,"Oh, igaz is! A nevem Flimmer, az egyetlen és igazi varázsló segítőd! A drága Trixie nénikédnek dolgoztam eddig, de itt hagyott neked, hogy átsegítselek a mindennapokon. Nem olyan könnyű boszorkány üzletet vezetni ám!",MISSING_TEXT_ENG_S0_INTRO_12
+S0_INTRO_13,Olyan kegyetlenek tudnak lenni a tündérek…,MISSING_TEXT_ENG_S0_INTRO_13
+S0_INTRO_14,"De ne aggódj! A nap folyamán sok szerencsétlen lélek fog betérni a boltodba, mind választ keresve a gondjaikra! Ezeket neked kellesz megoldanod akár egy főzet elkészítésével, vagy azzal, hogy megmondod a jövőjüket tarot kártyák vagy a holdtál segítségével.",MISSING_TEXT_ENG_S0_INTRO_14
+S0_INTRO_15,"Fontos lesz, hogy remekelj, mert ha a vásárló boldogtalan, nem fogja megfizetni a munkád. Ha pedig nem fizetnek, te sem fogod tudni kifizetni a tartozásaidat!",MISSING_TEXT_ENG_S0_INTRO_15
+S0_INTRO_16,"Várj, ezt mégis honnan-",MISSING_TEXT_ENG_S0_INTRO_16
+S0_INTRO_17,Nincs idő!! Vásárló érkezik!!,MISSING_TEXT_ENG_S0_INTRO_17
+S1_CAT_0,"Halk csengés hallatszott ahogy egy gyönyörű, kifinomult szfinx nő lépett be szerény boltodba. Levette a napszemüvegét, mint ahogy a rosszalló tekintetét– aztán édeskés mosollyal lépett a pultodhoz.",MISSING_TEXT_ENG_S1_CAT_0
+S1_CAT_1,Szinte már ki tudtad szagolni a vastag pénztárca illatát a zsebéből. Viszonoztad a mosolyt.,MISSING_TEXT_ENG_S1_CAT_1
+S1_CAT_2,Jó reggelt! Miben segíthetek?,MISSING_TEXT_ENG_S1_CAT_2
+S1_CAT_3,"Szervusz, kedvesem! Éppen csak erre jártam, de mondhatnám, igazán megragadta a kis boltod a figyelmem.",MISSING_TEXT_ENG_S1_CAT_3
+S1_CAT_4,"Nézd, nem is akarom húzni az időt, mert az idő az pénz… A kedvenc testápolómat megszűntették, és én nem használhatok akármilyen testápolót. Szörnyen érzékeny a bőröm és egy magam korú hölgynek igazán figyelnie kell magára. ",MISSING_TEXT_ENG_S1_CAT_4
+S1_CAT_5,"Biztosan meglepő, de nagyon sokat kell tennem azért, hogy ilyen gyönyörű lehessek. Fárasztó is! Sokan nem is tudják mennyire…",MISSING_TEXT_ENG_S1_CAT_5
+S1_CAT_6,"Ezért elgondolkodtatott. Mi lenne, ha a szépségem még magasabb szintre emelhetném? Méghozzá a sok bajlódás nélkül.",MISSING_TEXT_ENG_S1_CAT_6
+S1_CAT_7,"Te kompetens boszorkánynak tűnsz. Össze tudnál nekem valamit dobni, kedves? Valamit, amitől teljesen…megújulnék.",MISSING_TEXT_ENG_S1_CAT_7
+S1_CAT_8,"Attól függ, mennyi pénze van?  ",MISSING_TEXT_ENG_S1_CAT_8
+S1_CAT_9,"Egy pillanatra megrándult a szeme sarka. Pupillái kitágúltak, veszélyesen figyelt téged. ",MISSING_TEXT_ENG_S1_CAT_9
+S1_CAT_10,"Elég ahhoz, hogy akár megvegyem a tetőt a fejed fölül. Szóval legyen tökéletes és megkapod a jussod, kis boszorkány. Sőt, lehet megszánlak pár smink tippel grátiszba! Lenne azon a tusvonalon mit finomítani…",MISSING_TEXT_ENG_S1_CAT_10
+MG1_TUTORIAL_0,"Kissé bonyolultnak tűnik, nem igaz? De ne aggódj! Ha odafigyelsz, seperc alatt kész lesz a főzeted, mindössze három alapanyagra lesz szükséged!",MISSING_TEXT_ENG_MG1_TUTORIAL_0
+MG1_TUTORIAL_1,"Jobb oldalon találod őket kategóriákba rendezve, viszont vigyázz, nem mindegy hogyan választod ki őket!",MISSING_TEXT_ENG_MG1_TUTORIAL_1
+MG1_TUTORIAL_2,"A recepten láthatóak kritériumok. Igen, ott bal oldalt! Úgy kell összeválogatnod az alapanyagokat, hogy azok értéke megfeleljen. Ennek az állapotát lent láthatod.",MISSING_TEXT_ENG_MG1_TUTORIAL_2
+MG1_TUTORIAL_3,"Ha pedig biztos vagy a döntésedben, már csak annyi a dolgod, hogy megfőzd et voilà! Mehet is az üvegbe!",MISSING_TEXT_ENG_MG1_TUTORIAL_3
+MG1_GOODE_0,Clawdia gondosan megnézte az üveget és meglötyögtette a benne lévő folyadékot. Nem tudtad kiolvasni az arckifejezését. ,MISSING_TEXT_ENG_MG1_GOODE_0
+MG1_GOODE_1,"Rendben, megteszi. Tessék, itt a fizetséged.",MISSING_TEXT_ENG_MG1_GOODE_1
+MG1_GOODE_2,"Várj, mi baj a tusvonalammal?",MISSING_TEXT_ENG_MG1_GOODE_2
+MG1_GOODE_3,"Sajnálom, kedves, de nagyon sietnem kell! Talán…legközelebb. Pá-pá!",MISSING_TEXT_ENG_MG1_GOODE_3
+MG1_PERFECTE_0,"Clawdia a mancsai közé vette az üveget és meglötyögtette a benne lévő folyadékot. Végül kissé kitekerte a kupakot, és megszagolta. Szinte szó szerint felcsillant a szeme. ",MISSING_TEXT_ENG_MG1_PERFECTE_0
+MG1_PERFECTE_1,"Oh, hát ennek remek illata van!  Remélem, ugyanolyan csodás lesz a hatása is. Tessék, itt a fizetséged!",MISSING_TEXT_ENG_MG1_PERFECTE_1
+MG1_PERFECTE_2,"Várj, mi baj a tusvonalammal?",MISSING_TEXT_ENG_MG1_PERFECTE_2
+MG1_PERFECTE_3,"Kissé fent ragadt a szemhéjjadon. Miután felrajzoltad, nem árt egy kicsit várni, hogy megszáradjon, hisz nem mindenki olyan kedves, mint én, hogy szól! Na pá-pá, kedvesem! Még találkozunk!",MISSING_TEXT_ENG_MG1_PERFECTE_3
+MG1_PERFECTE_4,"Visszavette a napszemüvegét, aztán elégedett mosollyal távozott a boltodból. Egyszerre érezted magad kellemetlenül, és hálásan. Szörnyű lett volna ha elkenődött sminkkel kellett volna végigcsinálnod az első napod.",MISSING_TEXT_ENG_MG1_PERFECTE_4
+MG1_BADE_0,"Abban a pillanatban amint a mancsai közé vette az üveget, az orra grimaszba rándult.",MISSING_TEXT_ENG_MG1_BADE_0
+MG1_BADE_1,Most komolyan ezt kellene magamra kennem?,MISSING_TEXT_ENG_MG1_BADE_1
+MG1_BADE_2,"Hát, a szépségért meg kell szenvedni… Ajánlom, hogy megérje. Tessék, itt a fizetséged!",MISSING_TEXT_ENG_MG1_BADE_2
+MG1_BADE_3,"Várj, mi baj a tusvonalammal?",MISSING_TEXT_ENG_MG1_BADE_3
+MG1_BADE_4,"De mielőtt befejezhetted volna a mondatod, ő hevesen elhagyta a boltot. Belőle már biztosan nem lesz törzsvendég.",MISSING_TEXT_ENG_MG1_BADE_4
+S2_VENATOR_0,"Az idő pontosan olyan izgalmasan telt, mint ahogy azt képzelted. Tehát semennyire. ",MISSING_TEXT_ENG_S2_VENATOR_0
+S2_VENATOR_1,"Jöttek itt-ott vásárlók. Legtöbben nézelődtek, aztán távoztak. Valamikor sikerült kristályokat, vagy védelmező talizmánokat eladnod. Talán megemelhetnéd az árakat? Nem eléggé, hogy elriaszd velük a vásárlókat, csak annyira, hogy számodra jobb legyen.",MISSING_TEXT_ENG_S2_VENATOR_1
+S2_VENATOR_2,"Lehet meggyőző varázslattal bevont füstölőt kellene égetned, akkor mindenképpen pénz jutna a zsebedbe, elég lenne belélegezniük a boltban keringő levegőt.",MISSING_TEXT_ENG_S2_VENATOR_2
+S2_VENATOR_3,…Ezt a gondolatot elraktad máskorra.,MISSING_TEXT_ENG_S2_VENATOR_3
+S2_VENATOR_4,"Dél környékén eleredt az eső, és mivel egy lélek sem járt arra, megengedted magadnak, hogy tarts egy kis szünetet.",MISSING_TEXT_ENG_S2_VENATOR_4
+S2_VENATOR_5,"Mikor máskor, ha nem most van rá a megfelelő alkalom, hogy animét nézz? Trixie néni biztos nem bánná, hogy használod a munkahelyi számítógépet. ",MISSING_TEXT_ENG_S2_VENATOR_5
+S2_VENATOR_6,"Normális, hogy valaki ennyit üvölt?",MISSING_TEXT_ENG_S2_VENATOR_6
+S2_VENATOR_7,Ez a drámai hatás része.,MISSING_TEXT_ENG_S2_VENATOR_7
+S2_VENATOR_8,Még egy kérdés…mi az a tsundere?,MISSING_TEXT_ENG_S2_VENATOR_8
+S2_VENATOR_9,Shhh!,MISSING_TEXT_ENG_S2_VENATOR_9
+S2_VENATOR_10,‘Napot.,MISSING_TEXT_ENG_S2_VENATOR_10
+S2_VENATOR_11,"Összerezzentél a mély hang hallatán, Flimmer pedig egy ijedt nyekkenés kíséretében eltűnt. Az új vevő meglehetősen…kényelmetlenné tett. ",MISSING_TEXT_ENG_S2_VENATOR_11
+S2_VENATOR_12,"Szemei üregesek voltak. Nem volt tekintete, mégis érezted magadon a súlyát. Nem mellesleg a bakancsával összekoszolta sárral a padlót. Remek.",MISSING_TEXT_ENG_S2_VENATOR_12
+S2_VENATOR_13,Szép napot! Miben segíthetek?,MISSING_TEXT_ENG_S2_VENATOR_13
+S2_VENATOR_14,"Reménykedtél, hogy nem veszi észre a remegést a hangodban.",MISSING_TEXT_ENG_S2_VENATOR_14
+S2_VENATOR_15,Tudd…hogy nem szeretem…a magadfajtát.,MISSING_TEXT_ENG_S2_VENATOR_15
+S2_VENATOR_16,…Lehet ezt jobb lenne ha kifejtenéd.,MISSING_TEXT_ENG_S2_VENATOR_16
+S2_VENATOR_17,"Boszorkány vagy...olyan erővel játszol, amit lefogadok te magad sem értesz…",MISSING_TEXT_ENG_S2_VENATOR_17
+S2_VENATOR_18,De most…fontos…hogy a segítséged kérjem.,MISSING_TEXT_ENG_S2_VENATOR_18
+S2_VENATOR_19,Igazán hízelgő.,MISSING_TEXT_ENG_S2_VENATOR_19
+S2_VENATOR_20,Te…látod a jövőt?,MISSING_TEXT_ENG_S2_VENATOR_20
+S2_VENATOR_21,Ez egy tág fogalom. Mennyire kell látni a jövőt?,MISSING_TEXT_ENG_S2_VENATOR_21
+S2_VENATOR_22,*halk morgás*…A közel jövőt…Milyen lesz…a vadászat?,MISSING_TEXT_ENG_S2_VENATOR_22
+S2_VENATOR_23,Segít majd…megtisztulnom?,MISSING_TEXT_ENG_S2_VENATOR_23
+S2_VENATOR_24,"Úgy érzem a problémája összetettebb. Ha igénye úgy tartja, megkérdezhetem a kártyákat, és ha egész kártyaterítést szeretne, új vásárlóknak 5% kedvezmény jár! Azzal belátást nyerne mélyebben a problémáira, és akár rávezethetnek a régi sebek gyógyítására.",MISSING_TEXT_ENG_S2_VENATOR_24
+S2_VENATOR_25,A félelem semmit sem ér ha van egy célod.,MISSING_TEXT_ENG_S2_VENATOR_25
+S2_VENATOR_26,…,MISSING_TEXT_ENG_S2_VENATOR_26
+S2_VENATOR_27,……,MISSING_TEXT_ENG_S2_VENATOR_27
+S2_VENATOR_28,…………..Legyen.,MISSING_TEXT_ENG_S2_VENATOR_28
+MG2_TUTORIAL_0,"Ez talán a legkönnyebb része a munkádnak, hiszen nincs is másra szükséged, csak az intuíciódra.",MISSING_TEXT_ENG_MG2_TUTORIAL_0
+MG2_TUTORIAL_1,"Fókuszálj a kérdésedre és hagyd, hogy a kártyák beszéljenek hozzád! Minden a részletekben rejlik…",MISSING_TEXT_ENG_MG2_TUTORIAL_1
+TAROT_TITLE_CUPS_G,Nincs minden veszve,MISSING_TEXT_ENG_TAROT_TITLE_CUPS_G
+TAROT_TITLE_CUPS_B,Végtelen gyötrelem,MISSING_TEXT_ENG_TAROT_TITLE_CUPS_B
+TAROT_DESC_CUPS_G,"A múltadban elvesztettél valaki fontosat, és még ezen szeretethez ragaszkodni nemes dolog, a fájdalom megbénítja a mindennapjaidat. Már elfeledted, hogyan lásd a szépet, de vajon elhunyt szeretted is ezt akarná számodra?",MISSING_TEXT_ENG_TAROT_DESC_CUPS_G
+TAROT_DESC_CUPS_B,"A múltadban elvesztettél valaki fontosat. Ez a kín felemészti a mindennapjaidat, kísért az álmaidban- talán már túl késő…Életed végéig kell cipelned ezt a terhet.",MISSING_TEXT_ENG_TAROT_DESC_CUPS_B
+TAROT_TITLE_HERMIT_G,Introspekció,MISSING_TEXT_ENG_TAROT_TITLE_HERMIT_G
+TAROT_TITLE_HERMIT_B,Örök magány,MISSING_TEXT_ENG_TAROT_TITLE_HERMIT_B
+TAROT_DESC_HERMIT_G,"Időt szakítottál arra, hogy végre magadba nézz- ez hatalmas lépés! Az egyetlen kérdés, amire választ kell találnod, önmagadban rejlik. Itt az ideje, hogy végre önmagaddal foglalkozz, és levedd a válladról mások terhét. ",MISSING_TEXT_ENG_TAROT_DESC_HERMIT_G
+TAROT_DESC_HERMIT_B,"Elszigetelődtél a társadalomtól. Úgy érzed nyűg mások felé nyitni, hogy mára már minden értelmetlenné vált- pedig pont az ellenkezője! Itt az ideje, hogy abbahagyd a menekülést és kapcsolatokat építs! Később meglátod, kifizetődik a pozitív gondolkodás!",MISSING_TEXT_ENG_TAROT_DESC_HERMIT_B
+TAROT_TITLE_SUN_G,Boldog idők,MISSING_TEXT_ENG_TAROT_TITLE_SUN_G
+TAROT_TITLE_SUN_B,Irreális elvárások,MISSING_TEXT_ENG_TAROT_TITLE_SUN_B
+TAROT_DESC_SUN_G,"Hosszú évek durva, megterhelő munkája végre meghozzá várt gyümölcsét. Megtalálod önmagad, és leveted a láncaidat, csak hallgatnod kell a megérzéseidre. Ne engedd, hogy más befolyásoljon. A vadászat sikeres lesz.",MISSING_TEXT_ENG_TAROT_DESC_SUN_G
+TAROT_DESC_SUN_B,"Már látod a fényt az alagút végén, de a valóság az, hogy az igazán fontos dolgokat sohasem könnyű elérni. Ez nem jelenti azt, hogy fel kell adnod, szimplán csak át kell gondolnod a terved, hogy biztosan a legjobb végkimenetelt kapd. A vadászat sikertelen lesz, viszont nincs minden veszve!",MISSING_TEXT_ENG_TAROT_DESC_SUN_B
