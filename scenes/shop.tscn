@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://7en3j6hc7kc3" path="res://scenes/dev_debug_menu.tscn" id="8_y6sft"]
 [ext_resource type="Texture2D" uid="uid://dviio0v7aaskt" path="res://assets/tutorial wizard/wizard_shocked.png" id="9_1v8qu"]
 [ext_resource type="Texture2D" uid="uid://dks0agwv35an8" path="res://assets/tutorial wizard/wizard_hurt.png" id="9_gobkm"]
-[ext_resource type="Texture2D" uid="uid://b1hl83324sdjn" path="res://assets/placeholders/placeholder_char.png" id="10_heatd"]
 [ext_resource type="Texture2D" uid="uid://bexyfdl7u66bo" path="res://assets/shop/characters/Radomir.PNG" id="12_24it5"]
 [ext_resource type="Texture2D" uid="uid://bhru5f31v1lpn" path="res://assets/placeholders/Screenshot 2026-08-13 233144.png" id="12_44xle"]
 
@@ -34,27 +33,62 @@ texture = ExtResource("3_ajxib")
 [node name="Wizard_DialogueManager" parent="." unique_id=515192348 instance=ExtResource("5_y6sft")]
 visible = false
 text_key = Array[String](["S0_INTRO_7", "S0_INTRO_8", "S0_INTRO_9", "S0_INTRO_10", "S0_INTRO_11", "S0_INTRO_12", "S0_INTRO_13", "S0_INTRO_14", "S0_INTRO_15", "S0_INTRO_16", "S0_INTRO_17"])
-characters_name = Array[String](["**TEST**NARRÁTOR", "**TEST**NARRÁTOR", "**TEST**NARRÁTOR", "CHAR_NAME_TUTORWIZARD", "**TEST**JÁTÉKOS", "CHAR_NAME_TUTORWIZARD", "CHAR_NAME_TUTORWIZARD", "CHAR_NAME_TUTORWIZARD", "CHAR_NAME_TUTORWIZARD", "**TEST**JÁTÉKOS", "CHAR_NAME_TUTORWIZARD"])
+characters_name = Array[String](["", "", "", "CHAR_NAME_TUTORWIZARD", "**TEST**JÁTÉKOS", "CHAR_NAME_TUTORWIZARD", "CHAR_NAME_TUTORWIZARD", "CHAR_NAME_TUTORWIZARD", "CHAR_NAME_TUTORWIZARD", "**TEST**JÁTÉKOS", "CHAR_NAME_TUTORWIZARD"])
 textcolor = Array[Color]([Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)])
 Portraits = Array[Texture2D]([null, null, null, ExtResource("8_heatd"), ExtResource("8_heatd"), ExtResource("8_7mqwv"), ExtResource("9_gobkm"), ExtResource("8_heatd"), ExtResource("7_m4ofw"), ExtResource("7_m4ofw"), ExtResource("9_1v8qu")])
 
 [node name="CatDialogueManager" parent="." unique_id=1145626878 instance=ExtResource("5_y6sft")]
 visible = false
-text_key = Array[String](["**TEST** üdv, csinálj nekem a potit", "**TEST** milyet szeretnél?", "**TEST** Jót", "**TEST** És siess", "**TEST** Rendben"])
-characters_name = Array[String](["**TEST**Cat", "**TEST**Player", "**TEST**Cat", "**TEST**Cat", "**TEST**Player"])
-textcolor = Array[Color]([Color(0.8812561, 0.65154487, 0.9766125, 1), Color(1, 0.8, 0.5647059, 1), Color(0.88235295, 0.6509804, 0.9764706, 1), Color(0.88235295, 0.6509804, 0.9764706, 1), Color(1, 0.8, 0.5647059, 1)])
-Portraits = Array[Texture2D]([ExtResource("10_heatd"), ExtResource("10_heatd"), ExtResource("10_heatd"), ExtResource("10_heatd"), ExtResource("10_heatd")])
+text_key = Array[String](["S1_CAT_0", "S1_CAT_1", "S1_CAT_2", "S1_CAT_3", "S1_CAT_4", "S1_CAT_5", "S1_CAT_6", "S1_CAT_7", "S1_CAT_8", "S1_CAT_9", "S1_CAT_10"])
+characters_name = Array[String](["", "", "**TEST**JÁTÉKOS", "CHAR_NAME_CAT", "CHAR_NAME_CAT", "CHAR_NAME_CAT", "CHAR_NAME_CAT", "CHAR_NAME_CAT", "**TEST**JÁTÉKOS", "", "CHAR_NAME_CAT"])
+textcolor = Array[Color]([Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)])
+Portraits = Array[Texture2D]([null, null, null, null, null, null, null, null, null, null, null])
+
+[node name="perfect_potion" parent="." unique_id=1861403986 instance=ExtResource("5_y6sft")]
+visible = false
+text_key = Array[String](["MG1_PERFECTE_0", "MG1_PERFECTE_1", "MG1_PERFECTE_2", "MG1_PERFECTE_3", "MG1_PERFECTE_4"])
+characters_name = Array[String](["", "CHAR_NAME_CAT", "**TEST**JÁTÉKOS", "CHAR_NAME_CAT", ""])
+textcolor = Array[Color]([Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)])
+Portraits = Array[Texture2D]([null, null, null, null, null])
+
+[node name="Bad_potion" parent="." unique_id=1864638761 instance=ExtResource("5_y6sft")]
+visible = false
+text_key = Array[String](["MG1_BADE_0", "MG1_BADE_1", "MG1_BADE_2", "MG1_BADE_3", "MG1_BADE_4"])
+characters_name = Array[String](["", "CHAR_NAME_CAT", "CHAR_NAME_CAT", "**TEST**JÁTÉKOS", ""])
+textcolor = Array[Color]([Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)])
+Portraits = Array[Texture2D]([null, null, null, null, null])
+
+[node name="Good_potion" parent="." unique_id=644986971 instance=ExtResource("5_y6sft")]
+visible = false
+text_key = Array[String](["MG1_GOODE_0", "MG1_GOODE_1", "MG1_GOODE_2", "MG1_GOODE_3"])
+characters_name = Array[String](["", "CHAR_NAME_CAT", "**TEST**JÁTÉKOS", "CHAR_NAME_CAT"])
+textcolor = Array[Color]([Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)])
+Portraits = Array[Texture2D]([null, null, null, null])
 
 [node name="MonsterHunterDialogueManager" parent="." unique_id=562795217 instance=ExtResource("5_y6sft")]
 visible = false
-text_key = Array[String](["**TEST** szeretnék egy ritmusjátékot."])
-characters_name = Array[String](["**TEST** Monster Hunter"])
-textcolor = Array[Color]([Color(0.4898336, 0.6540255, 1, 1)])
-Portraits = Array[Texture2D]([ExtResource("12_24it5")])
+text_key = Array[String](["S2_VENATOR_0", "S2_VENATOR_1", "S2_VENATOR_2", "S2_VENATOR_3", "S2_VENATOR_4", "S2_VENATOR_5", "S2_VENATOR_6", "S2_VENATOR_7", "S2_VENATOR_8", "S2_VENATOR_9", "S2_VENATOR_10", "S2_VENATOR_11", "S2_VENATOR_12", "S2_VENATOR_13", "S2_VENATOR_14", "S2_VENATOR_15", "S2_VENATOR_16", "S2_VENATOR_17", "S2_VENATOR_18", "S2_VENATOR_19", "S2_VENATOR_20", "S2_VENATOR_21", "S2_VENATOR_22", "S2_VENATOR_23", "S2_VENATOR_24", "S2_VENATOR_25", "S2_VENATOR_26", "S2_VENATOR_27", "S2_VENATOR_28"])
+characters_name = Array[String](["", "", "", "", "", "", "CHAR_NAME_TUTORWIZARD", "**TEST**JÁTÉKOS", "CHAR_NAME_TUTORWIZARD", "**TEST**JÁTÉKOS", "CHAR_NAME_VENATOR", "", "", "**TEST**JÁTÉKOS", "", "CHAR_NAME_VENATOR", "**TEST**JÁTÉKOS", "CHAR_NAME_VENATOR", "CHAR_NAME_VENATOR", "**TEST**JÁTÉKOS", "CHAR_NAME_VENATOR", "**TEST**JÁTÉKOS", "CHAR_NAME_VENATOR", "CHAR_NAME_VENATOR", "**TEST**JÁTÉKOS", "", "CHAR_NAME_VENATOR", "**TEST**JÁTÉKOS", "CHAR_NAME_VENATOR"])
+textcolor = Array[Color]([Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)])
+Portraits = Array[Texture2D]([null, null, null, null, null, null, null, null, null, null, ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5")])
+
+[node name="Tarot_good" parent="." unique_id=1268993334 instance=ExtResource("5_y6sft")]
+visible = false
+text_key = Array[String](["**TEST** good"])
+characters_name = Array[String](["**TEST** Pozitív jóslás"])
+textcolor = Array[Color]([Color(1, 1, 1, 1)])
+Portraits = Array[Texture2D]([null])
+
+[node name="Tarot_bad" parent="." unique_id=1337277289 instance=ExtResource("5_y6sft")]
+visible = false
+text_key = Array[String](["**TEST** bad"])
+characters_name = Array[String](["**TEST** rossz jóslás"])
+textcolor = Array[Color]([Color(1, 1, 1, 1)])
+Portraits = Array[Texture2D]([null])
 
 [node name="2PLACEHOLDERNAMEDialogueManager" parent="." unique_id=1878537526 instance=ExtResource("5_y6sft")]
 visible = false
-text_key = Array[String](["**TEST** Tarot Szöveg", "**TEST** Szöveg Tarot"])
+text_key = Array[String](["**TEST** rythm minigame szöveg", "**TEST** igen"])
 characters_name = Array[String](["**TEST** asd", "**TEST**dsa"])
 textcolor = Array[Color]([Color(1, 0.286494, 0.23255634, 1), Color(1, 0.28627452, 0.23137255, 1)])
 Portraits = Array[Texture2D]([ExtResource("12_44xle"), ExtResource("12_44xle")])

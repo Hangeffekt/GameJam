@@ -1,5 +1,6 @@
 extends CanvasLayer
 
+@onready var color_rect_2: ColorRect = $DialogueBox/ColorRect2
 @onready var dialogue_box: Control = $DialogueBox
 @onready var dialogue_text: RichTextLabel = $DialogueBox/dialogueText
 @onready var name_text: Label = $DialogueBox/ColorRect2/nameText
@@ -35,7 +36,7 @@ func _ready() -> void:
 	#start_dialogue(text_key, characters_name, textcolor)
 
 func start_dialogue(lines: Array[String], CHARname: Array[String], color: Array[Color], tutorial: bool):
-	# ha a totorial igaz a kis kép jelenik meg, ha hamis középen a nagy
+	# ha a tutorial igaz a kis kép jelenik meg, ha hamis középen a nagy
 	#game is paused, kivéve a Dialogue manager
 	get_tree().paused = true
 	#kiszedem az első elemeket a listából
@@ -51,6 +52,10 @@ func start_dialogue(lines: Array[String], CHARname: Array[String], color: Array[
 	updateLine()
 
 func updateLine():
+	#ha a narrátor beszél akkor nem kell név doboz
+	if characters_name[current_line_index] == "":
+		color_rect_2.visible = false
+	else: color_rect_2.visible = true
 	#felmerült egy hiba a typewriter funkcióban.
 	#A char_count nem a fordított szöveg hosszát kapta meg,
 	#hanem a localization kulcs nevének hosszát, ezt a tr() metódussal lehetett megoldani

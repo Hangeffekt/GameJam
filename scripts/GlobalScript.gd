@@ -1,7 +1,9 @@
 extends Node
 
-var language = "eng"
+var language = "hun"
 var nextcustomer = 0
+var potiongrade = ""
+var tarotgarde = ""
 
 var script_fajl = load("res://scripts/load_datas.gd")
 

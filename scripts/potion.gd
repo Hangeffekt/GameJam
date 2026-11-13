@@ -304,12 +304,16 @@ func end_game(atr1: int, atr2: int, atr3: int) -> void:
 	match(result_point):
 		0:
 			$result/textResult.text = "Rossz"
+			GlobalScript.potiongrade = "Rossz"
 		1:
 			$result/textResult.text = "Rossz"
+			GlobalScript.potiongrade = "Rossz"
 		2:
 			$result/textResult.text = "Jó"
+			GlobalScript.potiongrade = "Jó"
 		3:
 			$result/textResult.text = "Kiváló"
+			GlobalScript.potiongrade = "Kiváló"
 	$result.show()
 	await get_tree().create_timer(3.0).timeout
 	$AspectRatioContainer.visible= true
