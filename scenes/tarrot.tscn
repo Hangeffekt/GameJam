@@ -1,93 +1,167 @@
 [gd_scene format=3 uid="uid://djqj71ivsyqvv"]
 
 [ext_resource type="Script" uid="uid://elfgwaow3d6e" path="res://scripts/tarrot.gd" id="1_baelf"]
-[ext_resource type="Texture2D" uid="uid://diakfjfana6ne" path="res://assets/tarrot/tarot_back.PNG" id="1_ixfkp"]
+[ext_resource type="PackedScene" uid="uid://c1ca2saxdsdvq" path="res://assets/tarrot/the_sun_külön.blend" id="3_bsci0"]
+[ext_resource type="Texture2D" uid="uid://bxkpbo002y1re" path="res://assets/potion/wizard_icon_notification_02.png" id="3_t3gwp"]
+[ext_resource type="PackedScene" uid="uid://cshl60v00b23l" path="res://scenes/dialogue_manager.tscn" id="4_c7su6"]
+[ext_resource type="Texture2D" uid="uid://bvcmyt7enuqqj" path="res://assets/tutorial wizard/wizard_default.png" id="5_k00m4"]
+[ext_resource type="Texture2D" uid="uid://javtmgmibwpb" path="res://assets/tutorial wizard/wizard_thinking.png" id="6_bsci0"]
+[ext_resource type="Texture2D" uid="uid://btp5ofkfadkv5" path="res://assets/tutorial wizard/wizard_pointing.png" id="7_37xhk"]
+[ext_resource type="PackedScene" uid="uid://7en3j6hc7kc3" path="res://scenes/dev_debug_menu.tscn" id="7_qp3rv"]
+[ext_resource type="PackedScene" uid="uid://b6al6ok1n283t" path="res://assets/tarrot/the hermit_külön.blend" id="9_37xhk"]
+[ext_resource type="Texture2D" uid="uid://2lwv0txkq6h5" path="res://assets/tarrot/textures/tarot_background.PNG" id="10_37xhk"]
+[ext_resource type="PackedScene" uid="uid://nukocomxj4fj" path="res://assets/tarrot/five_of_cups_külön.blend" id="10_qp3rv"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_msale"]
-size = Vector3(3.5109863, 2.1738281, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3px8j"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t3gwp"]
-albedo_color = Color(0.5411765, 0.64705884, 0.9764706, 1)
-albedo_texture = ExtResource("1_ixfkp")
-uv1_triplanar = true
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s8ax7"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_msale"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x27il"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_fw5pv"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_67q4m"]
+size = Vector3(0.19989014, 0.32281494, 0.00982666)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_msale"]
+albedo_texture = ExtResource("10_37xhk")
+metallic_specular = 0.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_67q4m"]
+material = SubResource("StandardMaterial3D_msale")
 
 [node name="Node3D" type="Node3D" unique_id=1399307508]
 script = ExtResource("1_baelf")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1431497585]
+
+[node name="TutorialButton" type="Button" parent="CanvasLayer" unique_id=1656893003]
+offset_left = 992.0
+offset_top = 5.0
+offset_right = 1101.0
+offset_bottom = 114.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_3px8j")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_s8ax7")
+theme_override_styles/hover = SubResource("StyleBoxTexture_x27il")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/TutorialButton" unique_id=1244983606]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_t3gwp")
+expand_mode = 1
+
+[node name="Good" type="Button" parent="CanvasLayer" unique_id=1547482361]
+visible = false
+offset_left = 172.0
+offset_top = 478.0
+offset_right = 299.0
+offset_bottom = 517.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Good" unique_id=1255787743]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Good"
+metadata/_edit_group_ = true
+
+[node name="Bad" type="Button" parent="CanvasLayer" unique_id=1964047992]
+visible = false
+offset_left = 874.0
+offset_top = 480.0
+offset_right = 1001.0
+offset_bottom = 519.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Bad" unique_id=1911577189]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Bad"
+metadata/_edit_group_ = true
+
+[node name="SartTutorial" parent="CanvasLayer" unique_id=515192348 instance=ExtResource("4_c7su6")]
+visible = false
+text_key = Array[String](["ÁÁÁÁ, úgy látom, keresel valamit! Jó helyen jársz!", "Ha még egyszer rám kattintasz a sarokban nem foglak zavarni.", "Válassz a bal oldali gombok közül, és minden kérdésedre választ kapsz!"])
+characters_name = Array[String](["Wizz Ard", "Wizz Ard", "Wizz Ard"])
+textcolor = Array[Color]([Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)])
+Portraits = Array[Texture2D]([ExtResource("5_k00m4"), ExtResource("6_bsci0"), ExtResource("7_37xhk")])
+
+[node name="Dev_debug_menu" parent="CanvasLayer" unique_id=218198422 instance=ExtResource("7_qp3rv")]
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2133830255]
 transform = Transform3D(0.99999356, -0.0014985949, 0.003273189, 0, 0.90923613, 0.4162808, -0.0035999417, -0.4162781, 0.9092302, -0.032362938, 0, 2.0469391)
 light_energy = 4.9
-shadow_enabled = true
 directional_shadow_max_distance = 292.0
+sky_mode = 1
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=176322408]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.0440049)
 
-[node name="background" type="StaticBody3D" parent="." unique_id=438419121]
+[node name="cardTop" type="AnimatableBody3D" parent="." unique_id=969270666]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.29607105, 0.08516729)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="background" unique_id=475222848]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.059448242, 0.11035156, -1.218467)
-shape = SubResource("BoxShape3D_msale")
-debug_color = Color(0, 0.6, 0.69803923, 1)
+[node name="the_sun_külön" parent="cardTop" unique_id=809570471 instance=ExtResource("3_bsci0")]
+transform = Transform3D(-0.11060007, -8.742278e-09, 4.2264387e-16, 0, -4.371139e-09, -0.11060007, 9.668965e-09, -0.1, 4.8344826e-09, 0, -0.15993881, 0.000595361)
 
-[node name="cardTop" type="AnimatableBody3D" parent="." unique_id=1327374470]
-transform = Transform3D(0.178, 0, 0, 0, 0.3, 0, 0, 0, 0.001, -0.0023832917, -0.181, 0.07793236)
+[node name="Area3D" type="Area3D" parent="cardTop" unique_id=2144627511]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.00019593537)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="cardTop" unique_id=1404632352]
-material_override = SubResource("StandardMaterial3D_t3gwp")
-mesh = SubResource("BoxMesh_msale")
-
-[node name="Area3D" type="Area3D" parent="cardTop" unique_id=576079976]
-transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="cardTop/Area3D" unique_id=1897931787]
-transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0, 0)
-shape = SubResource("BoxShape3D_fw5pv")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="cardTop/Area3D" unique_id=59834265]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0517578e-05, -0.15640259, -0.000358209)
+shape = SubResource("BoxShape3D_67q4m")
 
 [node name="cardSun" type="AnimatableBody3D" parent="." unique_id=330745014]
-transform = Transform3D(0.178, 0, 0, 0, 0.3, 0, 0, 0, 0.001, -0.001, -0.181, 0.056646347)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.29840082, 0.079987586)
+sync_to_physics = false
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="cardSun" unique_id=997789347]
-material_override = SubResource("StandardMaterial3D_t3gwp")
-mesh = SubResource("BoxMesh_msale")
+[node name="the_sun_külön" parent="cardSun" unique_id=569962803 instance=ExtResource("3_bsci0")]
+transform = Transform3D(-0.111, -1.6760534e-08, 7.326262e-16, 0, -4.851964e-09, -0.111, 1.6760534e-08, -0.111, 4.851964e-09, 0, -0.15993881, 0.000595361)
 
 [node name="Area3D" type="Area3D" parent="cardSun" unique_id=2143164304]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.00019593537)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="cardSun/Area3D" unique_id=1041132154]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-shape = SubResource("BoxShape3D_fw5pv")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="cardSun/Area3D" unique_id=1648179968]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0517578e-05, -0.15640259, -0.000358209)
+shape = SubResource("BoxShape3D_67q4m")
 
-[node name="cardHermit" type="AnimatableBody3D" parent="." unique_id=1887018426]
-transform = Transform3D(0.178, 0, 0, 0, 0.3, 0, 0, 0, 0.001, -0.001, -0.181, 0.011125684)
+[node name="cardCups" type="AnimatableBody3D" parent="." unique_id=420887716]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.30042243, 0.07565342)
+sync_to_physics = false
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="cardHermit" unique_id=721514764]
-material_override = SubResource("StandardMaterial3D_t3gwp")
-mesh = SubResource("BoxMesh_msale")
+[node name="five_of_cups_külön" parent="cardCups" unique_id=376045713 instance=ExtResource("10_qp3rv")]
+transform = Transform3D(-0.111, -9.703928e-09, 4.2417218e-16, 0, -4.851964e-09, -0.111, 9.703928e-09, -0.111, 4.851964e-09, 0, -0.159197, 0)
 
-[node name="Area3D" type="Area3D" parent="cardHermit" unique_id=1916120151]
+[node name="Area3D" type="Area3D" parent="cardCups" unique_id=1193253093]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0016021729)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="cardHermit/Area3D" unique_id=2146900032]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-shape = SubResource("BoxShape3D_fw5pv")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="cardCups/Area3D" unique_id=35652117]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0517578e-05, -0.15640259, -0.0004272461)
+shape = SubResource("BoxShape3D_67q4m")
 
-[node name="cardCups" type="AnimatableBody3D" parent="." unique_id=1765407090]
-transform = Transform3D(0.178, 0, 0, 0, 0.3, 0, 0, 0, 0.001, -0.001, -0.181, 0.029331386)
+[node name="cardHermit" type="AnimatableBody3D" parent="." unique_id=1303044079]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.30273283, 0.07098487)
+sync_to_physics = false
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="cardCups" unique_id=1010426612]
-material_override = SubResource("StandardMaterial3D_t3gwp")
-mesh = SubResource("BoxMesh_msale")
+[node name="the hermit_külön" parent="cardHermit" unique_id=1948674372 instance=ExtResource("9_37xhk")]
+transform = Transform3D(-0.111, -9.703928e-09, 4.2417218e-16, 0, -4.851964e-09, -0.111, 9.703928e-09, -0.111, 4.851964e-09, 0, -0.15861474, 0)
 
-[node name="Area3D" type="Area3D" parent="cardCups" unique_id=402957952]
+[node name="Area3D" type="Area3D" parent="cardHermit" unique_id=566594583]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0023543835)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="cardCups/Area3D" unique_id=728311241]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-shape = SubResource("BoxShape3D_fw5pv")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="cardHermit/Area3D" unique_id=513095854]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0517578e-05, -0.15640259, 0.0047187805)
+shape = SubResource("BoxShape3D_67q4m")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1834050910]
+transform = Transform3D(1.55, 0, 0, 0, -4.371139e-08, -0.85, 0, 1, -3.715468e-08, 0, -0.0056831837, -0.033314705)
+mesh = SubResource("PlaneMesh_67q4m")
 
 [connection signal="input_event" from="cardTop/Area3D" to="." method="_on_area_3d_input_event_cardTop"]
 [connection signal="input_event" from="cardSun/Area3D" to="." method="_on_area_3d_input_event_sunCard"]
-[connection signal="input_event" from="cardHermit/Area3D" to="." method="_on_area_3d_input_event_cardHermit"]
 [connection signal="input_event" from="cardCups/Area3D" to="." method="_on_area_3d_input_event_cardCups"]
+[connection signal="input_event" from="cardHermit/Area3D" to="." method="_on_area_3d_input_event_cardHermit"]

@@ -4,13 +4,16 @@ extends Node3D
 @onready var cardSun = $cardSun
 @onready var cardHermit = $cardHermit
 @onready var cardCups = $cardCups
-@export var target_x: float = 0.5
-@export var target_y: float = 0.5
+@onready var goodBtn = $CanvasLayer/Good
+@onready var badBtn = $CanvasLayer/Bad
+@export var target_x: float = 0.45
+@export var target_y: float = 0.415
 
 var sun_is_rotated: bool = false
 var hermit_is_rotated: bool = false
 var cups_is_rotated: bool = false
 var move_position: bool = false
+var card_block: bool = false # ha egy kártya fent van akkor ne lehessen másikra kattintani
 var sun_original_position: Vector3
 var hermit_original_position: Vector3
 var cups_original_position: Vector3
@@ -36,7 +39,7 @@ func move_card_to_coordinates() -> void:
 	
 	if not move_position:
 		hermit_destination.x += 0.0
-		hermit_destination.y += target_y + 0.1
+		hermit_destination.y += target_y + 0.25
 		sun_destination.x += target_x
 		sun_destination.y += target_y
 		cups_destination.x += -target_x
@@ -60,30 +63,65 @@ func _on_area_3d_input_event_cardTop(camera: Node, event: InputEvent, event_posi
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT and not move_position:
 		move_card_to_coordinates()
 
+func flip_card(card: String) -> void:
+	# Létrehozzuk a Tween-t
+	card_block = true
+	var tweenrot = create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+	var tweenmov = create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+	
+	if card == "sun":
+		tweenmov.tween_property(cardSun, "rotation_degrees:y", 180.0, 0.6)
+		tweenrot.tween_property(cardSun, "position:z", cardSun.position.z + 0.35, 1.0)
+		sun_is_rotated = false
+		
+	elif card == "hermit":
+		tweenrot.tween_property(cardHermit, "rotation_degrees:y", 180, 0.6)
+		tweenmov.parallel().tween_property(cardHermit, "position:z", cardHermit.position.z + 0.35, 1.0)
+		tweenmov.parallel().tween_property(cardHermit, "position:y", cardHermit.position.y - 0.25, 1.0)
+		hermit_is_rotated = false
+		
+	elif card == "cups":
+		tweenrot.tween_property(cardCups, "rotation_degrees:y", 180, 0.6)
+		tweenmov.tween_property(cardCups, "position:z", cardCups.position.z + 0.35, 1.0)
+		cups_is_rotated = false
+		
+	goodBtn.visible = true
+	badBtn.visible = true
+
+func flip_card_back(card: String) -> void:
+	# Létrehozzuk a Tween-t
+	card_block = false
+	var tweenrot = create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+	var tweenmov = create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+	
+	if card == "sun":
+		tweenmov.tween_property(cardSun, "rotation_degrees:y", 0.0, 0.6)
+		tweenrot.tween_property(cardSun, "position:z", cardSun.position.z - 0.35, 1.0)
+		sun_is_rotated = false
+		
+	elif card == "hermit":
+		tweenrot.tween_property(cardHermit, "rotation_degrees:y", 0, 0.6)
+		tweenmov.parallel().tween_property(cardHermit, "position:z", cardHermit.position.z - 0.35, 1.0)
+		tweenmov.parallel().tween_property(cardHermit, "position:y", cardHermit.position.y + 0.25, 1.0)
+		hermit_is_rotated = false
+		
+	elif card == "cups":
+		tweenrot.tween_property(cardCups, "rotation_degrees:y", 0, 0.6)
+		tweenmov.tween_property(cardCups, "position:z", cardCups.position.z - 0.35, 1.0)
+		cups_is_rotated = false
 
 func _on_area_3d_input_event_sunCard(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
 	
-	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT and sun_is_rotated:
-		# Létrehozzuk a Tween-t
-		var tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
-		# Animáljuk a kártya Y tengelyes rotációját fokokban
-		tween.tween_property(cardSun, "rotation_degrees:y", 180, 1.0)
-		sun_is_rotated = false
-
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT and sun_is_rotated and not card_block:
+		flip_card("sun")
+		
 
 func _on_area_3d_input_event_cardHermit(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT and hermit_is_rotated:
-		# Létrehozzuk a Tween-t
-		var tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
-		# Animáljuk a kártya Y tengelyes rotációját fokokban
-		tween.tween_property(cardHermit, "rotation_degrees:y", 180, 1.0)
-		hermit_is_rotated = false
-
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT and hermit_is_rotated and not card_block:
+		flip_card("hermit")
+		
 
 func _on_area_3d_input_event_cardCups(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT and cups_is_rotated:
-		# Létrehozzuk a Tween-t
-		var tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
-		# Animáljuk a kártya Y tengelyes rotációját fokokban
-		tween.tween_property(cardCups, "rotation_degrees:y", 180, 1.0)
-		cups_is_rotated = false
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT and cups_is_rotated and not card_block:
+		flip_card("cups")
+		
