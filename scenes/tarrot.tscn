@@ -4,9 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://c1ca2saxdsdvq" path="res://assets/tarrot/the_sun_külön.blend" id="3_bsci0"]
 [ext_resource type="Texture2D" uid="uid://bxkpbo002y1re" path="res://assets/potion/wizard_icon_notification_02.png" id="3_t3gwp"]
 [ext_resource type="PackedScene" uid="uid://cshl60v00b23l" path="res://scenes/dialogue_manager.tscn" id="4_c7su6"]
-[ext_resource type="Texture2D" uid="uid://bvcmyt7enuqqj" path="res://assets/tutorial wizard/wizard_default.png" id="5_k00m4"]
-[ext_resource type="Texture2D" uid="uid://javtmgmibwpb" path="res://assets/tutorial wizard/wizard_thinking.png" id="6_bsci0"]
-[ext_resource type="Texture2D" uid="uid://btp5ofkfadkv5" path="res://assets/tutorial wizard/wizard_pointing.png" id="7_37xhk"]
 [ext_resource type="PackedScene" uid="uid://7en3j6hc7kc3" path="res://scenes/dev_debug_menu.tscn" id="7_qp3rv"]
 [ext_resource type="PackedScene" uid="uid://b6al6ok1n283t" path="res://assets/tarrot/the hermit_külön.blend" id="9_37xhk"]
 [ext_resource type="Texture2D" uid="uid://2lwv0txkq6h5" path="res://assets/tarrot/textures/tarot_background.PNG" id="10_37xhk"]
@@ -63,13 +60,6 @@ offset_top = 478.0
 offset_right = 299.0
 offset_bottom = 517.0
 
-[node name="Label" type="Label" parent="CanvasLayer/Good" unique_id=1255787743]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Good"
-metadata/_edit_group_ = true
-
 [node name="Bad" type="Button" parent="CanvasLayer" unique_id=1964047992]
 visible = false
 offset_left = 874.0
@@ -77,19 +67,53 @@ offset_top = 480.0
 offset_right = 1001.0
 offset_bottom = 519.0
 
-[node name="Label" type="Label" parent="CanvasLayer/Bad" unique_id=1911577189]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Bad"
-metadata/_edit_group_ = true
-
-[node name="SartTutorial" parent="CanvasLayer" unique_id=515192348 instance=ExtResource("4_c7su6")]
+[node name="CupGood" parent="CanvasLayer" unique_id=515192348 instance=ExtResource("4_c7su6")]
 visible = false
-text_key = Array[String](["ÁÁÁÁ, úgy látom, keresel valamit! Jó helyen jársz!", "Ha még egyszer rám kattintasz a sarokban nem foglak zavarni.", "Válassz a bal oldali gombok közül, és minden kérdésedre választ kapsz!"])
-characters_name = Array[String](["Wizz Ard", "Wizz Ard", "Wizz Ard"])
-textcolor = Array[Color]([Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)])
-Portraits = Array[Texture2D]([ExtResource("5_k00m4"), ExtResource("6_bsci0"), ExtResource("7_37xhk")])
+text_key = Array[String](["A múltadban elvesztettél valaki fontosat, és még ezen szeretethez ragaszkodni nemes dolog, a fájdalom megbénítja a mindennapjaidat. Már elfeledted, hogyan lásd a szépet, de vajon elhunyt szeretted is ezt akarná számodra?"])
+characters_name = Array[String]([""])
+textcolor = Array[Color]([Color(1, 1, 1, 1)])
+Portraits = Array[Texture2D]([null])
+TutorialScreens = Array[Texture2D]([null])
+
+[node name="CupBad" parent="CanvasLayer" unique_id=623781932 instance=ExtResource("4_c7su6")]
+visible = false
+text_key = Array[String](["A múltadban elvesztettél valaki fontosat. Ez a kín felemészti a mindennapjaidat, kísért az álmaidban- talán már túl késő…Életed végéig kell cipelned ezt a terhet."])
+characters_name = Array[String]([""])
+textcolor = Array[Color]([Color(1, 1, 1, 1)])
+Portraits = Array[Texture2D]([null])
+TutorialScreens = Array[Texture2D]([null])
+
+[node name="HermitGood" parent="CanvasLayer" unique_id=516002077 instance=ExtResource("4_c7su6")]
+visible = false
+text_key = Array[String](["Időt szakítottál arra, hogy végre magadba nézz- ez hatalmas lépés! Az egyetlen kérdés, amire választ kell találnod, önmagadban rejlik. Itt az ideje, hogy végre önmagaddal foglalkozz, és levedd a válladról mások terhét."])
+characters_name = Array[String]([""])
+textcolor = Array[Color]([Color(1, 1, 1, 1)])
+Portraits = Array[Texture2D]([null])
+TutorialScreens = Array[Texture2D]([null])
+
+[node name="HermitBad" parent="CanvasLayer" unique_id=1888825331 instance=ExtResource("4_c7su6")]
+visible = false
+text_key = Array[String](["Elszigetelődtél a társadalomtól. Úgy érzed nyűg mások felé nyitni, hogy mára már minden értelmetlenné vált- pedig pont az ellenkezője! Itt az ideje, hogy abbahagyd a menekülést és kapcsolatokat építs! Később meglátod, kifizetődik a pozitív gondolkodás!"])
+characters_name = Array[String]([""])
+textcolor = Array[Color]([Color(1, 1, 1, 1)])
+Portraits = Array[Texture2D]([null])
+TutorialScreens = Array[Texture2D]([null])
+
+[node name="SunGood" parent="CanvasLayer" unique_id=84388008 instance=ExtResource("4_c7su6")]
+visible = false
+text_key = Array[String](["Hosszú évek durva, megterhelő munkája végre meghozzá várt gyümölcsét. Megtalálod önmagad, és leveted a láncaidat, csak hallgatnod kell a megérzéseidre. Ne engedd, hogy más befolyásoljon. A vadászat sikeres lesz."])
+characters_name = Array[String]([""])
+textcolor = Array[Color]([Color(1, 1, 1, 1)])
+Portraits = Array[Texture2D]([null])
+TutorialScreens = Array[Texture2D]([null])
+
+[node name="SunBad" parent="CanvasLayer" unique_id=1389973128 instance=ExtResource("4_c7su6")]
+visible = false
+text_key = Array[String](["Már látod a fényt az alagút végén, de a valóság az, hogy az igazán fontos dolgokat sohasem könnyű elérni. Ez nem jelenti azt, hogy fel kell adnod, szimplán csak át kell gondolnod a terved, hogy biztosan a legjobb végkimenetelt kapd. A vadászat sikertelen lesz, viszont nincs minden veszve!"])
+characters_name = Array[String]([""])
+textcolor = Array[Color]([Color(1, 1, 1, 1)])
+Portraits = Array[Texture2D]([null])
+TutorialScreens = Array[Texture2D]([null])
 
 [node name="Dev_debug_menu" parent="CanvasLayer" unique_id=218198422 instance=ExtResource("7_qp3rv")]
 

@@ -64,7 +64,7 @@ func PLACEHOLDERNAME2_customer(dialogue_manager: CanvasLayer) -> void:
 	dialogue_manager.visible = true
 	dialogue_manager.start_dialogue(dialogue_manager.text_key, dialogue_manager.characters_name, dialogue_manager.textcolor, false )
 	await dialogue_manager.dialogue_finished
-	SceneTransition.change_scene("res://scenes/tarot_minigame.tscn")
+	SceneTransition.change_scene("res://scenes/tarrot.tscn")
 
 
 func leave_customer(dialogue_manager: CanvasLayer) -> void:
