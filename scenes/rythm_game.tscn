@@ -5,11 +5,17 @@
 [ext_resource type="Texture2D" uid="uid://clnrqnuaoeq2s" path="res://assets/rythm_game/constellation_background.png" id="2_h07vb"]
 [ext_resource type="Texture2D" uid="uid://bimbgqtnn6rlq" path="res://assets/rythm_game/constellation_bowl.png" id="2_jgy0h"]
 [ext_resource type="Texture2D" uid="uid://cjy7c4jmmn876" path="res://assets/rythm_game/csepp_alt.png" id="3_eacpd"]
+[ext_resource type="Texture2D" uid="uid://dnwj0tompnur4" path="res://assets/rythm_game/hitmarkers/PERFECT.png" id="4_38vb1"]
 [ext_resource type="PackedScene" uid="uid://dpy8dk57s8673" path="res://scenes/wave.tscn" id="4_uuflm"]
 [ext_resource type="PackedScene" uid="uid://mgw84bj5qnk4" path="res://scenes/star.tscn" id="5_4qhuu"]
+[ext_resource type="Texture2D" uid="uid://c72jlhpn016bf" path="res://assets/rythm_game/hitmarkers/GOOD.png" id="5_avwwa"]
 [ext_resource type="Texture2D" uid="uid://co7sokf1pc6fm" path="res://assets/placeholders/IMG_0848.jpeg" id="5_gko7c"]
+[ext_resource type="Texture2D" uid="uid://iv67j6lvd3ue" path="res://assets/rythm_game/hitmarkers/MISS.png" id="6_8qdn5"]
 [ext_resource type="Texture2D" uid="uid://del3al4177hn0" path="res://assets/rythm_game/csepp_normal.png" id="6_c8p3f"]
 [ext_resource type="PackedScene" uid="uid://7en3j6hc7kc3" path="res://scenes/dev_debug_menu.tscn" id="6_jgy0h"]
+[ext_resource type="Texture2D" uid="uid://b11a81uuag0u3" path="res://assets/rythm_game/hitmarkers/TÖKÉLETES.png" id="7_q72qw"]
+[ext_resource type="Texture2D" uid="uid://b0bgpxyx61v88" path="res://assets/rythm_game/hitmarkers/JÓ.png" id="8_nfk1n"]
+[ext_resource type="Texture2D" uid="uid://05turbg0jeuh" path="res://assets/rythm_game/hitmarkers/ROSSZ.png" id="9_usak7"]
 [ext_resource type="Texture2D" uid="uid://bvcmyt7enuqqj" path="res://assets/tutorial wizard/wizard_default.png" id="10_6yyfv"]
 [ext_resource type="Texture2D" uid="uid://sfy3lftmxibm" path="res://assets/rythm_game/hpldtal_ui_progress_bar_under.png" id="10_qtbob"]
 [ext_resource type="PackedScene" uid="uid://bqog7piaxqlsc" path="res://scenes/tutorial.tscn" id="11_c8p3f"]
@@ -149,7 +155,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"run",
-"speed": 20.0
+"speed": 30.0
 }]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c8p3f"]
@@ -166,9 +172,6 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": null
-}, {
 "duration": 1.0,
 "texture": ExtResource("27_wothk")
 }, {
@@ -210,16 +213,25 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("40_5bn43")
+}, {
+"duration": 1.0,
+"texture": null
 }],
 "loop": 0,
 "name": &"run",
-"speed": 25.0
+"speed": 30.0
 }]
 
 [node name="rythm_game" type="Node2D" unique_id=1484322323]
 script = ExtResource("1_hidhp")
 normalTexture = ExtResource("6_c8p3f")
 alternateTexture = ExtResource("3_eacpd")
+texture_perferct_eng = ExtResource("4_38vb1")
+texture_good_eng = ExtResource("5_avwwa")
+texture_miss_eng = ExtResource("6_8qdn5")
+texture_perferct_hun = ExtResource("7_q72qw")
+texture_good_hun = ExtResource("8_nfk1n")
+texture_miss_hun = ExtResource("9_usak7")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=518702295]
 offset = Vector2(577.111, 320.5)
@@ -266,22 +278,12 @@ shape = SubResource("RectangleShape2D_0mw1e")
 position = Vector2(593.285, 326.005)
 scale = Vector2(0.919, 0.919)
 
-[node name="HitText" type="Label" parent="." unique_id=1750695539]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 783.0
-offset_top = 178.0
-offset_right = 823.0
-offset_bottom = 201.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="HitText" type="Sprite2D" parent="." unique_id=1191839389]
+z_index = 2
+scale = Vector2(0.05, 0.05)
 
-[node name="Particles" type="AnimatedSprite2D" parent="HitText" unique_id=1428575239]
-position = Vector2(16.14, 15)
-scale = Vector2(0.098, 0.098)
+[node name="Particles" type="AnimatedSprite2D" parent="." unique_id=1428575239]
+scale = Vector2(0.03, 0.03)
 sprite_frames = SubResource("SpriteFrames_e3dmf")
 animation = &"idle"
 
@@ -384,8 +386,8 @@ visible = false
 stream = ExtResource("12_rtuws")
 
 [node name="perfectHullamEffect" type="AnimatedSprite2D" parent="." unique_id=1643179599]
-position = Vector2(584.99994, 336)
-scale = Vector2(0.351, 0.351)
+position = Vector2(581.665, 336.61)
+scale = Vector2(0.561, 0.561)
 sprite_frames = SubResource("SpriteFrames_71p6h")
 animation = &"idle"
 

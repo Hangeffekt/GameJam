@@ -7,10 +7,10 @@ extends Node2D
 @onready var dropplet_placeholderr: Sprite2D = $dropplet_placeholderr
 @onready var progress_bar: TextureProgressBar = $ProgressBar
 @onready var victory_label: Label = $"ProgressBar/victory label"
-@onready var particles: AnimatedSprite2D = $HitText/Particles
-@onready var hit_text: Label = $HitText
+@onready var particles: AnimatedSprite2D = $Particles
 @onready var perfect_hullam_effect: AnimatedSprite2D = $perfectHullamEffect
 @onready var camera: Camera2D = $Camera2D
+@onready var hit_text: Sprite2D = $HitText
 
 
 
@@ -44,7 +44,14 @@ var target_value: float
 
 ##hitText
 var hitTween: Tween
-var labelOriginPos: Vector2
+#var labelOriginPos: Vector2
+@export var texture_perferct_eng: Texture2D
+@export var texture_good_eng: Texture2D
+@export var texture_miss_eng: Texture2D
+@export var texture_perferct_hun: Texture2D
+@export var texture_good_hun: Texture2D
+@export var texture_miss_hun: Texture2D
+
 
 ##camera
 var shakeTween:Tween
@@ -65,6 +72,7 @@ func _input(event: InputEvent) -> void:
 	if not wave.waveActive:
 		return #nincs hullám, minek ellenőrizni?
 		
+	var mouse_pos:Vector2 = get_global_mouse_position()
 	antispam = 0
 	var now := Time.get_ticks_msec() / 1000.0
 	var diff:float = now - wave.waveHitTime
@@ -72,20 +80,24 @@ func _input(event: InputEvent) -> void:
 	
 	if absoluteDiff <= perfect_window:
 		#wave.visible = false
-		HitText("PERFECT")
+		HitText(texture_perferct_eng)
 		pontszerzes(2)
+	
+		particles.position = mouse_pos
 		particles.play("run")
-		perfect_hullam_effect.play_backwards("run") #visszafele játszva szerintem jobban működik. rendesen futtatva összezavarhatja a játékost
+		perfect_hullam_effect.play("run") 
 	
 	elif absoluteDiff <= good_window:
 		#wave.visible = false
-		HitText("GOOD")
+		HitText(texture_good_eng)
 		pontszerzes(1)
+		
+		particles.position = mouse_pos
 		particles.play("run")
 	
 	else:
 		#wave.visible = false
-		HitText("MISS")
+		HitText(texture_miss_eng)
 		camera_shake(10.0, 0.5)
 		
 	wave.visible = false
@@ -95,7 +107,7 @@ func _input(event: InputEvent) -> void:
 func _ready() -> void:
 	#be kell állítani az original pozíciókat mert különben szépen lassan kimegyünk a képernyőből
 	cameraOriginPos = camera.offset
-	labelOriginPos = hit_text.position
+	#labelOriginPos = hit_text.position
 	
 	##DROPPLET
 	test_metronome_120_bpm.play() #le tesztelem "zenével". a beat lassan elcsúszik de itt lehet a hangfile-al van probléma.
@@ -130,18 +142,18 @@ func start_drop() -> void:
 	dropplet_anim.stop()
 	dropplet_anim.play("dropping")
 
-func HitText(text: String) -> void:
+func HitText(pic: Texture2D) -> void:
 	
 	if hitTween and hitTween.is_running():
 		hitTween.kill()
+	var mouse_pos:Vector2 = get_global_mouse_position()
+	var local_pos:Vector2 = hit_text.get_parent().to_local(mouse_pos)
 	
-	hit_text.text = text
+	hit_text.texture = pic
 	hit_text.modulate.a = 1.0
 	hit_text.visible = true
-	hit_text.position = labelOriginPos
+	hit_text.position = local_pos
 	
-	#forgatás középpontját a szöveg középpontjához igazítom
-	hit_text.pivot_offset = hit_text.size / 2.0
 	
 	var random_angle:float = deg_to_rad(randf_range(-15.0, 15.0))
 	hit_text.rotation = random_angle
