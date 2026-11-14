@@ -149,10 +149,10 @@ Portraits = Array[Texture2D]([ExtResource("4_cq4me"), ExtResource("6_gbqnl"), Ex
 
 [node name="TarrotTutorial" parent="." unique_id=1791220221 instance=ExtResource("3_4kmhl")]
 visible = false
-text_key = Array[String](["Az első nap mindíg nehéz nem igaz. Ne aggódj segítek eligazodni a sok őjdonségban.", "Egyátlagos nap kinyitod a boltot. Jönnek a vásárlók akik szeretnének valami... hogy is mondjam?", "Nem éppen jóra való dolgot... Béjitalt, csillagok olvasását, vagy Jóslást kártyából.", "Hakész, fizetnek és jön a következő, közben minden féle dologgal traktálnak."])
+text_key = Array[String](["Ez talán a legkönnyebb része a munkádnak, hiszen nincs is másra szükséged, csak az intuíciódra.", "Kattints a középen lévő paklira hogy kioszd a lapokat.", "Jól gondold meg a válaszod. Mert lehet nem fog tetszeni a vásárlónak amit mondasz!", "Fókuszálj a kérdésedre és hagyd, hogy a kártyák beszéljenek hozzád! Minden a részletekben rejlik…"])
 characters_name = Array[String](["CHAR_NAME_TUTORWIZARD", "CHAR_NAME_TUTORWIZARD", "CHAR_NAME_TUTORWIZARD", "CHAR_NAME_TUTORWIZARD"])
 textcolor = Array[Color]([Color(1, 1, 1, 1), Color(0.9955804, 0.99558026, 0.99558026, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)])
-Portraits = Array[Texture2D]([ExtResource("4_cq4me"), ExtResource("6_gbqnl"), ExtResource("7_ckvwl"), ExtResource("4_cq4me")])
+TutorialScreens = Array[Texture2D]([ExtResource("4_cq4me"), ExtResource("5_6yjpi"), ExtResource("7_ckvwl"), ExtResource("6_gbqnl")])
 
 [node name="StillHere" parent="." unique_id=1676930901 instance=ExtResource("3_4kmhl")]
 visible = false

@@ -13,6 +13,10 @@ func _ready() -> void:
 	objects._ready()
 	
 func show_tutorial_icon() -> void:
-	print(get_tree().current_scene)
-	var icon = get_tree().current_scene.get_node("TutorialButton")
+	var icon
+	if get_tree().current_scene is Node2D or get_tree().current_scene is CanvasLayer:
+		icon = get_tree().current_scene.get_node("TutorialButton")
+	else:
+		#3d sceene
+		icon = get_tree().current_scene.get_node("CanvasLayer/TutorialButton")
 	icon.visible = true

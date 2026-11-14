@@ -4,7 +4,7 @@ extends CanvasLayer
 @onready var main_dialogue_manager: CanvasLayer = $MainTutorial
 @onready var potion_dialogue_manager: CanvasLayer = $PotionTutorial
 @onready var moonplate_dialogue_manager: CanvasLayer = $MoonPlateTutorial
-@onready var tarrot_dialogue_manager: CanvasLayer = $TarrotTutorial
+@onready var tarot_dialogue_manager: CanvasLayer = $TarrotTutorial
 @onready var still_here_manager: CanvasLayer = $StillHere
 
 @onready var startBtn: Button = $Control/MarginContainer/VBoxContainer/StartBtn
@@ -56,6 +56,16 @@ func moonplate() -> void:
 	moonplate_dialogue_manager.hide()
 	_on_tutorial_button_pressed()
 	#choose_tutorial(5)
+	
+func tarot() -> void:
+	tarot_dialogue_manager.visible = true
+	tarot_dialogue_manager.show()
+	#jön a kérdés. hogy működik az alábbi sor úgy, hogy a portré listát már nem adjuk meg neki. Válasz: idk but it works, dont touch it
+	tarot_dialogue_manager.start_dialogue(tarot_dialogue_manager.text_key, tarot_dialogue_manager.characters_name, tarot_dialogue_manager.textcolor,true  )
+	await tarot_dialogue_manager.dialogue_finished
+	tarot_dialogue_manager.hide()
+	_on_tutorial_button_pressed()
+	#choose_tutorial(5)
 
 #tutorial után lezáró dialógus
 func still_here() -> void:
@@ -85,7 +95,7 @@ func choose_tutorial(button: int) -> void:
 		3:
 			moonplate()
 		4:
-			moonplate()
+			tarot()
 		5:
 			still_here()
 

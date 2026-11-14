@@ -16,6 +16,8 @@ extends Node3D
 @onready var HermitBad = $CanvasLayer/HermitBad
 @onready var SunGood = $CanvasLayer/SunGood
 @onready var SunBad = $CanvasLayer/SunBad
+@onready var tutorialScene: CanvasLayer = $CanvasLayer/Tutorial
+@onready var tutorialBtn: Button = $CanvasLayer/TutorialButton
 
 var sun_is_rotated: bool = false
 var hermit_is_rotated: bool = false
@@ -27,6 +29,8 @@ var hermit_original_position: Vector3
 var cups_original_position: Vector3
 var global_card: String
 var result: int = 0
+var goodBtnPosition: Vector2
+var badBtnPosition: Vector2
 
 
 # Called when the node enters the scene tree for the first time.
@@ -39,6 +43,7 @@ func _ready() -> void:
 	
 	goodBtn.pressed.connect(_on_good_pressed)
 	badBtn.pressed.connect(_on_bad_pressed)
+	tutorialScene.visible = false
 
 func move_card_to_coordinates() -> void:
 	
@@ -80,6 +85,13 @@ func flip_card(card: String) -> void:
 	# Létrehozzuk a Tween-t
 	card_block = true
 	var tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	goodBtnPosition = goodBtn.position
+	badBtnPosition = badBtn.position
+	
+	if randi() % 10 > 4:
+		print("megy")
+		goodBtn.position = badBtnPosition
+		badBtn.position = goodBtnPosition
 	
 	if card == "sun":
 		tween.tween_property(cardSun, "rotation_degrees:y", 180.0, 0.6)
@@ -105,6 +117,8 @@ func flip_card(card: String) -> void:
 	
 	global_card = card
 	await get_tree().create_timer(1.5).timeout
+	goodBtn.position = goodBtnPosition
+	badBtn.position = badBtnPosition
 	goodBtn.visible = true
 	badBtn.visible = true
 
@@ -192,3 +206,9 @@ func _on_bad_pressed() -> void:
 	
 	await get_tree().create_timer(0.5).timeout
 	flip_card_back(global_card)
+
+
+func _on_tutorial_button_pressed() -> void:
+	tutorialBtn.visible = false
+	tutorialScene.visible = true
+	tutorialScene.choose_tutorial(4)
