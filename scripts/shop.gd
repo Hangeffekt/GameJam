@@ -15,7 +15,10 @@ extends CanvasLayer
 ##tarot minigame után
 @onready var tarot_good: CanvasLayer = $Tarot_good
 @onready var tarot_bad: CanvasLayer = $Tarot_bad
-
+##ritmus minigame után
+@onready var after_rythm_game_dialogue: CanvasLayer = $afterRythmGameDialogue
+##DELETELATER
+@onready var placeholder_end_game_uzenet: CanvasLayer = $PlaceholderEndGameUzenet
 
 var ido: float = 3.0
 
@@ -54,7 +57,7 @@ func MonsterHunter_customer(dialogue_manager: CanvasLayer) -> void:
 	dialogue_manager.visible = true
 	dialogue_manager.start_dialogue(dialogue_manager.text_key, dialogue_manager.characters_name, dialogue_manager.textcolor, false )
 	await dialogue_manager.dialogue_finished
-	SceneTransition.change_scene("res://scenes/rythm_game.tscn")
+	SceneTransition.change_scene("res://scenes/tarrot.tscn")
 
 
 func PLACEHOLDERNAME2_customer(dialogue_manager: CanvasLayer) -> void:
@@ -64,7 +67,7 @@ func PLACEHOLDERNAME2_customer(dialogue_manager: CanvasLayer) -> void:
 	dialogue_manager.visible = true
 	dialogue_manager.start_dialogue(dialogue_manager.text_key, dialogue_manager.characters_name, dialogue_manager.textcolor, false )
 	await dialogue_manager.dialogue_finished
-	SceneTransition.change_scene("res://scenes/tarrot.tscn")
+	SceneTransition.change_scene("res://scenes/rythm_game.tscn")
 
 
 func leave_customer(dialogue_manager: CanvasLayer) -> void:
@@ -74,6 +77,7 @@ func leave_customer(dialogue_manager: CanvasLayer) -> void:
 
 
 #egy globalis változóba tárolom hogy melyik számu vásárló jön (itt rendelem hozzá a számhoz a vásárlót ha esetleg késöbb felcserélnénk őket)
+#frissítem az előző kommentet. ez itt már clusterfuck, de működik. ha valamit kell itt csinálni akkor inkább kérj meg engem.
 func choose_customer(nextcustomer: int) -> void:
 	await get_tree().create_timer(ido).timeout
 	
@@ -100,3 +104,8 @@ func choose_customer(nextcustomer: int) -> void:
 					different_ending(tarot_bad)
 		5:
 			PLACEHOLDERNAME2_customer(_2placeholdername_dialogue_manager)
+		6:
+			different_ending(after_rythm_game_dialogue)
+		7:
+			different_ending(placeholder_end_game_uzenet)
+			SceneTransition.quit_game()

@@ -69,7 +69,7 @@ offset_bottom = 519.0
 
 [node name="CupGood" parent="CanvasLayer" unique_id=515192348 instance=ExtResource("4_c7su6")]
 visible = false
-text_key = Array[String](["A múltadban elvesztettél valaki fontosat, és még ezen szeretethez ragaszkodni nemes dolog, a fájdalom megbénítja a mindennapjaidat. Már elfeledted, hogyan lásd a szépet, de vajon elhunyt szeretted is ezt akarná számodra?"])
+text_key = Array[String](["TAROT_DESC_CUPS_G"])
 characters_name = Array[String]([""])
 textcolor = Array[Color]([Color(1, 1, 1, 1)])
 Portraits = Array[Texture2D]([null])
@@ -77,7 +77,7 @@ TutorialScreens = Array[Texture2D]([null])
 
 [node name="CupBad" parent="CanvasLayer" unique_id=623781932 instance=ExtResource("4_c7su6")]
 visible = false
-text_key = Array[String](["A múltadban elvesztettél valaki fontosat. Ez a kín felemészti a mindennapjaidat, kísért az álmaidban- talán már túl késő…Életed végéig kell cipelned ezt a terhet."])
+text_key = Array[String](["TAROT_DESC_CUPS_B"])
 characters_name = Array[String]([""])
 textcolor = Array[Color]([Color(1, 1, 1, 1)])
 Portraits = Array[Texture2D]([null])
@@ -85,7 +85,7 @@ TutorialScreens = Array[Texture2D]([null])
 
 [node name="HermitGood" parent="CanvasLayer" unique_id=516002077 instance=ExtResource("4_c7su6")]
 visible = false
-text_key = Array[String](["Időt szakítottál arra, hogy végre magadba nézz- ez hatalmas lépés! Az egyetlen kérdés, amire választ kell találnod, önmagadban rejlik. Itt az ideje, hogy végre önmagaddal foglalkozz, és levedd a válladról mások terhét."])
+text_key = Array[String](["TAROT_DESC_HERMIT_G"])
 characters_name = Array[String]([""])
 textcolor = Array[Color]([Color(1, 1, 1, 1)])
 Portraits = Array[Texture2D]([null])
@@ -93,7 +93,7 @@ TutorialScreens = Array[Texture2D]([null])
 
 [node name="HermitBad" parent="CanvasLayer" unique_id=1888825331 instance=ExtResource("4_c7su6")]
 visible = false
-text_key = Array[String](["Elszigetelődtél a társadalomtól. Úgy érzed nyűg mások felé nyitni, hogy mára már minden értelmetlenné vált- pedig pont az ellenkezője! Itt az ideje, hogy abbahagyd a menekülést és kapcsolatokat építs! Később meglátod, kifizetődik a pozitív gondolkodás!"])
+text_key = Array[String](["TAROT_DESC_HERMIT_B"])
 characters_name = Array[String]([""])
 textcolor = Array[Color]([Color(1, 1, 1, 1)])
 Portraits = Array[Texture2D]([null])
@@ -101,7 +101,7 @@ TutorialScreens = Array[Texture2D]([null])
 
 [node name="SunGood" parent="CanvasLayer" unique_id=84388008 instance=ExtResource("4_c7su6")]
 visible = false
-text_key = Array[String](["Hosszú évek durva, megterhelő munkája végre meghozzá várt gyümölcsét. Megtalálod önmagad, és leveted a láncaidat, csak hallgatnod kell a megérzéseidre. Ne engedd, hogy más befolyásoljon. A vadászat sikeres lesz."])
+text_key = Array[String](["TAROT_DESC_SUN_G"])
 characters_name = Array[String]([""])
 textcolor = Array[Color]([Color(1, 1, 1, 1)])
 Portraits = Array[Texture2D]([null])
@@ -109,7 +109,7 @@ TutorialScreens = Array[Texture2D]([null])
 
 [node name="SunBad" parent="CanvasLayer" unique_id=1389973128 instance=ExtResource("4_c7su6")]
 visible = false
-text_key = Array[String](["Már látod a fényt az alagút végén, de a valóság az, hogy az igazán fontos dolgokat sohasem könnyű elérni. Ez nem jelenti azt, hogy fel kell adnod, szimplán csak át kell gondolnod a terved, hogy biztosan a legjobb végkimenetelt kapd. A vadászat sikertelen lesz, viszont nincs minden veszve!"])
+text_key = Array[String](["TAROT_DESC_SUN_B"])
 characters_name = Array[String]([""])
 textcolor = Array[Color]([Color(1, 1, 1, 1)])
 Portraits = Array[Texture2D]([null])

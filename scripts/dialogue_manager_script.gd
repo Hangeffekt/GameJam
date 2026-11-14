@@ -21,6 +21,23 @@ var isTutorial: bool = false
 #ötlet 2: van szöveg és név. ez még kettő külön tömb. Kezelhető, meg már kész van. nem kell ide más... de mi lenne ha a karakterek szövegei más színnel lenne ábrázolva?
 #ötlet 3: most vagy csinálok még1 listát és kézzel lekezelem az egésszet, vagy újra írom az EGÉSZ kódot hogy egy dictionary-vel működjön... 
 
+##belépő animáció
+const PortreEntraceDuration: float = 0.7
+const PortraitStartScale: float = 0.7
+const PortraitStartOffsetY: float = -40.0
+const PortraitSiruetteHold: float = 0.35 #meddig marad teljesen fekete
+const PortraitFadeDuration: float = 0.45 #sziruett eltünésének hossza
+
+var currentPortrait: Texture2D = null
+var PortreEntraceTween: Tween
+var PortraitHomePos: Vector2
+var PortraitHomeScale: Vector2
+var PortraitHomeModulate: Color = Color.WHITE
+var PortraitHomeReady: bool = false
+
+@export var entraceAnimIndexes: Array[int] = []
+
+
 const time_per_char: float = 0.03
 
 var tween: Tween
@@ -32,10 +49,56 @@ var is_dialogue_active: bool = false
 func _ready() -> void:
 	TranslationServer.set_locale(GlobalScript.language)
 	dialogue_box.visible = false
+	Capture_portrait_home.call_deferred()
 	
-	#start_dialogue(text_key, characters_name, textcolor)
+func Capture_portrait_home() -> void:
+	await get_tree().process_frame
+	PortraitHomePos = portrait.position
+	PortraitHomeScale = portrait.scale
+	PortraitHomeModulate = portrait.modulate
+	PortraitHomeReady = true
+	
+func PlayPortraitEntrace(target: TextureRect) -> void:
+	if PortreEntraceTween and PortreEntraceTween.is_valid():
+		PortreEntraceTween.kill()
+		
+	if not PortraitHomeReady:
+		PortraitHomePos = portrait.position
+		PortraitHomeScale = portrait.scale
+		PortraitHomeModulate = portrait.modulate
+		PortraitHomeReady = true
+		
+	target.pivot_offset = target.size * 0.5
+	
+	target.position = PortraitHomePos + Vector2(0, PortraitStartOffsetY)
+	target.scale = PortraitHomeScale * PortraitStartScale
+	target.modulate = Color(0,0,0, PortraitHomeModulate.a)
+	
+	
+	##tweens
+	PortreEntraceTween = create_tween()
+	PortreEntraceTween.set_parallel(true)
+	PortreEntraceTween.set_trans(Tween.TRANS_CUBIC)
+	PortreEntraceTween.set_ease(Tween.EASE_OUT)
+	
+	#csúszás
+	PortreEntraceTween.tween_property(target, "position", PortraitHomePos, PortreEntraceDuration)
+	#növekvés
+	PortreEntraceTween.tween_property(target, "scale", PortraitHomeScale, PortreEntraceDuration)
+	#sziluett
+	PortreEntraceTween.tween_property(target, "modulate", PortraitHomeModulate, PortraitFadeDuration).set_delay(PortraitSiruetteHold).set_trans(Tween.TRANS_LINEAR) #nem tetszett a sziruett gyors eltünése ezért pontosítok egy kicsit a késleltetéssel
+
+func resetPortrait(target: TextureRect) -> void:
+	if PortreEntraceTween and PortreEntraceTween.is_valid():
+		PortreEntraceTween.kill()
+	if PortraitHomeReady:
+		target.position = PortraitHomePos
+		target.scale = PortraitHomeScale
+		target.modulate = PortraitHomeModulate
 
 func start_dialogue(lines: Array[String], CHARname: Array[String], color: Array[Color], tutorial: bool):
+	currentPortrait = null
+	resetPortrait(portrait)
 	# ha a tutorial igaz a kis kép jelenik meg, ha hamis középen a nagy
 	#game is paused, kivéve a Dialogue manager
 	get_tree().paused = true
@@ -56,21 +119,38 @@ func updateLine():
 	if characters_name[current_line_index] == "":
 		color_rect_2.visible = false
 	else: color_rect_2.visible = true
+	
 	#felmerült egy hiba a typewriter funkcióban.
 	#A char_count nem a fordított szöveg hosszát kapta meg,
 	#hanem a localization kulcs nevének hosszát, ezt a tr() metódussal lehetett megoldani
 	dialogue_text.text = tr(dialogue_lines[current_line_index])
 	name_text.text = tr(characters_name[current_line_index])
 	dialogue_text.self_modulate = textcolor[current_line_index]
+	
 	if current_line_index < Portraits.size() and Portraits[current_line_index]:
 		#ha tutorial szöveget írunk ki
 		if isTutorial:
 			tutorialportrait.visible = true
 			tutorialportrait.texture = Portraits[current_line_index]
 		else:
-			portrait.texture = Portraits[current_line_index]
+			var newTexure: Texture2D = Portraits[current_line_index]
+			var shouldAnimate: bool = current_line_index in entraceAnimIndexes
+			#portrait.texture = Portraits[current_line_index]
+			if newTexure != currentPortrait and not shouldAnimate:
+				resetPortrait(portrait)
+			
+			portrait.texture = newTexure
 			portrait.visible = true
-	else: portrait.visible = false; tutorialportrait.visible = false
+			currentPortrait = newTexure
+			
+			if shouldAnimate:
+				PlayPortraitEntrace(portrait)
+			
+	else:
+		portrait.visible = false
+		tutorialportrait.visible = false
+		resetPortrait(portrait)
+		currentPortrait = null
 	typeWriterEffect()
 
 func _input(event: InputEvent) -> void:
@@ -96,6 +176,10 @@ func advance_dialogue():
 		dialogue_box.visible = false
 		portrait.visible = false
 		tutorialportrait.visible = false
+		
+		currentPortrait = null
+		resetPortrait(portrait)
+		
 		dialogue_finished.emit() #jelzek hogy vége van a beszélgetésnek
 		print("dialogue_finished.emit()")
 		

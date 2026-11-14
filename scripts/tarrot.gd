@@ -84,23 +84,23 @@ func flip_card(card: String) -> void:
 	if card == "sun":
 		tween.tween_property(cardSun, "rotation_degrees:y", 180.0, 0.6)
 		tween.tween_property(cardSun, "position:z", cardSun.position.z + 0.35, 1.0)
-		goodBtn.text = "Boldog idők"
-		badBtn.text = "Irreális elvárások"
+		goodBtn.text = "TAROT_TITLE_SUN_G"
+		badBtn.text = "TAROT_TITLE_SUN_B"
 		sun_is_rotated = false
 		
 	elif card == "hermit":
 		tween.tween_property(cardHermit, "rotation_degrees:y", 180, 0.6)
 		tween.parallel().tween_property(cardHermit, "position:z", cardHermit.position.z + 0.35, 1.0)
 		tween.parallel().tween_property(cardHermit, "position:y", cardHermit.position.y - 0.25, 1.0)
-		goodBtn.text = "Introspekció"
-		badBtn.text = "Örök magány"
+		goodBtn.text = "TAROT_TITLE_HERMIT_G"
+		badBtn.text = "TAROT_TITLE_HERMIT_B"
 		hermit_is_rotated = false
 		
 	elif card == "cups":
 		tween.tween_property(cardCups, "rotation_degrees:y", 180, 0.6)
 		tween.tween_property(cardCups, "position:z", cardCups.position.z + 0.35, 1.0)
-		goodBtn.text = "Nincs minden veszve"
-		badBtn.text = "Végtelen gyötrelem"
+		goodBtn.text = "TAROT_TITLE_CUPS_G"
+		badBtn.text = "TAROT_TITLE_CUPS_B"
 		cups_is_rotated = false
 	
 	global_card = card
