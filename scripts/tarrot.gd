@@ -47,7 +47,7 @@ func _ready() -> void:
 
 func move_card_to_coordinates() -> void:
 	
-	var tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	var tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT).set_parallel(true)
 	
 	# Ha még nem mozgott el, az új X és Y koordinátára megyünk
 	# A Z-t (mélység) meghagyjuk az eredetiben, hogy ne vesszen el
@@ -58,9 +58,9 @@ func move_card_to_coordinates() -> void:
 	if not move_position:
 		hermit_destination.x += 0.0
 		hermit_destination.y += target_y + 0.25
-		sun_destination.x += target_x
+		sun_destination.x += -target_x
 		sun_destination.y += target_y
-		cups_destination.x += -target_x
+		cups_destination.x += target_x
 		cups_destination.y += target_y
 		move_position = true
 	else:
@@ -70,8 +70,8 @@ func move_card_to_coordinates() -> void:
 
 	# Animáljuk a teljes position vektort (ez viszi az X-et és az Y-t egyszerre)
 	tween.tween_property(cardHermit, "position", hermit_destination, 1.0)
-	tween.tween_property(cardSun, "position", sun_destination, 1.0)
-	tween.tween_property(cardCups, "position", cups_destination, 1.0)
+	tween.tween_property(cardCups, "position", sun_destination, 1.0).set_delay(0.2)
+	tween.tween_property(cardSun, "position", cups_destination, 1.0).set_delay(0.4)
 	
 	sun_is_rotated = true
 	hermit_is_rotated = true
@@ -85,11 +85,11 @@ func flip_card(card: String) -> void:
 	# Létrehozzuk a Tween-t
 	card_block = true
 	var tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	#gombcsere
 	goodBtnPosition = goodBtn.position
 	badBtnPosition = badBtn.position
 	
 	if randi() % 10 > 4:
-		print("megy")
 		goodBtn.position = badBtnPosition
 		badBtn.position = goodBtnPosition
 	
@@ -117,8 +117,6 @@ func flip_card(card: String) -> void:
 	
 	global_card = card
 	await get_tree().create_timer(1.5).timeout
-	goodBtn.position = goodBtnPosition
-	badBtn.position = badBtnPosition
 	goodBtn.visible = true
 	badBtn.visible = true
 
@@ -137,6 +135,10 @@ func flip_card_back(card: String) -> void:
 		
 	elif card == "cups":
 		tween.tween_property(cardCups, "position:z", cardCups.position.z - 0.35, 1.0)
+	
+	#gombcsere visszaállítás
+	goodBtn.position = goodBtnPosition
+	badBtn.position = badBtnPosition
 	
 	if not sun_is_rotated and not hermit_is_rotated and not cups_is_rotated:
 		_on_change_sceene()

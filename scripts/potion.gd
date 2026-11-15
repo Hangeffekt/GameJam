@@ -76,6 +76,7 @@ func category_buttons(id: int):
 			button.add_child(add_bg_to_categorie("potion ui_ingredients list_category frame"))
 			button.visible = true
 			button.add_to_group("potion_buttons")
+			button.add_theme_stylebox_override("normal", preload("res://styles/left_side_menu.tres"))
 			if categorie.id == id:
 				button.custom_minimum_size = Vector2(100, 101)
 				category_items(id)

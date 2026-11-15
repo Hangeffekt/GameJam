@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://b55tkn7r41er4" path="res://assets/potion/steam animation/potion_steam_007.png" id="11_gmx3n"]
 [ext_resource type="Texture2D" uid="uid://bxkpbo002y1re" path="res://assets/potion/wizard_icon_notification_02.png" id="11_nxh22"]
 [ext_resource type="Texture2D" uid="uid://b4p4yyjma3tc1" path="res://assets/potion/steam animation/potion_steam_008.png" id="12_qkra3"]
+[ext_resource type="StyleBox" uid="uid://clqda3ykp77qo" path="res://styles/left_side_menu.tres" id="13_jq2hk"]
 [ext_resource type="Texture2D" uid="uid://cw77m55bxx8v5" path="res://assets/potion/potion ui_ingredients list_base.png" id="13_qkra3"]
 [ext_resource type="Texture2D" uid="uid://bvyx0htqac8rk" path="res://assets/potion/ingredients/amethyst.png" id="13_qted3"]
 [ext_resource type="PackedScene" uid="uid://7en3j6hc7kc3" path="res://scenes/dev_debug_menu.tscn" id="14_ancum"]
@@ -230,11 +231,16 @@ animations = [{
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gmx3n"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qkra3"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ex703"]
+shadow_color = Color(0, 0, 0, 0)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1nmat"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jq2hk"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jq2hk"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lwpdo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_woews"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3rwhh"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_67q4m"]
 
@@ -823,7 +829,7 @@ offset_left = 68.0
 offset_top = 16.0
 offset_right = 397.0
 offset_bottom = 553.0
-theme_override_styles/panel = SubResource("StyleBoxEmpty_qkra3")
+theme_override_styles/panel = SubResource("StyleBoxFlat_ex703")
 
 [node name="TextureRect" type="TextureRect" parent="Control/potionmenu" unique_id=2049742529]
 layout_mode = 1
@@ -855,8 +861,11 @@ layout_mode = 2
 size_flags_vertical = 4
 size_flags_stretch_ratio = 1.21
 offset_transform_enabled = true
-theme_override_styles/normal = SubResource("StyleBoxEmpty_1nmat")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_jq2hk")
+theme_override_styles/normal = ExtResource("13_jq2hk")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jq2hk")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_lwpdo")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_woews")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3rwhh")
 
 [node name="TextureRect" type="TextureRect" parent="Control/VBox/testbtn" unique_id=1730209497]
 layout_mode = 1
