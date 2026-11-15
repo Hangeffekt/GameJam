@@ -16,6 +16,11 @@ extends CanvasLayer
 @onready var progresBarDiamond: TextureProgressBar = $recipe/Results/ControlDiamond/TextureProgressBarDiamond
 @onready var maxSignDiamond: TextureRect = $recipe/Results/ControlDiamond/MaxSign
 
+#const POTION_VIDEO_ENG = preload("uid://qs6y5rpicw12")
+#const POTION_VIDEO_HUN = preload("uid://3v06nmclqkmf")
+#var POTION_VIDEO_ENG = "res://assets/videos/eng/Potion_video_eng.mp4"
+#var POTION_VIDEO_HUN = "res://assets/videos/hun/Potion_video_hun.mp4"
+
 @onready var potionScrup: VideoStreamPlayer = $AspectRatioContainer/VideoScrup
 @onready var potionFill: VideoStreamPlayer = $AspectRatioContainer2/VideoFill
 @onready var potionSplash: VideoStreamPlayer = $AspectRatioContainer2/VideoSplash
@@ -320,8 +325,26 @@ func end_game(atr1: int, atr2: int, atr3: int) -> void:
 	$AspectRatioContainer.visible= true
 	potionScrup.visible = true
 	potionScrup.finished.connect(_on_change_sceene)
-	var kovetkezo_video = load("res://assets/videos/" + recipe[0].file_name + "_potion_hu.ogv")
-	potionScrup.stream = kovetkezo_video
+	
+	##videolejatszas tökölés mert szarakodik az egész... késő van már nekem ehez
+	var videoFileName = ""
+	match GlobalScript.language:
+		"hun":
+			videoFileName = "Potion_video_hun.mp4"
+		"eng":
+			videoFileName = "Potion_video_eng.mp4"
+	var baseDir = OS.get_executable_path().get_base_dir()
+	var absolutePath = baseDir.path_join(videoFileName)
+	if not FileAccess.file_exists(absolutePath):
+		printerr("HIBA: A videó nem található a lemezen: ", absolutePath)
+		return
+	
+	var videoStream = load(absolutePath)
+	if videoStream == null:
+		printerr("HIBA: A stream betöltése sikertelen: ", absolutePath)
+		return
+	
+	potionScrup.stream = videoStream
 	potionScrup.play()
 	
 
