@@ -40,6 +40,8 @@ func _ready() -> void:
 	cardHermit.input_ray_pickable = true
 	cardCups.input_ray_pickable = true
 	cardTop.input_ray_pickable = true
+	goodBtn.visible = false
+	badBtn.visible = false
 	
 	goodBtn.pressed.connect(_on_good_pressed)
 	badBtn.pressed.connect(_on_bad_pressed)

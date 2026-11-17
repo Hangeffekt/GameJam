@@ -10,6 +10,11 @@
 [ext_resource type="Texture2D" uid="uid://2lwv0txkq6h5" path="res://assets/tarrot/textures/tarot_background.PNG" id="10_37xhk"]
 [ext_resource type="PackedScene" uid="uid://nukocomxj4fj" path="res://assets/tarrot/five_of_cups_külön.blend" id="10_qp3rv"]
 
+[sub_resource type="Environment" id="Environment_67q4m"]
+background_color = Color(1, 1, 1, 1)
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3px8j"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s8ax7"]
@@ -28,6 +33,9 @@ material = SubResource("StandardMaterial3D_msale")
 
 [node name="Node3D" type="Node3D" unique_id=1399307508]
 script = ExtResource("1_baelf")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=380720409]
+environment = SubResource("Environment_67q4m")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1431497585]
 
@@ -121,9 +129,9 @@ visible = false
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2133830255]
 transform = Transform3D(0.99999356, -0.0014985949, 0.003273189, 0, 0.90923613, 0.4162808, -0.0035999417, -0.4162781, 0.9092302, -0.032362938, 0, 2.0469391)
+visible = false
 light_energy = 4.9
 directional_shadow_max_distance = 292.0
-sky_mode = 1
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=176322408]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.0440049)
