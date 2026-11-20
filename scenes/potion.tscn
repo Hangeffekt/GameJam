@@ -1106,25 +1106,7 @@ size_flags_horizontal = 4
 theme_override_styles/normal = ExtResource("16_a6teu")
 theme_override_styles/disabled = ExtResource("16_a6teu")
 disabled = true
-
-[node name="Label" type="Label" parent="FinalBtnMargin/MakePotion" unique_id=624391788]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -90.0
-offset_top = -18.5
-offset_right = 90.0
-offset_bottom = 18.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.6039216, 0.5019608, 0.57254905, 1)
-theme_override_font_sizes/font_size = 27
-text = "Örlés és főzés"
-horizontal_alignment = 1
-vertical_alignment = 1
+text = "POTION_END_BUTTON"
 
 [node name="disableCategories" type="Panel" parent="." unique_id=915566903]
 visible = false

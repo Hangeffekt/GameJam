@@ -45,6 +45,7 @@ var item_place_id_3: int = 0
 var recipe: Array 
 var used_items: Array = []
 var choosed_category : int = 1
+var _skip_first_translation_changed: bool = false
 
 
 # Called when the node enters the scene tree for the first time.
@@ -97,7 +98,7 @@ func category_buttons(id: int):
 func category_items(id: int):
 	#remove child categories
 	for child in categorie_item_box.get_children():
-		child.queue_free()
+			child.queue_free()
 	#felépítés
 	#control
 	# -> VBoxContainer ebbe kerül a kép  és 3 változó
@@ -134,12 +135,13 @@ func category_items(id: int):
 			control.add_child(button)
 			
 			#label for name
-			control.add_child(create_labels_for_item(item.name))
+			control.add_child(create_labels_for_item(tr(item.name)))
 			#create labels for values
 			control.add_child(add_container("skull_icon", item.atr1))
 			control.add_child(add_container("star_icon", item.atr2))
 			control.add_child(add_container("diamond_icon", item.atr3))
 			categorie_item_box.add_child(control)
+	_skip_first_translation_changed = true
 
 #lista itemhez értékek
 func add_container(image_name: String, atr: int) -> HBoxContainer:
@@ -309,16 +311,16 @@ func end_game(atr1: int, atr2: int, atr3: int) -> void:
 	
 	match(result_point):
 		0:
-			$result/textResult.text = "Rossz"
+			$result/textResult.text = tr("POTION_RESULT_BA")
 			GlobalScript.potiongrade = "Rossz"
 		1:
-			$result/textResult.text = "Rossz"
+			$result/textResult.text = tr("POTION_RESULT_BA")
 			GlobalScript.potiongrade = "Rossz"
 		2:
-			$result/textResult.text = "Jó"
+			$result/textResult.text = tr("POTION_RESULT_GO")
 			GlobalScript.potiongrade = "Jó"
 		3:
-			$result/textResult.text = "Kiváló"
+			$result/textResult.text = tr("POTION_RESULT_EX")
 			GlobalScript.potiongrade = "Kiváló"
 	$result.show()
 	await get_tree().create_timer(3.0).timeout
@@ -456,3 +458,9 @@ func _on_mouse_entered_item_3() -> void:
 	
 func _on_mouse_exited_item_3() -> void:
 	item_3_remove_x.texture = load("res://assets/potion/potion ui_ingredients bar kivevés ikon.png")
+
+#lokalizáció
+func _notification(what: int) -> void:
+	# Ha futás közben nyelvet váltunk, frissítjük a kódból beállított szöveget
+	if _skip_first_translation_changed and what == NOTIFICATION_TRANSLATION_CHANGED:
+		category_items(choosed_category)
