@@ -5,12 +5,15 @@ MENU_BUTTON_CREDITS,Közreműködők,Credits
 MENU_BUTTON_EXIT,Kilépés,Exit
 TEXT_LANGUAGE,Nyelv,Language
 TEXT_MUSIC,Zene,Music
+POTION_BUTTON_ACCEPT,Örlés és főzés,Grind ingredients
+RYTHM_WIN,Győztél!,Victory!
 TEXT_SFX,Hangeffektek,Soundeffects
-TEXT_FULLSCREEN,Teljes Képernyő,Fullscreen
+CREDITS_DESCRIPTION,MISSING_CREDITS_DESCRIPTION_HUN,MISSING_CREDITS_DESCRIPTION_ENG
+CREDITS_TITLE,Közreműködők,Credits
 CHAR_NAME_PLAYER,Te,You
 CHAR_NAME_CAT,Clawdia,Clawdia
 CHAR_NAME_VENATOR,Radomir,Radomir
-CHAR_NAME_CHAR3,MISSING_TEXT_CHAR_NAME_CHAR3_HU,MISSING_TEXT_CHAR_NAME_CHAR3_ENG
+CHAR_NAME_DOG,Kerberosz,MISSING_TEXT_CHAR_NAME_DOG_ENG
 CHAR_NAME_TUTORWIZARD,Flimmer,Flimmer
 S0_INTRO_1,"Ha fiatal boszorkány korodban azt mondják, hogy az egyetem helyett egy kis boltot fogsz üzemeltetni azért, hogy kifizesd a tartozásaid, vagy légy formájában kellesz leélned életed hátralévő részét- ami valljuk be, jobbik esetben is csak 30 nap- akkor azt mondod: “ Az nem lehet!”",MISSING_TEXT_ENG_S0_INTRO_1
 S0_INTRO_2,“Nekem álmaim vannak! Még ott vár a nagybetűs élet!” ,MISSING_TEXT_ENG_S0_INTRO_2
@@ -88,7 +91,7 @@ S2_VENATOR_26,…,MISSING_TEXT_ENG_S2_VENATOR_26
 S2_VENATOR_27,……,MISSING_TEXT_ENG_S2_VENATOR_27
 S2_VENATOR_28,…………..Legyen.,MISSING_TEXT_ENG_S2_VENATOR_28
 MG2_TUTORIAL_0,"Ez talán a legkönnyebb része a munkádnak, hiszen nincs is másra szükséged, csak az intuíciódra.",MISSING_TEXT_ENG_MG2_TUTORIAL_0
-MG2_TUTORIAL_1,"Fókuszálj a kérdésedre és hagyd, hogy a kártyák beszéljenek hozzád! Minden a részletekben rejlik…",MISSING_TEXT_ENG_MG2_TUTORIAL_1
+MG2_TUTORIAL_1,"Fókuszálj a kérdésedre! Van, hogy nem úgy tűnik, de a pozitív válaszokat meglelheted bárhol, ha elég erősen keresed.",MISSING_TEXT_ENG_MG2_TUTORIAL_1
 TAROT_TITLE_CUPS_G,Nincs minden veszve,MISSING_TEXT_ENG_TAROT_TITLE_CUPS_G
 TAROT_TITLE_CUPS_B,Végtelen gyötrelem,MISSING_TEXT_ENG_TAROT_TITLE_CUPS_B
 TAROT_DESC_CUPS_G,"A múltadban elvesztettél valaki fontosat, és még ezen szeretethez ragaszkodni nemes dolog, a fájdalom megbénítja a mindennapjaidat. Már elfeledted, hogyan lásd a szépet, de vajon elhunyt szeretted is ezt akarná számodra?",MISSING_TEXT_ENG_TAROT_DESC_CUPS_G
@@ -121,3 +124,45 @@ POTION_ITEM_CINNAMON,Fahéj,Cinnamon
 POTION_ITEM_SALT,Só,Salt
 POTION_ITEM_RYE,Rozs,Rye
 POTION_ITEM_NAIL,Szög,Nail
+MG2_GOODE_0,"A férfi hallgatott, mintha nem is zavarná az érdeklődő tekinteted. Már kezdtél türelmetlen lenni, mikor mély sóhaj hagyta el a száját.",MISSING_TEXT_ENG_MG2_GOODE_0
+MG2_GOODE_1,…Értem….,MISSING_TEXT_ENG_MG2_GOODE_1
+MG2_GOODE_2,"Rendben, akkor ha ennyi lesz-",MISSING_TEXT_ENG_MG2_GOODE_2
+MG2_GOODE_3,"Hirtelen mozdulattal átnyújtotta neked a fizetséged. Meg sem várta, hogy eltedd, már az ajtónál járt.",MISSING_TEXT_ENG_MG2_GOODE_3
+MG2_GOODE_4,…Köszönöm.,MISSING_TEXT_ENG_MG2_GOODE_4
+MG2_GOODE_5,"Felettébb furcsa alak, de valahol a lelked mélyén jó érzéssel töltött el a lehetőség, hogy segítettek rajta a szavaid.",MISSING_TEXT_ENG_MG2_GOODE_5
+MG2_BADE_0,"Nyomasztó csend ült be közétek. Várakozó tekintettel figyelted, mi lesz a következő lépése, de végül csak halk morgás hagyta el a száját.",MISSING_TEXT_ENG_MG2_BADE_0
+MG2_BADE_1,Értem…,MISSING_TEXT_ENG_MG2_BADE_1
+MG2_BADE_2,Megindult a kijárat felé.,MISSING_TEXT_ENG_MG2_BADE_2
+MG2_BADE_3,"Hé, várj! Mi lesz a fizetségemmel?!-",MISSING_TEXT_ENG_MG2_BADE_3
+MG2_BADE_4,"Az ajtó hatalmas csattanással zárult be mögötte. Halkan szitkozódtál az orrod alatt. Holnap lehet kiraksz majd egy táblát, hogy “furcsa-farkas-fajzat pasasoknak tilos a belépés”.",MISSING_TEXT_ENG_MG2_BADE_4
+MG3_CERBERUS_0,"Határozottan arra a következtetésre jutottál, hogy a munkád legkellemetlenebb része a takarítás. Sokkal több idő ment el a felmosással, mint azt szeretted volna.  ",MISSING_TEXT_ENG_MG3_CERBERUS_0
+MG3_CERBERUS_1,"Örültél, amikor végre visszatérhettél a megszokott helyedre a pult mögé.",MISSING_TEXT_ENG_MG3_CERBERUS_1
+MG3_CERBERUS_2,"Ekkor ismét megszólalt a kis csengő. Felnézve meglepetten konstatáltad, hogy a vásárló nem lehet más-",MISSING_TEXT_ENG_MG3_CERBERUS_2
+MG3_CERBERUS_3,-mint Hádész egyik kutyája.,MISSING_TEXT_ENG_MG3_CERBERUS_3
+MG3_CERBERUS_4,"Határozott kiállással nézelődött körbe a boltban, mindvégig beszélt valakivel telefonon. Próbálta halkan tartani a hangját, de még így is jól érezhető volt rajta az irritáltság.",MISSING_TEXT_ENG_MG3_CERBERUS_4
+MG3_CERBERUS_5,"Szórakoztatónak találtad. Az alvilágban rémisztő alaknak számít, és mégis, ugyanolyan gondterhelten járkál, mint egy egyszerű kis boltot üzemeltető boszorkány.",MISSING_TEXT_ENG_MG3_CERBERUS_5
+MG3_CERBERUS_6,"Mikor befejezte, megigazította a nyakkendőjét és végre a pultodhoz lépett.",MISSING_TEXT_ENG_MG3_CERBERUS_6
+MG3_CERBERUS_7,"Jó estét, segíthetek valamiben?",MISSING_TEXT_ENG_MG3_CERBERUS_7
+MG3_CERBERUS_8,Remélhetőleg…,MISSING_TEXT_ENG_MG3_CERBERUS_8
+MG3_CERBERUS_9,Sajnos itt nem árulunk rágó játékokat.,MISSING_TEXT_ENG_MG3_CERBERUS_9
+MG3_CERBERUS_10,"Értékelném ha nem pazarolnád az időmet ilyen förtelmesen primitív viccekkel. Nem a magam nevében jöttem, és a főnököm nem olyan jószívű, mint én. Csak egy szavamba kerül-",MISSING_TEXT_ENG_MG3_CERBERUS_10
+MG3_CERBERUS_11,"Jólvan, jólvan, sajnálom… kérlek, folytassa.",MISSING_TEXT_ENG_MG3_CERBERUS_11
+MG3_CERBERUS_12,"A főnököm fia rövidesen megszületik, és tudni akarja mi vár rá. A jót és a rosszat. Ő egy nagyon pontos ember, ha érti.",MISSING_TEXT_ENG_MG3_CERBERUS_12
+MG3_CERBERUS_13,"A párkáknál már próbálkoztam, de a Ciprusokra utaztak és nem hajlandóak válaszolni. Nem is értem ők hogyan tudtak szabadságot kivenni, én pedig nem…",MISSING_TEXT_ENG_MG3_CERBERUS_13
+MG3_CERBERUS_14,"Khm, szóval– Vállalja?",MISSING_TEXT_ENG_MG3_CERBERUS_14
+MG3_CERBERUS_15,"Igen, viszont szükségem lesz a szülőktől egy-egy fontos tárgyra.",MISSING_TEXT_ENG_MG3_CERBERUS_15
+MG3_CERBERUS_16,"Felkészülten a zsebébe nyúlt, aztán egy ezüst golyóstollat és egy virágos hajtűt helyezett eléd.",MISSING_TEXT_ENG_MG3_CERBERUS_16
+MG3_CERBERUS_17,Megfelel?,MISSING_TEXT_ENG_MG3_CERBERUS_17
+MG3_CERBERUS_18,"Tökéletesen. Kérem, várjon itt!",MISSING_TEXT_ENG_MG3_CERBERUS_18
+MG3_CERBERUS_19,Addig elintézek mégegy hívást…,MISSING_TEXT_ENG_MG3_CERBERUS_19
+MG3_TUTORIAL_0,"A víz ismeri a múltat és a jövőt. Azért, hogy felderítse titkait, figyelned kell a hullámok ritmusára, akárcsak egy táncban…csak itt jóval kevesebbet kell mozognod.  ",MISSING_TEXT_ENG_MG3_TUTORIAL_0
+MG3_TUTORIAL_1,"Sőt, egyetlen ujjadat kell mozdítanod! Amikor a hullám a tál széléhez ér, kattints!",MISSING_TEXT_ENG_MG3_TUTORIAL_1
+MG3_TUTORIAL_2,"Várj, hogy érted, hogy “kattints”?  ",MISSING_TEXT_ENG_MG3_TUTORIAL_2
+MG3_TUTORIAL_3,Csak csináld!,MISSING_TEXT_ENG_MG3_TUTORIAL_3
+MG3_END_0,"A fiú erős, és céltudatos lesz. Az anyja szívét és az apja eszét örökli majd, büszkévé teszi mindannyiukat- viszont az az életteli láng, mely a lelkében ég, csillapíthatatlan lesz. Még az apja sem lesz képes elnyomni azt. Szoros kötődésük meggyengülni látszik, viszont e végkifejlet súlya nem a fiú vállait nyomja majd- hanem az apjáét.",MISSING_TEXT_ENG_MG3_END_0
+MG3_END_1,Kerberosz lassan bólintott.,MISSING_TEXT_ENG_MG3_END_1
+MG3_END_2,"…Leírná ezt a füzetembe? Csak, hogy pontosan át tudjam adni a jóslatot.",MISSING_TEXT_ENG_MG3_END_2
+MG3_END_3,"Természetesen engedelmeskedtél a kérésének. Mikor végeztél, a zsebébe tette a füzetet, majd érméket nyújtott feléd.",MISSING_TEXT_ENG_MG3_END_3
+MG3_END_4,"Alvilági pénznemet is elfogad, ugye?",MISSING_TEXT_ENG_MG3_END_4
+MG3_END_5,"Nem igazán számított a válaszod, mivel újra megcsörrent a telefonja. Egy biccentéssel kifizette a munkád, aztán heves léptekkel távozott a boltodból.",MISSING_TEXT_ENG_MG3_END_5
+DAY_END,"Eltelt az első napod, és egy csukló mozdulattal megfordítottad a táblát az ajtódon. “Zárva”. Elfáradtál, de holnap új nap vár, újabb arcokkal és újabb gondokkal amik megoldásra várnak…",MISSING_TEXT_ENG_DAY_END

@@ -1,11 +1,31 @@
 [gd_scene format=3 uid="uid://o5jy8ipb8x7j"]
 
 [ext_resource type="Script" uid="uid://brawnbapu2vld" path="res://scripts/menuScript.gd" id="1_vjb58"]
+[ext_resource type="Texture2D" uid="uid://bmohr4spc8lok" path="res://assets/mainMenu/buttons/indítás_default.png" id="2_fy8yy"]
 [ext_resource type="Texture2D" uid="uid://k4hisv0bjonu" path="res://assets/mainMenu/menu_base.png" id="2_g3eks"]
+[ext_resource type="Texture2D" uid="uid://cd1dcdenrucmu" path="res://assets/mainMenu/buttons/start_default.png" id="3_6wigr"]
 [ext_resource type="Texture2D" uid="uid://wmauxsx0l7ai" path="res://assets/placeholders/button arrow.png" id="3_con2f"]
+[ext_resource type="Texture2D" uid="uid://c7y24bk648ckf" path="res://assets/mainMenu/buttons/indítás_hover.png" id="4_lnf0i"]
 [ext_resource type="Script" uid="uid://b7f2nriigjc7q" path="res://scripts/Music_control_script.gd" id="4_mhnvy"]
+[ext_resource type="Texture2D" uid="uid://j2s6s0as6412" path="res://assets/mainMenu/buttons/start_hover.png" id="5_ffqrc"]
 [ext_resource type="Script" uid="uid://n6r30eg8sd0u" path="res://scripts/sfx_control.gd" id="5_g3eks"]
 [ext_resource type="PackedScene" uid="uid://7en3j6hc7kc3" path="res://scenes/dev_debug_menu.tscn" id="6_g3eks"]
+[ext_resource type="Texture2D" uid="uid://c5pkbgyon5ok5" path="res://assets/mainMenu/buttons/beállytások_default.png" id="6_x16fv"]
+[ext_resource type="Texture2D" uid="uid://ofyj2cs47gne" path="res://assets/mainMenu/buttons/settings_default.png" id="7_g54pe"]
+[ext_resource type="Texture2D" uid="uid://bffkqoy3ij4cv" path="res://assets/mainMenu/buttons/beállytások_hover.png" id="8_48ryc"]
+[ext_resource type="Texture2D" uid="uid://do657lwohbpyy" path="res://assets/mainMenu/buttons/settings_hover.png" id="9_vhsb5"]
+[ext_resource type="Texture2D" uid="uid://brfqd8w0s1pyt" path="res://assets/mainMenu/buttons/közreműködők_default.png" id="10_hwfsl"]
+[ext_resource type="Texture2D" uid="uid://ctvr6b6s7lad8" path="res://assets/mainMenu/buttons/credits_default.png" id="11_a04p5"]
+[ext_resource type="Texture2D" uid="uid://cv4e2ijg0uw1" path="res://assets/mainMenu/buttons/közreműködők_hover.png" id="12_b5gwo"]
+[ext_resource type="Texture2D" uid="uid://blia2t8afmci2" path="res://assets/mainMenu/buttons/credits_hover.png" id="13_0ndyk"]
+[ext_resource type="Texture2D" uid="uid://dmjrng58wc38v" path="res://assets/mainMenu/buttons/kilépés_default.png" id="14_0qewb"]
+[ext_resource type="Texture2D" uid="uid://etqv0uw73hdb" path="res://assets/mainMenu/buttons/exit_default.png" id="15_mhjd8"]
+[ext_resource type="Texture2D" uid="uid://bi4sx8nv0vdb8" path="res://assets/mainMenu/buttons/kilépés_hover.png" id="16_d3h35"]
+[ext_resource type="Texture2D" uid="uid://cejvk28f2teeu" path="res://assets/mainMenu/buttons/exit_hover.png" id="17_v8lyk"]
+[ext_resource type="Texture2D" uid="uid://dsti7mpv6cuy3" path="res://assets/mainMenu/menu_háttér bővített.png" id="18_6wigr"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ecx8g"]
+texture = ExtResource("18_6wigr")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e3dmf"]
 texture = ExtResource("2_g3eks")
@@ -82,6 +102,42 @@ _data = {
 &"show": SubResource("Animation_70i5f")
 }
 
+[sub_resource type="Animation" id="Animation_6wigr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(576, -323)]
+}
+
+[sub_resource type="Animation" id="Animation_lnf0i"]
+resource_name = "slide_down"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.4506245, 1),
+"update": 0,
+"values": [Vector2(576, -323), Vector2(576, 322)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ffqrc"]
+_data = {
+&"RESET": SubResource("Animation_6wigr"),
+&"slide_down": SubResource("Animation_lnf0i")
+}
+
 [node name="Menu" type="Control" unique_id=185611375]
 layout_mode = 3
 anchors_preset = 15
@@ -90,6 +146,30 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vjb58")
+StartButtonBaseHun = ExtResource("2_fy8yy")
+StartButtonBaseEng = ExtResource("3_6wigr")
+StartButtonHoverHun = ExtResource("4_lnf0i")
+StartButtonHoverEng = ExtResource("5_ffqrc")
+OptionsButtonBaseHun = ExtResource("6_x16fv")
+OptionsButtonBaseEng = ExtResource("7_g54pe")
+OptionsButtonHoverHun = ExtResource("8_48ryc")
+OptionsButtonHoverEng = ExtResource("9_vhsb5")
+CreditsButtonBaseHun = ExtResource("10_hwfsl")
+CreditsButtonBaseEng = ExtResource("11_a04p5")
+CreditsButtonHoverHun = ExtResource("12_b5gwo")
+CreditsButtonHoverEng = ExtResource("13_0ndyk")
+ExitButtonBaseHun = ExtResource("14_0qewb")
+ExitButtonBaseEng = ExtResource("15_mhjd8")
+ExitButtonHoverHun = ExtResource("16_d3h35")
+ExitButtonHoverEng = ExtResource("17_v8lyk")
+
+[node name="bovitettmenubackgrng" type="Panel" parent="." unique_id=412064242]
+layout_mode = 0
+offset_left = -101.0
+offset_top = -698.0
+offset_right = 1245.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_ecx8g")
 
 [node name="menuBackground" type="Panel" parent="." unique_id=593073912]
 layout_mode = 1
@@ -102,42 +182,53 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_e3dmf")
 
 [node name="Start" type="Button" parent="." unique_id=1007614672]
 layout_mode = 0
-offset_left = 738.0
-offset_top = 260.0
-offset_right = 858.0
-offset_bottom = 311.0
+offset_left = 747.0
+offset_top = 263.0
+offset_right = 947.0
+offset_bottom = 341.0
+scale = Vector2(0.5, 0.5)
 size_flags_vertical = 3
-text = "MENU_BUTTON_START"
+icon = ExtResource("3_6wigr")
+flat = true
 text_overrun_behavior = 1
+icon_alignment = 1
 
 [node name="Options" type="Button" parent="." unique_id=525988023]
 layout_mode = 0
-offset_left = 626.0
-offset_top = 343.0
-offset_right = 748.0
-offset_bottom = 385.0
+offset_left = 640.0
+offset_top = 345.0
+offset_right = 840.0
+offset_bottom = 423.0
+scale = Vector2(0.5, 0.5)
 size_flags_vertical = 3
-text = "MENU_BUTTON_OPTIONS"
+icon = ExtResource("7_g54pe")
+flat = true
 text_overrun_behavior = 1
 
 [node name="Credits" type="Button" parent="." unique_id=1569469642]
 layout_mode = 0
-offset_left = 723.0
-offset_top = 423.0
-offset_right = 826.0
-offset_bottom = 465.0
+offset_left = 728.0
+offset_top = 425.0
+offset_right = 932.0
+offset_bottom = 503.0
+scale = Vector2(0.5, 0.5)
 size_flags_vertical = 3
 text = "MENU_BUTTON_CREDITS"
+icon = ExtResource("11_a04p5")
+flat = true
 text_overrun_behavior = 1
 
 [node name="Exit" type="Button" parent="." unique_id=588939185]
 layout_mode = 0
-offset_left = 617.0
-offset_top = 525.0
-offset_right = 727.0
-offset_bottom = 556.0
+offset_left = 632.0
+offset_top = 517.0
+offset_right = 836.0
+offset_bottom = 595.0
+scale = Vector2(0.5, 0.5)
 size_flags_vertical = 3
 text = "MENU_BUTTON_EXIT"
+icon = ExtResource("15_mhjd8")
+flat = true
 text_overrun_behavior = 1
 
 [node name="OptionsBackground" type="Panel" parent="." unique_id=587607581]
@@ -220,11 +311,6 @@ value = 1.0
 scrollable = false
 script = ExtResource("5_g3eks")
 
-[node name="Fullscreen_CheckButton" type="CheckButton" parent="OptionsBackground/Setting_VBoxContainer" unique_id=1876615944]
-layout_mode = 2
-size_flags_horizontal = 0
-button_pressed = true
-
 [node name="text_VBoxContainer" type="VBoxContainer" parent="OptionsBackground" unique_id=1961793688]
 layout_mode = 1
 anchors_preset = 8
@@ -258,13 +344,6 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 8
 text = "TEXT_SFX"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="FullScreenText" type="Label" parent="OptionsBackground/text_VBoxContainer" unique_id=599833319]
-layout_mode = 2
-size_flags_horizontal = 8
-text = "TEXT_FULLSCREEN"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -338,6 +417,27 @@ bus = &"SFX"
 [node name="Dev_debug_menu" parent="." unique_id=218198422 instance=ExtResource("6_g3eks")]
 layout_mode = 1
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=680443412]
+position = Vector2(576, -323)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D" unique_id=350172002]
+libraries/ = SubResource("AnimationLibrary_ffqrc")
+
+[node name="Press mouse text" type="Label" parent="." unique_id=569805097]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -83.0
+offset_top = -398.0
+offset_right = 83.0
+offset_bottom = -375.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "MENU_PRESS_MOUSE"
+
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
@@ -347,5 +447,4 @@ layout_mode = 1
 [connection signal="pressed" from="OptionsBackground/Setting_VBoxContainer/Language_HBoxContainer/Eng_button" to="." method="_on_eng_button_pressed"]
 [connection signal="value_changed" from="OptionsBackground/Setting_VBoxContainer/Music_Slider" to="OptionsBackground/Setting_VBoxContainer/Music_Slider" method="_on_value_changed"]
 [connection signal="value_changed" from="OptionsBackground/Setting_VBoxContainer/SFX_Slider" to="OptionsBackground/Setting_VBoxContainer/SFX_Slider" method="_on_value_changed"]
-[connection signal="toggled" from="OptionsBackground/Setting_VBoxContainer/Fullscreen_CheckButton" to="." method="_on_check_button_toggled"]
 [connection signal="pressed" from="CreditsBackground/Credits_exit_Button" to="." method="_on_credits_exit_button_pressed"]

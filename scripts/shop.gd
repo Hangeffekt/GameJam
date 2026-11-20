@@ -3,7 +3,7 @@ extends CanvasLayer
 @onready var wizard_dialogue_manager: CanvasLayer = $Wizard_DialogueManager
 @onready var cat_dialogue_manager: CanvasLayer = $CatDialogueManager
 @onready var monster_hunter_dialogue_manager: CanvasLayer = $MonsterHunterDialogueManager
-@onready var _2placeholdername_dialogue_manager: CanvasLayer = $"2PLACEHOLDERNAMEDialogueManager"
+@onready var cerberus_dialogue_manager: CanvasLayer = $CerberusDialogueManager
 
 @onready var door_animation: AnimatedSprite2D = $shop_background/door_animation/AnimatedSprite2D
 @onready var timer: Timer = Timer.new()
@@ -60,7 +60,7 @@ func MonsterHunter_customer(dialogue_manager: CanvasLayer) -> void:
 	SceneTransition.change_scene("res://scenes/tarrot.tscn")
 
 
-func PLACEHOLDERNAME2_customer(dialogue_manager: CanvasLayer) -> void:
+func Cerberus_customer(dialogue_manager: CanvasLayer) -> void:
 	door_animation.play("open")
 	await door_animation.animation_finished
 	
@@ -103,7 +103,7 @@ func choose_customer(nextcustomer: int) -> void:
 				"negative":
 					different_ending(tarot_bad)
 		5:
-			PLACEHOLDERNAME2_customer(_2placeholdername_dialogue_manager)
+			Cerberus_customer(cerberus_dialogue_manager)
 		6:
 			different_ending(after_rythm_game_dialogue)
 		7:
