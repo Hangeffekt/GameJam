@@ -7,11 +7,88 @@ extends Control
 @onready var option_animation_player: AnimationPlayer = $OptionsBackground/OptionAnimationPlayer
 @onready var credits_animation_player: AnimationPlayer = $CreditsBackground/CreditsAnimationPlayer
 
+#startB
+@export var StartButtonBaseHun: Texture2D
+@export var StartButtonBaseEng: Texture2D
+@export var StartButtonHoverHun: Texture2D
+@export var StartButtonHoverEng: Texture2D
+#optionsB
+@export var OptionsButtonBaseHun: Texture2D
+@export var OptionsButtonBaseEng: Texture2D
+@export var OptionsButtonHoverHun: Texture2D
+@export var OptionsButtonHoverEng: Texture2D
+#creditsB
+@export var CreditsButtonBaseHun: Texture2D
+@export var CreditsButtonBaseEng: Texture2D
+@export var CreditsButtonHoverHun: Texture2D
+@export var CreditsButtonHoverEng: Texture2D
+#exitB
+@export var ExitButtonBaseHun: Texture2D
+@export var ExitButtonBaseEng: Texture2D
+@export var ExitButtonHoverHun: Texture2D
+@export var ExitButtonHoverEng: Texture2D
+
+var isCameraDown = false
+@onready var CamAnimation_player: AnimationPlayer = $Camera2D/AnimationPlayer
+
+##hover effekthez
+var hover_states: Dictionary = {}
+
+func ButtonIconsLocalization() -> void:
+	for button in [startB, optionsB, creditsB, exitB]:
+		ApplyButtonIcon(button)
 
 func _ready() -> void:
 	#itt meg kell adnom egy alap értéket mert különben mindenhol a key érték neve fog kiíródni
 	TranslationServer.set_locale(GlobalScript.language)
 	
+	hover_states = {
+		startB: false,
+		optionsB: false,
+		creditsB: false,
+		exitB: false
+	}
+	
+	for button in hover_states.keys():
+		button.mouse_entered.connect(OnButtonHover.bind(button, true))
+		button.mouse_exited.connect(OnButtonHover.bind(button, false))
+	
+	ButtonIconsLocalization()
+
+func OnButtonHover(button: Button, hovered: bool) -> void:
+	hover_states[button] = hovered
+	ApplyButtonIcon(button)
+
+func ApplyButtonIcon(button: Button) -> void:
+	var hovered: bool = hover_states.get(button, false)
+	var base_icon: Texture2D
+	var hover_icon: Texture2D
+	var is_eng: bool = GlobalScript.language == "eng"
+	
+	match button:
+		startB:
+			base_icon  = StartButtonBaseEng  if is_eng else StartButtonBaseHun
+			hover_icon = StartButtonHoverEng if is_eng else StartButtonHoverHun
+		optionsB:
+			base_icon  = OptionsButtonBaseEng  if is_eng else OptionsButtonBaseHun
+			hover_icon = OptionsButtonHoverEng if is_eng else OptionsButtonHoverHun
+		creditsB:
+			base_icon  = CreditsButtonBaseEng  if is_eng else CreditsButtonBaseHun
+			hover_icon = CreditsButtonHoverEng if is_eng else CreditsButtonHoverHun
+		exitB:
+			base_icon  = ExitButtonBaseEng  if is_eng else ExitButtonBaseHun
+			hover_icon = ExitButtonHoverEng if is_eng else ExitButtonHoverHun
+	
+	button.icon = hover_icon if hovered else base_icon
+
+##press mouse to start game részhez
+func _input(event: InputEvent) -> void:
+	if isCameraDown:
+		return
+	if not event.is_action_pressed("interact"):
+		return
+	CamAnimation_player.play("slide_down")
+	isCameraDown = true
 
 ##Button Singals
 func _on_start_pressed() -> void:
@@ -44,12 +121,8 @@ func _on_credits_exit_button_pressed() -> void:
 func _on_hun_button_pressed() -> void:
 	GlobalScript.language = "hun"
 	TranslationServer.set_locale(GlobalScript.language)
+	ButtonIconsLocalization()
 func _on_eng_button_pressed() -> void:
 	GlobalScript.language = "eng"
 	TranslationServer.set_locale(GlobalScript.language)
-
-#fullscreen/windowed váltás
-func _on_check_button_toggled(toggled_on: bool) -> void:
-	if toggled_on:
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-	else: DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+	ButtonIconsLocalization()

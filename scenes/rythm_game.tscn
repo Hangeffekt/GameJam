@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://dv52i53pw4i85" path="res://scripts/rythm_game.gd" id="1_hidhp"]
 [ext_resource type="Texture2D" uid="uid://b6ptulv8pfij3" path="res://assets/rythm_game/constellation_titrálásos csepegtető dolog.png" id="2_868m3"]
-[ext_resource type="Texture2D" uid="uid://clnrqnuaoeq2s" path="res://assets/rythm_game/constellation_background.png" id="2_h07vb"]
 [ext_resource type="Texture2D" uid="uid://bimbgqtnn6rlq" path="res://assets/rythm_game/constellation_bowl.png" id="2_jgy0h"]
 [ext_resource type="Texture2D" uid="uid://cjy7c4jmmn876" path="res://assets/rythm_game/csepp_alt.png" id="3_eacpd"]
 [ext_resource type="Texture2D" uid="uid://dnwj0tompnur4" path="res://assets/rythm_game/hitmarkers/PERFECT.png" id="4_38vb1"]
@@ -17,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://b0bgpxyx61v88" path="res://assets/rythm_game/hitmarkers/JÓ.png" id="8_nfk1n"]
 [ext_resource type="Texture2D" uid="uid://05turbg0jeuh" path="res://assets/rythm_game/hitmarkers/ROSSZ.png" id="9_usak7"]
 [ext_resource type="Texture2D" uid="uid://bvcmyt7enuqqj" path="res://assets/tutorial wizard/wizard_default.png" id="10_6yyfv"]
+[ext_resource type="Texture2D" uid="uid://86p3tf7n8hqk" path="res://assets/rythm_game/holdtál_háttér bővített.png" id="10_8cpu0"]
 [ext_resource type="Texture2D" uid="uid://sfy3lftmxibm" path="res://assets/rythm_game/hpldtal_ui_progress_bar_under.png" id="10_qtbob"]
 [ext_resource type="PackedScene" uid="uid://bqog7piaxqlsc" path="res://scenes/tutorial.tscn" id="11_c8p3f"]
 [ext_resource type="Texture2D" uid="uid://bgm1gn2sewiph" path="res://assets/rythm_game/hpldtal_ui_progress_bar_over.png" id="11_ohs8n"]
@@ -46,7 +46,6 @@
 [ext_resource type="Texture2D" uid="uid://bals4n66iluvv" path="res://assets/rythm_game/shockwave/holdtal_visszajelzes_shockwave0013.png" id="38_nfk1n"]
 [ext_resource type="Texture2D" uid="uid://b0hjnupqkeh5j" path="res://assets/rythm_game/shockwave/holdtal_visszajelzes_shockwave0014.png" id="39_usak7"]
 [ext_resource type="Texture2D" uid="uid://dvn8j7w44d2bl" path="res://assets/rythm_game/shockwave/holdtal_visszajelzes_shockwave0015.png" id="40_5bn43"]
-[ext_resource type="Texture2D" uid="uid://di7a6w8yqloiw" path="res://assets/placeholders/missing_texture.png" id="41_bwufy"]
 
 [sub_resource type="Animation" id="Animation_qmehk"]
 length = 0.001
@@ -240,7 +239,7 @@ zoom = Vector2(1.01, 1.01)
 [node name="background" type="Sprite2D" parent="." unique_id=1032067898]
 position = Vector2(577.1111, 320.5)
 scale = Vector2(0.59907407, 0.59907407)
-texture = ExtResource("2_h07vb")
+texture = ExtResource("10_8cpu0")
 
 [node name="pipettasprite" type="Sprite2D" parent="." unique_id=939671545]
 position = Vector2(576.6667, 322)
@@ -390,12 +389,6 @@ position = Vector2(581.665, 336.61)
 scale = Vector2(0.561, 0.561)
 sprite_frames = SubResource("SpriteFrames_71p6h")
 animation = &"idle"
-
-[node name="MISSIONG TEXTURE REMINDER" type="Sprite2D" parent="." unique_id=526504522]
-z_index = -1
-position = Vector2(597, 324)
-scale = Vector2(6.505, 6.505)
-texture = ExtResource("41_bwufy")
 
 [connection signal="animation_finished" from="dropplet_placeholderr/DroppletAnimationPlayer" to="." method="_on_dropplet_animation_player_animation_finished"]
 [connection signal="value_changed" from="ProgressBar" to="." method="_on_progress_bar_value_changed"]

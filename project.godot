@@ -29,7 +29,6 @@ SceneTransition="*uid://dpu4wkfor1375"
 window/size/mode=4
 window/size/resizable=false
 window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
 
 [dotnet]
 
