@@ -339,12 +339,14 @@ func end_game(atr1: int, atr2: int, atr3: int) -> void:
 	var absolutePath = baseDir.path_join(videoFileName)
 	if not FileAccess.file_exists(absolutePath):
 		printerr("HIBA: A videó nem található a lemezen: ", absolutePath)
-		return
+		printerr("jelenetváltás")
+		SceneTransition.change_scene("res://scenes/shop.tscn")
 	
 	var videoStream = load(absolutePath)
 	if videoStream == null:
 		printerr("HIBA: A stream betöltése sikertelen: ", absolutePath)
-		return
+		printerr("jelenetváltás")
+		SceneTransition.change_scene("res://scenes/shop.tscn")
 	
 	potionScrup.stream = videoStream
 	potionScrup.play()
