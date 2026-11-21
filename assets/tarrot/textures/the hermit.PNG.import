@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c5bbfkewieibq"
 path.s3tc="res://.godot/imported/the hermit.PNG-05c8072021eb84b17ba17c747c7af2b0.s3tc.ctex"
+path.etc2="res://.godot/imported/the hermit.PNG-05c8072021eb84b17ba17c747c7af2b0.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/tarrot/textures/the hermit.PNG"
-dest_files=["res://.godot/imported/the hermit.PNG-05c8072021eb84b17ba17c747c7af2b0.s3tc.ctex"]
+dest_files=["res://.godot/imported/the hermit.PNG-05c8072021eb84b17ba17c747c7af2b0.s3tc.ctex", "res://.godot/imported/the hermit.PNG-05c8072021eb84b17ba17c747c7af2b0.etc2.ctex"]
 
 [params]
 
