@@ -15,7 +15,6 @@
 [ext_resource type="Texture2D" uid="uid://b11a81uuag0u3" path="res://assets/rythm_game/hitmarkers/TÖKÉLETES.png" id="7_q72qw"]
 [ext_resource type="Texture2D" uid="uid://b0bgpxyx61v88" path="res://assets/rythm_game/hitmarkers/JÓ.png" id="8_nfk1n"]
 [ext_resource type="Texture2D" uid="uid://05turbg0jeuh" path="res://assets/rythm_game/hitmarkers/ROSSZ.png" id="9_usak7"]
-[ext_resource type="Texture2D" uid="uid://bvcmyt7enuqqj" path="res://assets/tutorial wizard/wizard_default.png" id="10_6yyfv"]
 [ext_resource type="Texture2D" uid="uid://86p3tf7n8hqk" path="res://assets/rythm_game/holdtál_háttér bővített.png" id="10_8cpu0"]
 [ext_resource type="Texture2D" uid="uid://sfy3lftmxibm" path="res://assets/rythm_game/hpldtal_ui_progress_bar_under.png" id="10_qtbob"]
 [ext_resource type="PackedScene" uid="uid://bqog7piaxqlsc" path="res://scenes/tutorial.tscn" id="11_c8p3f"]
@@ -35,6 +34,7 @@
 [ext_resource type="Texture2D" uid="uid://bcmjeipmfqu51" path="res://assets/rythm_game/shockwave/holdtal_visszajelzes_shockwave0002.png" id="27_wothk"]
 [ext_resource type="Texture2D" uid="uid://j22g851qmtu5" path="res://assets/rythm_game/shockwave/holdtal_visszajelzes_shockwave0003.png" id="28_bwufy"]
 [ext_resource type="Texture2D" uid="uid://bvxeytgiefxs7" path="res://assets/rythm_game/shockwave/holdtal_visszajelzes_shockwave0004.png" id="29_wh5tl"]
+[ext_resource type="Texture2D" uid="uid://bxkpbo002y1re" path="res://assets/potion/wizard_icon_notification_02.png" id="30_8cpu0"]
 [ext_resource type="Texture2D" uid="uid://blltpsoafk1wk" path="res://assets/rythm_game/shockwave/holdtal_visszajelzes_shockwave0005.png" id="30_51ojm"]
 [ext_resource type="Texture2D" uid="uid://2ug5644mik8h" path="res://assets/rythm_game/shockwave/holdtal_visszajelzes_shockwave0006.png" id="31_gsidj"]
 [ext_resource type="Texture2D" uid="uid://b55xpydispx1f" path="res://assets/rythm_game/shockwave/holdtal_visszajelzes_shockwave0007.png" id="32_vaiqt"]
@@ -366,16 +366,18 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_c8p3f")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_rtuws")
 theme_override_styles/hover = SubResource("StyleBoxTexture_eacpd")
 
-[node name="TextureRect" type="TextureRect" parent="TutorialButton" unique_id=1856495880]
+[node name="TextureRect" type="TextureRect" parent="TutorialButton" unique_id=1833792647]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1.0
-offset_top = -1.0
+offset_left = 25.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = -25.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("10_6yyfv")
+texture = ExtResource("30_8cpu0")
 expand_mode = 1
 
 [node name="Tutorial" parent="." unique_id=1684112177 instance=ExtResource("11_c8p3f")]

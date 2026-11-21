@@ -229,21 +229,23 @@ func item_choosed(id: int, name: String, atr1: int, atr2: int, atr3: int):
 		
 
 func countProgressBarResult(bar: TextureProgressBar, atr: int, relacio: String, target: int) -> void:
+	var tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT).set_parallel(true)
+	
 	if target > 0:
-		bar.value += atr
+		tween.tween_property(bar, "value", bar.value + atr, 0.6)
 	elif target < 0:
-		bar.value += (atr * -1)
+		tween.tween_property(bar, "value", bar.value + atr * -1, 0.6)
 	elif target == 0 and relacio == '>':
-		bar.value += atr
+		tween.tween_property(bar, "value", bar.value + atr, 0.6)
 	elif target == 0 and relacio == '<':
-		bar.value += (atr * -1)
+		tween.tween_property(bar, "value", bar.value + atr * -1, 0.6)
 	else:
 		if bar.value > 2 and atr > 0:
-			bar.value += (atr * -1)
+			tween.tween_property(bar, "value", bar.value + atr * -1, 0.6)
 		elif bar.value > 2 and atr < 0:
-			bar.value += atr
+			tween.tween_property(bar, "value", bar.value + atr, 0.6)
 		elif bar.value <= 2:
-			bar.value += (atr * -1)
+			tween.tween_property(bar, "value", bar.value + atr * -1, 0.6)
 	
 	
 func set_and_write_values(atr1: int, atr2: int, atr3: int) -> void:
