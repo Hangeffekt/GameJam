@@ -37,6 +37,8 @@ var PortraitHomeReady: bool = false
 
 @export var entraceAnimIndexes: Array[int] = []
 
+var doorAnimIndexes: Array[int] = []
+
 
 const time_per_char: float = 0.03
 
@@ -96,6 +98,7 @@ func resetPortrait(target: TextureRect) -> void:
 		target.scale = PortraitHomeScale
 		target.modulate = PortraitHomeModulate
 
+
 func start_dialogue(lines: Array[String], CHARname: Array[String], color: Array[Color], tutorial: bool):
 	currentPortrait = null
 	resetPortrait(portrait)
@@ -135,7 +138,13 @@ func updateLine():
 		else:
 			var newTexure: Texture2D = Portraits[current_line_index]
 			var shouldAnimate: bool = current_line_index in entraceAnimIndexes
-			#portrait.texture = Portraits[current_line_index]
+			
+			##perpillanat nem használt blokk. delete later maybe
+			var shouldOpenDoor: bool = current_line_index in doorAnimIndexes
+			if shouldOpenDoor:
+				GlobalScript.DoorWouldOpen.emit()
+				print("DoorWouldOpen.emit()")
+			
 			if newTexure != currentPortrait and not shouldAnimate:
 				resetPortrait(portrait)
 			

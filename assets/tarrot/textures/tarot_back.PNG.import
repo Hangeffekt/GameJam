@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://d0d08ocbac22p"
 path.s3tc="res://.godot/imported/tarot_back.PNG-cd2f5669b808a2af7290646d92781264.s3tc.ctex"
+path.etc2="res://.godot/imported/tarot_back.PNG-cd2f5669b808a2af7290646d92781264.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/tarrot/textures/tarot_back.PNG"
-dest_files=["res://.godot/imported/tarot_back.PNG-cd2f5669b808a2af7290646d92781264.s3tc.ctex"]
+dest_files=["res://.godot/imported/tarot_back.PNG-cd2f5669b808a2af7290646d92781264.s3tc.ctex", "res://.godot/imported/tarot_back.PNG-cd2f5669b808a2af7290646d92781264.etc2.ctex"]
 
 [params]
 

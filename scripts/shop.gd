@@ -23,7 +23,10 @@ extends CanvasLayer
 var ido: float = 3.0
 
 func _ready() -> void:
+	
 	choose_customer(GlobalScript.nextcustomer)
+
+
 
 ##karakterek
 func wizard_customer(dialogue_manager: CanvasLayer) -> void:

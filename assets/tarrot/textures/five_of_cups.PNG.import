@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b3ivpt5gcvgnk"
 path.s3tc="res://.godot/imported/five_of_cups.PNG-367b36da917235bd4f5e0c4c0b4ee4e0.s3tc.ctex"
+path.etc2="res://.godot/imported/five_of_cups.PNG-367b36da917235bd4f5e0c4c0b4ee4e0.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/tarrot/textures/five_of_cups.PNG"
-dest_files=["res://.godot/imported/five_of_cups.PNG-367b36da917235bd4f5e0c4c0b4ee4e0.s3tc.ctex"]
+dest_files=["res://.godot/imported/five_of_cups.PNG-367b36da917235bd4f5e0c4c0b4ee4e0.s3tc.ctex", "res://.godot/imported/five_of_cups.PNG-367b36da917235bd4f5e0c4c0b4ee4e0.etc2.ctex"]
 
 [params]
 
