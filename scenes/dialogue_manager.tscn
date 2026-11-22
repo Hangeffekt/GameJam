@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cshl60v00b23l"]
 
 [ext_resource type="Script" uid="uid://byxwcael5jsg7" path="res://scripts/dialogue_manager_script.gd" id="1_jbixp"]
+[ext_resource type="FontFile" uid="uid://cv5hsgsl4ggkp" path="res://assets/fonts/StoryScript-Regular.ttf" id="2_516v5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jbixp"]
 font_size = 35
@@ -68,6 +69,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_516v5")
 theme_override_font_sizes/normal_font_size = 29
 theme_override_font_sizes/bold_font_size = 29
 theme_override_font_sizes/bold_italics_font_size = 29
@@ -90,5 +92,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_516v5")
 text = "test text"
 label_settings = SubResource("LabelSettings_jbixp")

@@ -7,6 +7,9 @@ extends Control
 @onready var option_animation_player: AnimationPlayer = $OptionsBackground/OptionAnimationPlayer
 @onready var credits_animation_player: AnimationPlayer = $CreditsBackground/CreditsAnimationPlayer
 
+@onready var logo: Sprite2D = $Logo
+@onready var press_mouse_text: Label = $"Press mouse text"
+
 #startB
 @export var StartButtonBaseHun: Texture2D
 @export var StartButtonBaseEng: Texture2D
@@ -34,6 +37,9 @@ var isCameraDown = false
 ##hover effekthez
 var hover_states: Dictionary = {}
 
+var logoTween: Tween
+var logo_shine_tween: Tween
+
 func ButtonIconsLocalization() -> void:
 	for button in [startB, optionsB, creditsB, exitB]:
 		ApplyButtonIcon(button)
@@ -54,6 +60,38 @@ func _ready() -> void:
 		button.mouse_exited.connect(OnButtonHover.bind(button, false))
 	
 	ButtonIconsLocalization()
+	
+	logoPulse()
+	LogoShine()
+
+func logoPulse() -> void:
+	if logoTween and logoTween.is_valid():
+		logoTween.kill()
+	
+	var baseScale:Vector2 = logo.scale
+	#paraméterek
+	var grow: Vector2 = baseScale * 1.04 #növekvés mérték
+	var half: float = 2.2 #egy loop hossza de csak a fele
+	
+	logoTween = create_tween().set_loops()
+	logoTween.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	
+	logoTween.tween_property(logo, "scale", grow, half)
+	logoTween.tween_property(logo, "scale", baseScale, half)
+
+func LogoShine() -> void:
+	if logo_shine_tween and logo_shine_tween.is_valid():
+		logo_shine_tween.kill()
+		
+	var mat: ShaderMaterial = logo.material as ShaderMaterial
+	mat.set_shader_parameter("shine_progress", -0.3)
+	
+	logo_shine_tween = create_tween().set_loops()
+	logo_shine_tween.tween_interval(5.0) #kettő shine közötti szünet
+	logo_shine_tween.tween_method(
+		func(v: float): mat.set_shader_parameter("shine_progress", v),
+		-0.3, 1.3, 0.9
+		)
 
 func OnButtonHover(button: Button, hovered: bool) -> void:
 	hover_states[button] = hovered
@@ -92,9 +130,8 @@ func _input(event: InputEvent) -> void:
 
 ##Button Singals
 func _on_start_pressed() -> void:
-	SceneTransition.change_scene("res://scenes/shop.tscn")
+	SceneTransition.change_scene("res://scenes/intro.tscn")
 	
-
 func _on_options_pressed() -> void:
 	creditsB.disabled = true
 	option_animation_player.play("show")

@@ -2,8 +2,10 @@ extends CanvasLayer
 
 @onready var wizard_dialogue_manager: CanvasLayer = $Wizard_DialogueManager
 @onready var cat_dialogue_manager: CanvasLayer = $CatDialogueManager
+@onready var before_hunter: CanvasLayer = $BeforeHunter
 @onready var monster_hunter_dialogue_manager: CanvasLayer = $MonsterHunterDialogueManager
 @onready var cerberus_dialogue_manager: CanvasLayer = $CerberusDialogueManager
+@onready var before_cerberus: CanvasLayer = $BeforeCerberus
 
 @onready var door_animation: AnimatedSprite2D = $shop_background/door_animation/AnimatedSprite2D
 @onready var timer: Timer = Timer.new()
@@ -20,7 +22,7 @@ extends CanvasLayer
 ##DELETELATER
 @onready var placeholder_end_game_uzenet: CanvasLayer = $PlaceholderEndGameUzenet
 
-var ido: float = 3.0
+var ido: float = 1.0
 
 func _ready() -> void:
 	
@@ -46,12 +48,14 @@ func cat_customer(dialogue_manager: CanvasLayer) -> void:
 	SceneTransition.change_scene("res://scenes/potion.tscn")
 
 #különböző elágazásokhoz használt dialógus metódus. pl: potion grade reakciók vagy tartot positiv negativ válasz
+#különbség az hogy itt nincs door anim inuláskor
 func different_ending(dialogue_manager: CanvasLayer) -> void:
 	
 	dialogue_manager.visible = true
 	dialogue_manager.start_dialogue(dialogue_manager.text_key, dialogue_manager.characters_name, dialogue_manager.textcolor, false )
 	await dialogue_manager.dialogue_finished
 	leave_customer(dialogue_manager)
+
 
 func MonsterHunter_customer(dialogue_manager: CanvasLayer) -> void:
 	door_animation.play("open")
@@ -62,7 +66,6 @@ func MonsterHunter_customer(dialogue_manager: CanvasLayer) -> void:
 	await dialogue_manager.dialogue_finished
 	SceneTransition.change_scene("res://scenes/tarrot.tscn")
 
-
 func Cerberus_customer(dialogue_manager: CanvasLayer) -> void:
 	door_animation.play("open")
 	await door_animation.animation_finished
@@ -71,6 +74,7 @@ func Cerberus_customer(dialogue_manager: CanvasLayer) -> void:
 	dialogue_manager.start_dialogue(dialogue_manager.text_key, dialogue_manager.characters_name, dialogue_manager.textcolor, false )
 	await dialogue_manager.dialogue_finished
 	SceneTransition.change_scene("res://scenes/rythm_game.tscn")
+
 
 
 func leave_customer(dialogue_manager: CanvasLayer) -> void:
@@ -83,7 +87,7 @@ func leave_customer(dialogue_manager: CanvasLayer) -> void:
 #frissítem az előző kommentet. ez itt már clusterfuck, de működik. ha valamit kell itt csinálni akkor inkább kérj meg engem.
 func choose_customer(nextcustomer: int) -> void:
 	await get_tree().create_timer(ido).timeout
-	
+
 	match nextcustomer:
 		0:
 			wizard_customer(wizard_dialogue_manager)
@@ -98,17 +102,21 @@ func choose_customer(nextcustomer: int) -> void:
 				"Rossz":
 					different_ending(bad_potion)
 		3:
-			MonsterHunter_customer(monster_hunter_dialogue_manager)
+			different_ending(before_hunter)
 		4:
+			MonsterHunter_customer(monster_hunter_dialogue_manager)
+		5:
 			match GlobalScript.tarotgarde:
 				"positive":
 					different_ending(tarot_good)
 				"negative":
 					different_ending(tarot_bad)
-		5:
-			Cerberus_customer(cerberus_dialogue_manager)
 		6:
-			different_ending(after_rythm_game_dialogue)
+			different_ending(before_cerberus)
 		7:
+			Cerberus_customer(cerberus_dialogue_manager)
+		8:
+			different_ending(after_rythm_game_dialogue)
+		9:
 			different_ending(placeholder_end_game_uzenet)
 			SceneTransition.quit_game()

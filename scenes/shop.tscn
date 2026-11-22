@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://ftysgm2wcxpj" path="res://scripts/shop.gd" id="1_032fp"]
 [ext_resource type="Texture2D" uid="uid://cj546s45na2kh" path="res://assets/shop/shop_background.png" id="2_8r1wq"]
 [ext_resource type="Texture2D" uid="uid://du7byomuhtfaf" path="res://assets/shop/shop_foreground.png" id="3_ajxib"]
+[ext_resource type="Texture2D" uid="uid://dnp08x6ecmkn4" path="res://assets/shop/cash register_01_desk_01.png" id="3_j14q8"]
 [ext_resource type="PackedScene" uid="uid://dmy2me1t326d7" path="res://scenes/door_animation.tscn" id="3_y6sft"]
 [ext_resource type="PackedScene" uid="uid://cshl60v00b23l" path="res://scenes/dialogue_manager.tscn" id="5_y6sft"]
 [ext_resource type="Texture2D" uid="uid://c02psrf0vepa3" path="res://assets/tutorial wizard/wizard_evil.png" id="7_m4ofw"]
@@ -23,6 +24,11 @@ script = ExtResource("1_032fp")
 position = Vector2(578.1112, 324.25)
 scale = Vector2(0.6013889, 0.6013889)
 texture = ExtResource("2_8r1wq")
+
+[node name="pult" type="Sprite2D" parent="shop_background" unique_id=89215294]
+z_index = 3
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("3_j14q8")
 
 [node name="door_animation" parent="shop_background" unique_id=1620329815 instance=ExtResource("3_y6sft")]
 position = Vector2(556.85895, 72.74827)
@@ -69,13 +75,20 @@ characters_name = Array[String](["", "CHAR_NAME_CAT", "CHAR_NAME_PLAYER", "CHAR_
 textcolor = Array[Color]([Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)])
 Portraits = Array[Texture2D]([null, null, null, null])
 
+[node name="BeforeHunter" parent="." unique_id=1676800563 instance=ExtResource("5_y6sft")]
+visible = false
+text_key = Array[String](["S2_VENATOR_0", "S2_VENATOR_1", "S2_VENATOR_2", "S2_VENATOR_3", "S2_VENATOR_4", "S2_VENATOR_5", "S2_VENATOR_6", "S2_VENATOR_7", "S2_VENATOR_8", "S2_VENATOR_9"])
+characters_name = Array[String](["", "", "", "", "", "", "CHAR_NAME_TUTORWIZARD", "CHAR_NAME_PLAYER", "CHAR_NAME_TUTORWIZARD", "CHAR_NAME_PLAYER"])
+textcolor = Array[Color]([Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)])
+Portraits = Array[Texture2D]([null, null, null, null, null, null, ExtResource("12_gobkm"), ExtResource("12_gobkm"), ExtResource("13_j14q8"), ExtResource("13_j14q8")])
+
 [node name="MonsterHunterDialogueManager" parent="." unique_id=562795217 instance=ExtResource("5_y6sft")]
 visible = false
-text_key = Array[String](["S2_VENATOR_0", "S2_VENATOR_1", "S2_VENATOR_2", "S2_VENATOR_3", "S2_VENATOR_4", "S2_VENATOR_5", "S2_VENATOR_6", "S2_VENATOR_7", "S2_VENATOR_8", "S2_VENATOR_9", "S2_VENATOR_10", "S2_VENATOR_11", "S2_VENATOR_12", "S2_VENATOR_13", "S2_VENATOR_14", "S2_VENATOR_15", "S2_VENATOR_16", "S2_VENATOR_17", "S2_VENATOR_18", "S2_VENATOR_19", "S2_VENATOR_20", "S2_VENATOR_21", "S2_VENATOR_22", "S2_VENATOR_23", "S2_VENATOR_24", "S2_VENATOR_25", "S2_VENATOR_26", "S2_VENATOR_27", "S2_VENATOR_28"])
-characters_name = Array[String](["", "", "", "", "", "", "CHAR_NAME_TUTORWIZARD", "CHAR_NAME_PLAYER", "CHAR_NAME_TUTORWIZARD", "CHAR_NAME_PLAYER", "CHAR_NAME_VENATOR", "", "", "CHAR_NAME_PLAYER", "", "CHAR_NAME_VENATOR", "CHAR_NAME_PLAYER", "CHAR_NAME_VENATOR", "CHAR_NAME_VENATOR", "CHAR_NAME_PLAYER", "CHAR_NAME_VENATOR", "CHAR_NAME_PLAYER", "CHAR_NAME_VENATOR", "CHAR_NAME_VENATOR", "CHAR_NAME_PLAYER", "", "CHAR_NAME_VENATOR", "CHAR_NAME_PLAYER", "CHAR_NAME_VENATOR"])
-textcolor = Array[Color]([Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)])
-Portraits = Array[Texture2D]([null, null, null, null, null, null, ExtResource("12_gobkm"), ExtResource("12_gobkm"), ExtResource("13_j14q8"), null, ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5")])
-entraceAnimIndexes = Array[int]([6, 10])
+text_key = Array[String](["S2_VENATOR_10", "S2_VENATOR_11", "S2_VENATOR_12", "S2_VENATOR_13", "S2_VENATOR_14", "S2_VENATOR_15", "S2_VENATOR_16", "S2_VENATOR_17", "S2_VENATOR_18", "S2_VENATOR_19", "S2_VENATOR_20", "S2_VENATOR_21", "S2_VENATOR_22", "S2_VENATOR_23", "S2_VENATOR_24", "S2_VENATOR_25", "S2_VENATOR_26", "S2_VENATOR_27", "S2_VENATOR_28"])
+characters_name = Array[String](["CHAR_NAME_VENATOR", "", "", "CHAR_NAME_PLAYER", "", "CHAR_NAME_VENATOR", "CHAR_NAME_PLAYER", "CHAR_NAME_VENATOR", "CHAR_NAME_VENATOR", "CHAR_NAME_PLAYER", "CHAR_NAME_VENATOR", "CHAR_NAME_PLAYER", "CHAR_NAME_VENATOR", "CHAR_NAME_VENATOR", "CHAR_NAME_PLAYER", "", "CHAR_NAME_VENATOR", "CHAR_NAME_PLAYER", "CHAR_NAME_VENATOR"])
+textcolor = Array[Color]([Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)])
+Portraits = Array[Texture2D]([ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5")])
+entraceAnimIndexes = Array[int]([0])
 
 [node name="Tarot_good" parent="." unique_id=1268993334 instance=ExtResource("5_y6sft")]
 visible = false
@@ -91,13 +104,20 @@ characters_name = Array[String](["", "CHAR_NAME_VENATOR", "", "CHAR_NAME_PLAYER"
 textcolor = Array[Color]([Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)])
 Portraits = Array[Texture2D]([ExtResource("12_24it5"), ExtResource("12_24it5"), null, null])
 
+[node name="BeforeCerberus" parent="." unique_id=330743380 instance=ExtResource("5_y6sft")]
+visible = false
+text_key = Array[String](["MG3_CERBERUS_0", "MG3_CERBERUS_1", "MG3_CERBERUS_2"])
+characters_name = Array[String](["", "", ""])
+textcolor = Array[Color]([Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)])
+Portraits = Array[Texture2D]([null, null, null])
+
 [node name="CerberusDialogueManager" parent="." unique_id=1878537526 instance=ExtResource("5_y6sft")]
 visible = false
-text_key = Array[String](["MG3_CERBERUS_0", "MG3_CERBERUS_1", "MG3_CERBERUS_2", "MG3_CERBERUS_3", "MG3_CERBERUS_4", "MG3_CERBERUS_5", "MG3_CERBERUS_6", "MG3_CERBERUS_7", "MG3_CERBERUS_8", "MG3_CERBERUS_9", "MG3_CERBERUS_10", "MG3_CERBERUS_11", "MG3_CERBERUS_12", "MG3_CERBERUS_13", "MG3_CERBERUS_14", "MG3_CERBERUS_15", "MG3_CERBERUS_16", "MG3_CERBERUS_17", "MG3_CERBERUS_18", "MG3_CERBERUS_19"])
-characters_name = Array[String](["", "", "", "", "", "", "", "CHAR_NAME_PLAYER", "CHAR_NAME_DOG", "CHAR_NAME_PLAYER", "CHAR_NAME_DOG", "CHAR_NAME_PLAYER", "CHAR_NAME_DOG", "CHAR_NAME_DOG", "CHAR_NAME_DOG", "CHAR_NAME_PLAYER", "", "CHAR_NAME_DOG", "CHAR_NAME_PLAYER", "CHAR_NAME_DOG"])
-textcolor = Array[Color]([Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)])
-Portraits = Array[Texture2D]([null, null, null, ExtResource("15_gobkm"), ExtResource("15_gobkm"), ExtResource("15_gobkm"), ExtResource("15_gobkm"), ExtResource("15_gobkm"), ExtResource("15_gobkm"), ExtResource("15_gobkm"), ExtResource("15_gobkm"), ExtResource("15_gobkm"), ExtResource("15_gobkm"), ExtResource("15_gobkm"), ExtResource("15_gobkm"), ExtResource("15_gobkm"), ExtResource("15_gobkm"), ExtResource("15_gobkm"), ExtResource("15_gobkm"), ExtResource("15_gobkm")])
-entraceAnimIndexes = Array[int]([3])
+text_key = Array[String](["MG3_CERBERUS_2", "MG3_CERBERUS_3", "MG3_CERBERUS_4", "MG3_CERBERUS_5", "MG3_CERBERUS_6", "MG3_CERBERUS_7", "MG3_CERBERUS_8", "MG3_CERBERUS_9", "MG3_CERBERUS_10", "MG3_CERBERUS_11", "MG3_CERBERUS_12", "MG3_CERBERUS_13", "MG3_CERBERUS_14", "MG3_CERBERUS_15", "MG3_CERBERUS_16", "MG3_CERBERUS_17", "MG3_CERBERUS_18", "MG3_CERBERUS_19"])
+characters_name = Array[String](["", "", "", "", "", "CHAR_NAME_PLAYER", "CHAR_NAME_DOG", "CHAR_NAME_PLAYER", "CHAR_NAME_DOG", "CHAR_NAME_PLAYER", "CHAR_NAME_DOG", "CHAR_NAME_DOG", "CHAR_NAME_DOG", "CHAR_NAME_PLAYER", "", "CHAR_NAME_DOG", "CHAR_NAME_PLAYER", "CHAR_NAME_DOG"])
+textcolor = Array[Color]([Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)])
+Portraits = Array[Texture2D]([null, ExtResource("15_gobkm"), ExtResource("15_gobkm"), ExtResource("15_gobkm"), ExtResource("15_gobkm"), ExtResource("15_gobkm"), ExtResource("15_gobkm"), ExtResource("15_gobkm"), ExtResource("15_gobkm"), ExtResource("15_gobkm"), ExtResource("15_gobkm"), ExtResource("15_gobkm"), ExtResource("15_gobkm"), ExtResource("15_gobkm"), ExtResource("15_gobkm"), ExtResource("15_gobkm"), ExtResource("15_gobkm"), ExtResource("15_gobkm")])
+entraceAnimIndexes = Array[int]([1])
 
 [node name="afterRythmGameDialogue" parent="." unique_id=107753591 instance=ExtResource("5_y6sft")]
 visible = false

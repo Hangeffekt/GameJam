@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://db3e685b5elv"]
+
+[ext_resource type="Script" uid="uid://b5kgvw42qaht0" path="res://scripts/introScript.gd" id="1_yjqpq"]
+[ext_resource type="PackedScene" uid="uid://cshl60v00b23l" path="res://scenes/dialogue_manager.tscn" id="2_4bx60"]
+
+[node name="Intro" type="Control" unique_id=443835615]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_yjqpq")
+
+[node name="Intro dialogue" parent="." unique_id=515192348 instance=ExtResource("2_4bx60")]
+text_key = Array[String](["S0_INTRO_1", "S0_INTRO_2", "S0_INTRO_3", "S0_INTRO_4", "S0_INTRO_5", "S0_INTRO_6"])
+characters_name = Array[String](["", "", "", "", "", ""])
+textcolor = Array[Color]([Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)])
+Portraits = Array[Texture2D]([null, null, null, null, null, null])
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=658980005]
+z_index = -1
+layout_mode = 0
+offset_left = -101.0
+offset_top = -66.0
+offset_right = 1259.0
+offset_bottom = 731.0
+color = Color(0, 0, 0, 1)

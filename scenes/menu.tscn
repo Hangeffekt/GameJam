@@ -22,10 +22,20 @@
 [ext_resource type="Texture2D" uid="uid://etqv0uw73hdb" path="res://assets/mainMenu/buttons/exit_default.png" id="15_mhjd8"]
 [ext_resource type="Texture2D" uid="uid://bi4sx8nv0vdb8" path="res://assets/mainMenu/buttons/kilépés_hover.png" id="16_d3h35"]
 [ext_resource type="Texture2D" uid="uid://cejvk28f2teeu" path="res://assets/mainMenu/buttons/exit_hover.png" id="17_v8lyk"]
-[ext_resource type="Texture2D" uid="uid://dsti7mpv6cuy3" path="res://assets/mainMenu/menu_háttér bővített.png" id="18_6wigr"]
+[ext_resource type="Texture2D" uid="uid://br34u1ibvvvx4" path="res://assets/mainMenu/menu_base_no logo.png" id="18_lnf0i"]
+[ext_resource type="Texture2D" uid="uid://jtveyuw3y6cm" path="res://assets/mainMenu/logo 02_dark.png" id="19_ffqrc"]
+[ext_resource type="Shader" uid="uid://b8v5wpallxodv" path="res://Shaders/menuLogo.gdshader" id="19_x16fv"]
+[ext_resource type="FontFile" uid="uid://cv5hsgsl4ggkp" path="res://assets/fonts/StoryScript-Regular.ttf" id="21_x16fv"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ecx8g"]
-texture = ExtResource("18_6wigr")
+texture = ExtResource("18_lnf0i")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lnf0i"]
+shader = ExtResource("19_x16fv")
+shader_parameter/shine_progress = -0.3
+shader_parameter/shine_width = 0.12
+shader_parameter/shine_color = Color(1, 1, 1, 1)
+shader_parameter/shine_strength = 0.85
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e3dmf"]
 texture = ExtResource("2_g3eks")
@@ -171,6 +181,28 @@ offset_right = 1245.0
 offset_bottom = 648.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_ecx8g")
 
+[node name="Logo" type="Sprite2D" parent="." unique_id=820163098]
+material = SubResource("ShaderMaterial_lnf0i")
+position = Vector2(575, -353)
+scale = Vector2(0.235, 0.235)
+texture = ExtResource("19_ffqrc")
+
+[node name="Press mouse text" type="Label" parent="." unique_id=569805097]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -83.0
+offset_top = -398.0
+offset_right = 83.0
+offset_bottom = -375.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("21_x16fv")
+text = "MENU_PRESS_MOUSE"
+
 [node name="menuBackground" type="Panel" parent="." unique_id=593073912]
 layout_mode = 1
 anchors_preset = 15
@@ -255,6 +287,7 @@ offset_top = 43.0
 offset_right = 99.0
 offset_bottom = 66.0
 grow_horizontal = 2
+theme_override_fonts/font = ExtResource("21_x16fv")
 text = "MENU_BUTTON_OPTIONS"
 horizontal_alignment = 1
 
@@ -289,10 +322,12 @@ layout_mode = 2
 
 [node name="Hun_button" type="Button" parent="OptionsBackground/Setting_VBoxContainer/Language_HBoxContainer" unique_id=1299889416]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("21_x16fv")
 text = "Hun"
 
 [node name="Eng_button" type="Button" parent="OptionsBackground/Setting_VBoxContainer/Language_HBoxContainer" unique_id=362882908]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("21_x16fv")
 text = "Eng"
 
 [node name="Music_Slider" type="HSlider" parent="OptionsBackground/Setting_VBoxContainer" unique_id=793611312]
@@ -329,6 +364,7 @@ theme_override_constants/separation = 25
 [node name="Language_text" type="Label" parent="OptionsBackground/text_VBoxContainer" unique_id=216446200]
 layout_mode = 2
 size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("21_x16fv")
 text = "TEXT_LANGUAGE"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -336,6 +372,7 @@ vertical_alignment = 1
 [node name="MusicText" type="Label" parent="OptionsBackground/text_VBoxContainer" unique_id=390023182]
 layout_mode = 2
 size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("21_x16fv")
 text = "TEXT_MUSIC"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -343,6 +380,7 @@ vertical_alignment = 1
 [node name="SFXText" type="Label" parent="OptionsBackground/text_VBoxContainer" unique_id=900391258]
 layout_mode = 2
 size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("21_x16fv")
 text = "TEXT_SFX"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -374,6 +412,7 @@ offset_top = 43.0
 offset_right = 99.0
 offset_bottom = 66.0
 grow_horizontal = 2
+theme_override_fonts/font = ExtResource("21_x16fv")
 text = "MENU_BUTTON_CREDITS"
 
 [node name="Credits_exit_Button" type="Button" parent="CreditsBackground" unique_id=1519739959]
@@ -401,6 +440,7 @@ offset_right = 253.0
 offset_bottom = 243.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("21_x16fv")
 text = "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
 autowrap_mode = 2
 
@@ -422,21 +462,6 @@ position = Vector2(576, -323)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D" unique_id=350172002]
 libraries/ = SubResource("AnimationLibrary_ffqrc")
-
-[node name="Press mouse text" type="Label" parent="." unique_id=569805097]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -83.0
-offset_top = -398.0
-offset_right = 83.0
-offset_bottom = -375.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "MENU_PRESS_MOUSE"
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Options" to="." method="_on_options_pressed"]
