@@ -21,6 +21,13 @@ extends CanvasLayer
 #var POTION_VIDEO_ENG = "res://assets/videos/eng/Potion_video_eng.mp4"
 #var POTION_VIDEO_HUN = "res://assets/videos/hun/Potion_video_hun.mp4"
 
+#startB
+@export var FinishButtonBaseHun: Texture2D
+@export var FinishButtonBaseEng: Texture2D
+@export var FinishButtonHoverHun: Texture2D
+@export var FinishButtonHoverEng: Texture2D
+var finisButtonHover: bool = false
+
 @onready var potionScrup: VideoStreamPlayer = $AspectRatioContainer/VideoScrup
 @onready var potionFill: VideoStreamPlayer = $AspectRatioContainer2/VideoFill
 @onready var potionSplash: VideoStreamPlayer = $AspectRatioContainer2/VideoSplash
@@ -50,6 +57,7 @@ var _skip_first_translation_changed: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	finishButton.visible = false
 	if get_tree().current_scene.name == "potion":
 		set_and_write_values(0,0,0)
 		category_buttons(1)
@@ -69,6 +77,11 @@ func _ready() -> void:
 	choosed_item_2.mouse_exited.connect(_on_mouse_exited_item_2)
 	choosed_item_3.mouse_entered.connect(_on_mouse_entered_item_3)
 	choosed_item_3.mouse_exited.connect(_on_mouse_exited_item_3)
+	
+	#set up grindind and cooking button
+	finishButton.mouse_entered.connect(OnButtonHover.bind(finishButton, true))
+	finishButton.mouse_exited.connect(OnButtonHover.bind(finishButton, false))
+	OnButtonHover(finishButton, false)
 	
 
 func category_buttons(id: int):
@@ -149,9 +162,8 @@ func add_container(image_name: String, atr: int) -> HBoxContainer:
 	hBoxContainer.add_theme_constant_override("separation", 60)
 	var labelgreen = create_labels_for_item(set_number(atr))
 	var image = add_bg_to_categorie(image_name)
-	image.custom_minimum_size = Vector2i(25, 20)
 	image.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-	image.set_anchors_preset(Control.PRESET_FULL_RECT)
+	image.custom_minimum_size = Vector2i(30, 30)
 	hBoxContainer.add_child(image)
 	hBoxContainer.add_child(labelgreen)
 	return hBoxContainer
@@ -184,6 +196,11 @@ func add_image(name: String) -> MarginContainer:
 func create_labels_for_item(text: String) -> Label:
 	var label = Label.new()
 	label.text = text
+	label.add_theme_font_override("font", load("res://assets/fonts/StoryScript-Regular.ttf"))
+	label.add_theme_color_override("font_color", Color("0c0b16"))
+	label.add_theme_color_override("font_outline_color", Color("f2d2d9"))
+	label.add_theme_constant_override("outline_size", 8)
+	label.add_theme_constant_override("margin_left", 8)
 	label.add_theme_font_size_override("font_size", 20)
 	label.add_theme_color_override("font_color", Color("#000000"))
 	label.autowrap_mode = TextServer.AUTOWRAP_WORD
@@ -220,13 +237,28 @@ func item_choosed(id: int, name: String, atr1: int, atr2: int, atr3: int):
 	countProgressBarResult(progresBarDiamond, atr3, recipe[0].relation_3, recipe[0].target_number_3)
 	
 	if item_place_1 and item_place_2 and item_place_3:
+		finishButton.visible = true
 		finishButton.disabled = false
 		disableCategoryPanel.visible = true
-		finishButton.add_theme_stylebox_override("normal", preload("res://styles/menubox.tres"))
 	else:
+		finishButton.visible = false
 		finishButton.disabled = true
 		disableCategoryPanel.visible = false
-		
+
+func OnButtonHover(button: Button, hovered: bool) -> void:
+	finisButtonHover = hovered
+	finishButtonfunc(button)
+
+func finishButtonfunc(button: Button) -> void:
+	var hovered: bool = finisButtonHover
+	var base_icon: Texture2D
+	var hover_icon: Texture2D
+	var is_eng: bool = GlobalScript.language == "eng"
+	
+	base_icon  = FinishButtonBaseEng  if is_eng else FinishButtonBaseHun
+	hover_icon = FinishButtonHoverEng if is_eng else FinishButtonHoverHun
+	
+	button.icon = hover_icon if hovered else base_icon
 
 func countProgressBarResult(bar: TextureProgressBar, atr: int, relacio: String, target: int) -> void:
 	var tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT).set_parallel(true)
@@ -277,6 +309,10 @@ func add_labels_to_recipe(str1: String, str2: String, str3: String, placeholder)
 
 func create_and_set_new_label(str_value: String, placeholder) -> void:
 	var text_label = Label.new()
+	text_label.add_theme_font_override("font", load("res://assets/fonts/StoryScript-Regular.ttf"))
+	text_label.add_theme_color_override("font_color", Color("0c0b16"))
+	text_label.add_theme_color_override("font_outline_color", Color("f2d2d9"))
+	text_label.add_theme_constant_override("outline_size", 8)
 	text_label.add_theme_font_size_override("font_size", 35)
 	text_label.add_theme_color_override("font_color", Color("#000000"))
 	text_label.text = str_value
@@ -307,22 +343,29 @@ func end_game(atr1: int, atr2: int, atr3: int) -> void:
 	#set and write game result
 	add_labels_to_recipe(set_number(sum_red), set_number(sum_green), set_number(sum_blue), result_box)
 	var result_point = 0
+	var label = $result/textResult
+	label.add_theme_font_override("font", load("res://assets/fonts/StoryScript-Regular.ttf"))
+	label.add_theme_color_override("font_color", Color("0c0b16"))
+	label.add_theme_color_override("font_outline_color", Color("f2d2d9"))
+	label.add_theme_constant_override("outline_size", 8)
+	label.add_theme_font_size_override("font_size", 35)
+	label.add_theme_color_override("font_color", Color("#000000"))
 	result_point = result_point + mini_game_result(sum_red, recipe[0].relation_1, recipe[0].target_number_1)
 	result_point = result_point + mini_game_result(sum_green, recipe[0].relation_2, recipe[0].target_number_2)
 	result_point = result_point + mini_game_result(sum_blue, recipe[0].relation_3, recipe[0].target_number_3)
 	
 	match(result_point):
 		0:
-			$result/textResult.text = tr("POTION_RESULT_BA")
+			label.text = tr("POTION_RESULT_BA")
 			GlobalScript.potiongrade = "Rossz"
 		1:
-			$result/textResult.text = tr("POTION_RESULT_BA")
+			label.text = tr("POTION_RESULT_BA")
 			GlobalScript.potiongrade = "Rossz"
 		2:
-			$result/textResult.text = tr("POTION_RESULT_GO")
+			label.text = tr("POTION_RESULT_GO")
 			GlobalScript.potiongrade = "Jó"
 		3:
-			$result/textResult.text = tr("POTION_RESULT_EX")
+			label.text = tr("POTION_RESULT_EX")
 			GlobalScript.potiongrade = "Kiváló"
 	$result.show()
 	await get_tree().create_timer(3.0).timeout
@@ -468,3 +511,4 @@ func _notification(what: int) -> void:
 	# Ha futás közben nyelvet váltunk, frissítjük a kódból beállított szöveget
 	if _skip_first_translation_changed and what == NOTIFICATION_TRANSLATION_CHANGED:
 		category_items(choosed_category)
+		OnButtonHover(finishButton, false)

@@ -1,8 +1,12 @@
 [gd_scene format=3 uid="uid://doh57xo13r2dp"]
 
 [ext_resource type="Script" uid="uid://dwtnsmhbby5et" path="res://scripts/potion.gd" id="1_3mc24"]
+[ext_resource type="Texture2D" uid="uid://hmjruav0mhry" path="res://assets/potion/ŐRLÉS ÉS FŐZÉS_default.png" id="2_3rwhh"]
 [ext_resource type="StyleBox" uid="uid://b6ynm81qtn1v3" path="res://styles/menubox.tres" id="2_8kk5y"]
+[ext_resource type="Texture2D" uid="uid://wk7spac5imlu" path="res://assets/potion/ŐRLÉS ÉS FŐZÉS_angol_default.png" id="3_7o4qn"]
 [ext_resource type="Texture2D" uid="uid://xj4vn1r3r8h3" path="res://assets/potion/potion.png" id="3_8kk5y"]
+[ext_resource type="Texture2D" uid="uid://crwjv2x8c4hb3" path="res://assets/potion/ŐRLÉS ÉS FŐZÉS_hover.png" id="4_5w5ul"]
+[ext_resource type="Texture2D" uid="uid://dk3lihyb4t61c" path="res://assets/potion/ŐRLÉS ÉS FŐZÉS_angol_hover.png" id="5_qajbk"]
 [ext_resource type="Texture2D" uid="uid://r5enybi6yqii" path="res://assets/potion/steam animation/potion_steam_001.png" id="5_yxgu6"]
 [ext_resource type="Texture2D" uid="uid://d4msi4th65iwv" path="res://assets/potion/steam animation/potion_steam_002.png" id="6_qted3"]
 [ext_resource type="Texture2D" uid="uid://c43fv27541ow8" path="res://assets/potion/steam animation/potion_steam_003.png" id="7_ancum"]
@@ -21,7 +25,6 @@
 [ext_resource type="Texture2D" uid="uid://c6san78754ic2" path="res://assets/potion/potion ui_ingredients bar_reference.png" id="15_ron7i"]
 [ext_resource type="Texture2D" uid="uid://c58cnvvfekrmj" path="res://assets/potion/skull_icon.png" id="16_1nmat"]
 [ext_resource type="PackedScene" uid="uid://bqog7piaxqlsc" path="res://scenes/tutorial.tscn" id="16_8dbo2"]
-[ext_resource type="StyleBox" uid="uid://c3kxrhf1owtl6" path="res://styles/disableButton.tres" id="16_a6teu"]
 [ext_resource type="Texture2D" uid="uid://ipsm6bc3auxm" path="res://assets/potion/potion ui_requirement_base.png" id="16_gmx3n"]
 [ext_resource type="Texture2D" uid="uid://lk7m6mtvk3y6" path="res://assets/potion/potion ui_ingredients bar kivevés ikon.png" id="18_jq2hk"]
 [ext_resource type="Texture2D" uid="uid://jyjmxgn2h3hg" path="res://assets/potion/potion ui_requirement_bar base.png" id="21_4yosp"]
@@ -246,6 +249,8 @@ shadow_color = Color(0, 0, 0, 0)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_msale"]
 
+[sub_resource type="FontVariation" id="FontVariation_k4rk4"]
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qa3cu"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0fxgo"]
@@ -263,6 +268,16 @@ shadow_color = Color(0, 0, 0, 0)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_phbq8"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_75ifr"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3rwhh"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7o4qn"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5w5ul"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qajbk"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gi5c5"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_67q4m"]
 
@@ -776,6 +791,10 @@ animations = [{
 
 [node name="potion" type="CanvasLayer" unique_id=947814072]
 script = ExtResource("1_3mc24")
+FinishButtonBaseHun = ExtResource("2_3rwhh")
+FinishButtonBaseEng = ExtResource("3_7o4qn")
+FinishButtonHoverHun = ExtResource("4_5w5ul")
+FinishButtonHoverEng = ExtResource("5_qajbk")
 
 [node name="Potion" type="Sprite2D" parent="." unique_id=1887912111]
 position = Vector2(576, 324.49994)
@@ -938,7 +957,8 @@ expand_mode = 1
 
 [node name="Label" type="Label" parent="ScrollContainer/GridContainer/VBoxContainer" unique_id=1588469287]
 layout_mode = 2
-text = "sdvdsfv"
+theme_override_fonts/font = SubResource("FontVariation_k4rk4")
+text = " sdvdsfv"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/GridContainer/VBoxContainer" unique_id=1691132367]
 layout_mode = 2
@@ -1099,14 +1119,18 @@ size_flags_vertical = 4
 theme_override_constants/margin_top = 22
 theme_override_constants/margin_bottom = 20
 
-[node name="MakePotion" type="Button" parent="FinalBtnMargin" unique_id=536323282]
+[node name="MakePotion" type="Button" parent="FinalBtnMargin" unique_id=1507723281]
 custom_minimum_size = Vector2(250, 60)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_styles/normal = ExtResource("16_a6teu")
-theme_override_styles/disabled = ExtResource("16_a6teu")
+theme_override_styles/normal = SubResource("StyleBoxTexture_3rwhh")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_7o4qn")
+theme_override_styles/hover = SubResource("StyleBoxTexture_5w5ul")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_qajbk")
+theme_override_styles/focus = SubResource("StyleBoxTexture_gi5c5")
 disabled = true
-text = "POTION_END_BUTTON"
+icon = ExtResource("3_7o4qn")
+expand_icon = true
 
 [node name="disableCategories" type="Panel" parent="." unique_id=915566903]
 visible = false
@@ -1440,14 +1464,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -55.0
-offset_top = -149.0
-offset_right = 55.0
-offset_bottom = 94.0
+offset_left = -72.5
+offset_top = -126.0
+offset_right = 92.5
+offset_bottom = 117.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/h_separation = 21
-theme_override_constants/v_separation = 5
+theme_override_constants/h_separation = 42
+theme_override_constants/v_separation = 8
 columns = 3
 
 [node name="bluex" type="Label" parent="result/GridContainer" unique_id=131924349]
@@ -1479,13 +1503,13 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -111.5
-offset_top = -71.0
+offset_top = -91.0
 offset_right = 112.5
+offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
-text = "Good"
 horizontal_alignment = 1
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="." unique_id=265360005]
