@@ -56,7 +56,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+color = Color(0.019607844, 0.019607844, 0.09019608, 1)
 
 [node name="Label" type="Label" parent="." unique_id=601759169]
 layout_mode = 1
@@ -70,6 +70,7 @@ offset_right = 331.0
 offset_bottom = 975.016
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.92156863, 0.8039216, 0.8352941, 1)
 text = "A ‘New Moon’ 
 az Eszterházy Károly Katolikus Egyetem 8.GémDzsem pályázatára készült.
 
@@ -127,7 +128,7 @@ autoplay = &"start"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1171413084]
 stream = ExtResource("2_2ckv8")
-pitch_scale = 0.9
+pitch_scale = 0.95
 autoplay = true
 bus = &"Music"
 parameters/looping = true

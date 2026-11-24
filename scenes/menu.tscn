@@ -35,7 +35,7 @@ texture = ExtResource("18_lnf0i")
 shader = ExtResource("19_x16fv")
 shader_parameter/shine_progress = -0.3
 shader_parameter/shine_width = 0.12
-shader_parameter/shine_color = Color(1, 1, 1, 1)
+shader_parameter/shine_color = Color(0.92156863, 0.8039216, 0.8352941, 1)
 shader_parameter/shine_strength = 0.85
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e3dmf"]
@@ -148,7 +148,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_ecx8g")
 
 [node name="Logo" type="Sprite2D" parent="." unique_id=820163098]
 material = SubResource("ShaderMaterial_lnf0i")
-position = Vector2(576, -323)
+position = Vector2(576, -369)
 scale = Vector2(0.235, 0.235)
 texture = ExtResource("20_x16fv")
 
@@ -159,15 +159,18 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -83.0
-offset_top = -704.0
-offset_right = 83.0
-offset_bottom = -681.0
+offset_left = -100.0
+offset_top = -733.0
+offset_right = 129.0
+offset_bottom = -695.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_colors/font_color = Color(0.92156863, 0.8039216, 0.8352941, 1)
 theme_override_fonts/font = ExtResource("21_x16fv")
+theme_override_font_sizes/font_size = 29
 text = "MENU_PRESS_MOUSE"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="menuBackground" type="Panel" parent="." unique_id=593073912]
 layout_mode = 1
@@ -253,6 +256,7 @@ offset_top = 43.0
 offset_right = 99.0
 offset_bottom = 66.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(0.92156863, 0.8039216, 0.8352941, 1)
 theme_override_fonts/font = ExtResource("21_x16fv")
 text = "MENU_BUTTON_OPTIONS"
 horizontal_alignment = 1
@@ -290,11 +294,13 @@ layout_mode = 2
 
 [node name="Hun_button" type="Button" parent="OptionsBackground/Setting_VBoxContainer/Language_HBoxContainer" unique_id=1299889416]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.92156863, 0.8039216, 0.8352941, 1)
 theme_override_fonts/font = ExtResource("21_x16fv")
 text = "Hun"
 
 [node name="Eng_button" type="Button" parent="OptionsBackground/Setting_VBoxContainer/Language_HBoxContainer" unique_id=362882908]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.92156863, 0.8039216, 0.8352941, 1)
 theme_override_fonts/font = ExtResource("21_x16fv")
 text = "Eng"
 
@@ -332,6 +338,7 @@ theme_override_constants/separation = 25
 [node name="Language_text" type="Label" parent="OptionsBackground/text_VBoxContainer" unique_id=216446200]
 layout_mode = 2
 size_flags_horizontal = 8
+theme_override_colors/font_color = Color(0.92156863, 0.8039216, 0.8352941, 1)
 theme_override_fonts/font = ExtResource("21_x16fv")
 text = "TEXT_LANGUAGE"
 horizontal_alignment = 1
@@ -340,6 +347,7 @@ vertical_alignment = 1
 [node name="MusicText" type="Label" parent="OptionsBackground/text_VBoxContainer" unique_id=390023182]
 layout_mode = 2
 size_flags_horizontal = 8
+theme_override_colors/font_color = Color(0.92156863, 0.8039216, 0.8352941, 1)
 theme_override_fonts/font = ExtResource("21_x16fv")
 text = "TEXT_MUSIC"
 horizontal_alignment = 1
@@ -348,6 +356,7 @@ vertical_alignment = 1
 [node name="SFXText" type="Label" parent="OptionsBackground/text_VBoxContainer" unique_id=900391258]
 layout_mode = 2
 size_flags_horizontal = 8
+theme_override_colors/font_color = Color(0.92156863, 0.8039216, 0.8352941, 1)
 theme_override_fonts/font = ExtResource("21_x16fv")
 text = "TEXT_SFX"
 horizontal_alignment = 1
