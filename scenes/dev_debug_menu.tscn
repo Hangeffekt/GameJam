@@ -18,7 +18,7 @@ anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -130.0
-offset_bottom = 277.0
+offset_bottom = 313.0
 grow_horizontal = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=612941330]
@@ -55,6 +55,10 @@ layout_mode = 2
 text = "potion"
 icon_alignment = 1
 
+[node name="Tarot" type="Button" parent="Panel/VBoxContainer" unique_id=291994582]
+layout_mode = 2
+text = "Tarot"
+
 [node name="fullscreen" type="CheckButton" parent="Panel" unique_id=2002300317]
 layout_mode = 1
 anchors_preset = 8
@@ -63,9 +67,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 12.0
-offset_top = -22.5
+offset_top = -43.5
 offset_right = 56.0
-offset_bottom = 1.5
+offset_bottom = -19.5
 grow_horizontal = 2
 grow_vertical = 2
 button_pressed = true
@@ -93,9 +97,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -40.0
-offset_top = -65.5
+offset_top = -89.5
 offset_right = 38.0
-offset_bottom = -25.5
+offset_bottom = -49.5
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -107,16 +111,11 @@ text = "eng"
 layout_mode = 2
 text = "hu  "
 
-[node name="debug_visible_button" type="CheckButton" parent="." unique_id=1983700777]
-layout_mode = 1
-offset_left = -44.0
-offset_bottom = 24.0
-
 [connection signal="pressed" from="Panel/VBoxContainer/Menu scene" to="." method="_on_menu_scene_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/shop scene" to="." method="_on_shop_scene_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/rythm scene" to="." method="_on_rythm_scene_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/potion scene" to="." method="_on_potion_scene_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Tarot" to="." method="_on_tarot_pressed"]
 [connection signal="toggled" from="Panel/fullscreen" to="." method="_on_fullscreen_toggled"]
 [connection signal="pressed" from="Panel/HBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Panel/HBoxContainer/Button2" to="." method="_on_button_2_pressed"]
-[connection signal="toggled" from="debug_visible_button" to="." method="_on_debug_visible_button_toggled"]

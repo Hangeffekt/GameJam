@@ -12,10 +12,11 @@
 [ext_resource type="PackedScene" uid="uid://7en3j6hc7kc3" path="res://scenes/dev_debug_menu.tscn" id="8_y6sft"]
 [ext_resource type="Texture2D" uid="uid://dviio0v7aaskt" path="res://assets/tutorial wizard/wizard_shocked.png" id="9_1v8qu"]
 [ext_resource type="Texture2D" uid="uid://dks0agwv35an8" path="res://assets/tutorial wizard/wizard_hurt.png" id="9_gobkm"]
-[ext_resource type="Texture2D" uid="uid://bexyfdl7u66bo" path="res://assets/shop/characters/Radomir.PNG" id="12_24it5"]
 [ext_resource type="Texture2D" uid="uid://javtmgmibwpb" path="res://assets/tutorial wizard/wizard_thinking.png" id="12_gobkm"]
+[ext_resource type="Texture2D" uid="uid://yq1uoxif50t6" path="res://assets/shop/characters/CroppedClawdia.png" id="13_5u241"]
 [ext_resource type="Texture2D" uid="uid://btp5ofkfadkv5" path="res://assets/tutorial wizard/wizard_pointing.png" id="13_j14q8"]
 [ext_resource type="Texture2D" uid="uid://c1mavjw8hcf3y" path="res://assets/shop/characters/cerberus.png" id="15_gobkm"]
+[ext_resource type="Texture2D" uid="uid://dv2vlbln8njsx" path="res://assets/shop/characters/CroppedRadomir.png" id="16_pqync"]
 
 [node name="Node2D" type="CanvasLayer" unique_id=1181666746]
 script = ExtResource("1_032fp")
@@ -51,7 +52,7 @@ visible = false
 text_key = Array[String](["S1_CAT_0", "S1_CAT_1", "S1_CAT_2", "S1_CAT_3", "S1_CAT_4", "S1_CAT_5", "S1_CAT_6", "S1_CAT_7", "S1_CAT_8", "S1_CAT_9", "S1_CAT_10"])
 characters_name = Array[String](["", "", "CHAR_NAME_PLAYER", "CHAR_NAME_CAT", "CHAR_NAME_CAT", "CHAR_NAME_CAT", "CHAR_NAME_CAT", "CHAR_NAME_CAT", "CHAR_NAME_PLAYER", "", "CHAR_NAME_CAT"])
 textcolor = Array[Color]([Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)])
-Portraits = Array[Texture2D]([null, null, null, null, null, null, null, null, null, null, null])
+Portraits = Array[Texture2D]([null, null, null, ExtResource("13_5u241"), ExtResource("13_5u241"), ExtResource("13_5u241"), ExtResource("13_5u241"), ExtResource("13_5u241"), ExtResource("13_5u241"), ExtResource("13_5u241"), ExtResource("13_5u241")])
 entraceAnimIndexes = Array[int]([3])
 
 [node name="perfect_potion" parent="." unique_id=1861403986 instance=ExtResource("5_y6sft")]
@@ -59,21 +60,21 @@ visible = false
 text_key = Array[String](["MG1_PERFECTE_0", "MG1_PERFECTE_1", "MG1_PERFECTE_2", "MG1_PERFECTE_3", "MG1_PERFECTE_4"])
 characters_name = Array[String](["", "CHAR_NAME_CAT", "CHAR_NAME_PLAYER", "CHAR_NAME_CAT", ""])
 textcolor = Array[Color]([Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)])
-Portraits = Array[Texture2D]([null, null, null, null, null])
+Portraits = Array[Texture2D]([ExtResource("13_5u241"), ExtResource("13_5u241"), ExtResource("13_5u241"), ExtResource("13_5u241"), ExtResource("13_5u241")])
 
 [node name="Bad_potion" parent="." unique_id=1864638761 instance=ExtResource("5_y6sft")]
 visible = false
 text_key = Array[String](["MG1_BADE_0", "MG1_BADE_1", "MG1_BADE_2", "MG1_BADE_3", "MG1_BADE_4"])
 characters_name = Array[String](["", "CHAR_NAME_CAT", "CHAR_NAME_CAT", "CHAR_NAME_PLAYER", ""])
 textcolor = Array[Color]([Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)])
-Portraits = Array[Texture2D]([null, null, null, null, null])
+Portraits = Array[Texture2D]([ExtResource("13_5u241"), ExtResource("13_5u241"), ExtResource("13_5u241"), ExtResource("13_5u241"), ExtResource("13_5u241")])
 
 [node name="Good_potion" parent="." unique_id=644986971 instance=ExtResource("5_y6sft")]
 visible = false
 text_key = Array[String](["MG1_GOODE_0", "MG1_GOODE_1", "MG1_GOODE_2", "MG1_GOODE_3"])
 characters_name = Array[String](["", "CHAR_NAME_CAT", "CHAR_NAME_PLAYER", "CHAR_NAME_CAT"])
 textcolor = Array[Color]([Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)])
-Portraits = Array[Texture2D]([null, null, null, null])
+Portraits = Array[Texture2D]([ExtResource("13_5u241"), ExtResource("13_5u241"), ExtResource("13_5u241"), ExtResource("13_5u241")])
 
 [node name="BeforeHunter" parent="." unique_id=1676800563 instance=ExtResource("5_y6sft")]
 visible = false
@@ -87,7 +88,7 @@ visible = false
 text_key = Array[String](["S2_VENATOR_10", "S2_VENATOR_11", "S2_VENATOR_12", "S2_VENATOR_13", "S2_VENATOR_14", "S2_VENATOR_15", "S2_VENATOR_16", "S2_VENATOR_17", "S2_VENATOR_18", "S2_VENATOR_19", "S2_VENATOR_20", "S2_VENATOR_21", "S2_VENATOR_22", "S2_VENATOR_23", "S2_VENATOR_24", "S2_VENATOR_25", "S2_VENATOR_26", "S2_VENATOR_27", "S2_VENATOR_28"])
 characters_name = Array[String](["CHAR_NAME_VENATOR", "", "", "CHAR_NAME_PLAYER", "", "CHAR_NAME_VENATOR", "CHAR_NAME_PLAYER", "CHAR_NAME_VENATOR", "CHAR_NAME_VENATOR", "CHAR_NAME_PLAYER", "CHAR_NAME_VENATOR", "CHAR_NAME_PLAYER", "CHAR_NAME_VENATOR", "CHAR_NAME_VENATOR", "CHAR_NAME_PLAYER", "", "CHAR_NAME_VENATOR", "CHAR_NAME_PLAYER", "CHAR_NAME_VENATOR"])
 textcolor = Array[Color]([Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)])
-Portraits = Array[Texture2D]([ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5")])
+Portraits = Array[Texture2D]([ExtResource("16_pqync"), ExtResource("16_pqync"), ExtResource("16_pqync"), ExtResource("16_pqync"), ExtResource("16_pqync"), ExtResource("16_pqync"), ExtResource("16_pqync"), ExtResource("16_pqync"), ExtResource("16_pqync"), ExtResource("16_pqync"), ExtResource("16_pqync"), ExtResource("16_pqync"), ExtResource("16_pqync"), ExtResource("16_pqync"), ExtResource("16_pqync"), ExtResource("16_pqync"), ExtResource("16_pqync"), ExtResource("16_pqync"), ExtResource("16_pqync")])
 entraceAnimIndexes = Array[int]([0])
 
 [node name="Tarot_good" parent="." unique_id=1268993334 instance=ExtResource("5_y6sft")]
@@ -95,14 +96,14 @@ visible = false
 text_key = Array[String](["MG2_GOODE_0", "MG2_GOODE_1", "MG2_GOODE_2", "MG2_GOODE_3", "MG2_GOODE_4", "MG2_GOODE_5"])
 characters_name = Array[String](["", "CHAR_NAME_VENATOR", "CHAR_NAME_PLAYER", "", "CHAR_NAME_VENATOR", ""])
 textcolor = Array[Color]([Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)])
-Portraits = Array[Texture2D]([ExtResource("12_24it5"), ExtResource("12_24it5"), ExtResource("12_24it5"), null, null, null])
+Portraits = Array[Texture2D]([ExtResource("16_pqync"), ExtResource("16_pqync"), ExtResource("16_pqync"), null, null, null])
 
 [node name="Tarot_bad" parent="." unique_id=1337277289 instance=ExtResource("5_y6sft")]
 visible = false
 text_key = Array[String](["MG2_BADE_0", "MG2_BADE_1", "MG2_BADE_2", "MG2_BADE_3", "MG2_BADE_4"])
 characters_name = Array[String](["", "CHAR_NAME_VENATOR", "", "CHAR_NAME_PLAYER", ""])
 textcolor = Array[Color]([Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)])
-Portraits = Array[Texture2D]([ExtResource("12_24it5"), ExtResource("12_24it5"), null, null])
+Portraits = Array[Texture2D]([ExtResource("16_pqync"), ExtResource("16_pqync"), null, null])
 
 [node name="BeforeCerberus" parent="." unique_id=330743380 instance=ExtResource("5_y6sft")]
 visible = false

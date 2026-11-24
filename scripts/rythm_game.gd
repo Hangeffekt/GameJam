@@ -2,7 +2,8 @@ extends Node2D
 
 @onready var wave: Node2D = $wave
 @onready var animation_player: AnimatedSprite2D = $wave/AnimatedSprite2D
-@onready var test_metronome_120_bpm: AudioStreamPlayer = $"test_metronome 120bpm"
+@onready var music_1_player: AudioStreamPlayer = $Music1Player
+@onready var music_2_player: AudioStreamPlayer = $Music2player
 @onready var dropplet_anim: AnimationPlayer = $dropplet_placeholderr/DroppletAnimationPlayer
 @onready var dropplet_placeholderr: Sprite2D = $dropplet_placeholderr
 @onready var progress_bar: TextureProgressBar = $ProgressBar
@@ -12,11 +13,12 @@ extends Node2D
 @onready var camera: Camera2D = $Camera2D
 @onready var hit_text: Sprite2D = $HitText
 
-
+@export var music1: AudioStreamMP3
+@export var music2: AudioStreamMP3
 
 #egy ritmus játéknál ahol a zenei visszajelzés is fontos, a lehető legpontosabbnak kell lenni idő szerint. ezért a csepp logikáját is meg kell változtatnom :") 
 #bpm nem @export mert ha kint változtatom az értékét akkor a számított érték itt nem fog változni elvileg, hacsak nem írok egy settert. 
-var bpm: float = 120.0 ##FONTOS ha ezt átállítod akkor a wave_scropt.gd ben is a bpmet állítsd át ugyanarra a számra
+var bpm: float = 90.0 ##FONTOS ha ezt átállítod akkor a wave_script.gd ben is a bpmet állítsd át ugyanarra a számra
 #elfogadási értékek mp-ben
 const perfect_window: float = 0.060
 const good_window: float = 0.120
@@ -105,12 +107,17 @@ func _input(event: InputEvent) -> void:
 	animation_player.play("idle")
 
 func _ready() -> void:
+	
 	#be kell állítani az original pozíciókat mert különben szépen lassan kimegyünk a képernyőből
 	cameraOriginPos = camera.offset
 	#labelOriginPos = hit_text.position
 	
 	##DROPPLET
-	test_metronome_120_bpm.play() #le tesztelem "zenével". a beat lassan elcsúszik de itt lehet a hangfile-al van probléma.
+		##music choise
+	if randf() < 0.7:
+		music_1_player.play()
+	else:
+		music_2_player.play()
 	var targetDuration:float = beatsPerDrop * 60 / bpm
 	var naturalDuration:float = dropplet_anim.get_animation("dropping").length
 	dropplet_anim.speed_scale = naturalDuration / targetDuration
