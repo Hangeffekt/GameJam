@@ -4,7 +4,7 @@ extends Node2D
 
 #felmerült egy hiba ami a startwave számításainál kerekítési hibát eredményezett (BaseSpeed függvény nullát adott vissza. az elég lassu ngl)
 # int / int = lefelekerekítés int. ezért a konstansok float értékek kell legyenek
-var bpm = 120.0
+var bpm = 90.0
 const Frames:float = 44.0
 const fps:float = 60.0
 const beatsPerWave:float = 2.0

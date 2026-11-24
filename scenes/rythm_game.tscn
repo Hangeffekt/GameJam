@@ -20,7 +20,6 @@
 [ext_resource type="PackedScene" uid="uid://bqog7piaxqlsc" path="res://scenes/tutorial.tscn" id="11_c8p3f"]
 [ext_resource type="Texture2D" uid="uid://bgm1gn2sewiph" path="res://assets/rythm_game/hpldtal_ui_progress_bar_over.png" id="11_ohs8n"]
 [ext_resource type="Texture2D" uid="uid://cal60xhkqr2sr" path="res://assets/rythm_game/hpldtal_ui_progress_bar_progress.png" id="12_jfaf1"]
-[ext_resource type="AudioStream" uid="uid://b8yfu8pb7251e" path="res://assets/placeholders/120 BPM Metronome.mp3" id="12_rtuws"]
 [ext_resource type="Texture2D" uid="uid://boisfvvueokcg" path="res://assets/rythm_game/action lines/holdtal_visszajelzes_vonalak0002.png" id="17_cv5sy"]
 [ext_resource type="Texture2D" uid="uid://dbalh070rqkxk" path="res://assets/rythm_game/action lines/holdtal_visszajelzes_vonalak0003.png" id="18_5q2jr"]
 [ext_resource type="Texture2D" uid="uid://5lcc5lp1jovh" path="res://assets/rythm_game/action lines/holdtal_visszajelzes_vonalak0004.png" id="19_byp0e"]
@@ -37,8 +36,10 @@
 [ext_resource type="Texture2D" uid="uid://bxkpbo002y1re" path="res://assets/potion/wizard_icon_notification_02.png" id="30_8cpu0"]
 [ext_resource type="Texture2D" uid="uid://blltpsoafk1wk" path="res://assets/rythm_game/shockwave/holdtal_visszajelzes_shockwave0005.png" id="30_51ojm"]
 [ext_resource type="Texture2D" uid="uid://2ug5644mik8h" path="res://assets/rythm_game/shockwave/holdtal_visszajelzes_shockwave0006.png" id="31_gsidj"]
+[ext_resource type="AudioStream" uid="uid://c0e3s1d0cufxi" path="res://assets/ZENE/holdtál_zene_001.mp3" id="32_8cpu0"]
 [ext_resource type="Texture2D" uid="uid://b55xpydispx1f" path="res://assets/rythm_game/shockwave/holdtal_visszajelzes_shockwave0007.png" id="32_vaiqt"]
 [ext_resource type="Texture2D" uid="uid://con0gpqo0onnp" path="res://assets/rythm_game/shockwave/holdtal_visszajelzes_shockwave0008.png" id="33_8cpu0"]
+[ext_resource type="AudioStream" uid="uid://dgf8p4pb54qym" path="res://assets/ZENE/holdtál_zene_002.mp3" id="33_38vb1"]
 [ext_resource type="Texture2D" uid="uid://dj7jcboam54xg" path="res://assets/rythm_game/shockwave/holdtal_visszajelzes_shockwave0009.png" id="34_38vb1"]
 [ext_resource type="Texture2D" uid="uid://dcis2t7ewxr5e" path="res://assets/rythm_game/shockwave/holdtal_visszajelzes_shockwave0010.png" id="35_avwwa"]
 [ext_resource type="Texture2D" uid="uid://cdpd1glwdrpdt" path="res://assets/rythm_game/shockwave/holdtal_visszajelzes_shockwave0011.png" id="36_8qdn5"]
@@ -223,6 +224,8 @@ animations = [{
 
 [node name="rythm_game" type="Node2D" unique_id=1484322323]
 script = ExtResource("1_hidhp")
+music1 = ExtResource("32_8cpu0")
+music2 = ExtResource("33_38vb1")
 normalTexture = ExtResource("6_c8p3f")
 alternateTexture = ExtResource("3_eacpd")
 texture_perferct_eng = ExtResource("4_38vb1")
@@ -260,7 +263,7 @@ texture = ExtResource("5_gko7c")
 [node name="dropplet_placeholderr" type="Sprite2D" parent="." unique_id=51806181]
 visible = false
 position = Vector2(573.99994, 50)
-scale = Vector2(0.41798434, 0.4804709)
+scale = Vector2(0.5, 0.574)
 texture = ExtResource("6_c8p3f")
 
 [node name="DroppletAnimationPlayer" type="AnimationPlayer" parent="dropplet_placeholderr" unique_id=268235826]
@@ -383,8 +386,15 @@ expand_mode = 1
 [node name="Tutorial" parent="." unique_id=1684112177 instance=ExtResource("11_c8p3f")]
 visible = false
 
-[node name="test_metronome 120bpm" type="AudioStreamPlayer" parent="." unique_id=1961988476]
-stream = ExtResource("12_rtuws")
+[node name="Music1Player" type="AudioStreamPlayer" parent="." unique_id=1961988476]
+stream = ExtResource("32_8cpu0")
+bus = &"Music"
+parameters/looping = true
+
+[node name="Music2player" type="AudioStreamPlayer" parent="." unique_id=1752112930]
+stream = ExtResource("33_38vb1")
+bus = &"Music"
+parameters/looping = true
 
 [node name="perfectHullamEffect" type="AnimatedSprite2D" parent="." unique_id=1643179599]
 position = Vector2(581.665, 336.61)

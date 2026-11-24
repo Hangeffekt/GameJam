@@ -5,7 +5,7 @@ extends Control
 @onready var creditsB: Button = $Credits
 @onready var exitB: Button = $Exit
 @onready var option_animation_player: AnimationPlayer = $OptionsBackground/OptionAnimationPlayer
-@onready var credits_animation_player: AnimationPlayer = $CreditsBackground/CreditsAnimationPlayer
+
 
 @onready var logo: Sprite2D = $Logo
 @onready var press_mouse_text: Label = $"Press mouse text"
@@ -87,7 +87,7 @@ func LogoShine() -> void:
 	mat.set_shader_parameter("shine_progress", -0.3)
 	
 	logo_shine_tween = create_tween().set_loops()
-	logo_shine_tween.tween_interval(5.0) #kettő shine közötti szünet
+	logo_shine_tween.tween_interval(3.0) #kettő shine közötti szünet
 	logo_shine_tween.tween_method(
 		func(v: float): mat.set_shader_parameter("shine_progress", v),
 		-0.3, 1.3, 0.9
@@ -137,8 +137,7 @@ func _on_options_pressed() -> void:
 	option_animation_player.play("show")
 
 func _on_credits_pressed() -> void:
-	optionsB.disabled = true
-	credits_animation_player.play("show")
+	SceneTransition.change_scene("res://scenes/credits.tscn")
 
 func _on_exit_pressed() -> void:
 	SceneTransition.quit_game()
@@ -148,11 +147,6 @@ func _on_exit_pressed() -> void:
 func _on_option_exit_button_pressed() -> void:
 	creditsB.disabled = false
 	option_animation_player.play_backwards("show")
-
-##Credits menu
-func _on_credits_exit_button_pressed() -> void:
-	optionsB.disabled = false
-	credits_animation_player.play_backwards("show")
 
 ##nyelv váltás
 func _on_hun_button_pressed() -> void:

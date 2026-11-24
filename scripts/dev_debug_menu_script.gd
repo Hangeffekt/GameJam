@@ -1,6 +1,14 @@
 extends Control
 @onready var panel: Panel = $Panel
 
+func _input(event: InputEvent) -> void:
+	if not event.is_action_pressed("Debug_menu"):
+		return
+	else:
+		if panel.visible:
+			panel.visible = false
+		else:
+			panel.visible = true
 
 func _on_menu_scene_pressed() -> void:
 	SceneTransition.change_scene("res://scenes/menu.tscn")
@@ -17,6 +25,9 @@ func _on_rythm_scene_pressed() -> void:
 func _on_potion_scene_pressed() -> void:
 	SceneTransition.change_scene("res://scenes/potion.tscn")
 
+func _on_tarot_pressed() -> void:
+	SceneTransition.change_scene("res://scenes/tarrot.tscn")
+
 
 func _on_fullscreen_toggled(toggled_on: bool) -> void:
 	if toggled_on:
@@ -32,9 +43,3 @@ func _on_button_pressed() -> void:
 func _on_button_2_pressed() -> void:
 	GlobalScript.language = "hun"
 	TranslationServer.set_locale(GlobalScript.language)
-
-
-func _on_debug_visible_button_toggled(toggled_on: bool) -> void:
-	if toggled_on:
-		panel.visible = true
-	else: panel.visible = false	

@@ -119,4 +119,4 @@ func choose_customer(nextcustomer: int) -> void:
 			different_ending(after_rythm_game_dialogue)
 		9:
 			different_ending(placeholder_end_game_uzenet)
-			SceneTransition.quit_game()
+			SceneTransition.change_scene("res://scenes/outro.tscn")
