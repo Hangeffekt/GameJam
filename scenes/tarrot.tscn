@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://djqj71ivsyqvv"]
 
 [ext_resource type="Script" uid="uid://elfgwaow3d6e" path="res://scripts/tarrot.gd" id="1_baelf"]
+[ext_resource type="Texture2D" uid="uid://8c8bpa04w7fh" path="res://assets/tarrot/ÜRES GOMB.png" id="2_37xhk"]
 [ext_resource type="PackedScene" uid="uid://c1ca2saxdsdvq" path="res://assets/tarrot/the_sun_külön.blend" id="3_bsci0"]
 [ext_resource type="Texture2D" uid="uid://bxkpbo002y1re" path="res://assets/potion/wizard_icon_notification_02.png" id="3_t3gwp"]
 [ext_resource type="PackedScene" uid="uid://cshl60v00b23l" path="res://scenes/dialogue_manager.tscn" id="4_c7su6"]
@@ -39,6 +40,52 @@ environment = SubResource("Environment_67q4m")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1431497585]
 
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=1241267655]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 157.0
+offset_bottom = 226.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 500
+alignment = 1
+
+[node name="Good" type="TextureButton" parent="CanvasLayer/HBoxContainer" unique_id=2010577169]
+custom_maximum_size = Vector2(230, 55)
+layout_mode = 2
+texture_normal = ExtResource("2_37xhk")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/HBoxContainer/Good" unique_id=1032718830]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "fhjgfthjtjm"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Bad" type="TextureButton" parent="CanvasLayer/HBoxContainer" unique_id=1927064781]
+custom_maximum_size = Vector2(230, 55)
+layout_mode = 2
+texture_normal = ExtResource("2_37xhk")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/HBoxContainer/Bad" unique_id=1005241795]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "fhjgfthjtjm"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="TutorialButton" type="Button" parent="CanvasLayer" unique_id=1656893003]
 offset_left = 992.0
 offset_top = 5.0
@@ -61,18 +108,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_t3gwp")
 expand_mode = 1
-
-[node name="Good" type="Button" parent="CanvasLayer" unique_id=1547482361]
-offset_left = 172.0
-offset_top = 478.0
-offset_right = 299.0
-offset_bottom = 517.0
-
-[node name="Bad" type="Button" parent="CanvasLayer" unique_id=1964047992]
-offset_left = 874.0
-offset_top = 480.0
-offset_right = 1001.0
-offset_bottom = 519.0
 
 [node name="CupGood" parent="CanvasLayer" unique_id=515192348 instance=ExtResource("4_c7su6")]
 visible = false

@@ -202,7 +202,6 @@ func create_labels_for_item(text: String) -> Label:
 	label.add_theme_constant_override("outline_size", 8)
 	label.add_theme_constant_override("margin_left", 8)
 	label.add_theme_font_size_override("font_size", 20)
-	label.add_theme_color_override("font_color", Color("#000000"))
 	label.autowrap_mode = TextServer.AUTOWRAP_WORD
 	
 	return label
@@ -230,11 +229,11 @@ func item_choosed(id: int, name: String, atr1: int, atr2: int, atr3: int):
 	
 	set_and_write_values(atr1, atr2, atr3)
 	#progresBarSkull.value += atr1
-	countProgressBarResult(progresBarSkull, atr1, recipe[0].relation_1, recipe[0].target_number_1)
+	countProgressBarResult(progresBarSkull, atr1, recipe[0].relation_1, recipe[0].target_number_1, sum_red)
 	#progresBarStar.value += atr2
-	countProgressBarResult(progresBarStar, atr2, recipe[0].relation_2, recipe[0].target_number_2)
+	countProgressBarResult(progresBarStar, atr2, recipe[0].relation_2, recipe[0].target_number_2, sum_green)
 	#progresBarDiamond.value += atr3
-	countProgressBarResult(progresBarDiamond, atr3, recipe[0].relation_3, recipe[0].target_number_3)
+	countProgressBarResult(progresBarDiamond, atr3, recipe[0].relation_3, recipe[0].target_number_3, sum_blue)
 	
 	if item_place_1 and item_place_2 and item_place_3:
 		finishButton.visible = true
@@ -260,25 +259,20 @@ func finishButtonfunc(button: Button) -> void:
 	
 	button.icon = hover_icon if hovered else base_icon
 
-func countProgressBarResult(bar: TextureProgressBar, atr: int, relacio: String, target: int) -> void:
+func countProgressBarResult(bar: TextureProgressBar, atr: int, relacio: String, target: int, sum: int) -> void:
 	var tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT).set_parallel(true)
 	
-	if target > 0:
+	if target > 0 or target == 0 and relacio == '>':
 		tween.tween_property(bar, "value", bar.value + atr, 0.6)
-	elif target < 0:
-		tween.tween_property(bar, "value", bar.value + atr * -1, 0.6)
-	elif target == 0 and relacio == '>':
-		tween.tween_property(bar, "value", bar.value + atr, 0.6)
-	elif target == 0 and relacio == '<':
+	elif target < 0 or target == 0 and relacio == '<':
 		tween.tween_property(bar, "value", bar.value + atr * -1, 0.6)
 	else:
-		if bar.value > 2 and atr > 0:
-			tween.tween_property(bar, "value", bar.value + atr * -1, 0.6)
-		elif bar.value > 2 and atr < 0:
-			tween.tween_property(bar, "value", bar.value + atr, 0.6)
-		elif bar.value <= 2:
-			tween.tween_property(bar, "value", bar.value + atr * -1, 0.6)
-	
+		if sum == 0:
+			tween.tween_property(bar, "value", 2, 0.6)
+		elif sum == 1 or sum == -1:
+			tween.tween_property(bar, "value", 1, 0.6)
+		elif sum >= 2 or sum <= -2:
+			tween.tween_property(bar, "value", 0, 0.6)
 	
 func set_and_write_values(atr1: int, atr2: int, atr3: int) -> void:
 	sum_red = sum_red + atr1
@@ -314,7 +308,6 @@ func create_and_set_new_label(str_value: String, placeholder) -> void:
 	text_label.add_theme_color_override("font_outline_color", Color("f2d2d9"))
 	text_label.add_theme_constant_override("outline_size", 8)
 	text_label.add_theme_font_size_override("font_size", 35)
-	text_label.add_theme_color_override("font_color", Color("#000000"))
 	text_label.text = str_value
 	placeholder.add_child(text_label)
 	
@@ -349,7 +342,6 @@ func end_game(atr1: int, atr2: int, atr3: int) -> void:
 	label.add_theme_color_override("font_outline_color", Color("f2d2d9"))
 	label.add_theme_constant_override("outline_size", 8)
 	label.add_theme_font_size_override("font_size", 35)
-	label.add_theme_color_override("font_color", Color("#000000"))
 	result_point = result_point + mini_game_result(sum_red, recipe[0].relation_1, recipe[0].target_number_1)
 	result_point = result_point + mini_game_result(sum_green, recipe[0].relation_2, recipe[0].target_number_2)
 	result_point = result_point + mini_game_result(sum_blue, recipe[0].relation_3, recipe[0].target_number_3)

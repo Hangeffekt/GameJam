@@ -4,8 +4,10 @@ extends Node3D
 @onready var cardSun = $cardSun
 @onready var cardHermit = $cardHermit
 @onready var cardCups = $cardCups
-@onready var goodBtn: Button = $CanvasLayer/Good
-@onready var badBtn: Button = $CanvasLayer/Bad
+@onready var goodBtn: TextureButton = $CanvasLayer/HBoxContainer/Good
+@onready var badBtn: TextureButton = $CanvasLayer/HBoxContainer/Bad
+@onready var goodBtnLabel: Label = $CanvasLayer/HBoxContainer/Good/Label
+@onready var badBtnLabel: Label = $CanvasLayer/HBoxContainer/Bad/Label
 @export var target_x: float = 0.45
 @export var target_y: float = 0.415
 
@@ -40,12 +42,31 @@ func _ready() -> void:
 	cardHermit.input_ray_pickable = true
 	cardCups.input_ray_pickable = true
 	cardTop.input_ray_pickable = true
+	set_btn_text(goodBtnLabel)
+	set_btn_text(badBtnLabel)
 	goodBtn.visible = false
 	badBtn.visible = false
 	
 	goodBtn.pressed.connect(_on_good_pressed)
+	goodBtn.mouse_entered.connect(_on_mouse_enterd.bind(goodBtnLabel))
+	goodBtn.mouse_exited.connect(set_btn_text.bind(goodBtnLabel))
 	badBtn.pressed.connect(_on_bad_pressed)
+	badBtn.mouse_entered.connect(_on_mouse_enterd.bind(badBtnLabel))
+	badBtn.mouse_exited.connect(set_btn_text.bind(badBtnLabel))
 	tutorialScene.visible = false
+
+func set_btn_text(text_label: Label) -> void:
+	text_label.add_theme_font_override("font", load("res://assets/fonts/StoryScript-Regular.ttf"))
+	text_label.add_theme_color_override("font_color", Color("f2d2d9"))
+	text_label.add_theme_constant_override("outline_size", 0)
+	text_label.add_theme_font_size_override("font_size", 25)
+	
+func _on_mouse_enterd(text_label: Label) -> void:
+	text_label.add_theme_font_override("font", load("res://assets/fonts/StoryScript-Regular.ttf"))
+	text_label.add_theme_color_override("font_color", Color("0c0b16"))
+	text_label.add_theme_color_override("font_outline_color", Color("f2d2d9"))
+	text_label.add_theme_constant_override("outline_size", 8)
+	text_label.add_theme_font_size_override("font_size", 25)
 
 func move_card_to_coordinates() -> void:
 	
@@ -98,23 +119,23 @@ func flip_card(card: String) -> void:
 	if card == "sun":
 		tween.tween_property(cardSun, "rotation_degrees:y", 180.0, 0.6)
 		tween.tween_property(cardSun, "position:z", cardSun.position.z + 0.35, 1.0)
-		goodBtn.text = "TAROT_TITLE_SUN_G"
-		badBtn.text = "TAROT_TITLE_SUN_B"
+		goodBtnLabel.text = "TAROT_TITLE_SUN_G"
+		badBtnLabel.text = "TAROT_TITLE_SUN_B"
 		sun_is_rotated = false
 		
 	elif card == "hermit":
 		tween.tween_property(cardHermit, "rotation_degrees:y", 180, 0.6)
 		tween.parallel().tween_property(cardHermit, "position:z", cardHermit.position.z + 0.35, 1.0)
 		tween.parallel().tween_property(cardHermit, "position:y", cardHermit.position.y - 0.25, 1.0)
-		goodBtn.text = "TAROT_TITLE_HERMIT_G"
-		badBtn.text = "TAROT_TITLE_HERMIT_B"
+		goodBtnLabel.text = "TAROT_TITLE_HERMIT_G"
+		badBtnLabel.text = "TAROT_TITLE_HERMIT_B"
 		hermit_is_rotated = false
 		
 	elif card == "cups":
 		tween.tween_property(cardCups, "rotation_degrees:y", 180, 0.6)
 		tween.tween_property(cardCups, "position:z", cardCups.position.z + 0.35, 1.0)
-		goodBtn.text = "TAROT_TITLE_CUPS_G"
-		badBtn.text = "TAROT_TITLE_CUPS_B"
+		goodBtnLabel.text = "TAROT_TITLE_CUPS_G"
+		badBtnLabel.text = "TAROT_TITLE_CUPS_B"
 		cups_is_rotated = false
 	
 	global_card = card

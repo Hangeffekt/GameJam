@@ -242,5 +242,6 @@ func _on_phasesignal(index: int, phase: int) -> void:
 	print("Star ", index, " phase: ", phase)
 
 func _on_tutorial_button_pressed() -> void:
+	tutorialBtn.visible = false
 	tutorialScene.visible = true
 	tutorialScene.choose_tutorial(3)
