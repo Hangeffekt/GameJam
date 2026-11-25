@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bpxxs8yk27b40"]
 
 [ext_resource type="Script" uid="uid://bhbk2p4ehj6od" path="res://scripts/credits.gd" id="1_0bpdh"]
+[ext_resource type="FontFile" uid="uid://2b7gvcbx1e8e" path="res://assets/fonts/NotoSans-Italic-VariableFont_wdth,wght.ttf" id="2_0ctdu"]
 [ext_resource type="AudioStream" uid="uid://bpkbmny7somml" path="res://assets/ZENE/menu_zene_002.mp3" id="2_2ckv8"]
 
 [sub_resource type="Animation" id="Animation_yeqti"]
@@ -71,6 +72,7 @@ offset_bottom = 975.016
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.92156863, 0.8039216, 0.8352941, 1)
+theme_override_fonts/font = ExtResource("2_0ctdu")
 text = "A ‘New Moon’ 
 az Eszterházy Károly Katolikus Egyetem 8.GémDzsem pályázatára készült.
 

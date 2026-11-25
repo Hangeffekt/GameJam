@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://7en3j6hc7kc3" path="res://scenes/dev_debug_menu.tscn" id="1_nvx42"]
 [ext_resource type="Script" uid="uid://bn68fmntndp0b" path="res://scripts/outro.gd" id="1_r6h2c"]
+[ext_resource type="FontFile" uid="uid://2b7gvcbx1e8e" path="res://assets/fonts/NotoSans-Italic-VariableFont_wdth,wght.ttf" id="2_a6ogt"]
 
 [node name="Outro" type="Control" unique_id=735633593]
 layout_mode = 3
@@ -35,6 +36,7 @@ offset_bottom = 12.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.92156863, 0.8039216, 0.8352941, 1)
+theme_override_fonts/font = ExtResource("2_a6ogt")
 text = "ENDGAME_TY"
 
 [node name="Dev_debug_menu" parent="." unique_id=218198422 instance=ExtResource("1_nvx42")]

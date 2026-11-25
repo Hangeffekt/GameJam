@@ -369,7 +369,10 @@ func end_game(atr1: int, atr2: int, atr3: int) -> void:
 	var videoFileName = ""
 	match GlobalScript.language:
 		"hun":
-			videoFileName = "Potion_video_hun.mp4"
+			if GlobalScript.potiongrade == "Rossz":
+				videoFileName = "Potion_video_fail.mp4"
+			else:
+				videoFileName = "Potion_video_hun.mp4"
 		"eng":
 			videoFileName = "Potion_video_eng.mp4"
 	var baseDir = OS.get_executable_path().get_base_dir()

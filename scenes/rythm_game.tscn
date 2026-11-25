@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://dpy8dk57s8673" path="res://scenes/wave.tscn" id="4_uuflm"]
 [ext_resource type="PackedScene" uid="uid://mgw84bj5qnk4" path="res://scenes/star.tscn" id="5_4qhuu"]
 [ext_resource type="Texture2D" uid="uid://c72jlhpn016bf" path="res://assets/rythm_game/hitmarkers/GOOD.png" id="5_avwwa"]
-[ext_resource type="Texture2D" uid="uid://co7sokf1pc6fm" path="res://assets/placeholders/IMG_0848.jpeg" id="5_gko7c"]
 [ext_resource type="Texture2D" uid="uid://iv67j6lvd3ue" path="res://assets/rythm_game/hitmarkers/MISS.png" id="6_8qdn5"]
 [ext_resource type="Texture2D" uid="uid://del3al4177hn0" path="res://assets/rythm_game/csepp_normal.png" id="6_c8p3f"]
 [ext_resource type="PackedScene" uid="uid://7en3j6hc7kc3" path="res://scenes/dev_debug_menu.tscn" id="6_jgy0h"]
@@ -253,12 +252,6 @@ texture = ExtResource("2_868m3")
 position = Vector2(575.7918, 325.19534)
 scale = Vector2(0.5977866, 0.59778655)
 texture = ExtResource("2_jgy0h")
-
-[node name="placeholder_lupus" type="Sprite2D" parent="culdron" unique_id=814980982]
-modulate = Color(1, 1, 1, 0.289)
-position = Vector2(42.169174, -1.9996226)
-scale = Vector2(0.1827979, 0.18279795)
-texture = ExtResource("5_gko7c")
 
 [node name="dropplet_placeholderr" type="Sprite2D" parent="." unique_id=51806181]
 visible = false

@@ -1141,6 +1141,7 @@ offset_bottom = 655.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_67q4m")
 
 [node name="points" type="GridContainer" parent="." unique_id=785419252]
+visible = false
 offset_left = 21.0
 offset_top = 553.0
 offset_right = 766.0

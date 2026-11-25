@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://cv5hsgsl4ggkp"
-path="res://.godot/imported/StoryScript-Regular.ttf-97c145caedb03b0f9ffc76dde9263055.fontdata"
+uid="uid://2b7gvcbx1e8e"
+path="res://.godot/imported/NotoSans-Italic-VariableFont_wdth,wght.ttf-5c920ee795fb222e7123e9c273703b41.fontdata"
 
 [deps]
 
-source_file="res://assets/fonts/StoryScript-Regular.ttf"
-dest_files=["res://.godot/imported/StoryScript-Regular.ttf-97c145caedb03b0f9ffc76dde9263055.fontdata"]
+source_file="res://assets/fonts/NotoSans-Italic-VariableFont_wdth,wght.ttf"
+dest_files=["res://.godot/imported/NotoSans-Italic-VariableFont_wdth,wght.ttf-5c920ee795fb222e7123e9c273703b41.fontdata"]
 
 [params]
 

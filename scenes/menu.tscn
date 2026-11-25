@@ -24,7 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://br34u1ibvvvx4" path="res://assets/mainMenu/menu_base_no logo.png" id="18_lnf0i"]
 [ext_resource type="Shader" uid="uid://b8v5wpallxodv" path="res://Shaders/menuLogo.gdshader" id="19_x16fv"]
 [ext_resource type="Texture2D" uid="uid://c5aog7jsegyt" path="res://assets/mainMenu/logo 02_light.png" id="20_x16fv"]
-[ext_resource type="FontFile" uid="uid://cv5hsgsl4ggkp" path="res://assets/fonts/StoryScript-Regular.ttf" id="21_x16fv"]
+[ext_resource type="FontFile" uid="uid://2b7gvcbx1e8e" path="res://assets/fonts/NotoSans-Italic-VariableFont_wdth,wght.ttf" id="21_g54pe"]
 [ext_resource type="Texture2D" uid="uid://btjtc2advot2x" path="res://assets/mainMenu/buttons/vissza nyíl.png" id="23_x16fv"]
 [ext_resource type="AudioStream" uid="uid://bpkbmny7somml" path="res://assets/ZENE/menu_zene_002.mp3" id="26_g54pe"]
 
@@ -166,7 +166,7 @@ offset_bottom = -695.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0.92156863, 0.8039216, 0.8352941, 1)
-theme_override_fonts/font = ExtResource("21_x16fv")
+theme_override_fonts/font = ExtResource("21_g54pe")
 theme_override_font_sizes/font_size = 29
 text = "MENU_PRESS_MOUSE"
 horizontal_alignment = 1
@@ -246,6 +246,15 @@ offset_bottom = 324.0
 grow_horizontal = 0
 grow_vertical = 2
 
+[node name="ColorRect" type="ColorRect" parent="OptionsBackground" unique_id=1226009455]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.025840001, 0.025840001, 0.09320182, 0.5)
+
 [node name="OptionsText" type="Label" parent="OptionsBackground" unique_id=2146632078]
 layout_mode = 1
 anchors_preset = 5
@@ -257,7 +266,7 @@ offset_right = 99.0
 offset_bottom = 66.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.92156863, 0.8039216, 0.8352941, 1)
-theme_override_fonts/font = ExtResource("21_x16fv")
+theme_override_fonts/font = ExtResource("21_g54pe")
 text = "MENU_BUTTON_OPTIONS"
 horizontal_alignment = 1
 
@@ -295,13 +304,13 @@ layout_mode = 2
 [node name="Hun_button" type="Button" parent="OptionsBackground/Setting_VBoxContainer/Language_HBoxContainer" unique_id=1299889416]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.92156863, 0.8039216, 0.8352941, 1)
-theme_override_fonts/font = ExtResource("21_x16fv")
+theme_override_fonts/font = ExtResource("21_g54pe")
 text = "Hun"
 
 [node name="Eng_button" type="Button" parent="OptionsBackground/Setting_VBoxContainer/Language_HBoxContainer" unique_id=362882908]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.92156863, 0.8039216, 0.8352941, 1)
-theme_override_fonts/font = ExtResource("21_x16fv")
+theme_override_fonts/font = ExtResource("21_g54pe")
 text = "Eng"
 
 [node name="Music_Slider" type="HSlider" parent="OptionsBackground/Setting_VBoxContainer" unique_id=793611312]
@@ -339,7 +348,7 @@ theme_override_constants/separation = 25
 layout_mode = 2
 size_flags_horizontal = 8
 theme_override_colors/font_color = Color(0.92156863, 0.8039216, 0.8352941, 1)
-theme_override_fonts/font = ExtResource("21_x16fv")
+theme_override_fonts/font = ExtResource("21_g54pe")
 text = "TEXT_LANGUAGE"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -348,7 +357,7 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 8
 theme_override_colors/font_color = Color(0.92156863, 0.8039216, 0.8352941, 1)
-theme_override_fonts/font = ExtResource("21_x16fv")
+theme_override_fonts/font = ExtResource("21_g54pe")
 text = "TEXT_MUSIC"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -357,7 +366,7 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 8
 theme_override_colors/font_color = Color(0.92156863, 0.8039216, 0.8352941, 1)
-theme_override_fonts/font = ExtResource("21_x16fv")
+theme_override_fonts/font = ExtResource("21_g54pe")
 text = "TEXT_SFX"
 horizontal_alignment = 1
 vertical_alignment = 1

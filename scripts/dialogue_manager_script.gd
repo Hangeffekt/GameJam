@@ -1,9 +1,10 @@
 extends CanvasLayer
 
-@onready var color_rect_2: ColorRect = $DialogueBox/ColorRect2
+@onready var box: Sprite2D = $DialogueBox/Box
 @onready var dialogue_box: Control = $DialogueBox
 @onready var dialogue_text: RichTextLabel = $DialogueBox/dialogueText
-@onready var name_text: Label = $DialogueBox/ColorRect2/nameText
+@onready var namebox: Sprite2D = $DialogueBox/Namebox
+@onready var name_text: Label = $DialogueBox/Namebox/nameText
 @onready var portrait: TextureRect = $Portrait
 @onready var tutorialportrait: TextureRect = $TutorialPortrait
 signal dialogue_finished
@@ -120,8 +121,8 @@ func start_dialogue(lines: Array[String], CHARname: Array[String], color: Array[
 func updateLine():
 	#ha a narrátor beszél akkor nem kell név doboz
 	if characters_name[current_line_index] == "":
-		color_rect_2.visible = false
-	else: color_rect_2.visible = true
+		namebox.visible = false
+	else: namebox.visible = true
 	
 	#felmerült egy hiba a typewriter funkcióban.
 	#A char_count nem a fordított szöveg hosszát kapta meg,

@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://btp5ofkfadkv5" path="res://assets/tutorial wizard/wizard_pointing.png" id="13_j14q8"]
 [ext_resource type="Texture2D" uid="uid://c1mavjw8hcf3y" path="res://assets/shop/characters/cerberus.png" id="15_gobkm"]
 [ext_resource type="Texture2D" uid="uid://dv2vlbln8njsx" path="res://assets/shop/characters/CroppedRadomir.png" id="16_pqync"]
+[ext_resource type="AudioStream" uid="uid://7msanu4w45lh" path="res://assets/ZENE/main music_001.mp3" id="18_pqync"]
 
 [node name="Node2D" type="CanvasLayer" unique_id=1181666746]
 script = ExtResource("1_032fp")
@@ -40,6 +41,7 @@ texture = ExtResource("3_ajxib")
 [node name="Dev_debug_menu" parent="." unique_id=218198422 instance=ExtResource("8_y6sft")]
 
 [node name="Wizard_DialogueManager" parent="." unique_id=515192348 instance=ExtResource("5_y6sft")]
+layer = 2
 visible = false
 text_key = Array[String](["S0_INTRO_7", "S0_INTRO_8", "S0_INTRO_9", "S0_INTRO_10", "S0_INTRO_11", "S0_INTRO_12", "S0_INTRO_13", "S0_INTRO_14", "S0_INTRO_15", "S0_INTRO_16", "S0_INTRO_17"])
 characters_name = Array[String](["", "", "", "CHAR_NAME_TUTORWIZARD", "CHAR_NAME_PLAYER", "CHAR_NAME_TUTORWIZARD", "CHAR_NAME_TUTORWIZARD", "CHAR_NAME_TUTORWIZARD", "CHAR_NAME_TUTORWIZARD", "CHAR_NAME_PLAYER", "CHAR_NAME_TUTORWIZARD"])
@@ -133,3 +135,10 @@ text_key = Array[String](["DAY_END"])
 characters_name = Array[String]([""])
 textcolor = Array[Color]([Color(1, 1, 1, 1)])
 Portraits = Array[Texture2D]([null])
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1658363060]
+process_mode = 3
+stream = ExtResource("18_pqync")
+autoplay = true
+bus = &"Music"
+parameters/looping = true
