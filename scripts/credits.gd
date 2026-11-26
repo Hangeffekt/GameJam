@@ -1,5 +1,5 @@
 extends Control
-@onready var animation_player: AnimationPlayer = $Label/AnimationPlayer
+@onready var animation_player: AnimationPlayer = $RichTextLabel/AnimationPlayer
 
 func _ready() -> void:
 	await animation_player.animation_finished

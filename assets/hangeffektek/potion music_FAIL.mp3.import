@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cdari1c6pkua1"
+path="res://.godot/imported/potion music_FAIL.mp3-39d34c55ff04fe1b0c5bd027eccd8032.mp3str"
+
+[deps]
+
+source_file="res://assets/hangeffektek/potion music_FAIL.mp3"
+dest_files=["res://.godot/imported/potion music_FAIL.mp3-39d34c55ff04fe1b0c5bd027eccd8032.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

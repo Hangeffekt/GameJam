@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dqv5g2tq6wcw4"
+path="res://.godot/imported/tarot kártya_02.mp3-2c9d954a17cffed92925bc0dbd056185.mp3str"
+
+[deps]
+
+source_file="res://assets/hangeffektek/tarot kártya_02.mp3"
+dest_files=["res://.godot/imported/tarot kártya_02.mp3-2c9d954a17cffed92925bc0dbd056185.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dxn3o6k7i7ja7"
+path="res://.godot/imported/potion music_GOOD.mp3-ea3a0a46e93d33023735a7add07191ac.mp3str"
+
+[deps]
+
+source_file="res://assets/hangeffektek/potion music_GOOD.mp3"
+dest_files=["res://.godot/imported/potion music_GOOD.mp3-ea3a0a46e93d33023735a7add07191ac.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

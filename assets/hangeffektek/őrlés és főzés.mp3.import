@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dcvcdp66kqhqs"
+path="res://.godot/imported/őrlés és főzés.mp3-2297bbd7f1e94834409f1ba6a8baf0ad.mp3str"
+
+[deps]
+
+source_file="res://assets/hangeffektek/őrlés és főzés.mp3"
+dest_files=["res://.godot/imported/őrlés és főzés.mp3-2297bbd7f1e94834409f1ba6a8baf0ad.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

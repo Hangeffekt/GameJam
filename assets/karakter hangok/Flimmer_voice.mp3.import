@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://kont7f7m1k11"
+path="res://.godot/imported/Flimmer_voice.mp3-10c1ba0718ed9069a74afd64c99c4cd1.mp3str"
+
+[deps]
+
+source_file="res://assets/karakter hangok/Flimmer_voice.mp3"
+dest_files=["res://.godot/imported/Flimmer_voice.mp3-10c1ba0718ed9069a74afd64c99c4cd1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

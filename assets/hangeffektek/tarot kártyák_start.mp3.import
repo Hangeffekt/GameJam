@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cpgsn3cny4wqk"
+path="res://.godot/imported/tarot kártyák_start.mp3-641ecad7d82f9d23cb6c5322bcdd5531.mp3str"
+
+[deps]
+
+source_file="res://assets/hangeffektek/tarot kártyák_start.mp3"
+dest_files=["res://.godot/imported/tarot kártyák_start.mp3-641ecad7d82f9d23cb6c5322bcdd5531.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

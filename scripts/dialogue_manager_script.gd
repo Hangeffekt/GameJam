@@ -4,7 +4,7 @@ extends CanvasLayer
 @onready var dialogue_box: Control = $DialogueBox
 @onready var dialogue_text: RichTextLabel = $DialogueBox/dialogueText
 @onready var namebox: Sprite2D = $DialogueBox/Namebox
-@onready var name_text: Label = $DialogueBox/Namebox/nameText
+@onready var name_text: RichTextLabel = $DialogueBox/Namebox/NameText
 @onready var portrait: TextureRect = $Portrait
 @onready var tutorialportrait: TextureRect = $TutorialPortrait
 signal dialogue_finished
@@ -16,6 +16,21 @@ var isTutorial: bool = false
 @export var textcolor: Array[Color] = []
 @export var Portraits: Array[Texture2D] = []
 @export var TutorialScreens: Array[Texture2D] = []
+
+##Karakterhangok
+@export var voice_indices: Array[int] = []
+@export var voice_sound: AudioStream
+@export_range(0.0, 0.5, 0.01) var voice_pitch_variation: float = 0.08
+@export var voice_volume_db: float = -6.0
+@export var voice_bus: StringName = &"SFX"
+@export_range(1, 16, 1) var voice_player_pool_size: int = 4
+@export var voice_enabled: bool = true
+
+var _voice_players: Array[AudioStreamPlayer] = []
+var _voice_player_index: int = 0
+var _last_blip_visible: int = -1
+var _cached_parsed_text: String = ""
+var _voice_active_this_line: bool = false
 
 #miért nem egy dictionary vagy többdimenziód tömb?
 #ötlet 1: csak a szöveget tárolom. annak elég egy tömb... de jó lenne neveket is tárolni
@@ -53,7 +68,27 @@ func _ready() -> void:
 	TranslationServer.set_locale(GlobalScript.language)
 	dialogue_box.visible = false
 	Capture_portrait_home.call_deferred()
-	
+	_build_voice_pool()
+
+func _build_voice_pool() -> void:
+	_voice_players.clear()
+	for i in voice_player_pool_size:
+		var p := AudioStreamPlayer.new()
+		p.bus = voice_bus
+		p.volume_db = voice_volume_db
+		add_child(p)
+		_voice_players.append(p)
+
+func play_blip() -> void:
+	if not voice_enabled or voice_sound == null or _voice_players.is_empty():
+		return
+	var p := _voice_players[_voice_player_index]
+	_voice_player_index = (_voice_player_index + 1) % _voice_players.size()
+	p.stream = voice_sound
+	p.pitch_scale = 1.0 + randf_range(-voice_pitch_variation, voice_pitch_variation)
+	p.volume_db = voice_volume_db
+	p.play()
+
 func Capture_portrait_home() -> void:
 	await get_tree().process_frame
 	PortraitHomePos = portrait.position
@@ -128,7 +163,7 @@ func updateLine():
 	#A char_count nem a fordított szöveg hosszát kapta meg,
 	#hanem a localization kulcs nevének hosszát, ezt a tr() metódussal lehetett megoldani
 	dialogue_text.text = tr(dialogue_lines[current_line_index])
-	name_text.text = tr(characters_name[current_line_index])
+	name_text.text = "[b][i]" + tr(characters_name[current_line_index]) + "[/i][/b]"
 	dialogue_text.self_modulate = textcolor[current_line_index]
 	
 	if current_line_index < Portraits.size() and Portraits[current_line_index]:
@@ -199,14 +234,29 @@ func typeWriterEffect():
 		tween.kill()
 		
 	dialogue_text.visible_characters = 0
+	_last_blip_visible = -1
+	_cached_parsed_text = dialogue_text.get_parsed_text()
+	_voice_active_this_line = current_line_index in voice_indices
 	
 	var char_count: int = dialogue_text.text.length()
-	#print(char_count)
 	var realTime: float = char_count * time_per_char
 	
 	tween = create_tween()
 	tween.set_trans(Tween.TRANS_LINEAR)
-	tween.tween_property(dialogue_text, "visible_characters", char_count, realTime)
+	tween.tween_method(_on_typewriter_step, 0.0, float(char_count), realTime)
+
+func _on_typewriter_step(value: float) -> void:
+	var v: int = int(value)
+	
+	if v != _last_blip_visible:
+		if v > _last_blip_visible and v > 0 and _voice_active_this_line:
+			var idx := v - 1
+			if idx < _cached_parsed_text.length():
+				var ch := _cached_parsed_text[idx]
+				if ch != " " and ch != "\n" and ch != "\t" and ch != "\r":
+					play_blip()
+		_last_blip_visible = v
+	dialogue_text.visible_characters = v
 
 func skipTyping():
 	if tween and tween.is_valid():

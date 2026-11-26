@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://bpxxs8yk27b40"]
 
 [ext_resource type="Script" uid="uid://bhbk2p4ehj6od" path="res://scripts/credits.gd" id="1_0bpdh"]
-[ext_resource type="FontFile" uid="uid://2b7gvcbx1e8e" path="res://assets/fonts/NotoSans-Italic-VariableFont_wdth,wght.ttf" id="2_0ctdu"]
 [ext_resource type="AudioStream" uid="uid://bpkbmny7somml" path="res://assets/ZENE/menu_zene_002.mp3" id="2_2ckv8"]
 
 [sub_resource type="Animation" id="Animation_yeqti"]
@@ -19,7 +18,7 @@ tracks/0/keys = {
 "values": [Vector2(245, 665)]
 }
 
-[sub_resource type="Animation" id="Animation_0bpdh"]
+[sub_resource type="Animation" id="Animation_2ckv8"]
 resource_name = "start"
 length = 25.0
 tracks/0/type = "value"
@@ -32,13 +31,13 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 25),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(245, 665), Vector2(245, -1276)]
+"values": [Vector2(1, 649), Vector2(1, -1106)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2ckv8"]
 _data = {
 &"RESET": SubResource("Animation_yeqti"),
-&"start": SubResource("Animation_0bpdh")
+&"start": SubResource("Animation_2ckv8")
 }
 
 [node name="Credits" type="Control" unique_id=947903565]
@@ -59,72 +58,70 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.019607844, 0.019607844, 0.09019608, 1)
 
-[node name="Label" type="Label" parent="." unique_id=601759169]
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=2132234026]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 1.483
-offset_left = -331.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 245.0
 offset_top = 665.0
-offset_right = 331.0
-offset_bottom = 975.016
+offset_right = 245.0
+offset_bottom = 1144.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.92156863, 0.8039216, 0.8352941, 1)
-theme_override_fonts/font = ExtResource("2_0ctdu")
+bbcode_enabled = true
 text = "A ‘New Moon’ 
 az Eszterházy Károly Katolikus Egyetem 8.GémDzsem pályázatára készült.
 
 
  
-Köszönjük, hogy kipróbáltad a játékot! :))
+[wave]Köszönjük, hogy kipróbáltad a játékot! :))[/wave]
 
+ 
 
+[b]Grafikusok[/b]
 
-Grafikusok
-
-Derecskei Anna
+[b]Derecskei Anna[/b]
 Karakter design - Clawdia
 Item design
 
-Kraszkó Bulcsú
+[b]Kraszkó Bulcsú[/b]
 Karakter design - Kerberosz, Flimmer
 Főzet készítés
 Holdtál minigame
 3D animáció
 
-Bodolai Luca
+[b]Bodolai Luca[/b]
 Karakter design - Radomir
 Író
 Tarot 
 
 
 
-Programozók
+[b]Programozók[/b]
 
-Nagy Lóránt
+[b]Nagy Lóránt[/b]
 Tutorial
 Főzet készítés
 Tarot
 
 
-Sólyom Tas Etele
+[b]Sólyom Tas Etele[/b]
 Main menü
-Ritmus minigame
+Holdtál minigame
 Dialógus megjelenítése
 Lokalizáció
 
 
 
-Harmadik féltől származó assetek
+[b]Harmadik féltől származó assetek[/b]
 
 Native Video v0.4.1 - Clay Tercek
 
 "
 horizontal_alignment = 1
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Label" unique_id=908714930]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="RichTextLabel" unique_id=908714930]
 libraries/ = SubResource("AnimationLibrary_2ckv8")
 autoplay = &"start"
 

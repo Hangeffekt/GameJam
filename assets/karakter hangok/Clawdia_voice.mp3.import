@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ee4lcuoalrkt"
+path="res://.godot/imported/Clawdia_voice.mp3-a68317b89b489f67fb1640a0752d40d0.mp3str"
+
+[deps]
+
+source_file="res://assets/karakter hangok/Clawdia_voice.mp3"
+dest_files=["res://.godot/imported/Clawdia_voice.mp3-a68317b89b489f67fb1640a0752d40d0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -22,7 +22,10 @@
 [ext_resource type="Texture2D" uid="uid://bi4sx8nv0vdb8" path="res://assets/mainMenu/buttons/kilépés_hover.png" id="16_d3h35"]
 [ext_resource type="Texture2D" uid="uid://cejvk28f2teeu" path="res://assets/mainMenu/buttons/exit_hover.png" id="17_v8lyk"]
 [ext_resource type="Texture2D" uid="uid://br34u1ibvvvx4" path="res://assets/mainMenu/menu_base_no logo.png" id="18_lnf0i"]
+[ext_resource type="AudioStream" uid="uid://cymraagmg8132" path="res://assets/hangeffektek/click to start.mp3" id="18_vhsb5"]
+[ext_resource type="AudioStream" uid="uid://bkoek2wobv03o" path="res://assets/hangeffektek/menu gomb.mp3" id="19_hwfsl"]
 [ext_resource type="Shader" uid="uid://b8v5wpallxodv" path="res://Shaders/menuLogo.gdshader" id="19_x16fv"]
+[ext_resource type="AudioStream" uid="uid://bvrywfbqxr1wp" path="res://assets/hangeffektek/kilépés.mp3" id="20_hwfsl"]
 [ext_resource type="Texture2D" uid="uid://c5aog7jsegyt" path="res://assets/mainMenu/logo 02_light.png" id="20_x16fv"]
 [ext_resource type="FontFile" uid="uid://2b7gvcbx1e8e" path="res://assets/fonts/NotoSans-Italic-VariableFont_wdth,wght.ttf" id="21_g54pe"]
 [ext_resource type="Texture2D" uid="uid://btjtc2advot2x" path="res://assets/mainMenu/buttons/vissza nyíl.png" id="23_x16fv"]
@@ -137,6 +140,9 @@ ExitButtonBaseHun = ExtResource("14_0qewb")
 ExitButtonBaseEng = ExtResource("15_mhjd8")
 ExitButtonHoverHun = ExtResource("16_d3h35")
 ExitButtonHoverEng = ExtResource("17_v8lyk")
+sfxMenu = ExtResource("18_vhsb5")
+sfxButton = ExtResource("19_hwfsl")
+sfxButtonexit = ExtResource("20_hwfsl")
 
 [node name="bovitettmenubackgrng" type="Panel" parent="." unique_id=412064242]
 layout_mode = 0
@@ -152,23 +158,20 @@ position = Vector2(576, -369)
 scale = Vector2(0.235, 0.235)
 texture = ExtResource("20_x16fv")
 
-[node name="Press mouse text" type="Label" parent="." unique_id=569805097]
+[node name="pressMouseText" type="RichTextLabel" parent="." unique_id=1037284747]
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -100.0
-offset_top = -733.0
-offset_right = 129.0
-offset_bottom = -695.0
+offset_left = -245.0
+offset_top = -98.0
+offset_right = 262.0
+offset_bottom = -58.0
 grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(0.92156863, 0.8039216, 0.8352941, 1)
-theme_override_fonts/font = ExtResource("21_g54pe")
-theme_override_font_sizes/font_size = 29
-text = "MENU_PRESS_MOUSE"
+theme_override_fonts/normal_font = ExtResource("21_g54pe")
+theme_override_font_sizes/normal_font_size = 23
+bbcode_enabled = true
+text = "[wave] MENU_PRESS_MOUSE [/wave]"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -265,7 +268,6 @@ offset_top = 43.0
 offset_right = 99.0
 offset_bottom = 66.0
 grow_horizontal = 2
-theme_override_colors/font_color = Color(0.92156863, 0.8039216, 0.8352941, 1)
 theme_override_fonts/font = ExtResource("21_g54pe")
 text = "MENU_BUTTON_OPTIONS"
 horizontal_alignment = 1
@@ -303,13 +305,11 @@ layout_mode = 2
 
 [node name="Hun_button" type="Button" parent="OptionsBackground/Setting_VBoxContainer/Language_HBoxContainer" unique_id=1299889416]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.92156863, 0.8039216, 0.8352941, 1)
 theme_override_fonts/font = ExtResource("21_g54pe")
 text = "Hun"
 
 [node name="Eng_button" type="Button" parent="OptionsBackground/Setting_VBoxContainer/Language_HBoxContainer" unique_id=362882908]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.92156863, 0.8039216, 0.8352941, 1)
 theme_override_fonts/font = ExtResource("21_g54pe")
 text = "Eng"
 
@@ -347,7 +347,6 @@ theme_override_constants/separation = 25
 [node name="Language_text" type="Label" parent="OptionsBackground/text_VBoxContainer" unique_id=216446200]
 layout_mode = 2
 size_flags_horizontal = 8
-theme_override_colors/font_color = Color(0.92156863, 0.8039216, 0.8352941, 1)
 theme_override_fonts/font = ExtResource("21_g54pe")
 text = "TEXT_LANGUAGE"
 horizontal_alignment = 1
@@ -356,7 +355,6 @@ vertical_alignment = 1
 [node name="MusicText" type="Label" parent="OptionsBackground/text_VBoxContainer" unique_id=390023182]
 layout_mode = 2
 size_flags_horizontal = 8
-theme_override_colors/font_color = Color(0.92156863, 0.8039216, 0.8352941, 1)
 theme_override_fonts/font = ExtResource("21_g54pe")
 text = "TEXT_MUSIC"
 horizontal_alignment = 1
@@ -365,7 +363,6 @@ vertical_alignment = 1
 [node name="SFXText" type="Label" parent="OptionsBackground/text_VBoxContainer" unique_id=900391258]
 layout_mode = 2
 size_flags_horizontal = 8
-theme_override_colors/font_color = Color(0.92156863, 0.8039216, 0.8352941, 1)
 theme_override_fonts/font = ExtResource("21_g54pe")
 text = "TEXT_SFX"
 horizontal_alignment = 1

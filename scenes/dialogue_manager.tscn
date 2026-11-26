@@ -1,13 +1,9 @@
 [gd_scene format=3 uid="uid://cshl60v00b23l"]
 
 [ext_resource type="Script" uid="uid://byxwcael5jsg7" path="res://scripts/dialogue_manager_script.gd" id="1_jbixp"]
-[ext_resource type="Texture2D" uid="uid://ccekbd6vwvyc0" path="res://assets/dialoguebox/DialogueBoxcropped.png" id="2_61474"]
+[ext_resource type="Texture2D" uid="uid://cirnh2dsf4cml" path="res://assets/dialoguebox/DialogueBoxcropped.png" id="2_61474"]
 [ext_resource type="FontFile" uid="uid://2b7gvcbx1e8e" path="res://assets/fonts/NotoSans-Italic-VariableFont_wdth,wght.ttf" id="3_5hf3l"]
-[ext_resource type="Texture2D" uid="uid://c0g4si07s5586" path="res://assets/dialoguebox/DialogueNameBox.png" id="4_5hf3l"]
-[ext_resource type="FontFile" uid="uid://beyipdeykpo5i" path="res://assets/fonts/NotoSans-VariableFont_wdth,wght.ttf" id="5_507jh"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_jbixp"]
-font_size = 35
+[ext_resource type="Texture2D" uid="uid://75llwohj46ln" path="res://assets/dialoguebox/DialogueNameBox.png" id="4_5hf3l"]
 
 [node name="DialogueManager" type="CanvasLayer" unique_id=515192348]
 process_mode = 3
@@ -57,19 +53,21 @@ grow_vertical = 0
 mouse_filter = 2
 
 [node name="Box" type="Sprite2D" parent="DialogueBox" unique_id=445211639]
-position = Vector2(573, -26)
+position = Vector2(573, 57)
 scale = Vector2(0.52, 0.52)
 texture = ExtResource("2_61474")
 
 [node name="dialogueText" type="RichTextLabel" parent="DialogueBox" unique_id=86517111]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.086
-anchor_top = -0.045
+anchor_left = 0.095000006
+anchor_top = 0.035
 anchor_right = 0.90900004
-anchor_bottom = 0.845
-offset_left = -0.072006226
-offset_right = -0.16809082
+anchor_bottom = 0.88000005
+offset_left = 1.5599899
+offset_top = -12.0
+offset_right = -10.168091
+offset_bottom = 12.999985
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/normal_font = ExtResource("3_5hf3l")
@@ -79,27 +77,28 @@ theme_override_font_sizes/bold_italics_font_size = 29
 theme_override_font_sizes/italics_font_size = 29
 theme_override_font_sizes/mono_font_size = 29
 text = "test text"
+scroll_active = false
 visible_characters_behavior = 1
 
 [node name="Namebox" type="Sprite2D" parent="DialogueBox" unique_id=1892569470]
-position = Vector2(573, -26)
+position = Vector2(573, 57)
 scale = Vector2(0.52, 0.52)
 texture = ExtResource("4_5hf3l")
 
-[node name="nameText" type="Label" parent="DialogueBox/Namebox" unique_id=1065804556]
-anchors_preset = -1
-anchor_left = 0.087000005
-anchor_top = 0.402
-anchor_right = 0.36100003
-anchor_bottom = 0.48600003
-offset_left = -963.194
-offset_top = -539.9292
-offset_right = -958.5047
-offset_bottom = -528.7262
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("5_507jh")
-text = "test text"
-label_settings = SubResource("LabelSettings_jbixp")
+[node name="NameText" type="RichTextLabel" parent="DialogueBox/Namebox" unique_id=1070762355]
+offset_left = -794.2308
+offset_top = -271.15387
+offset_right = -267.30768
+offset_bottom = -150.0
+theme_override_fonts/normal_font = ExtResource("3_5hf3l")
+theme_override_font_sizes/normal_font_size = 80
+theme_override_font_sizes/bold_font_size = 80
+theme_override_font_sizes/bold_italics_font_size = 80
+theme_override_font_sizes/italics_font_size = 80
+theme_override_font_sizes/mono_font_size = 80
+bbcode_enabled = true
+text = "test text
+"
+scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1

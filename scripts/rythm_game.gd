@@ -15,6 +15,11 @@ extends Node2D
 
 @export var music1: AudioStreamMP3
 @export var music2: AudioStreamMP3
+@onready var sfx: AudioStreamPlayer = $SFX
+
+@export var SFXPerfect: AudioStreamMP3
+@export var SFXGood: AudioStreamMP3
+@export var SFXBad: AudioStreamMP3
 
 #egy ritmus játéknál ahol a zenei visszajelzés is fontos, a lehető legpontosabbnak kell lenni idő szerint. ezért a csepp logikáját is meg kell változtatnom :") 
 #bpm nem @export mert ha kint változtatom az értékét akkor a számított érték itt nem fog változni elvileg, hacsak nem írok egy settert. 
@@ -81,8 +86,11 @@ func _input(event: InputEvent) -> void:
 	var absoluteDiff:float = abs(diff) 
 	
 	if absoluteDiff <= perfect_window:
-		#wave.visible = false
-		HitText(texture_perferct_eng)
+		sfx.stream = SFXPerfect
+		sfx.play()
+		if GlobalScript.language == "hun":
+			HitText(texture_perferct_hun)
+		else: HitText(texture_perferct_eng)
 		pontszerzes(2)
 	
 		particles.position = mouse_pos
@@ -90,16 +98,22 @@ func _input(event: InputEvent) -> void:
 		perfect_hullam_effect.play("run") 
 	
 	elif absoluteDiff <= good_window:
-		#wave.visible = false
-		HitText(texture_good_eng)
+		sfx.stream = SFXGood
+		sfx.play()
+		if GlobalScript.language == "hun":
+			HitText(texture_good_hun)
+		else: HitText(texture_good_eng)
 		pontszerzes(1)
 		
 		particles.position = mouse_pos
 		particles.play("run")
 	
 	else:
-		#wave.visible = false
-		HitText(texture_miss_eng)
+		sfx.stream = SFXBad
+		sfx.play()
+		if GlobalScript.language == "hun":
+			HitText(texture_miss_hun)
+		else: HitText(texture_miss_eng)
 		camera_shake(10.0, 0.5)
 		
 	wave.visible = false

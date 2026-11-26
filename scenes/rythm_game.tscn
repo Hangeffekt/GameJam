@@ -5,12 +5,15 @@
 [ext_resource type="Texture2D" uid="uid://bimbgqtnn6rlq" path="res://assets/rythm_game/constellation_bowl.png" id="2_jgy0h"]
 [ext_resource type="Texture2D" uid="uid://cjy7c4jmmn876" path="res://assets/rythm_game/csepp_alt.png" id="3_eacpd"]
 [ext_resource type="Texture2D" uid="uid://dnwj0tompnur4" path="res://assets/rythm_game/hitmarkers/PERFECT.png" id="4_38vb1"]
+[ext_resource type="AudioStream" uid="uid://cyqaesn86yc1g" path="res://assets/hangeffektek/holdtál_PERFECT.mp3" id="4_q72qw"]
 [ext_resource type="PackedScene" uid="uid://dpy8dk57s8673" path="res://scenes/wave.tscn" id="4_uuflm"]
 [ext_resource type="PackedScene" uid="uid://mgw84bj5qnk4" path="res://scenes/star.tscn" id="5_4qhuu"]
 [ext_resource type="Texture2D" uid="uid://c72jlhpn016bf" path="res://assets/rythm_game/hitmarkers/GOOD.png" id="5_avwwa"]
+[ext_resource type="AudioStream" uid="uid://cxem01630dicc" path="res://assets/hangeffektek/holdtál_GOOD.mp3" id="5_nfk1n"]
 [ext_resource type="Texture2D" uid="uid://iv67j6lvd3ue" path="res://assets/rythm_game/hitmarkers/MISS.png" id="6_8qdn5"]
 [ext_resource type="Texture2D" uid="uid://del3al4177hn0" path="res://assets/rythm_game/csepp_normal.png" id="6_c8p3f"]
 [ext_resource type="PackedScene" uid="uid://7en3j6hc7kc3" path="res://scenes/dev_debug_menu.tscn" id="6_jgy0h"]
+[ext_resource type="AudioStream" uid="uid://y7prdwuneyh1" path="res://assets/hangeffektek/holdtál_MISS.mp3" id="6_usak7"]
 [ext_resource type="Texture2D" uid="uid://b11a81uuag0u3" path="res://assets/rythm_game/hitmarkers/TÖKÉLETES.png" id="7_q72qw"]
 [ext_resource type="Texture2D" uid="uid://b0bgpxyx61v88" path="res://assets/rythm_game/hitmarkers/JÓ.png" id="8_nfk1n"]
 [ext_resource type="Texture2D" uid="uid://05turbg0jeuh" path="res://assets/rythm_game/hitmarkers/ROSSZ.png" id="9_usak7"]
@@ -19,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://bqog7piaxqlsc" path="res://scenes/tutorial.tscn" id="11_c8p3f"]
 [ext_resource type="Texture2D" uid="uid://bgm1gn2sewiph" path="res://assets/rythm_game/hpldtal_ui_progress_bar_over.png" id="11_ohs8n"]
 [ext_resource type="Texture2D" uid="uid://cal60xhkqr2sr" path="res://assets/rythm_game/hpldtal_ui_progress_bar_progress.png" id="12_jfaf1"]
+[ext_resource type="Texture2D" uid="uid://c71x86nqub1jv" path="res://assets/rythm_game/Constellation_new_scorpio.PNG" id="15_38vb1"]
 [ext_resource type="Texture2D" uid="uid://boisfvvueokcg" path="res://assets/rythm_game/action lines/holdtal_visszajelzes_vonalak0002.png" id="17_cv5sy"]
 [ext_resource type="Texture2D" uid="uid://dbalh070rqkxk" path="res://assets/rythm_game/action lines/holdtal_visszajelzes_vonalak0003.png" id="18_5q2jr"]
 [ext_resource type="Texture2D" uid="uid://5lcc5lp1jovh" path="res://assets/rythm_game/action lines/holdtal_visszajelzes_vonalak0004.png" id="19_byp0e"]
@@ -225,6 +229,9 @@ animations = [{
 script = ExtResource("1_hidhp")
 music1 = ExtResource("32_8cpu0")
 music2 = ExtResource("33_38vb1")
+SFXPerfect = ExtResource("4_q72qw")
+SFXGood = ExtResource("5_nfk1n")
+SFXBad = ExtResource("6_usak7")
 normalTexture = ExtResource("6_c8p3f")
 alternateTexture = ExtResource("3_eacpd")
 texture_perferct_eng = ExtResource("4_38vb1")
@@ -252,6 +259,11 @@ texture = ExtResource("2_868m3")
 position = Vector2(575.7918, 325.19534)
 scale = Vector2(0.5977866, 0.59778655)
 texture = ExtResource("2_jgy0h")
+
+[node name="CauldronBackground" type="Sprite2D" parent="." unique_id=1710109915]
+position = Vector2(594.5, 324)
+scale = Vector2(0.31927085, 0.31666666)
+texture = ExtResource("15_38vb1")
 
 [node name="dropplet_placeholderr" type="Sprite2D" parent="." unique_id=51806181]
 visible = false
@@ -285,42 +297,42 @@ animation = &"idle"
 [node name="stars_collection" type="Node2D" parent="." unique_id=283514124]
 
 [node name="star" parent="stars_collection" unique_id=366075080 instance=ExtResource("5_4qhuu")]
-position = Vector2(510, 247)
+position = Vector2(510, 317)
 
 [node name="star2" parent="stars_collection" unique_id=1570308714 instance=ExtResource("5_4qhuu")]
-position = Vector2(569, 251)
+position = Vector2(468, 341)
 index = 1
 
 [node name="star3" parent="stars_collection" unique_id=544390773 instance=ExtResource("5_4qhuu")]
-position = Vector2(508, 297)
+position = Vector2(480, 416)
 index = 2
 
 [node name="star4" parent="stars_collection" unique_id=460662236 instance=ExtResource("5_4qhuu")]
-position = Vector2(586, 294)
+position = Vector2(534, 424)
 index = 3
 
 [node name="star5" parent="stars_collection" unique_id=878188028 instance=ExtResource("5_4qhuu")]
-position = Vector2(613, 272)
+position = Vector2(551, 386)
 index = 4
 
 [node name="star6" parent="stars_collection" unique_id=649013768 instance=ExtResource("5_4qhuu")]
-position = Vector2(668, 272)
+position = Vector2(561, 341)
 index = 5
 
 [node name="star7" parent="stars_collection" unique_id=1814637941 instance=ExtResource("5_4qhuu")]
-position = Vector2(622, 321)
+position = Vector2(591, 300)
 index = 6
 
 [node name="star8" parent="stars_collection" unique_id=1570439741 instance=ExtResource("5_4qhuu")]
-position = Vector2(652, 401)
+position = Vector2(630, 279)
 index = 7
 
 [node name="star9" parent="stars_collection" unique_id=449558581 instance=ExtResource("5_4qhuu")]
-position = Vector2(713, 347)
+position = Vector2(707, 257)
 index = 8
 
 [node name="star10" parent="stars_collection" unique_id=108483811 instance=ExtResource("5_4qhuu")]
-position = Vector2(751, 289)
+position = Vector2(709, 306)
 index = 9
 
 [node name="ProgressBar" type="TextureProgressBar" parent="." unique_id=838822504]
@@ -343,7 +355,7 @@ offset_top = -376.0
 offset_right = 850.0
 offset_bottom = -130.0
 theme_override_font_sizes/font_size = 180
-text = "győztél"
+text = "RYTHM_WIN"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -394,6 +406,9 @@ position = Vector2(581.665, 336.61)
 scale = Vector2(0.561, 0.561)
 sprite_frames = SubResource("SpriteFrames_71p6h")
 animation = &"idle"
+
+[node name="SFX" type="AudioStreamPlayer" parent="." unique_id=1525642388]
+bus = &"SFX"
 
 [connection signal="animation_finished" from="dropplet_placeholderr/DroppletAnimationPlayer" to="." method="_on_dropplet_animation_player_animation_finished"]
 [connection signal="value_changed" from="ProgressBar" to="." method="_on_progress_bar_value_changed"]

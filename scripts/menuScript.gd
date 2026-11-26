@@ -5,10 +5,11 @@ extends Control
 @onready var creditsB: Button = $Credits
 @onready var exitB: Button = $Exit
 @onready var option_animation_player: AnimationPlayer = $OptionsBackground/OptionAnimationPlayer
+@onready var sfx_stream_player: AudioStreamPlayer = $SFXStreamPlayer
 
 
 @onready var logo: Sprite2D = $Logo
-@onready var press_mouse_text: Label = $"Press mouse text"
+@onready var press_mouse_text: RichTextLabel = $pressMouseText
 
 #startB
 @export var StartButtonBaseHun: Texture2D
@@ -31,6 +32,12 @@ extends Control
 @export var ExitButtonHoverHun: Texture2D
 @export var ExitButtonHoverEng: Texture2D
 
+##sfx
+@export var sfxMenu: AudioStreamMP3
+@export var sfxButton: AudioStreamMP3
+@export var sfxButtonexit: AudioStreamMP3
+
+
 var isCameraDown = false
 @onready var CamAnimation_player: AnimationPlayer = $Camera2D/AnimationPlayer
 
@@ -47,6 +54,7 @@ func ButtonIconsLocalization() -> void:
 func _ready() -> void:
 	#itt meg kell adnom egy alap értéket mert különben mindenhol a key érték neve fog kiíródni
 	TranslationServer.set_locale(GlobalScript.language)
+	press_mouse_text.text = "[wave]" + tr("MENU_PRESS_MOUSE") + "[/wave]"
 	
 	hover_states = {
 		startB: false,
@@ -126,25 +134,37 @@ func _input(event: InputEvent) -> void:
 	if not event.is_action_pressed("interact"):
 		return
 	CamAnimation_player.play("slide_down")
+	sfx_stream_player.stream = sfxMenu
+	sfx_stream_player.play()
 	isCameraDown = true
 
 ##Button Singals
 func _on_start_pressed() -> void:
+	sfx_stream_player.stream = sfxButton
+	sfx_stream_player.play()
 	SceneTransition.change_scene("res://scenes/intro.tscn")
 	
 func _on_options_pressed() -> void:
+	sfx_stream_player.stream = sfxButton
+	sfx_stream_player.play()
 	creditsB.disabled = true
 	option_animation_player.play("show")
 
 func _on_credits_pressed() -> void:
+	sfx_stream_player.stream = sfxButton
+	sfx_stream_player.play()
 	SceneTransition.change_scene("res://scenes/credits.tscn")
 
 func _on_exit_pressed() -> void:
+	sfx_stream_player.stream = sfxButton
+	sfx_stream_player.play()
 	SceneTransition.quit_game()
 
 
 ##options menu
 func _on_option_exit_button_pressed() -> void:
+	sfx_stream_player.stream = sfxButtonexit
+	sfx_stream_player.play()
 	creditsB.disabled = false
 	option_animation_player.play_backwards("show")
 
